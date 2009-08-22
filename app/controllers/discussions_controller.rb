@@ -4,7 +4,7 @@ class DiscussionsController < ApplicationController
   # GET /discussions
   # GET /discussions.xml
   def index
-    @discussions = Discussion.all
+    @discussions = Intervention.all
 
     respond_to do |wants|
       wants.html # index.html.erb
@@ -24,7 +24,7 @@ class DiscussionsController < ApplicationController
   # GET /discussions/new
   # GET /discussions/new.xml
   def new
-    @discussion = Discussion.new
+    @discussion = Intervention.new
 
     respond_to do |wants|
       wants.html # new.html.erb
@@ -39,16 +39,16 @@ class DiscussionsController < ApplicationController
   # POST /discussions
   # POST /discussions.xml
   def create
-    @discussion = Discussion.new(params[:discussion])
+    @discussion = Intervention.new(params[:discussion])
 
     respond_to do |wants|
-      if @discussion.save
+      if @Intervention.save
         flash[:notice] = 'Discussion was successfully created.'
         wants.html { redirect_to(@discussion) }
         wants.xml  { render :xml => @discussion, :status => :created, :location => @discussion }
       else
         wants.html { render :action => "new" }
-        wants.xml  { render :xml => @discussion.errors, :status => :unprocessable_entity }
+        wants.xml  { render :xml => @Intervention.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -57,13 +57,13 @@ class DiscussionsController < ApplicationController
   # PUT /discussions/1.xml
   def update
     respond_to do |wants|
-      if @discussion.update_attributes(params[:discussion])
+      if @Intervention.update_attributes(params[:discussion])
         flash[:notice] = 'Discussion was successfully updated.'
         wants.html { redirect_to(@discussion) }
         wants.xml  { head :ok }
       else
         wants.html { render :action => "edit" }
-        wants.xml  { render :xml => @discussion.errors, :status => :unprocessable_entity }
+        wants.xml  { render :xml => @Intervention.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -71,7 +71,7 @@ class DiscussionsController < ApplicationController
   # DELETE /discussions/1
   # DELETE /discussions/1.xml
   def destroy
-    @discussion.destroy
+    @Intervention.destroy
 
     respond_to do |wants|
       wants.html { redirect_to(discussions_url) }
@@ -81,7 +81,7 @@ class DiscussionsController < ApplicationController
 
   private
     def find_discussion
-      @discussion = Discussion.find(params[:id])
+      @discussion = Intervention.find(params[:id])
     end
 
 end
