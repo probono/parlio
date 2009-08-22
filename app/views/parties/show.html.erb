@@ -7,7 +7,7 @@
   <h3>Parlamentarios Legislatura</h3>
   <ul>
     <% for parla in @party.parliamentarians %>
-      <li><%= link_to parla.full_name, parliamentarian_path(parla) %></li>
+      <li> <%= parlavatar(parla) %> <%= link_to parla.full_name, parliamentarian_path(parla) %></li>
     <% end %>
   </ul>
 <% end %>
