@@ -10,7 +10,7 @@ class SearchController < ApplicationController
       source = s.constantize
       @matches << source.site_search(@term)
     end
-    @matches = @matches.flatten.paginate :page => @page, :per_page => 2
+    @matches = @matches.flatten.paginate :page => @page, :per_page => 10
     respond_to do |format|
       format.html 
       format.xml  { render :xml => @matches }
