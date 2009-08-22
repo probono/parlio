@@ -20,6 +20,12 @@ module Legebiltzarra
       parties_document ||= Nokogiri::HTML(open(parties_url).read)
       parties_document.search('div[@id="grupos"]/table/tr').map { |p| Party.new(p) } rescue []      
     end
+    
+    def comissions(id=ACTIVE)
+      comissions_url = "#{BASE_URL}/comorga/c_comorga_com_#{self.id}.html"
+      comissions_document ||= Nokogiri::HTML(open(comissions_url).read)
+      comissions_document.search('div[@class="contenido_principal"]/ul[@class="lista_nomargin"]/li/a/@href').map { |c| Comission.new(c.content.match(/\d+/)[0] ) } rescue []
+    end
   
   
     def document
