@@ -11,4 +11,6 @@
 
 class Topic < ActiveRecord::Base
   seo_urls
+  
+  has_many :initiatives
 end

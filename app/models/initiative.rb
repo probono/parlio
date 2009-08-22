@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20090822155637
+# Schema version: 20090822190635
 #
 # Table name: initiatives
 #
@@ -13,11 +13,17 @@
 #  parliamentarian_id :integer
 #  created_at         :datetime
 #  updated_at         :datetime
+#  status             :string(255)
+#  topic_id           :integer
 #
 
 class Initiative < ActiveRecord::Base
+  OPEN  = "open"
+  CLOSE = "close"
+  
   seo_urls
   
   acts_as_taggable_on :tags
   belongs_to :parliamentarian
+  belongs_to :topic
 end
