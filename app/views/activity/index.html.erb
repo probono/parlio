@@ -1,29 +1,56 @@
 <%= render :partial => 'activity/activity_menu' %>
 
 
-
-
+<br/>
+<h2>Categorías</h2>
 <% if !@topics.blank? %>
   <ul>
     <% for t in @topics %>
-      <li><%= t %></li>
+      <li><%= link_to t.name, topic_path(t) %></li>
     <% end %>
   </ul>
 <% end %>
 
-<% if !@tags.blank? %>
+<br/>
+<h2>Categorías más activas</h2>
+<% if !@most_active.blank? %>
   <ul>
-    <% for tag in @tags %>
-      <li><%= tag %></li>
+    <% for t in @most_active %>
+      <li><%= link_to t.name, topic_path(t) %> <%= t.initiatives.size %> iniciativas</li>
     <% end %>
   </ul>
 <% end %>
- 
-                                  
-<% if !@ins.blank? %>
-<ul>
-  <% for ini in @ins %>
-    <li><%= ini.num_exp %> | <%= ini.title %></li>
-  <% end %>
-</ul>
+
+<h2>Etiquetas más activas</h2>
+<% if !@most_active_tags.blank? %>
+  <ul>
+    <% for t in @most_active_tags %>
+      <li><%= link_to t.name, initiatives_by_tag_path(t.name) %> <%= t.taggings.size %> iniciativas</li>
+    <% end %>
+  </ul>
 <% end %>
+
+<h2>Partidos más activos</h2>
+<% if !@most_active_parties.blank? %>
+  <ul>
+    <% for p in @most_active_parties %>
+      <li><%= link_to p.name, party_path(p) %> </li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+<h2>Parlamentarios más activos</h2>
+<% if !@most_active_parliamentarians.blank? %>
+  <ul>
+    <% for p in @most_active_parliamentarians %>
+      <li>
+        <%= link_to p.full_name, parliamentarian_path(p) %> <br/>
+        <%= p.party.acronym %> <%= p.initiatives.size %> iniciativas
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+           

@@ -5,7 +5,16 @@
 <br/>
 
 <p><%= @initiative.party %></p>
-<p><%= @initiative.tags %> </p>
+<p>
+  Etiquetas<br/>
+  <% if !@initiative.tags.blank? %>
+    <% for tag in @initiative.tags %>
+      <%= link_to tag, initiatives_by_tag_path(tag.name) %>
+    <% end %>
+  <% end %>
+  
+  <%=  %> 
+</p>
 <p><%= @initiative.num_exp %></p>
 <p><%= @initiative.votings %></p>
 

@@ -1,0 +1,10 @@
+<ul>
+  
+  <% if !@topic.initiatives.blank? %>
+    <% for ini in @topic.initiatives %>
+      <li><%= link_to ini.num_exp, initiative_path(ini) %> | <%= ini.title %></li>
+    <% end %>
+  <% end %>
+  
+  
+</ul>

@@ -12,6 +12,8 @@ ActionController::Routing::Routes.draw do |map|
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   
   map.activity  '/activity',    :controller => 'activity', :action => 'index'
+
+  map.initiatives_by_tag  '/activity/initiatives/by_tag/:tag',    :controller => 'taggings', :action => 'show'
   
   map.search    '/search',      :controller => 'search', :action => 'search'
   

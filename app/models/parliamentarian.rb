@@ -34,6 +34,12 @@ class Parliamentarian < ActiveRecord::Base
 
   def last_name
     self.full_name.split(',').first.strip
+  end    
+  def self.most_active
+    tuples = Initiative.count(:all, :group => "parliamentarian_id", :order => "count(*) DESC", :limit => 5)
+    returning most_active = [] do
+      tuples.each{|tuple| most_active << Parliamentarian.find(tuple[0])}
+    end    
   end
   
   def self.site_search(query)

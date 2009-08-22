@@ -16,7 +16,7 @@
     
 <ul>
   <li>Titulación: <%= @parliamentarian.profession %></li>
-  <li>Email: <%= @parliamentarian.email %></li>
+  <li>Email: <%= mail_to @parliamentarian.email %></li>
 </ul>
 
 <% if !@parliamentarian.posts.blank? %>
