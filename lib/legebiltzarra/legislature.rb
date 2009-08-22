@@ -26,8 +26,50 @@ module Legebiltzarra
       comissions_document ||= Nokogiri::HTML(open(comissions_url).read)
       comissions_document.search('div[@class="contenido_principal"]/ul[@class="lista_nomargin"]/li/a/@href').map { |c| Comission.new(c.content.match(/\d+/)[0] ) } rescue []
     end
-  
-  
+
+    def topics
+      topics_url = "#{BASE_URL}/cuadros/c_cuadros_tema_ENC.html"
+      topics_document ||= Nokogiri::HTML(open(topics_url).read)
+      topics = Array.new
+      topics_document.search('table[@class="tabla_estadisticas"]/tr').each do |row| 
+        topic = Topic.new
+
+        #ains, changed classes in html for even/pair
+        url_column = row.search('td[@class=tabla_estadisticas1]/a')
+        if url_column.size == 0
+          url_column = row.search('td[@class=tabla_estadisticas2]/a')
+        end
+
+        topic.url  = url_column[0].at('@href').content        
+        topic.size = url_column[0].content
+        topic.name = row.search('td[@class=tabla_estadisticas1]')[0].content 
+        topics << topic
+      end
+      topics
+    end
+      
+    def topics_for_closed_initiatives
+      topics_url = "#{BASE_URL}/cuadros/c_cuadros_tema_CER.html"
+      topics_document ||= Nokogiri::HTML(open(topics_url).read)
+      topics = Array.new
+      topics_document.search('table[@class="tabla_estadisticas"]/tr').each do |row| 
+        topic = Topic.new
+
+        #ains, changed classes in html for even/pair
+        url_column = row.search('td[@class=tabla_estadisticas1]/a')
+        if url_column.size == 0
+          url_column = row.search('td[@class=tabla_estadisticas2]/a')
+        end
+
+        topic.url  = url_column[0].at('@href').content        
+        topic.size = url_column[0].content
+        topic.name = row.search('td[@class=tabla_estadisticas1]')[0].content 
+        topics << topic
+      end
+      topics
+    end
+    
+
     def document
        @document ||= Nokogiri::HTML(open(self.url).read)
     end

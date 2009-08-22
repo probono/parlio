@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20090822083140
+# Schema version: 20090822123030
 #
 # Table name: parliamentarians
 #
@@ -12,11 +12,15 @@
 #  posts      :string(255)
 #  created_at :datetime
 #  updated_at :datetime
+#  orig_id    :string(255)
 #
 
 class Parliamentarian < ActiveRecord::Base
   seo_urls "full_name"
-  has_many :initiatives
+  has_many :initiatives, :dependent => :destroy
+  #has_many :interventions, :dependent => :destroy
+  
+  belongs_to :party
   
   def first_name
     self.full_name.split(',').last.strip
