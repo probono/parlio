@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20090822123030
+# Schema version: 20090822155637
 #
 # Table name: parliamentarians
 #
@@ -13,12 +13,15 @@
 #  created_at :datetime
 #  updated_at :datetime
 #  orig_id    :string(255)
+#  party_id   :integer
 #
 
 class Parliamentarian < ActiveRecord::Base
   seo_urls "full_name"
+  
   has_many :initiatives, :dependent => :destroy
-  #has_many :interventions, :dependent => :destroy
+  has_many :commission_members
+  has_many :commissions, :through => :commission_members, :source => :commision
   
   belongs_to :party
   
