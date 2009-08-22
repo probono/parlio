@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20090822122022
+# Schema version: 20090822155637
 #
 # Table name: initiatives
 #
@@ -8,7 +8,6 @@
 #  title              :string(255)
 #  party              :string(255)
 #  initiative_type    :string(255)
-#  tags               :string(255)
 #  procedures         :string(255)
 #  votings            :string(255)
 #  parliamentarian_id :integer
