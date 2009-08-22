@@ -13,6 +13,8 @@ ActionController::Routing::Routes.draw do |map|
   
   map.activity  '/activity',    :controller => 'activity', :action => 'index'
   
+  map.search    '/search',      :controller => 'search', :action => 'search'
+  
   map.resources :parties
   map.resources :topics, :path_prefix => 'activity'
   map.resources :initiatives, :path_prefix => 'activity'

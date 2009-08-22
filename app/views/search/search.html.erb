@@ -1,0 +1,6 @@
+<ul>
+<% @matches.each do |m| %>
+  <li><%= link_to m.full_name, parliamentarian_path(m) %></li>
+<% end -%>
+</ul>
+<%= will_paginate @matches %>

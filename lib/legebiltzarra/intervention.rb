@@ -16,13 +16,10 @@ module Legebiltzarra
     def file_number
       document.at("th[text()^='Núm. expediente']").next_sibling.content.strip rescue nil
     end
-    def source_initiative
-      document.at("th[text()^='Iniciativa origen']").next_sibling.content.strip rescue nil
-    end
 
     def commission 
       name = document.at("th[text()^='Comisión:']").next_sibling.content.strip rescue nil
-      name[name.index('Comis'),name.size - 1] if name
+      name[name.index('Comis'), name.size - 1] if name && name.index('Comis')
     end
     
     def session_date
@@ -58,7 +55,7 @@ module Legebiltzarra
     end
   
     def full_txt
-      @txt_document ||= open(self.txt_url).read
+      @txt_document ||= open(self.txt_url).read rescue ""
     end
   
     def pdf_url

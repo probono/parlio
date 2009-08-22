@@ -23,6 +23,9 @@ class Parliamentarian < ActiveRecord::Base
   has_many :commission_members
   has_many :commissions, :through => :commission_members, :source => :commision
   
+  has_many :intervention_parliamentarians
+  has_many :interventions, :through => :intervention_parliamentarians
+
   belongs_to :party
   
   def first_name
@@ -32,4 +35,9 @@ class Parliamentarian < ActiveRecord::Base
   def last_name
     self.full_name.split(',').first.strip
   end
+  
+  def self.site_search(query)
+    sql = "%#{query}%"
+    Parliamentarian.find(:all, :conditions => ["full_name like ? or profession like ? or posts like ?", sql, sql, sql])
+  end  
 end
