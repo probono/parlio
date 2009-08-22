@@ -1,13 +1,14 @@
 module Legebiltzarra
   class Legislature                        
-    ACTUAL_LEGISLATURE="GA"
+    CURRENT_LEGISLATURE="LGA"
+    CURRENT_PARLIAMENTARIANS="ACT"
     BASE_URL = "http://www.parlamento.euskadi.net"
     
     attr_accessor :id, :url
   
-    def initialize(id=ACTUAL_LEGISLATURE)
+    def initialize(id=CURRENT_PARLIAMENTARIANS)
       @id = id                   
-      @url = "#{BASE_URL}/comparla/c_comparla_alf_L#{self.id}.html"
+      @url = "#{BASE_URL}/comparla/c_comparla_alf_#{self.id}.html"
     end
   
     def parliamentarians
