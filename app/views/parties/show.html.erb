@@ -1,6 +1,6 @@
 <h2><%= @party.name %></h2>
 <p><%= @party.parliamentarians.size %> parlamentarios</p>
-<p>Sitio web: <= @party.url ></p>        
+<p>Sitio web: <%= @party.url %></p>        
 
 
 <% if !@party.parliamentarians.blank? %>
