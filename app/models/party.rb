@@ -15,5 +15,6 @@
 #
 
 class Party < ActiveRecord::Base
+  seo_urls
   has_many :parliamentarians
 end

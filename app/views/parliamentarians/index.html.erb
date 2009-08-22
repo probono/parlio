@@ -1,11 +1,14 @@
 <div class="parliamentarians">
-  parliamentarians
-
+  <h2>Parlamentarios</h2>
+  <h3>Total: <%= @parliamentarians.size %></h3>
+  
   <ul>
-  <% if !@parliamentarians.blank? %>
-    <% for p in @parliamentarians %>
-      <li><%= link_to p.full_name, parliamentarian_path(p) %></li>
+    <% @parliamentarians.group_by{|p| p.party}.each do |party, parliamentarians | %>
+      <li>
+        <%= link_to image_tag(party.logo), party_path(party) %>
+        <%= link_to party.acronym, party_path(party) %><br/>
+        <%= parliamentarians.size %> parlamentarios
+      </li>
     <% end %>
-  <% end %>
-  </ul>  
+  </ul>
 </div>

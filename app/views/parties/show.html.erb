@@ -1,0 +1,34 @@
+<h2><%= @party.name %></h2>
+<p><%= @party.parliamentarians.size %> parlamentarios</p>
+<p>Sitio web: <= @party.url ></p>        
+
+
+<% if !@party.parliamentarians.blank? %>
+  <h3>Parlamentarios Legislatura</h3>
+  <ul>
+    <% for parla in @party.parliamentarians %>
+      <li><%= link_to parla.full_name, parliamentarian_path(parla) %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+
+<h3>ON THE NEWS</h3>
+<ul>
+  <% if !@news["ResultSet"]["Result"].blank? %>
+    <% for a_new in @news["ResultSet"]["Result"] %>
+    <li class="clearfix">
+        <div class="image"><%=  image_tag a_new["Thumbnail"]["Url"] if a_new["Thumbnail"] && a_new["Thumbnail"]["Url"] %></div>
+        <div class="title"><%= link_to a_new["Title"], a_new["Url"]   %></div>
+        <div class="subtitle"><%=a_new["Summary"] %></div>
+        <div class="metadata">
+            Published by <%= link_to a_new["NewsSource"],  a_new["NewsSourceUrl"] %>
+
+        </div>
+    </li>
+      
+    <% end %>
+
+  <% end %>
+</ul>
