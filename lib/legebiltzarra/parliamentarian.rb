@@ -43,11 +43,17 @@ module Legebiltzarra
     def document
        @document ||= Nokogiri::HTML(open(self.url).read)
     end
-  
+
     def interventions
       int_url = "#{BASE_URL}/fichas/c_#{self.id}_int_SM.html"
-      int_doc_list ||= Nokogiri::HTML(open(int_url).read)
-      int_doc_list.search('div[@class="indentar2"]/ul/li/a/@onclick').map{ |p| Intervention.new(p.content.match(/\d+/)[0]) }
+      int_list ||= Nokogiri::HTML(open(int_url).read)
+      int_list.search('div[@class="indentar2"]/ul/li/a/@onclick').map{ |p| Intervention.new(p.content.match(/\d+/)[0]) }
+    end
+      
+    def initiatives
+      ini_url = "#{BASE_URL}/fichas/c_#{self.id}_ini_SM.html"
+      ini_list ||= Nokogiri::HTML(open(ini_url).read)
+      ini_list.search('div[@class="indentar2"]/ul/li/a').map{ |p| Initiative.new( p.content.match(/[0-9\\]+/)[0] ) }
     end
   end
 end
