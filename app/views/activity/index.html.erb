@@ -1,0 +1,29 @@
+<%= render :partial => 'activity/activity_menu' %>
+
+
+
+
+<% if !@topics.blank? %>
+  <ul>
+    <% for t in @topics %>
+      <li><%= t %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<% if !@tags.blank? %>
+  <ul>
+    <% for tag in @tags %>
+      <li><%= tag %></li>
+    <% end %>
+  </ul>
+<% end %>
+ 
+                                  
+<% if !@ins.blank? %>
+<ul>
+  <% for ini in @ins %>
+    <li><%= ini.num_exp %> | <%= ini.title %></li>
+  <% end %>
+</ul>
+<% end %>

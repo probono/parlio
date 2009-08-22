@@ -1,0 +1,29 @@
+<%# 
+#  id         :integer         not null, primary key
+#  full_name  :string(255)
+#  photo      :string(255)
+#  profession :string(255)
+#  languages  :string(255)
+#  email      :string(255)
+#  posts      :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+
+                                 
+ %>
+<p><%= @parliamentarian.full_name %></p>
+<%= image_tag @parliamentarian.photo %>   
+    
+<ul>
+  <li>Titulación: <%= @parliamentarian.profession %></li>
+  <li>Email: <%= @parliamentarian.email %></li>
+</ul>
+
+<% if !@parliamentarian.posts.blank? %>
+<ul>     
+  <% for post in @parliamentarian.posts %>
+    <li><%= post %></li>
+  <% end %>
+</ul>
+<% end %>
+

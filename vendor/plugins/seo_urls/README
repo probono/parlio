@@ -1,0 +1,44 @@
+= seo_urls
+
+==Installation:
+
+script/plugin install http://svn.redshiftmedia.com/svn/plugins/seo_urls
+
+==Usage:
+
+To apply this plugin to a model:
+
+class Post < ActiveRecord::Base
+   seo_urls
+end
+
+Or to use an attribute other than name or title:
+
+class Post < ActiveRecord::Base
+   seo_urls "nickname"
+end
+
+==Information
+
+The plugin looks for 'name' or 'title' attributes and if they are available it uses them to generate a search engine friendly string. to_param method is overwritten so that it returns the the numerical id of the record with the search engine friendly string appended to it.
+
+An example model
+@post=>{:id=>12,:title=>"seo_urls rails plugin"}
+
+Without the plugin:
+post_url(@post)=>"/posts/show/12"
+
+With the plugin:
+post_url(@post)=>"/posts/show/12-seo-urls-rails-plugin"
+
+If the value of the attribute being used to create the url string for a particular model changes, so will the resulting url string. However, old urls (which might have been stored in bookmarks etc.) will still work because rails only pays attention to the id reference number that begins the :id portion of any url, ignoring anything that follows it.
+
+== Resources
+
+Subversion
+
+* http://svn.redshiftmedia.com/svn/plugins/seo_urls
+
+Author
+
+* Tomasz Kaye. info [at] redshiftmedia [dot] com

@@ -1,0 +1,11 @@
+<div class="parliamentarians">
+  parliamentarians
+
+  <ul>
+  <% if !@parliamentarians.blank? %>
+    <% for p in @parliamentarians %>
+      <li><%= link_to p.full_name, parliamentarian_path(p) %></li>
+    <% end %>
+  <% end %>
+  </ul>  
+</div>

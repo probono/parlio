@@ -8,6 +8,10 @@ module Legebiltzarra
       @url = "#{BASE_URL}/fichas/c_#{self.id}_SM.html"
     end
   
+    def orig_id
+      self.id
+    end
+    
     def first_name
       self.full_name.split(',').last.strip
     end
