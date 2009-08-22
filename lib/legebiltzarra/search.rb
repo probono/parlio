@@ -1,4 +1,4 @@
-class Search
+class Legebiltzarra::Search
 
   attr_accessor :query
 

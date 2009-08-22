@@ -1,4 +1,4 @@
-class Legislature                        
+class Legebiltzarra::Legislature                        
   ACTUAL_LEGISLATURE="GA"
   BASE_URL = "http://www.parlamento.euskadi.net"
   

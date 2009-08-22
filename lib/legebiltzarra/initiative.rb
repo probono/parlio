@@ -1,4 +1,4 @@
-class Initiative
+class Legebiltzarra::Initiative
   BASE_URL = "http://www.parlamento.euskadi.net"
   attr_accessor :id, :url
 

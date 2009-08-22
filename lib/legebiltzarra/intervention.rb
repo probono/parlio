@@ -1,4 +1,4 @@
-class Intervention
+class Legebiltzarra::Intervention
   BASE_URL = "http://www.parlamento.euskadi.net"
   attr_accessor :id, :url, :txt_url
 
