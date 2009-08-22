@@ -1,5 +1,15 @@
 ## Welcome to your Rails Rumble 2009 Repository
 
+######     #    ######  #       ### ####### 
+#     #   # #   #     # #        #  #     # 
+#     #  #   #  #     # #        #  #     # 
+######  #     # ######  #        #  #     # 
+#       ####### #   #   #        #  #     # 
+#       #     # #    #  #        #  #     # 
+#       #     # #     # ####### ### ####### 
+                                            
+
+
 To get started, you need to clone this repository
 using your private URL above.
 
