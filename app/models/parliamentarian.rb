@@ -32,4 +32,9 @@ class Parliamentarian < ActiveRecord::Base
   def last_name
     self.full_name.split(',').first.strip
   end
+  
+  def self.site_search(query)
+    sql = "%#{query}%"
+    Parliamentarian.find(:all, :conditions => ["full_name like ? or profession like ? or posts like ?", sql, sql, sql])
+  end  
 end
