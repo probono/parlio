@@ -4,8 +4,13 @@ module Legebiltzarra
     attr_accessor :id, :url, :txt_url
   
     def initialize(id)
-      @id = id
-      @url = "#{BASE_URL}/sm_splenoc/DDW?W=spl_clave='#{self.id}'"
+      @id = id.strip
+      #interventions from commissions and congress have different ids size (16 vs 17)
+      if @id.size == 16
+        @url = "#{BASE_URL}/sm_scomisc/DDW?W=sco_clave='#{self.id}'"
+      else
+        @url = "#{BASE_URL}/sm_splenoc/DDW?W=spl_clave='#{self.id}'"
+      end
     end
     
     def file_number
@@ -13,6 +18,11 @@ module Legebiltzarra
     end
     def source_initiative
       document.at("th[text()^='Iniciativa origen']").next_sibling.content.strip rescue nil
+    end
+
+    def commission 
+      name = document.at("th[text()^='Comisión:']").next_sibling.content.strip rescue nil
+      name[name.index('Comis'),name.size - 1] if name
     end
     
     def session_date
