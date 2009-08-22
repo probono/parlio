@@ -1,0 +1,21 @@
+/* SCREEN */
+/* Hacks para IE6 */
+
+/*
+Solución PNG en IE6:
+Para solventar backgrund-position y background-repeat hay que cargar un .js de nombre "iepngfix_tilebg.js"
++info: http://www.twinhelix.com/css/iepngfix/
+*/
+.pngFix
+{ behavior: url(/stylesheets/iepngfix.htc); }
+
+/* IE6 actúa de modo raro con las especificidades CSS, así que me veo obligado a meter estar propiedades. */
+.bullet,
+.bulletListDec,
+.bulletList,
+.bulletList li,
+.bulletDec a
+{
+	background-image: none;
+	background-repeat: no-repeat;
+}

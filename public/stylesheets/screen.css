@@ -1,0 +1,1005 @@
+/* @group Reset */
+html
+{
+	/*This odd 100.01% value for the font size compensates for several browser bugs.
+First, setting a default body font size in percent (instead of em) eliminates an IE/Win problem with growing or shrinking fonts out of proportion if they are later set in ems in other elements.
+Additionally, some versions of Opera will draw a default font-size of 100% too small compared to other browsers.
+Safari, on the other hand, has a problem with a font-size of 101%.
+The current best suggestion is to use the 100.01% value for this property.*/
+	font-size: 100.01%;
+}
+
+html, body
+{
+	margin: 0;
+	padding: 0;
+}
+
+div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, q, cite, a, abbr, acronym, address,
+big, small, code, samp, var, tt, pre, del, ins, strike, dfn, kbd, em, strong, font, img, s, sub, sup, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table,caption, tbody, tfoot, thead, tr, th, td
+{	font-size: 100%;	vertical-align: baseline;}
+
+:link,:visited { text-decoration: none; }
+
+div, dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,input,pre,p,blockquote
+{
+	margin: 0;
+	padding: 0;
+}
+
+dl,ul,ol
+{
+	list-style: none;
+	list-style-type: none;
+}
+
+/* NOTA: tables still need 'cellspacing="0"' in the markup */
+table
+{
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+a,
+a:hover,
+a:active,
+a img,
+:link img,
+:visited img
+{
+	border: none;
+	outline: none;
+	outline-style: none;
+}
+
+:focus {outline: 0;}
+
+address,caption,cite,code,dfn,th,var
+{ 
+	font-style: normal; 
+	font-weight: normal; 
+}
+
+pre, code, tt, samp {font-size: 12px;}
+kbd {text-transform: uppercase;}
+sup {vertical-align: super;}
+sub {vertical-align: sub;}
+pre {white-space: pre;}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after
+{content:"";}
+
+blockquote,q{quotes: "" "";}
+/* @end */
+
+
+
+/* @group Webfonts */
+@font-face {
+	font-family: "Museo 300";
+	src: url(../../Museo300-Regular.otf) format("opentype");
+	}
+@font-face {
+	font-family: "Museo 500";
+	src: url(../../Museo500-Regular.otf) format("opentype");
+	}
+@font-face {
+	font-family: "Museo 700";
+	src: url(../../Museo700-Regular.otf) format("opentype");
+	}
+/* @end */
+
+/* @group HTML elements */
+body
+{
+  background: #fff;
+  color: #333;
+  font-family: Arial, sans-serif;
+  font-size: 12px;/* Corresponde a 11px */
+  line-height: 1.5;
+}
+
+/* Hacemos que todos los elementos en bloque por defecto tengan un margin inferior correspondiente a 10px */
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,input,pre,p,blockquote{margin: 0 0 10px 0;}
+
+/* @group headings */
+h1, h2, h3, h4, h5, h6
+{
+  font-family: "Museo 300", Museo, Georgia, 'Times New Roman', Times, serif;
+  font-weight: normal;
+  line-height: 1;
+  margin: 0 0 .5em 0;
+}
+
+h1 {font-size: 30px;}/* 30px */
+h2 {font-size: 24px;}/* 24px */
+h3 {font-size: 20px;}/* 20px */
+h4 {font-size: 16px;}/* 16px */
+h5 {font-size: 14px;}/* 14px */
+h6 {font-size: 12px;}/* 12px */
+
+/* @end */
+a {color: #798200;}
+a:hover {color: #4a4f00;}
+
+acronym,
+abbr
+{
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+/* @group q, bockquote, cite */
+q,
+blockquote
+{
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+}
+
+blockquote {font-size: 13px;}
+
+blockquote cite
+{
+  display: block;
+  font-size: 12px;
+  margin: 10px 0 0 0;
+}
+
+/* STANDARD QUOTES */
+
+q { quotes: "\201C" "\201D" "\2018" "\2019"; }
+q:lang(sv) { quotes: '\201D' '\201D' '\2019' '\2019'; }
+q:lang(da) { quotes: '\00BB' '\00AB' '\203A' '\2039'; }
+
+q:before { content: open-quote; }
+q:after  { content: close-quote; }
+
+/* SAFARI SUPPORT */
+
+q:before   { content: '\201C'; }
+q:after    { content: '\201D'; }
+q q:before { content: '\2018'; }
+q q:after  { content: '\2019'; }
+
+/* BLOCKQUOTES */
+
+blockquote * { quotes: none; }
+blockquote > *:before { content: '\201C'; }
+blockquote > *:after  { content: '\201D'; }
+blockquote q:before   { content: '\2018'; }
+blockquote q:after    { content: '\2019'; }
+
+/* LANGUAGE-SPECIFIC QUOTES SAFARI STYLE */
+
+*[lang~='da'] q:before, q[lang~='da']:before,
+*[lang~='da'] blockquote > *:before, blockquote[lang~='da'] > *:before { content: '\201E'; }
+
+*[lang~='da'] q:after, q[lang~='da']:after,
+*[lang~='da'] blockquote > *:after, blockquote[lang~='da'] > *:after { content: '\201C'; }
+
+*[lang~='da'] q q:before, q[lang~='da'] q:before,
+*[lang~='da'] blockquote q:before, blockquote[lang~='da'] q:before { content: '\2019'; }
+
+*[lang~='da'] q q:after, q[lang~='da'] q:after,
+*[lang~='da'] blockquote q:after, blockquote[lang~='da'] q:after { content: '\2019'; }
+
+*[lang~='sv'] q:before, q[lang~='sv']:before,
+*[lang~='sv'] blockquote > *:before, blockquote[lang~='sv'] > *:before { content: '\201D'; }
+
+*[lang~='sv'] q:after, q[lang~='sv']:after,
+*[lang~='sv'] blockquote > *:after, blockquote[lang~='sv'] > *:after { content: '\201D'; }
+
+*[lang~='sv'] q q:before, q[lang~='sv'] q:before,
+*[lang~='sv'] blockquote q:before, blockquote[lang~='sv'] q:before { content: '\2019'; }
+
+*[lang~='sv'] q q:after,  q[lang~='sv'] q:after,
+*[lang~='sv'] blockquote q:after, blockquote[lang~='sv'] q:after { content: '\2019'; }
+
+cite {}
+/* @end */
+kbd
+{
+  background: #eee;
+  border-top: .15em solid #ccc;
+  border-right:.25em solid #aaa;
+  border-bottom:.3em solid #888;
+  border-left:.2em solid #bbb;
+  color: #000;
+  font-size: 1em;
+  font-weight: normal;
+  font-family: "Lucida console", Courier, monospace, sans-serif;
+  line-height: 2;
+  padding: .05em .2em;
+}
+
+/* @group lists */
+ul, ol{}
+
+ol{}
+
+ul li,
+ol li
+{margin: 0 0 5px 0;}
+
+dl{}
+
+dt, dd{margin: 0;}
+
+dt{font-weight: bold;}
+
+dd{}
+/* @end */
+
+/* @group forms */
+form{}
+
+fieldset
+{
+  border: 1px solid #ccc;
+  border-top: 4px solid #ccc;
+  margin: 0 0 20px 0;
+  padding: 10px;
+}
+
+legend{display: none;}
+
+label,
+p.label/* Elemento que hace las veces de label cuando éste no interesa o no puede ser usado. */
+{
+  font-weight: bold;
+  line-height: 1;
+  margin: 0 0 10px 0;
+  display: block;
+}
+
+input{}
+
+optgroup {font-style: normal;}
+
+option
+{
+  background: #fff;
+  cursor: pointer;
+  padding: 0 0 0 10px;
+}
+
+input,
+select,
+optgroup,
+option,
+textarea
+{
+  background-color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+input,
+select,
+textarea
+{
+  border: 1px solid;
+  border-bottom-color: #d2d2d2;
+  border-left-color: #acacac;
+  border-right-color: #acacac;
+  border-top-color: #6f6f6f;
+}
+
+input,
+textarea
+{background: #fff;}
+
+select,
+input,
+textarea
+{
+  margin: 0 0 5px 0;
+  padding: 5px;
+}
+
+textarea {overflow: auto;}
+
+input:hover,
+select:hover,
+textarea:hover
+{
+  border-color: #aaa;
+  cursor: pointer;
+}
+
+input:focus,
+select:focus,
+textarea:focus
+{border-color: #666;}
+
+button
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+}
+
+button:hover{}
+button:focus{}
+/* @end */
+
+
+/* @group tables */
+table, caption, thead, th, tr, td
+{
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+table, thead, th, tr, td {border: 1px solid #ccc;}
+
+table
+{
+  margin: 0 0 10px 0;
+  width: 100%;
+}
+
+caption
+{
+  border-top: 1px solid #ccc;
+  font-family: 'Lucida Sans Unicode', 'Lucida Grande', LucidaGrande,'Lucida Sans', Geneva, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  padding: 5px;
+}
+
+th
+{
+  font-weight: bold;
+  text-align: left;
+}
+
+th,
+td
+{
+  padding: 5px;
+  vertical-align: top;
+}
+
+/* @group thead */
+thead
+{
+  background: #333;
+  color: #fff;
+}
+
+thead th{background: #333;}
+/* @end */
+
+
+/* @group tbody */
+tbody{}
+/* @end */
+
+
+/* @group tfoot */
+tfoot{}
+/* @end */
+/* @end */
+iframe {margin: 0;}
+/* @end */
+
+/* @group Global Styles */
+
+/* @group Estructural elements */
+
+#header
+{
+	background: #222;
+	color: #fff;	
+}
+
+#content
+{
+	
+}
+
+.col_left
+{
+	background: #f2f2f2;
+	float: left;
+	margin: 0 20px 0 0;
+	width: 200px;
+}
+
+.main_content
+{
+	background: #f2f2f2;
+	float: left;
+	width: 740px;
+}
+
+#footer
+{
+	background: #222;
+	color: #fff;
+	padding: 10px 0;
+}
+
+#footer p
+{
+	margin: 0;
+}
+
+/* @end */
+
+/* @group Modules */
+
+#logo_parliament{}
+
+.lang{}
+
+.main_menu{}
+
+#global_search{}
+
+.presentation{}
+
+.parliament_activity{}
+
+.debate{}
+
+.subject{}
+
+.commission{}
+
+.current_subjects{}
+
+.parlamentarians{}
+
+.parlamentarian{}
+
+.parlamentarian .photo{}
+
+.parlamentarian .name{}
+
+.parlamentarian .party_name{}
+
+.parlamentarian .label{}
+
+.parlamentarian .date{}
+
+.label{}
+.debate_label{}
+.subject_label{}
+.commission_label{}
+
+.date{}
+
+.title{}
+
+.author{}
+
+.parlamentarian{}
+
+.photo{}
+
+/* @end */
+
+/* @group classes */
+/* Envuelve el contenido central de los bloques principales (header, container, footer, etc.) para darles un ancho y centrarlos en la página */
+.inside
+{
+  margin: 0 auto;
+  width: 960px;
+}
+
+/* Oculta elementos */
+.hide {display: none;}
+
+/* Listado con bullet básico */
+ul.simpleBullet li
+{
+  background: url(/images/css/bullets/bullet.gif) no-repeat left .433em;
+  padding-left: 10px;
+}
+/* @group bullets */
+
+/*
+---------------------------
+Nota sobre uso de bullets:
+---------------------------
+.bulletDec:
+Elemento que sin ser enlace lleva un bullet a modo decorativo.
+Ej.: <p class="bulletDec bullet_date">Miércoles, 12 de febrero</p>
+---------------------------------------------------------------------------------------------
+.bulletListDec:
+Elementos de lista que llevan un bullet a modo decorativo.
+Ej.:
+<ul class="bulletListDec bullet_date">
+  <li>Miércoles, 12 de febrero</li>
+  <li>Jueves, 13 de febrero</li>
+</ul>
+---------------------------------------------------------------------------------------------
+a.bullet:
+Enlace con bullet.
+Ej.: <p class="bullet bullet_plus"><a href="#">más información sobre este sitio</a></p>
+---------------------------------------------------------------------------------------------
+.bulletList:
+Elementos de lista que contienen enlace con un mismo tipo de bullet.
+Ej. con mismo tipo de bullets:
+<ul class="bulletList bullet_date">
+  <li><a href="#">Miércoles, 12 de febrero</a></li>
+  <li><a href="#">Jueves, 13 de febrero</a></li>
+</ul>
+
+Ej. de listado con diferentes tipos de bullets:
+<ul class="bulletList">
+  <li class="bullet bullet_date"><a href="#">Miércoles, 12 de febrero</a></li>
+  <li class="bullet bullet_webcam"><a href="#">Sigue nuestra webcam</a></li>
+</ul>
+*/
+
+.bulletDec,
+.bulletListDec li,
+.bullet a,
+.bulletList li a
+{
+  background-position: left 3px;
+  background-repeat: no-repeat;
+  display: block;
+  float: left;
+  padding: .25em .5em .25em 21px;
+}
+
+.bullet a,
+.bulletList li a
+{float: left;}
+
+.bulletListDec li,
+.bulletList li
+{margin: 0;}
+
+.bulletList li
+{
+  background-image: none;
+  padding: 0;
+}
+
+
+/* Permite limpiar los flotados de los enlaces que lleva dentro cada elemento <li>  */
+.bullet:after,
+.bulletList li:after
+{
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.bullet,
+.bulletList li
+{display: inline-block;}
+/* Hides from IE-mac \*/
+* html .bullet,
+* html .bulletList li
+{height: 1%;}
+.bullet,
+.bulletList li
+{display: block;}
+/* End hide from IE-mac */
+
+/* Tipos de bullets */
+.bullet.bullet_showCont a,
+.bulletDec.bullet_showCont,
+.bulletList.bullet_showCont li a,
+.bulletListDec.bullet_showCont li
+{background-image: url(../../images/css/bullets/control_000_small.png);}
+/* @end */
+
+
+/* Botones */
+/* @group .btn */
+/* Listado de botones en horizontal */
+.btnList li
+{
+  float: left;
+  margin: 0 5px 5px 0;
+}
+
+form .btnList {clear: both;}
+
+/* Clases aplicables a enlaces y a elementos <button> */
+.btn,
+.btn:hover,
+.btn:active
+{
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-style: solid;
+  border-width: 2px;
+  display: block;
+  float: left;
+  margin: 0 5px 3px 0;
+  padding: 3px 5px;
+  text-transform: uppercase;
+}
+
+input.btn {width: auto!important;}
+
+input.btn,
+input.btn:hover
+{padding: 3px 5px;}
+
+/* Hack para Safari (también afecta a Chrome) */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    input.btn,
+    input.btn:hover
+	{padding: 3px 5px;}
+}
+
+.btn:hover {cursor: pointer;}
+
+/* @group .btnTrans */
+
+.btnTrans
+{
+  border-color: transparent;
+  color: #666;
+}
+
+button.btnTrans {background: #fff;/* Si no se especifica ningún background, el elemento <button> muestra el suyo original de fábrica (gris) */}
+
+.btnTrans:hover
+{
+  background: #f2f2f2;
+  border-color: #f2f2f2;
+  color: #999;
+}
+
+.btnTrans:active
+{
+  border-color: transparent;
+  color: #333;
+}
+/* @end */
+
+
+/* @group .btnWhite */
+.btnWhite
+{
+  background: #fff;
+  border-color: #ccc;
+  color: #666;
+}
+
+.btnWhite:hover
+{
+  background: #fff;
+  border-color: #999;
+  color: #999;
+}
+
+.btnWhite:active
+{
+  background: #fff;
+  border-color: #333;
+  color: #333;
+}
+/* @end */
+
+
+/* @group .btnBlack */
+.btnBlack
+{
+  background: #000;
+  border-color: #000;
+  color: #fff;
+}
+
+.btnBlack:hover
+{
+  background: #222;
+  border-color: #222;
+  color: #fff;
+}
+
+.btnBlack:active
+{
+  background: #333;
+  border-color: #333;
+  color: #fff;
+}
+/* @end */
+/* @end */
+
+
+/* @group .rounded */
+/* Esquinas redondeadas */
+.rounded_10px
+{
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  padding: 10px;
+}
+
+.rounded_b_10px
+{
+  -moz-border-radius-bottomleft: 10px;
+  -moz-border-radius-bottomright: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  -webkit-border-bottom-right-radius: 10px;
+  padding: 10px;
+}
+/* @end */
+
+/* @group .avatar */
+/* Listado de avatares en horizontal */
+.avatarList {margin: 0;}
+
+.avatarList li
+{
+  float: left;
+  margin: 0 5px 5px 0;
+}
+
+/* Avatares */
+a.avatar,
+.avatarImg
+{
+  display: block;
+  border: 2px solid #333;
+  float: left;
+}
+
+a.avatar img
+{
+  background: #fff;
+  border: 1px solid #000;
+  display: block;
+}
+
+a.avatar:hover {border: 2px solid #999;}
+
+a.avatar:hover img
+{
+  background: #e5e5e5;
+  border: 1px solid #222;
+}
+
+a.avatar.avatarDefault {border-color: #eaeaea;}
+a.avatar.avatarDefault img {border-color: #d9d9d9;}
+a.avatar.avatarDefault:hover {border-color: #ccc;}
+a.avatar.avatarDefault:hover img {border-color: #999;}
+/* @end */
+
+/* @group forms */
+
+/* @group label.clean */
+/* Para que no le aplique las propiedades de un input normal a los radio buttons y alos checkboxes */
+label.clean
+{
+  cursor: pointer;
+  display: inline;
+  font-weight: normal;
+  margin: 0 1em 0 0;
+  padding: 0;
+}
+
+label.clean input
+{
+  /* Para que IE no herede las propiedades del input*/
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0 .25em 0 0;
+  position: relative;
+  top: .25em;
+}
+
+label.clean input:focus {outline: none;}
+/* @end */
+
+/* Asteriscos */
+.asteriskGreen {color: #390;}
+
+/* Example */
+.example
+{
+  background: url(/images/css/bullets/notebook__arrow.png) no-repeat .25em .5em;
+  font-size: .917em;
+  line-height: 1.2em;
+  padding: .5em .5em .5em 25px;
+}
+
+/* @group .note */
+/* Nota */
+.note
+{
+  background: #ffc url(/images/css/bg/sticky_note_text.png) no-repeat .25em .5em;
+  border: 1px solid #ff9;
+  padding: .5em .5em .5em 25px;
+}
+/* @end */
+
+
+/* Cajas de validación */
+/* @group .validationBox */
+/* Confirmación de envío con errores */
+.validationBox
+{
+  -moz-border-radius: .833em;
+  -webkit-border-radius: .833em;
+  line-height: 1.2;
+  padding: 10px;
+}
+/* @end */
+
+
+/* @group .errorBox */
+/* Confirmación de envío con errores */
+.errorBox, .not_valid_emailBox {background: #fcc;}
+.errorBox p, .not_valid_emailBox p {margin: 0;}
+.errorBox a, .not_valid_emailBox a {color: #900;}
+.errorBox a:hover, .not_valid_emailBox a:hover {color: #600;}
+/* @end */
+
+
+/* @group .successBox */
+/* Confirmación de envío correcto */
+.okBox, .gracefully_sentBox {background: #dfc;}
+.okBox p, .gracefully_sentBox p {margin: 0;}
+.okBox a, .gracefully_sentBox a {color: #390;}
+.okBox a:hover, .gracefully_sentBox a:hover {color: #52cc14;}
+/* @end */
+
+
+/* Reporte de errores */
+/* @group .errors */
+.errorExplanation {border: 1px solid #ffd9d9;}
+
+.errorExplanation h2
+{
+  background: #ffd9d9 url(/images/css/bg/errorTitle.gif) no-repeat 5px;
+  color: #c00;
+  font-size: 14px;
+  margin: 0 0 5px 0;
+  padding: 5px;
+}
+
+.errorExplanation p,
+.errorExplanation ul 
+{padding: .5em .5em 0 .5em;}
+.errorExplanation ul li {margin: 0;}
+.errorExplanation ul li a {color: #c00;}
+.errorExplanation ul li a:hover {color: #900;}
+ul li.errorField {background: #ffd9d9;}
+
+ul li.errorField label,
+ul li.errorField p.label
+{color: #c00;}
+/* @end */
+
+
+/* @group .formInline */
+.formInline {border-top: 1px dotted #ccc;}
+.formInline .btnList {margin: 0;}
+
+.formInline p
+{
+  clear: both;
+  margin: 0 0 5px 0;
+}
+
+.formInline li.line
+{
+  border-bottom: 1px dotted #ccc;
+  margin: 0;
+  padding: 10px 10px 5px 10px;
+}
+
+.formInline label,
+.formInline p.label
+{padding: 5px 0;}
+
+.formInline label,
+.formInline p.label,
+.formInline input,
+.formInline textarea,
+.formInline select,
+.formInline .example,
+.formInline .note
+{
+  float: left;
+  margin: 0 5px 5px 0;
+}
+
+.formInline label.clean,
+.formInline label.clean input
+{
+  float: none;
+  width: auto!important;
+}
+
+.formInline label.clean {display: inline;}
+.formInline label.clean input {margin: 0 5px 0 0;}
+
+/* Todo excepto el label. Puede contener input/select/textarea y notas, ejemplos, links, etc. */
+.formInline .fieldsAndCo
+{
+  float: left;
+  margin: 0;
+}
+
+.formInline .example,
+.formInline .note
+{
+  clear: none;
+  float: left;
+}
+
+/* Cuando no nos interesa que dentro de un elemento 'li' de un .formInline haya label e inputs/textareas/select en línea le aplicamos la clase '.notLine' al 'li' en cuestión */
+.formInline li.notLine {}
+
+.formInline li.notLine .note {clear: both;}
+
+.formInline li.notLine label,
+.formInline li.notLine p.label,
+.formInline li.notLine input,
+.formInline li.notLine textarea,
+.formInline li.notLine select
+{float: none;}
+
+.formInline li.notLine label,
+.formInline li.notLine p.label
+{
+  margin: 0 0 .5em 0;
+  text-align: left;
+  top: auto;
+  /* Se usa !important para evitar las reglas referidas mediante el ID del body de la página, ya que éstas resultan más específicas. */
+  width: auto!important;
+}
+/* @end */
+/* @end */
+
+
+/* @group dl.line */
+/* line: clase para que el dt y el dd van en la misma línea */
+dl.line dt
+{
+  clear: both;
+  float: left;
+  margin: 0 5px 0 0;
+}
+
+dl.line dd.block {clear: both;}
+/* @end */
+
+/* @group .clearfix */
+/* Clearfix permite limpiar flotados. Mas info: http://www.positioniseverything.net/easyclearing.html  */
+.clearfix:after,
+.content .inside:after
+{
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.clearfix,
+.content .inside
+{display: inline-block;}
+
+/* Hides from IE-mac \*/
+* html .clearfix,
+* html .content .inside
+{height: 1%;}
+
+.clearfix,
+.content .inside
+{display: block;}
+/* End hide from IE-mac */
+/* @end */
+/* @end */
+/* @end */
+
+/* @end */
