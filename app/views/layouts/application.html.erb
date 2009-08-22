@@ -3,18 +3,42 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <head>
+      <title>Parlio HTML Elements</title>
+      <!-- Meta -->
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-    <title>untitled</title>
+      <!-- Favicon -->
+      <link type="image/x-icon" href="/favicon.ico" rel="icon" />
+      <link type="image/x-icon" href="/favicon.ico" rel="shortcut icon" />
+
+      <!-- CSS -->
+      <!-- Screen -->
+      <link rel="stylesheet" href="/stylesheets/screen.css" type="text/css" media="screen" />
+
+      <!--[if IE]>
+        <link rel="stylesheet" href="/stylesheets/screen/ie.css" type="text/css" media="screen" />
+      <![endif]-->
+
+      <!--[if IE 7]>
+        <link rel="stylesheet" href="/stylesheets/screen/ie7.css" type="text/css" media="screen" />
+      <![endif]-->
+
+      <!--[if IE 6]>
+        <link rel="stylesheet" href="/stylesheets/screen/ie6.css" type="text/css" media="screen" />
+        <script type="text/javascript" src="/stylesheets/iepngfix_tilebg.js"></script>
+      <![endif]-->
+
+    </head>
 
   </head>
 
   <body>
 
-    <%= render :partial => "shared/header" %>        
+    <%= render :partial => "shared/header" %>
 
     <%= yield %>
-    
+
     <%= render :partial => "shared/footer" %>
 
   </body>

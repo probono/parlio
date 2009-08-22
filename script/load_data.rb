@@ -27,7 +27,7 @@ end
 puts "#{Parliamentarian.count} parliamentarians loaded."
 
 
-puts "Loading Parties"
+puts "\nLoading Parties..."
 l.parties.each do |p|
   party = Party.new
   ['group_name', 'acronym', 'sites', 'name', 'url', 'logo'].each do |a|

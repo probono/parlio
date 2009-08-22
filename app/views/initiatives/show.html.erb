@@ -1,22 +1,6 @@
-<%#                            
-
-#  id                 :integer         not null, primary key
-#  num_exp            :string(255)
-#  title              :string(255)
-#  party              :string(255)
-#  type               :string(255)
-#  tags               :string(255)
-#  procedures         :string(255)
-#  votings            :string(255)
-#  parliamentarian_id :integer
-#  created_at         :datetime
-#  updated_at         :datetime
-
-
- %>
 <p><%= @initiative.num_exp %></p>
 <p><%= @initiative.title %></p>
-<p>Por: <%= @initiative.parliamentarian.full_name %></p>
+<p>Por: <%= link_to @initiative.parliamentarian.full_name, parliamentarian_path(@initiative.parliamentarian) %></p>
 <br/>
 <br/>
 
