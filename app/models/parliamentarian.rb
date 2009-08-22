@@ -18,7 +18,9 @@
 class Parliamentarian < ActiveRecord::Base
   
   has_many :initiatives, :dependent => :destroy
-  has_many :interventions, :dependent => :destroy
+  #has_many :interventions, :dependent => :destroy
+  
+  belongs_to :party
   
   def first_name
     self.full_name.split(',').last.strip
