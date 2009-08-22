@@ -22,4 +22,4 @@ l.parties.each do |p|
   puts "#{party.name} - #{party.parliamentarians.count}"
 end
 
-puts "#{Partie.count} parties loaded."
+puts "#{Party.count} parties loaded."
