@@ -23,7 +23,7 @@ l.topics.each do |t|
   puts "#{topic.name}"  
 end
 
-puts "\nClosing initiatives..."
+puts "\nLoading closed initiatives..."
 l.topics_for_closed_initiatives.each do |t|
   topic = Topic.find_by_name(t.name)
   puts "#{topic.name}"  
