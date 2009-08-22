@@ -1,9 +1,11 @@
-class Legebiltzarra::Search
-
-  attr_accessor :query
-
-  def initialize(query)
-    self.query = query
+module Legebiltzarra
+  class Search
+  
+    attr_accessor :query
+  
+    def initialize(query)
+      self.query = query
+    end
+   
   end
- 
 end
