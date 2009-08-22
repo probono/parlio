@@ -392,11 +392,30 @@ iframe {margin: 0;}
 
 /* @group Estructural elements */
 
+/* Envuelve el contenido central de los bloques principales (header, container, footer, etc.) para darles un ancho y centrarlos en la página */
+.inside
+{
+	margin: 0 auto;
+	width: 960px;
+}
+
+/* @group #header */
+
 #header
 {
 	background: #222;
 	color: #fff;	
 }
+
+#logo_parliament{}
+
+.lang{}
+
+.main_menu{}
+
+#global_search{}
+
+/* @end */
 
 #content
 {
@@ -407,7 +426,7 @@ iframe {margin: 0;}
 {
 	background: #f2f2f2;
 	float: left;
-	margin: 0 20px 0 0;
+	margin: 0 40px 0 0;
 	width: 200px;
 }
 
@@ -415,7 +434,7 @@ iframe {margin: 0;}
 {
 	background: #f2f2f2;
 	float: left;
-	width: 740px;
+	width: 720px;
 }
 
 #footer
@@ -434,14 +453,56 @@ iframe {margin: 0;}
 
 /* @group Modules */
 
-#logo_parliament{}
+/* @group .tab_system */
+.tab_system
+{
+	
+}
 
-.lang{}
+/* @group .tab_menu */
+.tab_menu
+{
+	font-size: 18px;
+	margin: 0;
+	position: relative;
+	top: 1px;
+}
 
-.main_menu{}
+.tab_menu li
+{
+	float: left;
+	margin: 0 5px 0 0;
+}
 
-#global_search{}
+.tab_menu li a
+{
+	-moz-border-radius-topleft: 5px;
+  	-moz-border-radius-topright: 5px;
+  	-webkit-border-top-left-radius: 5px;
+  	-webkit-border-top-right-radius: 5px;
+	background: #fff;
+	border: 1px solid #ccc;
+	border-bottom: none;
+	color: #333;
+	display: block;
+	padding: 5px 10px;
+}
 
+.tab_menu li a:hover
+{
+	color: #ccc;
+}
+
+/* @end */
+
+.tab_cont
+{
+	background: #fff;
+	border: 1px solid #ccc;
+	padding: 30px;
+}
+
+/* @end */
 .presentation{}
 
 .parliament_activity{}
@@ -456,6 +517,8 @@ iframe {margin: 0;}
 
 .parlamentarians{}
 
+/* @group .parlamentarian */
+
 .parlamentarian{}
 
 .parlamentarian .photo{}
@@ -467,6 +530,8 @@ iframe {margin: 0;}
 .parlamentarian .label{}
 
 .parlamentarian .date{}
+
+/* @end */
 
 .label{}
 .debate_label{}
@@ -483,18 +548,79 @@ iframe {margin: 0;}
 
 .photo{}
 
+/* @group .tab_system_subjects */
+
+/* Tab de Asuntos */
+.tab_system_subjects
+{
+	
+}
+
+/* @group .subject_cat */
+/* Menú de categorías de Asuntos */
+.subject_cat
+{
+	-moz-border-radius: 20px;
+  	-webkit-border-radius: 20px;
+	background: #f2f2f2;
+	float: left;
+	margin: 0 30px 0 0;
+	padding: 20px;
+	width: 160px;
+}
+
+.subject_cat ul
+{
+	
+}
+
+.subject_cat li
+{
+	
+}
+
+.subject_cat li a
+{
+	-moz-border-radius: 20px;
+  	-webkit-border-radius: 20px;
+	background: #333;
+	border: 3px solid #111;
+	color: #fff;
+	display: block;
+	float: left;
+	text-shadow: 1px 1px 2px #000;
+	padding: 5px 10px;
+}
+/* @end */
+
+/* @group .subject_cont */
+/* Contenido principal del tab de Asuntos */
+.subject_cont
+{
+	background: #f2f2f2;
+	float: left;
+	width: 668px;
+}
+/* @end */
+
+
+
+/* @end */
+
 /* @end */
 
 /* @group classes */
-/* Envuelve el contenido central de los bloques principales (header, container, footer, etc.) para darles un ancho y centrarlos en la página */
-.inside
-{
-  margin: 0 auto;
-  width: 960px;
-}
 
 /* Oculta elementos */
 .hide {display: none;}
+
+/* Texto bajo heading con estilo de claim */
+.claim
+{
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	font-size: 15px;
+	font-style: italic;
+}
 
 /* Listado con bullet básico */
 ul.simpleBullet li
@@ -977,7 +1103,10 @@ dl.line dd.block {clear: both;}
 /* @group .clearfix */
 /* Clearfix permite limpiar flotados. Mas info: http://www.positioniseverything.net/easyclearing.html  */
 .clearfix:after,
-.content .inside:after
+.content .inside:after,
+.tab_menu:after,
+.tab_cont:after,
+.subject_cat li:after
 {
   content: ".";
   display: block;
@@ -986,20 +1115,26 @@ dl.line dd.block {clear: both;}
   visibility: hidden;
 }
 .clearfix,
-.content .inside
+.content .inside,
+.tab_menu,
+.tab_cont,
+.subject_cat li
 {display: inline-block;}
 
 /* Hides from IE-mac \*/
 * html .clearfix,
-* html .content .inside
+* html .content .inside,
+* html .tab_menu,
+* html .tab_cont,
+* html .subject_cat li
 {height: 1%;}
 
 .clearfix,
-.content .inside
+.content .inside,
+.tab_menu,
+.subject_cat li
 {display: block;}
 /* End hide from IE-mac */
 /* @end */
 /* @end */
-/* @end */
-
 /* @end */
