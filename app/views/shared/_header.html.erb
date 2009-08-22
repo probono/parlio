@@ -5,8 +5,8 @@
   <li>
     <% form_tag(search_url, {:method => :get, :id => "global_search"}) do -%>
       <%= label :search_term, "Search" %>
-      <%= text_field_tag :search_term, "texto a buscar" %>
+      <%= text_field_tag :search_term, "texto a buscar", :onclick => '$("search_term").select();' %>
       <%= submit_tag "go" %>
     <% end -%>
   </li>
-</ul>
+</ul> 
