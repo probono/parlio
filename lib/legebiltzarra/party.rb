@@ -31,5 +31,11 @@ module Legebiltzarra
       BASE_URL + @content.search('td')[4].search('img/@src')[0]
     end
     
+    def parliamentarians
+      parl_url = BASE_URL + @content.search('td')[0].search('a/@href')[0]
+      parl_list ||= Nokogiri::HTML(open(parl_url).read)
+      parl_list.search('table[@class="parlamentarios"]/tr/td[@class="miembro_persona"]/a/@href').map{ |p| Parliamentarian.new(p.content.match(/\d+/)[0]) }
+    end
+    
   end
 end
