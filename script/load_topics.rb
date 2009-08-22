@@ -1,9 +1,9 @@
-puts "Cleaning topics.."
+puts "Cleaning topics..."
 Topic.destroy_all
 
 l = Legebiltzarra::Legislature.new 
 
-puts "\nLoading topics..."
+puts "Loading topics..."
 l.topics.each do |t|
   topic = Topic.new
   ['name'].each do |a|

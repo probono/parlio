@@ -7,7 +7,7 @@
 #  commision_id       :integer
 #  parliamentarian_id :integer
 #  position           :string(255)
-#  date               :date
+#  date               :string(255)
 #  created_at         :datetime
 #  updated_at         :datetime
 #

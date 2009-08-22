@@ -1,9 +1,9 @@
-puts "Cleaning Commission.."
+puts "Cleaning commissions..."
 Commision.destroy_all
 
 l = Legebiltzarra::Legislature.new 
 
-puts "\nLoading Commissions..."
+puts "Loading Commissions..."
 l.comissions.each do |c|
   commission = Commision.new
   ['name'].each do |a|
