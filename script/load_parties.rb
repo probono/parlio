@@ -1,6 +1,8 @@
 puts "Cleaning party..."
 Party.destroy_all
 
+l = Legebiltzarra::Legislature.new 
+
 puts "Loading Parties..."
 l.parties.each do |p|
   party = Party.new
