@@ -1,0 +1,11 @@
+<%= render :partial => 'activity/activity_menu' %>
+
+<h2>initiatives</h2>
+
+<% if !@initiatives.blank? %>  
+  <ul>
+    <% for ini in @initiatives %>
+      <li><%= link_to ini.num_exp, initiative_path(ini) %> | <%= ini.title %></li>
+    <% end %>
+  </ul>
+<% end %>

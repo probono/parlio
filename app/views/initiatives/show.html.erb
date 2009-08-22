@@ -1,8 +1,5 @@
-# == Schema Information
-# Schema version: 20090822105833
-#
-# Table name: initiatives
-#
+<%#                            
+
 #  id                 :integer         not null, primary key
 #  num_exp            :string(255)
 #  title              :string(255)
@@ -14,11 +11,17 @@
 #  parliamentarian_id :integer
 #  created_at         :datetime
 #  updated_at         :datetime
-#
 
-class Initiative < ActiveRecord::Base
-  seo_urls
-  
-  acts_as_taggable_on :tags
-  belongs_to :parliamentarian
-end
+
+ %>
+<p><%= @initiative.num_exp %></p>
+<p><%= @initiative.title %></p>
+<p>Por: <%= @initiative.parliamentarian.full_name %></p>
+<br/>
+<br/>
+
+<p><%= @initiative.party %></p>
+<p><%= @initiative.tags %> </p>
+<p><%= @initiative.num_exp %></p>
+<p><%= @initiative.votings %></p>
+

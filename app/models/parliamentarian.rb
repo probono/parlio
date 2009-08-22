@@ -15,7 +15,7 @@
 #
 
 class Parliamentarian < ActiveRecord::Base
-  
+  seo_urls "full_name"
   has_many :initiatives
   
   def first_name

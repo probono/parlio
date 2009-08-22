@@ -1,3 +1,9 @@
 <%= render :partial => 'activity/activity_menu' %>
 
-<h2>commisions</h2>
+<h2>commisions</h2>          
+
+<% if !@commisions.blank? %>
+  <% for c in @commisions %>
+    <li><%= link_to c.name, commision_path(c) %></li>
+  <% end %>
+<% end %>
