@@ -9,6 +9,7 @@ l.parties.each do |p|
   ['group_name', 'acronym', 'sites', 'name', 'url', 'logo'].each do |a|
     party.send("#{a}=", p.send(a))
   end
+  party.url = p.url
   party.save!
   
   p.parliamentarians.each do |parla|

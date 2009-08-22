@@ -24,7 +24,7 @@ module Legebiltzarra
     end
 
     def url
-      @content.search('td')[4].search('a/@href')[0]
+      @content.search('td')[4].search('a/@href')[0].to_s
     end
                 
     def logo
