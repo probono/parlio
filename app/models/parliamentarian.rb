@@ -18,8 +18,10 @@
 
 class Parliamentarian < ActiveRecord::Base
   seo_urls "full_name"
+  
   has_many :initiatives, :dependent => :destroy
-  #has_many :interventions, :dependent => :destroy
+  has_many :commission_members
+  has_many :commissions, :through => :commission_members, :source => :commision
   
   belongs_to :party
   

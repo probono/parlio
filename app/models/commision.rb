@@ -12,4 +12,7 @@
 class Commision < ActiveRecord::Base
   seo_urls
   
+  has_many :commission_members
+  has_many :members, :through => :commission_members, :source => :parliamentarian
+  
 end

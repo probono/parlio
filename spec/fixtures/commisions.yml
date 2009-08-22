@@ -1,3 +1,14 @@
+# == Schema Information
+# Schema version: 20090822155637
+#
+# Table name: commisions
+#
+#  id         :integer         not null, primary key
+#  name       :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
