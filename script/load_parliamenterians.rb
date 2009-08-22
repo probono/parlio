@@ -20,6 +20,7 @@ l.parliamentarians.each do |p|
   end
   
   parliamentarian.save!
+  
   puts "#{parliamentarian.orig_id} - #{parliamentarian.full_name} - #{parliamentarian.initiatives.count}"
 end
 
