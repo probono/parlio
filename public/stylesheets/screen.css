@@ -561,6 +561,8 @@ iframe {margin: 0;}
 	width: 720px;
 }
 
+/* @group .footer */
+
 #footer
 {
 	background: #222;
@@ -573,6 +575,8 @@ iframe {margin: 0;}
 {
 	margin: 0;
 }
+
+/* @end */
 
 /* @end */
 
@@ -603,12 +607,23 @@ iframe {margin: 0;}
 	-moz-border-radius: 10px;
   	-webkit-border-radius: 10px;
 	background: #eef9ff;
-	padding: 10px;
+	margin: 0 0 20px 0;
+	padding: 20px;
+}
+
+.subject .tag_mod
+{
+	margin: 0;
 }
 
 .subject .title
 {
 	
+}
+
+.subject .title a
+{
+	border: none;
 }
 
 .subject_type
@@ -691,6 +706,109 @@ iframe {margin: 0;}
 	text-shadow: none;
 }
 
+/* @group .pag_nav */
+.pag_nav
+{
+	margin: 0 0 40px 0;
+}
+
+.pag_nav a,
+.pag_nav span
+{
+	-moz-border-radius: .5em;
+	-webkit-border-radius: .5em;
+	border-style: solid;
+	border-width: 2px;
+	display: block;
+	float: left;
+	margin: 0 .25em .25em 0;
+	padding: .25em .5em;
+	text-transform: uppercase;
+}
+
+.pag_nav a
+{
+	background: #fff;
+	border-color: #ccc;
+	color: #666;
+}
+
+.pag_nav a:hover
+{
+	background: #fff;
+	border-color: #999;
+	color: #999;
+}
+
+.pag_nav a:active
+{
+	background: #fff;
+	border-color: #333;
+	color: #333;
+}
+
+a {border-bottom: 1px dotted #47b6ed;color: #1594D4;}
+a:hover {color: #47b6ed;}
+
+.pag_nav .prev_page,
+.pag_nav .next_page
+{
+	background: #1594D4;
+	border-color: #f2f2f2;
+	color: #fff;
+}
+
+.pag_nav a.prev_page:hover,
+.pag_nav a.next_page:hover
+{
+	background: #47b6ed;
+	border-color: #ccc;
+	color: #fff;
+}
+
+.pag_nav a.prev_page:active,
+.pag_nav a.next_page:active
+{
+	background: #3f4034;
+	border-color: #3f4034;
+	color: #fff;
+}
+
+.pag_nav .prev,
+.pag_nav .next
+{
+	
+}
+
+.pag_nav .start
+{
+	
+}
+
+.pag_nav span.disabled
+{
+	background: #ccc;
+	border-color: #f2f2f2;
+	color: #fff;
+	cursor: default;
+}
+
+.pag_nav span.current
+{
+	-moz-border-radius: .5em;
+	-webkit-border-radius: .5em;
+	background: #47b6ed;
+	border: 2px solid #47b6ed;
+	color: #fff;
+	display: block;
+	float: left;
+	margin: 0 .25em .25em 0;
+	padding: .25em .5em;
+}
+
+
+/* @end */
+
 /* @group .activity_meta */
 /* Datos de una actividad */
 .activity_meta
@@ -732,6 +850,18 @@ iframe {margin: 0;}
 .tag_mod
 {
 	margin: 0 0 20px 0;
+}
+
+.tag_mod .tag_mod_title
+{
+	float: left;
+	margin: 0 10px 0 0;
+	padding: 5px 0;
+}
+
+.tag_mod .tag_list
+{
+	float: left;
 }
 /* @end */
 
@@ -964,6 +1094,7 @@ iframe {margin: 0;}
 	background: #fff;
 	border: 1px solid #ccc;
 	padding: 30px;
+	width: 898px;
 }
 
 /* @end */
@@ -1033,8 +1164,74 @@ iframe {margin: 0;}
 	float: left;
 	width: 668px;
 }
+
+.subject_cont.subject_cont_category
+{
+	margin: 0 30px 0 0;
+	width: 438px;
+}
+/* @end */
+
+/* @group .subject_sidebar */
+.subject_sidebar
+{
+	float: left;
+	width: 200px;
+}
+
+.subject_sidebar h2
+{
+	font-size: 14px;
+	text-transform: uppercase;
+}
 /* @end */
 /* @end */
+
+/* @group .rss_mod */
+/* Enlace de suscripción a RSS */
+.rss_mod
+{
+	-moz-border-radius: 10px;
+  	-webkit-border-radius: 10px;
+	border: 2px solid #ccc;
+	cursor: pointer;
+	display: block;
+	padding: 10px;
+	width: 200px;
+}
+
+.rss_mod strong
+{
+	color: #333;
+	display: block;
+	font-family: "Museo 300", Museo, Georgia, 'Times New Roman', Times, serif;
+	font-size: 15px;
+	margin: 0;
+}
+
+.rss_mod span
+{
+	display: block;
+	line-height: 1.2;
+}
+
+.rss_mod:hover
+{
+	-moz-border-radius: 10px;
+  	-webkit-border-radius: 10px;
+	border: 2px solid #ccc;
+	display: block;
+	padding: 10px;
+	width: 200px;
+}
+
+.rss_mod:hover strong
+{
+	color: #999;
+}
+
+/* @end */
+
 /* Page: Asuntos */
 .subject_latest
 {
@@ -1105,8 +1302,9 @@ iframe {margin: 0;}
 	
 }
 /* @end */
-
 /* @end */
+
+
 /* @end */
 
 /* @group classes */
@@ -1608,6 +1806,7 @@ dl.line dd.block {clear: both;}
 .tab_menu:after,
 .tab_cont:after,
 .subject_cat li:after,
+.tag_mod:after,
 .tag_mod ul:after,
 .file_list li:after,
 .file:after,
@@ -1616,7 +1815,8 @@ dl.line dd.block {clear: both;}
 .parlamentarian:after,
 .main_menu:after,
 #global_search:after,
-.lang:after
+.lang:after,
+.pag_nav:after
 {
   content: ".";
   display: block;
@@ -1629,6 +1829,7 @@ dl.line dd.block {clear: both;}
 .tab_menu,
 .tab_cont,
 .subject_cat li,
+.tag_mod,
 .tag_mod ul,
 .file_list li,
 .file,
@@ -1637,7 +1838,8 @@ dl.line dd.block {clear: both;}
 .parlamentarian,
 .main_menu,
 #global_search,
-.lang
+.lang,
+.pag_nav
 {display: inline-block;}
 
 /* Hides from IE-mac \*/
@@ -1646,6 +1848,7 @@ dl.line dd.block {clear: both;}
 * html .tab_menu,
 * html .tab_cont,
 * html .subject_cat li,
+* html .tag_mod,
 * html .tag_mod ul,
 * html .file_list li,
 * html .file,
@@ -1654,13 +1857,15 @@ dl.line dd.block {clear: both;}
 * html .parlamentarian,
 * html .main_menu,
 * html #global_search,
-* html .lang
+* html .lang,
+* html .pag_nav
 {height: 1%;}
 
 .clearfix,
 .content .inside,
 .tab_menu,
 .subject_cat li,
+.tag_mod,
 .tag_mod ul,
 .file_list li,
 .file,
@@ -1669,7 +1874,8 @@ dl.line dd.block {clear: both;}
 .parlamentarian,
 .main_menu,
 #global_search,
-.lang
+.lang,
+.pag_nav
 {display: block;}
 /* End hide from IE-mac */
 /* @end */
