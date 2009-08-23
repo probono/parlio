@@ -7,7 +7,7 @@ InterventionSpeaker.destroy_all
 l = Legebiltzarra::Legislature.new 
 
 puts "Loading Interventions..."
-l.parliamentarians.first(5).each do |p|
+l.parliamentarians.each do |p|
   parliamentarian = Parliamentarian.find_by_orig_id(p.orig_id)
 
   p.interventions.select{|int| int.id.start_with?("2009")}.each do |i|
