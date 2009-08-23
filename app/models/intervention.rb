@@ -29,4 +29,6 @@ class Intervention < ActiveRecord::Base
   
   has_many :intervention_speakers
   has_many :speakers, :through => :intervention_speakers
+  
+  has_many :procedures, :order => 'name asc'
 end

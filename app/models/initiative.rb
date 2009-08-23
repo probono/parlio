@@ -28,5 +28,6 @@ class Initiative < ActiveRecord::Base
   acts_as_taggable_on :tags
   belongs_to :parliamentarian
   belongs_to :topic
+  has_many :procedures
   
 end
