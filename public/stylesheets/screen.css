@@ -427,10 +427,14 @@ iframe {margin: 0;}
 
 #logo_parliament
 {
+	-moz-border-radius-bottomleft: 10px;
+  	-moz-border-radius-bottomright: 10px;
+  	-webkit-border-bottom-left-radius: 10px;
+  	-webkit-border-bottom-right-radius: 10px;
 	background: #fff;
 	margin: 0 0 40px 0;
 	padding: 20px 0;
-	width: 347px;
+	width: 307px;
 }
 
 /* @group .lang */
@@ -1403,6 +1407,26 @@ a:hover {color: #47b6ed;}
 	color: #999;
 }
 
+/* @end */
+
+/* @group .balloon */
+.balloon
+{
+	-moz-border-radius: 20px;
+  	-webkit-border-radius: 20px;
+	background: #c00;
+	color: #fff;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	font-size: 15px;
+	font-style: italic;
+	line-height: 1.2;
+	padding: 20px;
+}
+
+.balloon p
+{
+	margin: 0;
+}
 /* @end */
 
 /* Page: Asuntos */
