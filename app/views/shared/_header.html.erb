@@ -1,12 +1,31 @@
-<ul>
-  <li><%= link_to "Parlamentarios", parliamentarians_path %></li>
-  <li><%= link_to "Actividad", activity_path %></li>
-  <li><%= link_to "Sobre Parlio", about_path %></li>
-  <li>
+<!-- header -->
+<div id="header">
+  <!-- inside -->
+  <div class="inside">
+    <div id="logo_parliament">
+      <img src="/images/logo_parliament.png" height="76" width="307" alt="Logotipo de Parliament" />
+    </div>
+
+    <ul class="lang">
+      <li><a href="#">euskara</a></li>
+      <li><a href="#">español</a></li>
+    </ul>
+    
     <% form_tag(search_url, {:method => :get, :id => "global_search"}) do -%>
-      <%= label :search_term, "Search" %>
-      <%= text_field_tag :search_term, "texto a buscar", :onclick => '$("search_term").select();' %>
-      <%= submit_tag "go" %>
+      <%= label :search_term, "Buscador" %>
+      <%= text_field_tag :search_term, "¿Qué buscas?", :onclick => '$("search_term").select();' %>
+      <%= submit_tag "Buscar" %>
     <% end -%>
-  </li>
-</ul> 
+    
+    <ul class="main_menu">
+      <li class="active"><%= link_to "Parlamentarios", parliamentarians_path %></li>
+      <li><%= link_to "Actividad", activity_path %></li>
+      <li><%= link_to "Sobre Parlio", about_path %></li>
+    </ul>
+
+
+
+  </div>
+  <!-- /inside -->
+</div>
+<!-- /header -->

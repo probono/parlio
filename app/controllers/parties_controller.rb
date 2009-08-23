@@ -89,7 +89,7 @@ class PartiesController < ApplicationController
     def get_news_for_this_party
       appid = "rzAI5ZbV34Frd2_uCqREg14Ui0jflPNwI5ub43vXao6R7fOO8_ciI.cwM7v7b8JToINus3w-"
       output="json"
-      name = URI.escape(@party.group_name)
+      name = URI.escape(@party.party_acronym)
       rs = Net::HTTP.get URI.parse("http://search.yahooapis.com/NewsSearchService/V1/newsSearch?appid=#{appid}&query=#{name}&results=2&language=es&output=#{output}")
       ActiveSupport::JSON.decode(rs)
     end

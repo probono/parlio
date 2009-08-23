@@ -24,4 +24,7 @@ class Party < ActiveRecord::Base
       tuples.each{|tuple| most_active << Party.find(tuple[0])}
     end
   end
+  def party_acronym
+    /\((.*)\)/.match(self.name)[1]  rescue nil
+  end
 end

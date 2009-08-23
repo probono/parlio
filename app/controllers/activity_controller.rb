@@ -8,5 +8,6 @@ class ActivityController < ApplicationController
     end       
     @most_active_parties= Party.most_active
     @most_active_parliamentarians= Parliamentarian.most_active
+    @most_recent_initiatives = Initiative.find(:all, :limit => 3) 
   end
 end
