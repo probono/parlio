@@ -26,7 +26,7 @@
             <% for intervention in @commision.interventions %>
               <li class="commission">
                 <%= link_to intervention.subject_title, intervention_path(intervention) %>
-                <span class="date">17.06.2009</span>
+                <span class="date"><%= intervention.session_date %></span>
               </li>
             <% end %>
             </ul>

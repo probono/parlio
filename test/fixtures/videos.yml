@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  parliamentarian_id: 1
+  speaker_id: 1
+  title: MyString
+  video_url: MyString
+  duration: MyString
+
+two:
+  parliamentarian_id: 1
+  speaker_id: 1
+  title: MyString
+  video_url: MyString
+  duration: MyString

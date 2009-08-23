@@ -781,7 +781,7 @@ a:hover {color: #47b6ed;}
 }
 /* @end */
 
-/* @group Parlamentarians */
+/* @group Parliamentarians */
 
 .parliamentarians_mod{margin: 0 0 40px 0;}
 
@@ -823,15 +823,185 @@ a:hover {color: #47b6ed;}
 {
 	margin: 0;
 }
+/* @end */
 
+/* @group .parliamentarian_sheet */
+.parliamentarian_sheet
+{
+	-moz-border-radius: 20px;
+  	-webkit-border-radius: 20px;
+	background: #f2f2f2;
+	margin: 0 0 40px 0;
+	padding: 20px 20px 0 20px;
+}
+
+.parliamentarian_sheet h1
+{
+	font-size: 18px;
+}
+
+.parliamentarian_sheet .photo
+{
+	float: left;
+	margin: 0 20px 0 0;
+}
+
+.parliamentarian_sheet .main
+{
+	float: left;
+	width: 788px;
+}
+
+.parliamentarian_status
+{
+	
+}
+
+.parliamentarian_status span
+{
+	-moz-border-radius: 20px;
+  	-webkit-border-radius: 20px;
+  	background: #666;
+  	color: #fff;
+	display: block;
+	float: left;
+	font-size: 11px;
+	padding: 5px 10px;
+	text-transform: uppercase;
+	text-shadow: 1px 1px 1px #000;
+}
+
+.parliamentarian_status.active span {background: #9fb200;}
+.parliamentarian_status.retired span {background: #b21500;}
+
+.parliament_data
+{
+	
+}
+
+.parliament_data dl.line
+{
+	float: left;
+	margin: 0 20px 0 0;
+	width: 340px;
+}
 /* @end */
 
 
+/* @group .parliamentarian_activity */
+.parliamentarian_activity
+{
+	
+}
+
+/* @group .legislature_menu */
+
+.legislature_menu
+{
+	-moz-border-radius: 20px;
+  	-webkit-border-radius: 20px;
+	background: #f5f5f5;
+	float: left;
+	margin: 0 30px 0 0;
+	padding: 20px;
+	width: 160px;
+}
+
+.legislature_menu ul
+{
+	
+}
+
+.legislature_menu li
+{
+	
+}
+
+.legislature_menu li a
+{
+	-moz-border-radius: 20px;
+  	-webkit-border-radius: 20px;
+	background: #fff;
+	border: none;
+	color: #666;
+	display: block;
+	float: left;
+	padding: 5px 10px;
+}
+
+.legislature_menu li.active a
+{
+	background: #47EDA9;
+	color: #fff;
+}
+/* @end */
+
+/* @group .parliamentarian_activity_cont */
+.parliamentarian_activity_cont
+{
+	float: left;
+	width: 730px;
+}
+
+.parliamentarian_activity_cont .discussion_list {}
+.parliamentarian_activity_cont .discussion_list .discussion {}
+
+/* @group .parliamentarian_activity_menu */
+.parliamentarian_activity_menu {}
+
+.parliamentarian_activity_menu li
+{
+	float: left;
+	margin: 0;
+}
+
+.parliamentarian_activity_menu li a
+{
+	background: #f2f2f2;
+	border: 1px solid #ccc;
+	color: #333;
+	display: block;
+	font-size: 14px;
+	padding: 5px 10px;
+	text-shadow: 1px 1px 1px #fff;
+}
+
+.parliamentarian_activity_menu li a:hover
+{
+	background: #e5e5e5;
+	color: #666;
+}
+
+.parliamentarian_activity_menu li.active a
+{
+	background: #333;
+	color: #fff;
+	text-shadow: 1px 1px 1px #000;
+}
+
+.parliamentarian_activity_menu li.first a
+{
+	-moz-border-radius-bottomleft: 20px;
+	-moz-border-radius-topleft: 20px;
+	-webkit-border-bottom-left-radius: 20px;
+	-webkit-border-top-left-radius: 20px;
+}
+
+.parliamentarian_activity_menu li.last a
+{
+	-moz-border-radius-bottomright: 20px;
+	-moz-border-radius-topright: 20px;
+	-webkit-border-bottom-right-radius: 20px;
+	-webkit-border-top-right-radius: 20px;
+}
+/* @end */
 
 /* @end */
+/* @end */
+/* @end */
+
 
 /* @group Tags */
-
 /* @group .tag */
 .tag
 {
@@ -1484,7 +1654,7 @@ a:hover {color: #47b6ed;}
 .discussion_cont
 {
 	float: left;
-	width: 498px;
+	width: 728px;
 }
 
 .discussion_title
@@ -1532,17 +1702,13 @@ a:hover {color: #47b6ed;}
 	font-size: 14px;
 }
 
+/* @group .discussion */
 .discussion
 {
 	-moz-border-radius: 10px;
   	-webkit-border-radius: 10px;
   	background: #dceef7;
   	padding: 20px 20px 10px 20px;
-}
-/* @group .discussion */
-.discussion
-{
-	
 }
 /* @end */
 /* @end */
@@ -1588,6 +1754,7 @@ a:hover {color: #47b6ed;}
 }
 /* @end */
 /* @end */
+
 
 .date
 {
@@ -1915,26 +2082,6 @@ button.btnTrans {background: #fff;/* Si no se especifica ningún background, el 
 /* @end */
 /* @end */
 
-
-/* @group .rounded */
-/* Esquinas redondeadas */
-.rounded_10px
-{
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  padding: 10px;
-}
-
-.rounded_b_10px
-{
-  -moz-border-radius-bottomleft: 10px;
-  -moz-border-radius-bottomright: 10px;
-  -webkit-border-bottom-left-radius: 10px;
-  -webkit-border-bottom-right-radius: 10px;
-  padding: 10px;
-}
-/* @end */
-
 /* @group .avatar */
 /* Listado de avatares en horizontal */
 .avatarList {margin: 0;}
@@ -2170,11 +2317,14 @@ ul li.errorField p.label
 dl.line dt
 {
 	background: url(../../images/css/bullets/dl-line_dt.gif) no-repeat left 2px;
-  clear: both;
-  float: left;
-  margin: 0 5px 0 0;
-  padding: 0 0 0 18px;
+	clear: both;
+	float: left;
+	margin: 0 5px 0 0;
 }
+
+dl.line dt,
+dl.line dd.block
+{padding: 0 0 0 18px;}
 
 dl.line dd.block {clear: both;}
 /* @end */
@@ -2197,7 +2347,13 @@ dl.line dd.block {clear: both;}
 #global_search:after,
 .lang:after,
 .pag_nav:after,
-.commission_cont_cols:after
+.commission_cont_cols:after,
+.parliamentarian_activity_menu:after,
+.parliamentarian_sheet:after,
+.parliament_data:after,
+.parliamentarian_status:after,
+.discussion_list:after,
+.legislature_menu li:after
 {
   content: ".";
   display: block;
@@ -2221,7 +2377,13 @@ dl.line dd.block {clear: both;}
 #global_search,
 .lang,
 .pag_nav,
-.commission_cont_cols
+.commission_cont_cols,
+.parliamentarian_activity_menu,
+.parliamentarian_sheet,
+.parliament_data,
+.parliamentarian_status,
+.discussion_list,
+.legislature_menu li
 {display: inline-block;}
 
 /* Hides from IE-mac \*/
@@ -2241,7 +2403,13 @@ dl.line dd.block {clear: both;}
 * html #global_search,
 * html .lang,
 * html .pag_nav,
-* html .commission_cont_cols
+* html .commission_cont_cols,
+* html .parliamentarian_activity_menu,
+* html .parliamentarian_sheet,
+* html .parliament_data,
+* html .parliamentarian_status,
+* html .discussion_list,
+* html .legislature_menu li
 {height: 1%;}
 
 .clearfix,
@@ -2259,7 +2427,13 @@ dl.line dd.block {clear: both;}
 #global_search,
 .lang,
 .pag_nav,
-.commission_cont_cols
+.commission_cont_cols,
+.parliamentarian_activity_menu,
+.parliamentarian_sheet,
+.parliament_data,
+.parliamentarian_status,
+.discussion_list,
+.legislature_menu li
 {display: block;}
 /* End hide from IE-mac */
 /* @end */
