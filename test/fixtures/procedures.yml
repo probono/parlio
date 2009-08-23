@@ -1,14 +1,15 @@
 # == Schema Information
-# Schema version: 20090823125052
+# Schema version: 20090823153255
 #
 # Table name: procedures
 #
-#  id            :integer         not null, primary key
-#  initiative_id :integer
-#  title         :string(255)
-#  url           :string(255)
-#  created_at    :datetime
-#  updated_at    :datetime
+#  id             :integer         not null, primary key
+#  initiative_id  :integer
+#  title          :string(255)
+#  url            :string(255)
+#  created_at     :datetime
+#  updated_at     :datetime
+#  procedure_date :date
 #
 
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
