@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <title>Parlio HTML Elements</title>
+  <title>Home</title>
   <!-- Meta -->
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
@@ -32,26 +32,27 @@
 	<div id="header">
 		<!-- inside -->
 		<div class="inside">
-			<img id="logo_parliament" src="" height="100" width="100" alt="Logotipo de Parliament" />
+			<div id="logo_parliament">
+				<img src="/images/logo_parliament.png" height="76" width="307" alt="Logotipo de Parliament" />
+			</div>
 
 			<ul class="lang">
 				<li><a href="#">euskara</a></li>
 				<li><a href="#">español</a></li>
 			</ul>
-
+			
+			<form id="global_search">
+				<label for="nombre">Buscador</label>
+				<input type="text" id="search" value="¿Qué buscas?" />
+				<button class="btn" type="submit">Search</button>
+			</form>
+			
 			<ul class="main_menu">
-				<li><a href="#">Parlamentarios</a></li>
+				<li class="active"><a href="#">Parlamentarios</a></li>
 				<li><a href="#">Actividad</a></li>
 				<li><a href="#">Sobre Parliament</a></li>
 			</ul>
 
-			<form id="global_search">
-				<label for="nombre">Buscador</label>
-				<input type="text" id="search" value="" />
-				<p class="clearfix">
-					<button class="btn" type="submit">Search</button>
-				</p>
-			</form>
 		</div>
 		<!-- /inside -->
 	</div>
@@ -171,9 +172,9 @@
 		
 					<!-- parlamentarian -->
 					<div class="parlamentarian">
-						<p class="photo"><a href="#"><img src="" alt="Foto de [parlamentarian_name]" width="77" /></a></p>
+						<p class="photo"><a href="#"><img src="http://parlamento.euskadi.net/img/fichas/149.jpg" alt="Foto de [parlamentarian_name]" width="48" /></a></p>
 						<h2 class="name"><a href="#">Nombre parlamentario</a></h2>
-						<p class="party"><a href="#">Nombre partido</a></p>
+						<p class="party"><a class="party_name" href="#">Aralar</a></p>
 						<p class="label subject_label"><a href="#">Asunto</a></p>
 						<p><a href="#">Nombre del asunto</a></p>
 						<p class="date">26.07.2009</p>
