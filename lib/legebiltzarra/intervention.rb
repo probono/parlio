@@ -23,7 +23,8 @@ module Legebiltzarra
     end
     
     def session_date
-      document.at("th[text()^='Fecha sesión:']").next_sibling.content.strip rescue nil
+      value = document.at("th[text()^='Fecha sesión:']").next_sibling.content.strip rescue nil
+      Date.strptime(value, "%d.%m.%Y")
     end
       
     def diary_number

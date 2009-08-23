@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090823110617) do
+ActiveRecord::Schema.define(:version => 20090823120036) do
 
   create_table "commisions", :force => true do |t|
     t.string   "name"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(:version => 20090823110617) do
     t.string   "proposer"
     t.string   "recipient"
     t.date     "initiative_date"
+    t.date     "session_date"
   end
 
   create_table "intervention_parliamentarians", :force => true do |t|
@@ -59,7 +60,6 @@ ActiveRecord::Schema.define(:version => 20090823110617) do
   create_table "interventions", :force => true do |t|
     t.string   "file_number"
     t.integer  "commision_id"
-    t.string   "session_date"
     t.string   "diary_number"
     t.string   "subject_number"
     t.string   "subject_title"
@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(:version => 20090823110617) do
     t.string   "subject_treated"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.date     "session_date"
   end
 
   create_table "parliamentarians", :force => true do |t|
