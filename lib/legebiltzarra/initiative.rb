@@ -49,17 +49,18 @@ module Legebiltzarra
       procedures
     end
 
-    def documents
+    def announcement
+      #FIXME some initiative shas more than one bulletin, in a second row.
+      #example: http://parlamento.euskadi.net/BASIS/izaro/webx/sm_iniciac/DDW?W%3Dini_seccion%3D11+and+ini_serie%3D2+and+ini_legis%3D9+and+ini_pendi+ne+0+order+by+ini_numexp%26M%3D9%26K%3D09\11\02\01\0017%26R%3DY%26U%3D1
       begin
-        #doc_url = "#{BASE_URL}/fichas/c_#{self.id}_int_SM.html"
-        #doc_url ||= Nokogiri::HTML(open(doc_url).read)
-        #doc_url.search('div[@class="indentar2"]/ul/li/a/@onclick').map{ |p| Intervention.new(p.content.match(/\d+/)[0]) }
-        puts "---->" + document.at("th[text()^='Boletines:']").next_sibling
-#        doc_url = document.at("th[text()^='Boletines:']").next_sibling.search('a').map { |a| a['href']  }
-#        doc_url
-        "ains"
-      rescue
-        []
+        if document.at("th[text()^='Boletines:']")
+          docid = document.at("th[text()^='Boletines:']").next_sibling.inner_html.scan(/'(\d+)'/).to_s
+          Announcement.new(docid)
+        end
+      rescue Exception => e
+        puts self.url
+        puts e.inspect
+        nil
       end
     end
 

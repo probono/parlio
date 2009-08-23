@@ -1,0 +1,36 @@
+# == Schema Information
+# Schema version: 20090823180900
+#
+# Table name: announcements
+#
+#  id                :integer         not null, primary key
+#  announcement_url  :string(255)
+#  initiative_id     :integer
+#  summary           :integer
+#  announcement_date :date
+#  num_exp           :integer
+#  number            :integer
+#  page              :integer
+#  created_at        :datetime
+#  updated_at        :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  announcement_url: MyString
+  initiative_id: 1
+  summary: 1
+  announcement_date: 2009-08-23
+  num_exp: 1
+  number: 1
+  page: 1
+
+two:
+  announcement_url: MyString
+  initiative_id: 1
+  summary: 1
+  announcement_date: 2009-08-23
+  num_exp: 1
+  number: 1
+  page: 1

@@ -14,7 +14,15 @@ parliamentarians.each do |p|
     end
     initiative.initiative_type=i.type
     initiative.tag_list = i.tags.join(",")
-    
+
+#    i.announcement.each do |a|
+    if i.announcement
+      announcement = initiative.announcements.build
+      ['announcement_url', 'summary', 'announcement_date', 'num_exp', 'number', 'page'].each do |m|
+        announcement.send("#{m}=", i.announcement.send(m))
+      end
+    end
+        
     i.procedures.each do |p|
       initiative.procedures.build(:title => p[:title], :url => p[:url], :procedure_date => p[:procedure_date])
     end
