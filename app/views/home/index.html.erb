@@ -1,12 +1,30 @@
-Actividad parlamentaria
-<ul>
-  
-</ul>                                       
+<h2>Actividad parlamentaria</h2>
+
+<% if !@parlio_activity.blank? %>
+  <ul>
+    <% for t in @parlio_activity %>
+      <% if t.instance_of? Initiative %>
+        <li>
+          ASUNTO - <%= t.initiative_date %> <br/> 
+          <%= link_to t.title, initiative_path(t) %>
+        </li>
+      <% else %>
+      <li>
+        DEBATE - <%= t.session_date %> <br/> 
+        <%= link_to t.subject_title, intervention_path(t) %>
+      </li>
+      <% end %>
+    <% end %>
+  </ul>
+<% end %>
 
 
-Asuntos de actualidad
 
-<h2>Categorías más activas</h2>    
+
+
+<h2>Asuntos de actualidad<h2>
+
+<h3>Categorías más activas</h3>
 
 <% if !@most_active.blank? %>
   <ul>
@@ -15,8 +33,8 @@ Asuntos de actualidad
     <% end %>
   </ul>
 <% end %>
-                
-<h2>Etiquetas más actuales</h2>                  
+
+<h3>Etiquetas más actuales</h3>
 <% if !@most_active_tags.blank? %>
   <ul>
     <% for t in @most_active_tags %>
@@ -25,8 +43,8 @@ Asuntos de actualidad
   </ul>
 <% end %>
 
- 
- 
+
+
 
 <h2>Parlamentarios más activos</h2>
 <% if !@most_active_parliamentarians.blank? %>
