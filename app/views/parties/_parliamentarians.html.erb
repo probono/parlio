@@ -2,8 +2,8 @@
     <!-- parliamentarians_list -->
     <div class="parliamentarians_list">
 
-      <% if !@party.parliamentarians.blank? %>
-        <% for parla in @party.parliamentarians %>
+      <% if !@party.parliamentarians.active.blank? %>
+        <% for parla in @party.parliamentarians.active %>
           <!-- parliamentarian -->
           <div class="parliamentarian">
             <p class="photo">
