@@ -16,8 +16,17 @@ module Legebiltzarra
       document.at("th[text()^='Título iniciativa:']").next_sibling.content.strip rescue nil
     end
 
-    def party
+    def proposer
       document.at("th[text()^='Proponentes:']").next_sibling.content.strip rescue nil
+    end
+
+    def recipient
+      document.at("th[text()^='Destinatario:']").next_sibling.content.strip rescue nil
+    end
+        
+    def initiative_date
+      value = document.at("th[text()^='Fecha de alta:']").next_sibling.content.strip rescue nil
+      Date.strptime(value, "%d.%m.%Y")
     end
 
     def type

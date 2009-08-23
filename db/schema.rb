@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090823095034) do
+ActiveRecord::Schema.define(:version => 20090823110617) do
 
   create_table "commisions", :force => true do |t|
     t.string   "name"
@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(:version => 20090823095034) do
   create_table "initiatives", :force => true do |t|
     t.string   "num_exp"
     t.string   "title"
-    t.string   "party"
     t.string   "initiative_type"
     t.string   "procedures"
     t.string   "votings"
@@ -38,6 +37,9 @@ ActiveRecord::Schema.define(:version => 20090823095034) do
     t.datetime "updated_at"
     t.string   "status"
     t.integer  "topic_id"
+    t.string   "proposer"
+    t.string   "recipient"
+    t.date     "initiative_date"
   end
 
   create_table "intervention_parliamentarians", :force => true do |t|
