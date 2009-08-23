@@ -3,6 +3,5 @@ tmp/**/*
 .DS_Store
 doc/api
 doc/app
-db/schema.rb
 coverage/*
 public/system/*

@@ -4,7 +4,7 @@ class ParliamentariansController < ApplicationController
   # GET /parliamentarians
   # GET /parliamentarians.xml
   def index
-    @parliamentarians = Parliamentarian.all
+    @parliamentarians = Parliamentarian.active
 
     respond_to do |wants|
       wants.html # index.html.erb

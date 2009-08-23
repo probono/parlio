@@ -41,12 +41,10 @@ module Legebiltzarra
               name = data.content.scan(/Sustituye a (.*) \(/).first
               parliamentarians.last.active = true
               parliamentarians.last.substitution = name.first
-              puts "#{name} sustituido por #{parliamentarians.last.full_name}"
             else
               name = data.content.scan(/Sustituid[a-o] por (.*) \(/).first
               parliamentarians.last.active = false
               parliamentarians.last.substitution = name.first
-              puts "#{name} sustituye a #{parliamentarians.last.full_name}"
             end          
           end
         end
@@ -73,7 +71,7 @@ module Legebiltzarra
       parliamentarians
     end
     
-    def parties(id=ACTIVE)
+    def parties(id=CURRENT_LEGISLATURE)
       parties_url = "#{BASE_URL}/c_comorga_gru_#{self.id}_SM.html"
       parties_document ||= Nokogiri::HTML(open(parties_url).read)
       parties_document.search('div[@id="grupos"]/table/tr').map { |p| Party.new(p) } rescue []      
