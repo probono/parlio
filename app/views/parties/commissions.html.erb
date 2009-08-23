@@ -1,0 +1,101 @@
+<%= render :partial => 'sheet' %>
+
+<!-- party_activity -->
+<div class="party_activity">
+
+<%= render :partial => 'menu' %>
+  
+  <!-- party_activity_cont -->
+  <div class="party_activity_cont">
+    <%= render :partial => 'parliamentarians' %>
+
+    <h3>Actividad parlamentaria del partido</h3>
+    <!-- party_activity_menu -->
+    <ul class="party_activity_menu">
+      <li class="first"><%= link_to "Asuntos", party_path(@party) %></li>
+      <li><%= link_to "Debates", interventions_party_path(@party) %></li>
+      <li class="last active"><%= link_to "Comisiones", commissions_party_path(@party) %></li>
+    </ul>
+    <!-- /party_activity_menu -->
+    
+    <!-- commissions_participants -->
+    <div class="commissions_participants">
+      <h4 class="commissions_participants_title">Comisiones en las que participan</h4>
+      
+      <!-- commission_participant -->
+      <div class="commission_participant">
+        <h5>Asuntos Europeos y Acción Exterior</h5>
+        <dl class="line">
+          <dt>Parlamentario:</dt>
+          <dd>Vaquero Montero, Maribel</dd>
+          <dt>Responsabilidad:</dt>
+          <dd>Vocal</dd>
+        </dl>
+      </div>
+      <!-- /commission_participant -->
+      
+      <!-- commission_participant -->
+      <div class="commission_participant">
+        <h5>Asuntos Europeos y Acción Exterior</h5>
+        <dl class="line">
+          <dt>Parlamentario:</dt>
+          <dd>Vaquero Montero, Maribel</dd>
+          <dt>Responsabilidad:</dt>
+          <dd>Vocal</dd>
+        </dl>
+      </div>
+      <!-- /commission_participant -->
+      
+      <!-- commission_participant -->
+      <div class="commission_participant">
+        <h5>Asuntos Europeos y Acción Exterior</h5>
+        <dl class="line">
+          <dt>Parlamentario:</dt>
+          <dd>Vaquero Montero, Maribel</dd>
+          <dt>Responsabilidad:</dt>
+          <dd>Vocal</dd>
+        </dl>
+      </div>
+      <!-- /commission_participant -->
+      
+    </div>
+    <!-- /commissions_participants -->
+    
+    <!-- commission_cont -->
+    <div class="commission_cont">
+      <h4>Iniciativas</h4>
+      <h5>Comisión de Vivienda, Obras Públicas y Transportes</h5>
+      <!-- commission_list -->
+      <ul class="commission_list">
+        <li class="commission">
+          <a href="#">Elección de la Mesa</a>
+          <span class="date">17.06.2009</span>
+        </li>
+        <li class="commission">
+          <a href="#">Resolución sobre la solicitud de comparecencia del consejero de Vivienda, Obras Públicas y Transportes, formulada por el grupo Nacionalistas Vascos, para informar sobre la política y las actuaciones a desarrollar durante la legislatura por su departamento, y, en su caso, celebración de la comparecencia y comparecencia del consejero de Vivienda, Obras Públicas y Transportes, a petición propia, para exponer las líneas generales de actuación de su departamento.</a>
+          <span class="date">17.06.2009</span>
+        </li>
+      </ul>
+      <!-- /commission_list -->
+      
+      <h5>Comisión de Vivienda, Obras Públicas y Transportes</h5>
+      <!-- commission_list -->
+      <ul class="commission_list">
+        <li class="commission">
+          <a href="#">Elección de la Mesa</a>
+          <span class="date">17.06.2009</span>
+        </li>
+        <li class="commission">
+          <a href="#">Resolución sobre la solicitud de comparecencia del consejero de Vivienda, Obras Públicas y Transportes, formulada por el grupo Nacionalistas Vascos, para informar sobre la política y las actuaciones a desarrollar durante la legislatura por su departamento, y, en su caso, celebración de la comparecencia y comparecencia del consejero de Vivienda, Obras Públicas y Transportes, a petición propia, para exponer las líneas generales de actuación de su departamento.</a>
+          <span class="date">17.06.2009</span>
+        </li>
+      </ul>
+      <!-- /commission_list -->
+    </div>
+    <!-- commission_cont -->
+    
+  </div>
+  <!-- /party_activity_cont -->
+  
+</div>
+<!-- /party_activity -->

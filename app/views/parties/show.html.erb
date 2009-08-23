@@ -1,34 +1,79 @@
-<h2><%= @party.name %></h2>
-<p><%= @party.parliamentarians.size %> parlamentarios</p>
-<p>Sitio web: <%= link_to @party.url, @party.url %></p>        
+<%= render :partial => 'sheet' %>
 
+<!-- party_activity -->
+<div class="party_activity">
 
-<% if !@party.parliamentarians.blank? %>
-  <h3>Parlamentarios Legislatura</h3>
-  <ul>
-    <% for parla in @party.parliamentarians %>
-      <li> <%= parlavatar(parla) %> <%= link_to parla.full_name, parliamentarian_path(parla) %></li>
-    <% end %>
-  </ul>
-<% end %>
+<%= render :partial => 'menu' %>
+  
+  <!-- party_activity_cont -->
+  <div class="party_activity_cont">
+    <%= render :partial => 'parliamentarians' %>
+    
+    <h3>Actividad parlamentaria del partido</h3>
+    <!-- party_activity_menu -->
+    <ul class="party_activity_menu">
+      <li class="first active"><%= link_to "Asuntos", party_path(@party) %></li>
+      <li><%= link_to "Debates", interventions_party_path(@party) %></li>
+      <li class="last"><%= link_to "Comisiones", commissions_party_path(@party) %></li>
+    </ul>
+    <!-- /party_activity_menu -->
+    
+    <!-- subject_cont -->
+    <div class="subject_cont">
 
-
-
-<h3>ON THE NEWS</h3>
-<ul>
-  <% if !@news["ResultSet"]["Result"].blank? %>
-    <% for a_new in @news["ResultSet"]["Result"] %>
-    <li class="clearfix">
-        <div class="image"><%=  image_tag a_new["Thumbnail"]["Url"] if a_new["Thumbnail"] && a_new["Thumbnail"]["Url"] %></div>
-        <div class="title"><%= link_to a_new["Title"], a_new["Url"]   %></div>
-        <div class="subtitle"><%=a_new["Summary"] %></div>
-        <div class="metadata">
-            Published by <%= link_to a_new["NewsSource"],  a_new["NewsSourceUrl"] %>
-
+      <!-- subject -->
+      <div class="activity subject">
+        <h4 class="title"><a href="#">Escuela pública San Martin Agirre de Bergara</a></h4>
+        <p class="activity_type"><span>Pregunta para su respuesta escrita</span></p>
+        <dl class="activity_meta line">
+          <dt>Fecha:</dt>
+          <dd>14.07.2009</dd>
+          <dt>Por:</dt>
+          <dd><a class="author" href="#">Maeztu Perez, Daniel</a> de <a class="party_name" href="#">Aralar</a></dd>
+        </dl>
+        <!-- tag_mod -->
+        <div class="tag_mod">
+          <h5>Etiquetas</h5>
+          <ul class="tag_list">
+            <li><a class="tag" href="#">minoría sexual</a></li>
+            <li><a class="tag" href="#">Osakidetza</a></li>
+            <li><a class="tag" href="#">terapéutica</a></li>
+            <li><a class="tag" href="#">cirugía</a></li>
+          </ul>
         </div>
-    </li>
+        <!-- /tag_mod -->
+      </div>
+      <!-- /subject -->
       
-    <% end %>
-
-  <% end %>
-</ul>
+      <!-- subject -->
+      <div class="activity subject">
+        <h4 class="title"><a href="#">Escuela pública San Martin Agirre de Bergara</a></h4>
+        <p class="activity_type"><span>Pregunta para su respuesta escrita</span></p>
+        <dl class="activity_meta line">
+          <dt>Fecha:</dt>
+          <dd>14.07.2009</dd>
+          <dt>Por:</dt>
+          <dd><a class="author" href="#">Maeztu Perez, Daniel</a> de <a class="party_name" href="#">Aralar</a></dd>
+        </dl>
+        <!-- tag_mod -->
+        <div class="tag_mod">
+          <h5>Etiquetas</h5>
+          <ul class="tag_list">
+            <li><a class="tag" href="#">minoría sexual</a></li>
+            <li><a class="tag" href="#">Osakidetza</a></li>
+            <li><a class="tag" href="#">terapéutica</a></li>
+            <li><a class="tag" href="#">cirugía</a></li>
+          </ul>
+        </div>
+        <!-- /tag_mod -->
+      </div>
+      <!-- /subject -->
+      
+    </div>
+    <!-- /subject_cont -->
+    
+  </div>
+  <!-- /party_activity_cont -->
+  
+</div>
+<!-- /party_activity -->

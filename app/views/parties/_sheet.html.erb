@@ -1,0 +1,65 @@
+<!-- party_sheet -->
+<div class="party_sheet">
+  
+  <!-- main -->
+  <div class="main">
+    <p class="party_logo"><%= link_to image_tag(@party.logo), party_path(@party) %></p>
+    <h1><%= @party.party_acronym %></h1>
+    <dl class="line">
+      <dt>Nº de parlamentarios:</dt>
+      <dd><%= @party.parliamentarians.size %></dd>
+      <dt>Sitio web:</dt>
+      <dd><%= link_to @party.url, @party.url %></dd>
+    </dl>
+  
+    <p><a href="http://partaide.parlam.euskadi.net">Respuestas en Partaide</a></p>
+  </div>
+  <!-- /main -->
+  
+  <!-- news -->
+  <div class="news">
+    <h2>Noticias</h2>
+    <ul class="news_list">
+      <% if !@news["ResultSet"]["Result"].blank? %>
+        <% for a_new in @news["ResultSet"]["Result"] %>
+        <li class="clearfix">
+            <%= link_to a_new["Title"], a_new["Url"] %> | <span class="date"><%= Time.at(a_new["PublishDate"].to_i).to_date %></span>
+        </li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+  <!-- /news -->
+  
+  
+  <!-- most_active_parliamentarians -->
+  <div class="activity_stat most_active_parliamentarians">
+    <h2>Parlamentarios más activos</h2>
+    <!-- parliamentarians_list -->
+    <div class="parliamentarians_list">
+    
+      <!-- parliamentarian -->
+      <div class="parliamentarian">
+        <p class="photo"><a href="#"><img src="http://parlamento.euskadi.net/img/fichas/149.jpg" alt="Foto de [parliamentarian_name]" width="24" /></a></p>
+        <div class="main">
+          <h2 class="name"><a href="#">Aintzane Ezenarro</a></h2>
+        </div>
+      </div>
+      <!-- parliamentarian -->
+    
+      <!-- parliamentarian -->
+      <div class="parliamentarian">
+        <p class="photo"><a href="#"><img src="http://parlamento.euskadi.net/img/fichas/149.jpg" alt="Foto de [parliamentarian_name]" width="24" /></a></p>
+        <div class="main">
+          <h2 class="name"><a href="#">Aintzane Ezenarro</a></h2>
+        </div>
+      </div>
+      <!-- parliamentarian -->
+    
+    </div>
+    <!-- /parliamentarians_list -->
+  </div>
+  <!-- /most_active_parliamentarians -->
+  
+</div>
+<!-- /party_sheet -->

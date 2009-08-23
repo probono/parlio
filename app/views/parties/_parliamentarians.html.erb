@@ -1,0 +1,21 @@
+    <h3>Parlamentarios Legislatura 2009-2013</h3>
+    <!-- parliamentarians_list -->
+    <div class="parliamentarians_list">
+
+      <% if !@party.parliamentarians.blank? %>
+        <% for parla in @party.parliamentarians %>
+          <!-- parliamentarian -->
+          <div class="parliamentarian">
+            <p class="photo">
+              <%= link_to image_tag(parla.photo, :width => "32", :alt => "Foto de #{parla.full_name}"), parliamentarian_path(parla) %>
+            </p>
+            <div class="main">
+              <h4 class="name"><%= link_to parla.full_name, parliamentarian_path(parla) %></h4>
+            </div>
+          </div>
+          <!-- parliamentarian -->
+        <% end %>
+      <% end %>
+
+    </div>
+    <!-- /parliamentarians_list -->

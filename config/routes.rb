@@ -17,7 +17,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.search    '/search',      :controller => 'search', :action => 'search'
   
-  map.resources :parties
+  map.resources :parties, :member => {:initiatives => :get, :interventions => :get, :commissions => :get} 
   map.resources :topics, :path_prefix => 'activity'
   map.resources :initiatives, :path_prefix => 'activity'            
   map.resources :interventions, :path_prefix => 'activity' 
