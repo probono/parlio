@@ -1,0 +1,11 @@
+<dl class="activity_meta line">
+  <dt>Fecha:</dt>
+  <dd><%= activity.initiative_date %></dd>
+  <dt>Por:</dt>
+  <dd>
+    <%= link_to activity.parliamentarian.full_name, parliamentarian_path(activity.parliamentarian), :class=>"author" %> de 
+    <%= link_to activity.parliamentarian.party.party_acronym, party_path(activity.parliamentarian.party), :class => "party_name" %>
+  </dd>
+  <dt>Para:</dt>
+  <dd><%= activity.recipient %></dd>
+</dl>  

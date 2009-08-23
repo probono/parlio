@@ -18,32 +18,14 @@
       <div class="activity subject">
         <h3 class="title"><%= link_to @initiative.title, initiative_path(@initiative)%></h3>
         <p class="activity_type"><span><%= @initiative.initiative_type %></span></p>
-        <dl class="activity_meta line">
-          <dt>Fecha:</dt>
-          <dd><%= @initiative.initiative_date %></dd>
-          <dt>Por:</dt>
-          <dd>
-            <%= link_to @initiative.parliamentarian.full_name, parliamentarian_path(@initiative.parliamentarian), :class=>"author" %> de 
-            <%= link_to @initiative.parliamentarian.party.party_acronym, party_path(@initiative.parliamentarian.party), :class => "party_name" %>
-          </dd>
-          <dt>Para:</dt>
-          <dd><%= @initiative.recipient %></dd>
-        </dl>
+        
+        <%= render :partial => 'activity/activity_meta_line', :locals => { :activity => @initiative } %>
       </div>
       <!-- /subject -->
+                           
+      <%= render :partial => 'activity/activity_tags', :locals => { :activity => @initiative } %>
       
-      <!-- tag_mod -->
-      <div class="tag_mod">
-        <h4>Etiquetas</h4>
-        <ul class="tag_list">      
-          <% if !@initiative.tags.blank? %>
-            <% for tag in @initiative.tags %>
-              <li><%= link_to tag, initiatives_by_tag_path(tag.name), :class => "tag" %></li>
-            <% end %>
-          <% end %>
-        </ul>
-      </div>
-      <!-- /tag_mod -->
+
       
       <!-- file_mod -->
       <div class="file_mod">
@@ -75,7 +57,7 @@
         <h2>Evolución</h2>
         <dl class="evolution_sheet">
           <dt>Situación:</dt>
-          <dd>En curso</dd>
+          <dd><%= @initiative.status %></dd>
           <dt>Plazo de presentación:</dt>
           <dd>03.09.2009 Plazo para que conteste el Gobierno Vasco</dd>
           <dt>Trámites por los que ha pasado:</dt>
