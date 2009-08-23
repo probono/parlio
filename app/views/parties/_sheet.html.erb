@@ -37,25 +37,21 @@
     <h2>Parlamentarios más activos</h2>
     <!-- parliamentarians_list -->
     <div class="parliamentarians_list">
-    
-      <!-- parliamentarian -->
-      <div class="parliamentarian">
-        <p class="photo"><a href="#"><img src="http://parlamento.euskadi.net/img/fichas/149.jpg" alt="Foto de [parliamentarian_name]" width="24" /></a></p>
-        <div class="main">
-          <h2 class="name"><a href="#">Aintzane Ezenarro</a></h2>
+      
+      <% if !@party.more_active_parlamentarians.blank? %>
+        <% for p in @party.more_active_parlamentarians %>
+        <!-- parliamentarian -->
+        <div class="parliamentarian">
+          <p class="photo"><%= link_to image_tag(p.photo, :width => "24", :alt => "Foto de #{p.full_name}"), parliamentarian_path(p) %></p>
+          <div class="main">
+            <h2 class="name"><%= link_to p.full_name, parliamentarian_path(p) %></h2>
+          </div>
         </div>
-      </div>
-      <!-- parliamentarian -->
-    
-      <!-- parliamentarian -->
-      <div class="parliamentarian">
-        <p class="photo"><a href="#"><img src="http://parlamento.euskadi.net/img/fichas/149.jpg" alt="Foto de [parliamentarian_name]" width="24" /></a></p>
-        <div class="main">
-          <h2 class="name"><a href="#">Aintzane Ezenarro</a></h2>
-        </div>
-      </div>
-      <!-- parliamentarian -->
-    
+        <!-- parliamentarian -->
+          
+        <% end %>
+      <% end %>
+          
     </div>
     <!-- /parliamentarians_list -->
   </div>

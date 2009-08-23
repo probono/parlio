@@ -32,7 +32,22 @@ class Party < ActiveRecord::Base
       tuples.each{|tuple| most_active << [Party.find(tuple[0]), tuple[1]]}
     end
   end
+  
+  def more_active_parlamentarians
+    Party.most_active_all_parlamentarians.select{|p| p.party==self}.first(3)
+  end
+  
   def party_acronym
     /\((.*)\)/.match(self.name)[1]  rescue nil
   end
+  
+  
+  private
+  def self.most_active_all_parlamentarians
+    tuples = Initiative.count(:all, :group => "parliamentarian_id", :order => "count(*) DESC")
+    returning most_active = [] do
+      tuples.each{|tuple| most_active << Parliamentarian.find(tuple[0])}
+    end    
+  end
+  
 end
