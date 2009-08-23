@@ -18,6 +18,12 @@ class CommissionMember < ActiveRecord::Base
   SECRETARY     = 3
   VOCAL         = 4
   
+  POSITIONS = ['Presidente/a', 'Vicepresidente/a', 'Secretario/a', 'Vocal']
+  
   belongs_to :commision
   belongs_to :parliamentarian
+  
+  def position2text
+    POSITIONS[(self.position.to_i - 1)]
+  end
 end

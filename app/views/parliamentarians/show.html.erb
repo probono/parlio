@@ -78,40 +78,18 @@
 
     <!-- parliamentarian_activity_menu -->
     <ul class="parliamentarian_activity_menu">
-      <li class="first active"><a href="#">Asuntos</a></li>
-      <li><a href="#">Debates</a></li>
-      <li class="last"><a href="#">Comisiones</a></li>
+      <li class="first <%= "active" if @initiatives %>"><%= link_to "Asuntos", initiatives_parliamentarian_path(@parliamentarian)%></li>
+      <li <%= "class=\"active\"" if @interventions %>><%= link_to "Debates", interventions_parliamentarian_path(@parliamentarian)%></li>
+      <li class="last <%= "active" if @commission_members %>"><%= link_to "Comisiones", commisions_parliamentarian_path(@parliamentarian)%></li>
     </ul>
     <!-- /parliamentarian_activity_menu -->
     
-    <%= render :partial => 'initiatives', :locals => {:initiatives => @initiatives}%>
+    <%= render(:partial => 'initiatives', :locals => {:initiatives => @initiatives}) if @initiatives %>
+    <%= render(:partial => 'interventions', :locals => {:interventions => @interventions}) if @interventions %>
+    <%= render(:partial => 'commissions', :locals => {:commission_members => @commission_members}) if @commission_members %>
     
   </div>
   <!-- /parliamentarian_activity_cont -->
   
 </div>
 <!-- /parliamentarian_activity -->
-
-
-
-<% if !@parliamentarian.interventions.blank? %>
-  <h2>Debates</h2>    
-  <ul>
-    <% for inter in @parliamentarian.interventions %>
-      <li><%= link_to inter.session_date, intervention_path(inter) %> | <%= inter.subject_title %></li>
-    <% end %>
-  </ul>
-<% end %>
-
-
-<% if !@parliamentarian.commissions.blank? %>
-  <h2>Comisiones</h2>
-  <ul>
-    <% for c in @parliamentarian.commissions %>
-      <li><%= link_to c.name, commision_path(c) %></li>
-    <% end %>
-  </ul>
-<% end %>
-
-
-

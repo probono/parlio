@@ -1,0 +1,21 @@
+<!-- activity_list -->
+<div class="activity_list discussion_list">
+
+  <% for int in interventions %>
+  <!-- discussion -->
+  <div class="activity discussion">
+    <h3 class="title"><%= link_to int.subject_title, intervention_path(int) %></h3>
+<!--
+    <p class="activity_type"><span>Interpelación</span></p>
+-->
+    <dl class="activity_meta line">
+      <dt>Fecha:</dt>
+      <dd class="date"><%= int.session_date%></dd>
+    </dl>
+  </div>
+  <!-- /discussion -->
+  <% end %>
+  <%= will_paginate interventions, :class => 'pag_nav' %>
+
+</div>
+<!-- /activity_list -->

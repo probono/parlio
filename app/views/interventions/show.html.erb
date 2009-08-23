@@ -17,18 +17,20 @@
       
       <!-- discussion -->
       <div class="activity discussion">
-        <h3 class="title"><%= link_to @intervention.subject_title, intervention_path(@intervention) %> (<%= @intervention.session_date%>)</h3>
+        <h3 class="title"><%= link_to @intervention.subject_title, intervention_path(@intervention) %></h3>
         <!--
         <p class="activity_type"><span>Debate y resolución definitiva</span></p>
-        
+      -->
         <dl class="activity_meta line">
           <dt>Fecha:</dt>
-          <dd>14.07.2009</dd>
+          <dd><%= @intervention.session_date %></dd>
+          <!--
           <dt>Por:</dt>
           <dd><a class="author" href="#">Maeztu Perez, Daniel</a> de <a class="party_name" href="#">Aralar</a></dd>
           <dt>Para:</dt>
           <dd>Consejero de Sanidad y Consumo</dd>
-        </dl> -->
+        -->
+        </dl>
       </div>
       <!-- /discussion -->
       

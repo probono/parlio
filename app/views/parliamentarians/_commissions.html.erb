@@ -1,0 +1,10 @@
+<!-- parliamentarian_commission_menu -->
+<div class="parliamentarian_commission_menu">
+  <h4>Comisiones en las que participa</h4>
+  <ul>
+    <% commission_members.each do |cm| %>
+      <li><%= link_to cm.commision.name, commision_path(cm.commision) %> <strong><%= cm.position2text%></strong> <em><%= cm.date %></em></li>
+    <% end %>
+  </ul>
+</div>
+<!-- /parliamentarian_commission_menu -->
