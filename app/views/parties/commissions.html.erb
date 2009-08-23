@@ -21,47 +21,32 @@
     <!-- commissions_participants -->
     <div class="commissions_participants">
       <h4 class="commissions_participants_title">Comisiones en las que participan</h4>
-      
-      <!-- commission_participant -->
-      <div class="commission_participant">
-        <h5>Asuntos Europeos y Acción Exterior</h5>
-        <dl class="line">
-          <dt>Parlamentario:</dt>
-          <dd>Vaquero Montero, Maribel</dd>
-          <dt>Responsabilidad:</dt>
-          <dd>Vocal</dd>
-        </dl>
-      </div>
-      <!-- /commission_participant -->
-      
-      <!-- commission_participant -->
-      <div class="commission_participant">
-        <h5>Asuntos Europeos y Acción Exterior</h5>
-        <dl class="line">
-          <dt>Parlamentario:</dt>
-          <dd>Vaquero Montero, Maribel</dd>
-          <dt>Responsabilidad:</dt>
-          <dd>Vocal</dd>
-        </dl>
-      </div>
-      <!-- /commission_participant -->
-      
-      <!-- commission_participant -->
-      <div class="commission_participant">
-        <h5>Asuntos Europeos y Acción Exterior</h5>
-        <dl class="line">
-          <dt>Parlamentario:</dt>
-          <dd>Vaquero Montero, Maribel</dd>
-          <dt>Responsabilidad:</dt>
-          <dd>Vocal</dd>
-        </dl>
-      </div>
-      <!-- /commission_participant -->
-      
+      <% if !@commissions.blank? %>
+        <% for comi in @commissions %>
+          <div class="commission_participant">
+            <h5><%= comi.name %></h5>
+            <% if !comi.members.blank? %>
+                  <dl class="line">
+                    <dt>Parlamentarios:</dt>
+                    <dd>
+                      <% for member in comi.members %>
+                        <% if member.party == @party %>
+                          <%= link_to member.full_name, parliamentarian_path(member) %> (<%= "Presidente" if comi.members_as_president.include?(member)%><%= "Vicepresidente" if comi.members_as_vicepresident.include?(member)%><%= "Secretario" if comi.members_as_secretary.include?(member)%><%= "Vocal" if comi.members_as_vocal.include?(member)%>)
+                        <% end %>
+                      <% end %>   
+                    </dd>
+                  </dl>
+            <% end %>
+          </div>
+          
+        <% end %>
+      <% end %>
+     
     </div>
     <!-- /commissions_participants -->
     
-    <!-- commission_cont -->
+    <!-- commission_cont -->  
+    <%# 
     <div class="commission_cont">
       <h4>Iniciativas</h4>
       <h5>Comisión de Vivienda, Obras Públicas y Transportes</h5>
@@ -92,6 +77,7 @@
       </ul>
       <!-- /commission_list -->
     </div>
+     %>
     <!-- commission_cont -->
     
   </div>
