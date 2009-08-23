@@ -1,12 +1,11 @@
 # == Schema Information
-# Schema version: 20090822224716
+# Schema version: 20090823151303
 #
 # Table name: interventions
 #
 #  id              :integer         not null, primary key
 #  file_number     :string(255)
 #  commision_id    :integer
-#  session_date    :string(255)
 #  diary_number    :string(255)
 #  subject_number  :string(255)
 #  subject_title   :string(255)
@@ -18,6 +17,7 @@
 #  subject_treated :string(255)
 #  created_at      :datetime
 #  updated_at      :datetime
+#  session_date    :date
 #
 
 class Intervention < ActiveRecord::Base

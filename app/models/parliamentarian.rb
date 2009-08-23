@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20090823110617
+# Schema version: 20090823151303
 #
 # Table name: parliamentarians
 #
@@ -9,7 +9,6 @@
 #  profession        :string(255)
 #  languages         :string(255)
 #  email             :string(255)
-#  posts             :string(255)
 #  created_at        :datetime
 #  updated_at        :datetime
 #  orig_id           :string(255)
@@ -18,6 +17,7 @@
 #  substitution_id   :integer
 #  substitutes_id    :integer
 #  substituted_by_id :integer
+#  degree            :string(255)
 #
 
 class Parliamentarian < ActiveRecord::Base
