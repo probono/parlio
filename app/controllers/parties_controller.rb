@@ -11,7 +11,9 @@ class PartiesController < ApplicationController
   end
 
   def commissions
-
+    
+    @commissions = @party.parliamentarians.map{|parla|parla.commissions}.flatten
+    
     respond_to do |wants|
       wants.html 
       wants.xml  { render :xml => @party }
