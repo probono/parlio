@@ -13,7 +13,7 @@
     
     <% form_tag(search_url, {:method => :get, :id => "global_search"}) do -%>
       <%= label :search_term, "Buscador" %>
-      <%= text_field_tag :search_term, "¿Qué buscas?", :onclick => '$("search_term").select();' %>
+      <%= text_field_tag :search_term, "¿Qué buscas?", :onclick => "this.select();" %>
       <%= submit_tag "Buscar" %>
     <% end -%>
     
