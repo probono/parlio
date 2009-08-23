@@ -85,12 +85,13 @@
         <!-- tag_mod -->
         <div class="tag_mod">
           <h2>Etiquetas utilizadas en esta categoria</h2>
-          <ul class="tag_list">
-            <li><a class="tag" href="#">minoría sexual</a></li>
-            <li><a class="tag" href="#">Osakidetza</a></li>
-            <li><a class="tag" href="#">terapéutica</a></li>
-            <li><a class="tag" href="#">cirugía</a></li>
-          </ul>
+          <% if !@tags.blank? %>
+            <ul class="tag_list">
+              <% for tag in @tags %>
+                <li><%= link_to tag.name, initiatives_by_tag_path(tag.name), :class => "tag" %></li>
+              <% end %>
+            </ul>
+          <% end %>
         </div>
         <!-- /tag_mod -->
 
