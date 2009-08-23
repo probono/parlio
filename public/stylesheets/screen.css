@@ -1012,6 +1012,139 @@ a:hover {color: #47b6ed;}
 /* @end */
 /* @end */
 
+/* @group Party */
+.party_sheet
+{
+	-moz-border-radius: 20px;
+  	-webkit-border-radius: 20px;
+	background: #f2f2f2;
+	margin: 0 0 40px 0;
+	padding: 20px;
+}
+
+.party_sheet .main .party_logo a
+{
+	background: #fff;
+	border: 1px solid #ccc;
+	display: block;
+	float: left;
+	margin: 0 20px 0 0;
+	padding: 3px;
+}
+
+.party_sheet .main .party_logo a:hover
+{
+	border: 1px solid #999;
+}
+
+.party_sheet .main
+{
+	float: left;
+	margin: 0 30px 0 0;
+	width: 200px;
+}
+
+.party_sheet .news
+{
+	float: left;
+	margin: 0 30px 0 0;
+	width: 350px;
+}
+
+.party_sheet .most_active_parliamentarians
+{
+	float: left;
+	width: 300px;
+}
+
+/* @group .party_activity_cont */
+.party_activity_cont
+{
+	float: left;
+	width: 730px;
+}
+
+.party_activity_cont .parliamentarians_list .parliamentarian
+{
+	-moz-border-radius: 5px;
+  	-webkit-border-radius: 5px;
+	background: #f2f2f2;
+	float: left;
+	margin: 0 15px 15px 0;
+	height: 70px;
+	padding: 3px;
+	width: 160px;
+}
+
+.party_activity_cont .parliamentarians_list .parliamentarian .name
+{
+	font-size: 14px;
+	top: 5px;
+}
+
+.party_activity_cont .parliamentarians_list .parliamentarian .main
+{
+	width: 104px;
+}
+
+.party_activity_cont .parliamentarians_list .parliamentarian .main .spokesman
+{
+	font-size: 11px;
+	font-weight: bold;
+}
+/* @group .party_activity_menu */
+.party_activity_menu {}
+
+.party_activity_menu li
+{
+	float: left;
+	margin: 0;
+}
+
+.party_activity_menu li a
+{
+	background: #f2f2f2;
+	border: 1px solid #ccc;
+	color: #333;
+	display: block;
+	font-size: 14px;
+	padding: 5px 10px;
+	text-shadow: 1px 1px 1px #fff;
+}
+
+.party_activity_menu li a:hover
+{
+	background: #e5e5e5;
+	color: #666;
+}
+
+.party_activity_menu li.active a
+{
+	background: #333;
+	color: #fff;
+	text-shadow: 1px 1px 1px #000;
+}
+
+.party_activity_menu li.first a
+{
+	-moz-border-radius-bottomleft: 20px;
+	-moz-border-radius-topleft: 20px;
+	-webkit-border-bottom-left-radius: 20px;
+	-webkit-border-top-left-radius: 20px;
+}
+
+.party_activity_menu li.last a
+{
+	-moz-border-radius-bottomright: 20px;
+	-moz-border-radius-topright: 20px;
+	-webkit-border-bottom-right-radius: 20px;
+	-webkit-border-top-right-radius: 20px;
+}
+/* @end */
+
+
+/* @end */
+/* @end */
 
 /* @group Tags */
 /* @group .tag */
@@ -1741,6 +1874,34 @@ a:hover {color: #47b6ed;}
 .commission {margin: 0 0 15px 0;}
 .commission a {}
 .commission span {display: block;}
+
+/* @group .commissions_participants */
+.commissions_participants
+{
+	-moz-border-radius: 10px;
+  	-webkit-border-radius: 10px;
+  	background: #dceef7;
+  	margin: 0 0 40px 0;
+  	padding: 20px 20px 10px 20px;
+}
+
+.commissions_participants .commissions_participants_title
+{
+	background: #fff;
+	border-bottom: 1px solid #666;
+	font-size: 18px;
+	padding: 10px;
+}
+
+.commission_participant
+{
+	border-bottom: 1px solid #ddd;
+	border-top: 1px solid #fff;
+	margin: 0;
+	padding: 10px 0 0 0;
+}
+/* @end */
+
 /* @end */
 
 /* @group Votes */
@@ -2364,7 +2525,10 @@ dl.line dd.block {clear: both;}
 .parliament_data:after,
 .parliamentarian_status:after,
 .discussion_list:after,
-.legislature_menu li:after
+.legislature_menu li:after,
+.party_sheet:after,
+.party_activity_menu:after,
+.party_activity_cont .parliamentarians_list:after
 {
   content: ".";
   display: block;
@@ -2394,7 +2558,10 @@ dl.line dd.block {clear: both;}
 .parliament_data,
 .parliamentarian_status,
 .discussion_list,
-.legislature_menu li
+.legislature_menu li,
+.party_sheet,
+.party_activity_menu,
+.party_activity_cont .parliamentarians_list
 {display: inline-block;}
 
 /* Hides from IE-mac \*/
@@ -2420,7 +2587,10 @@ dl.line dd.block {clear: both;}
 * html .parliament_data,
 * html .parliamentarian_status,
 * html .discussion_list,
-* html .legislature_menu li
+* html .legislature_menu li,
+* html .party_sheet,
+* html .party_activity_menu,
+* html .party_activity_cont .parliamentarians_list
 {height: 1%;}
 
 .clearfix,
@@ -2444,7 +2614,10 @@ dl.line dd.block {clear: both;}
 .parliament_data,
 .parliamentarian_status,
 .discussion_list,
-.legislature_menu li
+.legislature_menu li,
+.party_sheet,
+.party_activity_menu,
+.party_activity_cont .parliamentarians_list
 {display: block;}
 /* End hide from IE-mac */
 /* @end */
