@@ -25,7 +25,7 @@ end
 
 puts "\nLoading closed initiatives..."
 l.topics_for_closed_initiatives.each do |t|
-  topic = Topic.find_by_name(t.name)
+  topic = Topic.first(:conditions => ["name like ?", t.name])
   puts "#{topic.name}"  
   t.initiatives.each do |i|
     init = Initiative.find_by_num_exp(i.id)
