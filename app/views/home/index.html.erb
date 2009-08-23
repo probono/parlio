@@ -1,66 +1,178 @@
-<h2>Actividad parlamentaria</h2>
+<h1 class="hide">Parliament</h1>
 
-<% if !@parlio_activity.blank? %>
-  <ul>
-    <% for t in @parlio_activity %>
-      <% if t.instance_of? Initiative %>
-        <li>
-          ASUNTO - <%= t.initiative_date %> <br/> 
-          <%= link_to t.title, initiative_path(t) %>
-        </li>
-      <% else %>
-      <li>
-        DEBATE - <%= t.session_date %> <br/> 
-        <%= link_to t.subject_title, intervention_path(t) %>
-      </li>
+<!-- presentation -->
+<div class="presentation">
+
+  <div class="intro">
+    <h2>Tú los eliges. Pero, ¿sabes si te representan?</h2>
+    <p>Lo que se debate, lo que se propone, lo que se decide. Tienes derecho a saberlo.</p>
+  </div>
+
+  <!-- parlio_definition -->
+  <div class="parlio_definition">
+    <div class="yes">
+      <h3>Parliament SÍ es</h3>
+      <ul>
+        <li>Un lugar donde se quiere informar al ciudadano sobre la actividad parlamentaria del Parlamento Vasco.</li>
+        <li>La primera iniciativa de la asociación <a href="#"><strong>Pro Bono Público</strong></a> a favor de los estándares para la difusión de los datos públicos.</li>
+      </ul>
+    </div>
+
+    <div class="no">
+      <h3>Parliament NO es</h3>
+      <ul>
+        <li>El sitio web oficial del Parlamento Vasco. Ni tiene ningún vínculo con él.</li>
+        <li>Un sitio donde se emitan juicios de valor. Los datos hablan por sí mismos. Es lo bueno que tienen.</li>
+      </ul>
+    </div>
+  </div>
+  <!-- /parlio_definition -->
+
+</div>
+<!-- /presentation -->
+
+<!-- index_cols -->
+<div class="index_cols">
+  <!-- parliament_activity -->
+  <div class="index_col parliament_activity">
+
+    <h2>Actividad parlamentaria</h2>
+    
+    
+    <% if !@parlio_activity.blank? %>
+      <% for t in @parlio_activity %>
+        <% if t.instance_of? Initiative %>
+          <div class="last_activity last_subject">
+            <h3 class="label subject_label"><a href="#">Asunto</a></h3>
+            <p class="date"><%= t.initiative_date %></p>
+            <p class="title"><%= link_to t.title, initiative_path(t) %></p>
+            <p class="author"><strong>Por:</strong> <%= link_to t.parliamentarian.full_name, parliamentarian_path(t.parliamentarian) %> de <%= link_to t.parliamentarian.party.party_acronym, party_path(t.parliamentarian.party) %></p>
+          </div>
+        <% else %>
+          <div class="last_activity last_discussion">
+            <h3 class="label discussion_label"><a href="#">Debate</a></h3>
+            <p class="date"><%= t.session_date %></p>
+            <p class="title"><%= link_to t.subject_title, intervention_path(t) %></p>
+          </div>
+        <% end %>
       <% end %>
     <% end %>
-  </ul>
-<% end %>
 
+  </div>
+  <!-- /parliament_activity -->
 
+  <!-- actual_subjects -->
+  <div class="index_col current_subjects">
 
+    <h2>Asuntos de actualidad</h2>
 
+    <!-- categories -->
+    <div class="categories">
+      <h3>Categorías</h3>    
+      <% if !@most_active.blank? %>
+        <ul>
+          <% for t in @most_active %>
+            <li><%= link_to t.name, topic_path(t) %> <span class="subject_num"></li>
+          <% end %>
+        </ul>
+      <% end %>
+    </div>
+    <!-- /categories -->
 
-<h2>Asuntos de actualidad<h2>
+    <!-- tags -->
+    <div class="tags">
 
-<h3>Categorías más activas</h3>
+      <!-- tag_mod -->
+      <div class="tag_mod">
+        <h3>Etiquetas</h3>
+        <% if !@most_active_tags.blank? %>
+          <ul class="tag_list">
+            <% for t in @most_active_tags %>
+              <li><%= link_to t.name, initiatives_by_tag_path(t.name), :class => "tag" %></li>
+            <% end %>
+          </ul>
+        <% end %>
+      </div>
+      <!-- /tag_mod -->
 
-<% if !@most_active.blank? %>
-  <ul>
-    <% for t in @most_active %>
-      <li><%= link_to t.name, topic_path(t) %> <span class="subject_num"><%= t.initiatives.size %> iniciativas</span> </li>
+    </div>
+    <!-- /tags -->
+
+  </div>
+  <!-- /actual_subjects -->
+
+  <!-- actual_parliamentarians -->
+  <div class="index_col parliamentarians_list">
+
+    <h2>Parlamentarios de actualidad</h2>
+    <!-- parliamentarians_list -->             
+    
+    <% if !@most_active_parliamentarians.blank? %>
+      <!-- parliamentarians_list -->
+      <div class="parliamentarians_list">
+        <% for p in @most_active_parliamentarians %>
+          <!-- parliamentarian -->
+          <div class="parliamentarian">
+            <%= parlavatar(p) %>
+            <div class="main">
+              <h2 class="name"><%= link_to p.full_name, parliamentarian_path(p) %> </h2>
+              <p class="party"><%= link_to p.party.party_acronym, party_path(p.party), :class => "party_name" %></p>
+              <p class="subject_num"><%= p.initiatives.size %> iniciativas</p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <!-- /parliamentarians_list -->
     <% end %>
-  </ul>
-<% end %>
+    
+    
+    
+    <%# 
+    <div class="parliamentarians_list">
 
-<h3>Etiquetas más actuales</h3>
-<% if !@most_active_tags.blank? %>
-  <ul>
-    <% for t in @most_active_tags %>
-      <li><%= link_to t.name, initiatives_by_tag_path(t.name), :class => "tag" %> <span class="subject_num"><%= t.taggings.size %> asuntos</span></li><br/>
-    <% end %>
-  </ul>
-<% end %>
-
-
-
-
-<h2>Parlamentarios más activos</h2>
-<% if !@most_active_parliamentarians.blank? %>
-  <!-- parliamentarians_list -->
-  <div class="parliamentarians_list">
-    <% for p in @most_active_parliamentarians %>
       <!-- parliamentarian -->
       <div class="parliamentarian">
-        <%= parlavatar(p) %>
+        <p class="photo"><a href="#"><img src="http://parlamento.euskadi.net/img/fichas/149.jpg" alt="Foto de [parliamentarian_name]" width="48" /></a></p>
         <div class="main">
-          <h2 class="name"><%= link_to p.full_name, parliamentarian_path(p) %> </h2>
-          <p class="party"><%= link_to p.party.party_acronym, party_path(p.party), :class => "party_name" %></p>
-          <p class="subject_num"><%= p.initiatives.size %> iniciativas</p>
+          <h2 class="name"><a href="#">Aintzane Ezenarro</a></h2>
+          <p class="party"><a class="party_name" href="#">Aralar</a></p>
+          <p class="date">26.07.2009</p>
+          <p class="label subject_label"><a href="#">Asunto:</a></p>
+          <p><a href="#">Escuela pública San Martin Agirre de Bergara</a></p>
         </div>
       </div>
-    <% end %>
+      <!-- parliamentarian -->
+
+      <!-- parliamentarian -->
+      <div class="parliamentarian">
+        <p class="photo"><a href="#"><img src="http://parlamento.euskadi.net/img/fichas/149.jpg" alt="Foto de [parliamentarian_name]" width="48" /></a></p>
+        <div class="main">
+          <h2 class="name"><a href="#">Aintzane Ezenarro</a></h2>
+          <p class="party"><a class="party_name" href="#">Aralar</a></p>
+          <p class="date">26.07.2009</p>
+          <p class="label discussion_label"><a href="#">Discusión:</a></p>
+          <p><a href="#">Escuela pública San Martin Agirre de Bergara</a></p>
+        </div>
+      </div>
+      <!-- parliamentarian -->
+
+      <!-- parliamentarian -->
+      <div class="parliamentarian">
+        <p class="photo"><a href="#"><img src="http://parlamento.euskadi.net/img/fichas/149.jpg" alt="Foto de [parliamentarian_name]" width="48" /></a></p>
+        <div class="main">
+          <h2 class="name"><a href="#">Aintzane Ezenarro</a></h2>
+          <p class="party"><a class="party_name" href="#">Aralar</a></p>
+          <p class="date">26.07.2009</p>
+          <p class="label commission_label"><a href="#">Comisión:</a></p>
+          <p><a href="#">Escuela pública San Martin Agirre de Bergara</a></p>
+        </div>
+      </div>
+      <!-- parliamentarian -->
+
+    </div>
+    <!-- /parliamentarians_list -->
+     %>
   </div>
-  <!-- /parliamentarians_list -->
-<% end %>
+  <!-- /actual_parliamentarians -->
+</div>
+<!-- /index_cols -->

@@ -8,7 +8,7 @@ class HomeController < ApplicationController
     @most_active_parliamentarians= Parliamentarian.most_active
     
     @parlio_activity = Intervention.find(:all, :order=>"session_date DESC" , :limit => 3) + Initiative.find(:all, :order=>"initiative_date DESC" , :limit => 3)
-    @parlio_activity = @parlio_activity.sort_by { |e| if e.instance_of? Initiative; e.initiative_date; else e.session_date; end }.reverse
+    @parlio_activity = @parlio_activity.sort_by { |e| if e.instance_of? Initiative; e.initiative_date; else e.session_date; end }.reverse.first(3)
   end
 
 end
