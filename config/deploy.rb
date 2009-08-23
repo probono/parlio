@@ -59,12 +59,24 @@ namespace :deploy do
   end
 
 end
-              
-namespace :data do
-  desc "Load data from legebiltzarra"
-  task :download do                                                
-    puts "Loading data from legebiltzarra"
-    run "cd #{deploy_to}/current && script/runner script/load_parliamentarians.rb  && script/runner script/load_comissions.rb  && script/runner script/load_parties.rb  && script/runner script/load_topics.rb && script/runner script/load_interventions.rb"
-  end
+
+after "deploy", :move_dev_data_to_production
+desc "Use data extracted from http://www.parlamento.euskadi.net/ in production"
+task :move_dev_data_to_production do                                                
+  puts "Deploying to production... removing #{deploy_to}/current/public/.htaccess"
+  run "cp #{deploy_to}/current/db/development.sqlite3 #{deploy_to}/current/db/production.sqlite3 "
 end
+
+
+              
+#namespace :data do
+#  desc "Load data from legebiltzarra"
+#  task :download do                                                
+#    puts "Loading data from legebiltzarra"        
+#    run "cd #{deploy_to}/#{current_dir} && " +
+#        "script/runner -e production script/load_parliamentarians.rb"
+#    #run "cd #{deploy_to}/current && script/runner d #{deploy_to}/current/script/load_parliamentarians.rb  && script/runner script/load_comissions.rb  && script/runner script/load_parties.rb  && script/runner script/load_topics.rb && script/runner script/load_interventions.rb"
+#  end
+#end
+
 

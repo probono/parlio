@@ -1,7 +1,7 @@
 module Legebiltzarra
   class Parliamentarian
     BASE_URL = "http://www.parlamento.euskadi.net"
-    attr_accessor :id, :url
+    attr_accessor :id, :url, :active, :substitution
 
     def initialize(id)
       @id = id
@@ -28,20 +28,28 @@ module Legebiltzarra
       BASE_URL + document.at("div[@class='ficha_foto']/img/@src") rescue nil
     end
 
+    def degree
+      document.css('dt[contains("Titulaci")]+dd').text.strip rescue nil
+    end
+
     def profession
-      document.at('dl[@class="tabla"]/[2]').content.strip rescue nil
+      document.css('dt[contains("Profe")]+dd').text.strip rescue nil
     end
 
     def languages
-      document.at('dl[@class="tabla"]/[4]').content.strip.scan(/\w+/) rescue []
+      document.css('dt[contains("Idiomas:")]+dd').text.strip.scan(/\w+/) rescue []
     end
 
     def email
-      document.at('dl[@class="tabla"]/[6]').content.strip rescue nil
+      document.css('dt[contains("E-mail")]+dd>a').text.strip rescue nil
     end   
   
     def posts                        
       document.search('div[@class="indentar2"]//li').map { |l| l.content.strip } rescue []
+    end
+    
+    def active?
+      self.active
     end
 
     def document
