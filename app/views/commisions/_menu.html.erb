@@ -1,0 +1,12 @@
+<% if !@commisions.blank? %>
+  <!-- current_commissions -->
+  <div class="current_commissions">
+    <h2>Comisiones actuales</h2>
+    <ul>
+      <% for c in @commisions %>
+        <li <%= "class='active'" if c == @commision %>><%= link_to c.name, commision_path(c) %></li>
+      <% end %>
+    </ul>
+  </div>
+  <!-- /current_commissions -->
+<% end %>

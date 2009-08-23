@@ -15,4 +15,6 @@ class Commision < ActiveRecord::Base
   has_many :commission_members
   has_many :members, :through => :commission_members, :source => :parliamentarian
   
+  has_many :interventions
+  
 end

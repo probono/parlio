@@ -8,7 +8,7 @@
   <li>Email: <%= mail_to @parliamentarian.email %></li>
 </ul>
 
-<%= inline_annotated_timeline @activity_data, 400, 300, 
+<%= inline_annotated_timeline @activity_data, "100%", 300, 
                               "parliamentarian_#{@parliamentarian.id}_activity_data" %>
 <br/><br/>
 <% if !@parliamentarian.posts.blank? %>

@@ -1,1 +1,79 @@
-<h2><%= @commision.name %></h2>
+<h1>Actividad</h1>
+<p class="claim">Qué ocurre en el Parlamento Vasco</p>
+
+<!-- tab_system -->
+<div class="tab_system tab_system_subjects">
+
+  <%= render :partial => 'activity/activity_menu' %>
+
+  <!-- tab_cont -->
+  <div class="tab_cont">
+    <%= render :partial => 'menu' %>
+
+
+    <!-- commission_cont -->
+    <div class="commission_cont">
+      <h2><%= @commision.name %></h2>
+
+      <!-- commission_cont_cols -->
+      <div class="commission_cont_cols">
+
+        <!-- commission_cont_col_left -->
+        <div class="commission_cont_col commission_cont_col_left">
+          <!-- commission_list -->
+          <% if !@commision.interventions.blank? %>
+            <ul class="commission_list">
+            <% for intervention in @commision.interventions %>
+              <li class="commission">
+                <%= link_to intervention.subject_title, intervention_path(intervention) %>
+                <span class="date">17.06.2009</span>
+              </li>
+            <% end %>
+            </ul>
+          <% end %>
+          </ul>
+          <!-- /commission_list -->
+        </div>
+        <!-- /commission_cont_col_left -->
+
+        <!-- commission_cont_col_right -->
+        <div class="commission_cont_col commission_cont_col_right">
+
+          <!-- parliamentarians_mod -->
+          <div class="parliamentarians_mod">
+            <h3>Intervienen</h3>
+            <!-- parliamentarians_list -->
+            <div class="parliamentarians_list">
+              <% if !@commision.members.blank? %>
+                <% for member in @commision.members %>
+                  <!-- parliamentarian -->
+                  <div class="parliamentarian">
+                    <%= parlavatar(member) %>
+                    <div class="main">
+                      <h3 class="name"><%= link_to member.full_name, parliamentarian_path(member) %></h3>
+                      <p class="party"><%= link_to member.party.party_acronym, party_path(member.party), :class => "party_name" %></p>
+                      <p class="subject_num"><%= member.interventions.size %> intervenciones</p>
+                    </div>
+                  </div>
+                  <!-- parliamentarian -->
+                <% end %>
+              <% end %>
+
+            </div>
+            <!-- /parliamentarians_list -->
+          </div>
+          <!-- /parliamentarians_mod -->
+
+        </div>
+        <!-- /commission_cont_col_right -->
+
+      </div>
+      <!-- /commission_cont_cols -->
+
+    </div>
+    <!-- /commission_cont -->
+
+  </div>
+  <!-- /tab_cont -->
+</div>
+<!-- /tab_system -->
