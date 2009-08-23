@@ -3,7 +3,7 @@ Commision.destroy_all
 
 l = Legebiltzarra::Legislature.new 
 
-puts "Loading Commissions..."
+puts "Loading commissions..."
 l.comissions.each do |c|
   commission = Commision.new
   ['name'].each do |a|
@@ -28,4 +28,4 @@ l.comissions.each do |c|
   
 end
 
-puts "#{Commision.count} commission loaded."
+puts "#{Commision.count} commission loaded.\n"

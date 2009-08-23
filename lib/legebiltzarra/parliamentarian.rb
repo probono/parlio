@@ -37,7 +37,7 @@ module Legebiltzarra
     end
 
     def languages
-      document.css('dt[contains("Idiomas:")]+dd').text.strip.scan(/\w+/) rescue []
+      document.css('dt[contains("Idiomas:")]+dd').text.strip rescue nil
     end
 
     def email

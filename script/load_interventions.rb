@@ -6,7 +6,7 @@ InterventionSpeaker.destroy_all
 
 l = Legebiltzarra::Legislature.new 
 
-puts "Loading Interventions..."
+puts "Loading interventions..."
 l.parliamentarians.each do |p|
   parliamentarian = Parliamentarian.find_by_orig_id(p.orig_id)
 
@@ -43,4 +43,4 @@ l.parliamentarians.each do |p|
   puts "#{parliamentarian.orig_id} - #{parliamentarian.full_name} - #{parliamentarian.interventions.count}"
 end
 
-puts "#{Intervention.count} interventions loaded."
+puts "#{Intervention.count} interventions loaded.\n"

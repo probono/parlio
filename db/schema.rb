@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090823125052) do
+ActiveRecord::Schema.define(:version => 20090823151303) do
 
   create_table "commisions", :force => true do |t|
     t.string   "name"
@@ -79,7 +79,6 @@ ActiveRecord::Schema.define(:version => 20090823125052) do
     t.string   "profession"
     t.string   "languages"
     t.string   "email"
-    t.string   "posts"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "orig_id"
@@ -88,6 +87,7 @@ ActiveRecord::Schema.define(:version => 20090823125052) do
     t.integer  "substitution_id"
     t.integer  "substitutes_id"
     t.integer  "substituted_by_id"
+    t.string   "degree"
   end
 
   create_table "parties", :force => true do |t|
@@ -97,6 +97,13 @@ ActiveRecord::Schema.define(:version => 20090823125052) do
     t.string   "name"
     t.string   "url"
     t.string   "logo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "posts", :force => true do |t|
+    t.string   "title"
+    t.integer  "parliamentarian_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
