@@ -17,7 +17,7 @@
       
       <!-- discussion -->
       <div class="activity discussion">
-        <h3 class="title"><%= link_to @intervention.subject_title, intervention_path(@intervention) %></h3>
+        <h3 class="title"><%= link_to @intervention.subject_title, intervention_path(@intervention) %> (<%= @intervention.session_date%>)</h3>
         <!--
         <p class="activity_type"><span>Debate y resolución definitiva</span></p>
         
@@ -49,13 +49,13 @@
               <% @intervention.videos.each do |video| %>
         
                 <!-- turn -->
-                <div class="turn">        
+                <div class="<%= video_css(video)%>">        
                   <!-- parliamentarian -->
                   <div class="parliamentarian">
                     <p class="photo"><%= parlavatar(video.parliamentarian) if video.parliamentarian %></p>
                     <div class="main">
-                      <h5 class="name"><%= speaker_name(video)%></h5>
-                      <p class="party"><%= speaker_party(video)%></p>
+                      <h5 class="name"><%= video_speaker_name(video)%></h5>
+                      <p class="party"><%= video_speaker_party(video)%></p>
                       <dl class="line">
                         <dt>Duración:</dt>
                         <dd><%= video.duration%> <abbr title="Minutos">min.</abbr></dd>
@@ -84,41 +84,7 @@
           </div>
           <!-- /turn_mod -->
         <% end %>
-          <!-- votes_mod -->
-          <div class="votes_mod">
-            <!-- vote_list -->
-            <div class="vote_list">
-              <!-- vote -->
-              <div class="vote">
-                <h3>Votación</h3>
-                <dl class="line">
-                  <dt>Duración:</dt>
-                  <dd>12:23 <abbr title="Minutos">min.</abbr></dd>
-                </dl>
-                <!-- file_list -->
-                <ul class="file_list">
-                  <li>
-                    <a class="file file_realvideo" href="#" title="Ver vídeo: Turno de Gatzagaetxebarria Bastida, Ricardo">
-                      <span class="file_title">Calidad baja</span>
-                      <span class="file_meta">(<abbr title="RealMedia">RM</abbr>, 1,83 <abbr title="Megabytes">Mb.</abbr>)</span>
-                    </a>
-                  </li>
-      
-                  <li>
-                    <a class="file file_realvideo" href="#" title="Ver vídeo: Turno de Gatzagaetxebarria Bastida, Ricardo">
-                      <span class="file_title">Calidad alta</span>
-                      <span class="file_meta">(<abbr title="RealMedia">PDF</abbr>, 2,4 <abbr title="Megabytes">Mb.</abbr>)</span>
-                    </a>
-                  </li>
-                </ul>
-                <!-- /file_list -->
-              </div>
-              <!-- /vote -->
-            </div>
-            <!-- /vote_list -->
-          </div>
-          <!-- /votes_mod -->
-                          
+              
         </div>
         <!-- /discussion_cont_col_left -->
       
