@@ -663,16 +663,46 @@ iframe {margin: 0;}
 
 .current_subjects{}
 
-.parlamentarians{}
+.parliamentarians_mod{}
 
-/* @group .parlamentarian */
+.parliamentarians_list{}
 
-.parlamentarian{}
-.parlamentarian .photo{}
-.parlamentarian .name{}
-.parlamentarian .party_name{}
-.parlamentarian .label{}
-.parlamentarian .date{}
+/* @group .parliamentarian */
+
+.parliamentarian{}
+.parliamentarian .photo{}
+
+.parliamentarian .name
+{
+	font-size: 15px;
+	margin: 0 0 10px 0;
+}
+
+.parliamentarian .party
+{
+	margin: 0 0 5px 0;
+}
+
+.parliamentarian .party_name{}
+.parliamentarian .label{}
+.parliamentarian .date{}
+
+.parliamentarian .photo
+{
+	float: left;
+	margin: 0 10px 0 0;
+}
+
+.parliamentarian .main
+{
+	float: left;
+	margin: 0;
+}
+
+.parliamentarian .turn_meta
+{
+	margin: 0;
+}
 
 /* @end */
 
@@ -973,14 +1003,61 @@ a:hover {color: #47b6ed;}
 {
 	margin: 0 0 15px 0;
 }
-
 /* @end */
+
+
+/* @group .turn_mod */
+.turn_mod
+{
+	-moz-border-radius: 10px;
+  	-webkit-border-radius: 10px;
+	background: #f2f2f2;
+	padding: 10px;
+}
+/* @end */
+
+
+/* @group .turn_list */
+.turn_list
+{
+	-moz-border-radius: 10px;
+  	-webkit-border-radius: 10px;
+	background: #333;
+	padding: 10px;
+}
+/* @end */
+
+
+/* @group .turn */
+.turn
+{
+	-moz-border-radius: 10px;
+  	-webkit-border-radius: 10px;
+	background: #eef9ff;
+	padding: 10px;
+}
+
+.turn_main
+{
+	border: 10px solid #ddd;
+}
+
+.turn .parliamentarian
+{
+	
+}
+
+.turn .file_list
+{
+	
+}
+/* @end */
+
 
 .date
 {
 	font-family: Georgia, 'Times New Roman', Times, serif;
 	font-style: italic;
-	text-align: center;
 }
 
 .title{}
@@ -988,35 +1065,6 @@ a:hover {color: #47b6ed;}
 .author{}
 
 .subject_num{}
-
-/* @group .parlamentarian */
-.parlamentarian
-{
-	
-}
-
-.parlamentarian .name
-{
-	font-size: 15px;
-}
-
-.parlamentarian .party
-{
-	margin: 0 0 5px 0;
-}
-
-.parlamentarian .photo
-{
-	float: left;
-	margin: 0 10px 0 0;
-}
-
-.parlamentarian .main
-{
-	float: left;
-	margin: 0;
-}
-/* @end */
 
 /* @group .photo */
 .photo
@@ -1187,6 +1235,81 @@ a:hover {color: #47b6ed;}
 /* @end */
 /* @end */
 
+/* @group .tab_system_commission */
+
+/* Tab de Comisiones */
+.tab_system_commission
+{
+	
+}
+
+/* @group .current_commissions */
+/* Menú de comisiones actuales */
+.current_commissions
+{
+	-moz-border-radius: 20px;
+  	-webkit-border-radius: 20px;
+	background: #f5f5f5;
+	float: left;
+	margin: 0 30px 0 0;
+	padding: 20px;
+	width: 160px;
+}
+
+.current_commissions ul
+{
+	border-top: 1px dotted #ccc;
+}
+
+.current_commissions li
+{
+	border-bottom: 1px dotted #ccc;
+	line-height: 1.2;
+}
+
+.current_commissions li a
+{
+	border: none;
+	display: block;
+	padding: 5px;
+}
+
+.current_commissions li a:hover
+{
+	
+}
+
+.current_commissions li.active a
+{
+	background: #47eda9;
+	border-color: #3fd496;
+	color: #298760;
+	cursor: default;
+	text-shadow: 1px 1px 1px #fff;
+}
+/* @end */
+
+/* @group .commission_cont */
+/* Contenido principal del tab de Asuntos */
+.commission_cont
+{
+	float: left;
+	width: 668px;
+}
+
+.commission_title
+{
+	border-bottom: 1px solid #ddd;
+	padding: 0 0 5px 0;
+}
+
+.intervention_name
+{
+	
+}
+/* @end */
+/* @end */
+
 /* @group .rss_mod */
 /* Enlace de suscripción a RSS */
 .rss_mod
@@ -1296,8 +1419,8 @@ a:hover {color: #47b6ed;}
 }
 /* @end */
 
-/* @group .most_active_parlamentarians */
-.most_active_parlamentarians
+/* @group .most_active_parliamentarians */
+.most_active_parliamentarians
 {
 	
 }
@@ -1812,7 +1935,7 @@ dl.line dd.block {clear: both;}
 .file:after,
 .subject_type:after,
 .most_recent_tags li:after,
-.parlamentarian:after,
+.parliamentarian:after,
 .main_menu:after,
 #global_search:after,
 .lang:after,
@@ -1835,7 +1958,7 @@ dl.line dd.block {clear: both;}
 .file,
 .subject_type,
 .most_recent_tags li,
-.parlamentarian,
+.parliamentarian,
 .main_menu,
 #global_search,
 .lang,
@@ -1854,7 +1977,7 @@ dl.line dd.block {clear: both;}
 * html .file,
 * html .subject_type,
 * html .most_recent_tags li,
-* html .parlamentarian,
+* html .parliamentarian,
 * html .main_menu,
 * html #global_search,
 * html .lang,
@@ -1871,7 +1994,7 @@ dl.line dd.block {clear: both;}
 .file,
 .subject_type,
 .most_recent_tags li,
-.parlamentarian,
+.parliamentarian,
 .main_menu,
 #global_search,
 .lang,
