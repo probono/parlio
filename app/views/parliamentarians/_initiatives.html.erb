@@ -1,0 +1,19 @@
+<!-- subject_cont -->
+<div class="subject_cont">
+
+  <% for ini in initiatives %>
+
+    <!-- subject -->
+    <div class="activity subject">
+      <h4 class="title"><%= link_to ini.title, initiative_path(ini)%></h4>
+      <p class="activity_type"><span><%= ini.initiative_type %></span></p>
+      <%= render :partial => 'activity/activity_meta_line', :locals => { :activity => ini } %>
+      <%= render :partial => 'activity/activity_tags', :locals => { :activity => ini } %>
+    </div>
+    <!-- /subject -->
+
+  <% end %>
+  <%= will_paginate initiatives, :class => 'pag_nav' %>
+  
+</div>
+<!-- /subject_cont -->
