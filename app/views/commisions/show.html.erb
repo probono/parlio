@@ -40,29 +40,104 @@
         <div class="commission_cont_col commission_cont_col_right">
 
           <!-- parliamentarians_mod -->
-          <div class="parliamentarians_mod">
-            <h3>Intervienen</h3>
-            <!-- parliamentarians_list -->
-            <div class="parliamentarians_list">
-              <% if !@commision.members.blank? %>
-                <% for member in @commision.members %>
-                  <!-- parliamentarian -->
-                  <div class="parliamentarian">
-                    <%= parlavatar(member) %>
-                    <div class="main">
-                      <h3 class="name"><%= link_to member.full_name, parliamentarian_path(member) %></h3>
-                      <p class="party"><%= link_to member.party.party_acronym, party_path(member.party), :class => "party_name" %></p>
-                      <p class="subject_num"><%= member.interventions.size %> intervenciones</p>
-                    </div>
-                  </div>
-                  <!-- parliamentarian -->
-                <% end %>
-              <% end %>
+           <div class="parliamentarians_mod">
+             <h3>Presidente</h3>
+             <!-- parliamentarians_list -->
+             <div class="parliamentarians_list">
+               <% if !@commision.members_as_president.blank? %>
+                 <% for member in @commision.members_as_president %>
+                   <!-- parliamentarian -->
+                   <div class="parliamentarian">
+                     <%= parlavatar(member) %>
+                     <div class="main">
+                       <h4 class="name"><%= link_to member.full_name, parliamentarian_path(member) %></h4>
+                       <p class="party"><%= link_to member.party.party_acronym, party_path(member.party), :class => "party_name" %></p>
+                       <p class="subject_num"><%= member.interventions.size %> intervenciones</p>
+                     </div>
+                   </div>
+                   <!-- parliamentarian -->
+                 <% end %>
+               <% end %>
 
+             </div>
+             <!-- /parliamentarians_list -->
+           </div>
+           <!-- /parliamentarians_mod -->
+           
+           <!-- parliamentarians_mod -->
+            <div class="parliamentarians_mod">
+              <h3>Vicepresidente</h3>
+              <!-- parliamentarians_list -->
+              <div class="parliamentarians_list">
+                <% if !@commision.members_as_vicepresident.blank? %>
+                  <% for member in @commision.members_as_vicepresident %>
+                    <!-- parliamentarian -->
+                    <div class="parliamentarian">
+                      <%= parlavatar(member) %>
+                      <div class="main">
+                        <h4 class="name"><%= link_to member.full_name, parliamentarian_path(member) %></h4>
+                        <p class="party"><%= link_to member.party.party_acronym, party_path(member.party), :class => "party_name" %></p>
+                        <p class="subject_num"><%= member.interventions.size %> intervenciones</p>
+                      </div>
+                    </div>
+                    <!-- parliamentarian -->
+                  <% end %>
+                <% end %>
+
+              </div>
+              <!-- /parliamentarians_list -->
             </div>
-            <!-- /parliamentarians_list -->
-          </div>
-          <!-- /parliamentarians_mod -->
+            <!-- /parliamentarians_mod -->
+ 
+            <!-- parliamentarians_mod -->
+             <div class="parliamentarians_mod">
+               <h3>Secretario</h3>
+               <!-- parliamentarians_list -->
+               <div class="parliamentarians_list">
+                 <% if !@commision.members_as_secretary.blank? %>
+                   <% for member in @commision.members_as_secretary %>
+                     <!-- parliamentarian -->
+                     <div class="parliamentarian">
+                       <%= parlavatar(member) %>
+                       <div class="main">
+                         <h4 class="name"><%= link_to member.full_name, parliamentarian_path(member) %></h4>
+                         <p class="party"><%= link_to member.party.party_acronym, party_path(member.party), :class => "party_name" %></p>
+                         <p class="subject_num"><%= member.interventions.size %> intervenciones</p>
+                       </div>
+                     </div>
+                     <!-- parliamentarian -->
+                   <% end %>
+                 <% end %>
+
+               </div>
+               <!-- /parliamentarians_list -->
+             </div>
+             <!-- /parliamentarians_mod -->
+
+             <!-- parliamentarians_mod -->
+              <div class="parliamentarians_mod">
+                <h3>Vocales</h3>
+                <!-- parliamentarians_list -->
+                <div class="parliamentarians_list">
+                  <% if !@commision.members_as_vocal.blank? %>
+                    <% for member in @commision.members_as_vocal %>
+                      <!-- parliamentarian -->
+                      <div class="parliamentarian">
+                        <%= parlavatar(member) %>
+                        <div class="main">
+                          <h4 class="name"><%= link_to member.full_name, parliamentarian_path(member) %></h4>
+                          <p class="party"><%= link_to member.party.party_acronym, party_path(member.party), :class => "party_name" %></p>
+                          <p class="subject_num"><%= member.interventions.size %> intervenciones</p>
+                        </div>
+                      </div>
+                      <!-- parliamentarian -->
+                    <% end %>
+                  <% end %>
+
+                </div>
+                <!-- /parliamentarians_list -->
+              </div>
+              <!-- /parliamentarians_mod -->
 
         </div>
         <!-- /commission_cont_col_right -->
