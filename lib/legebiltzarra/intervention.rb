@@ -63,10 +63,31 @@ module Legebiltzarra
       BASE_URL + document.at("//div[@class='boton']/script").inner_html.match(/href='(.*)' title/)[1]
     end
     def videos
-      document.search("//a[text()=' (256 K)']").map { |v| { :title => v.parent.content, :url => v['href']} } rescue []
+      document.search("//a[text()=' (256 K)']").map { |v| Video.new(v) } rescue []
     end  
     def document
       @document ||= Nokogiri::HTML(open(self.url).read)
     end
   end
+  
+  class Video
+    
+    attr_accessor :parliamentarian, :speaker, :title, :video_url, :duration
+    
+    def initialize(v)
+      value = v.parent.content
+      self.video_url = v['href']
+      self.title    = value[0, value.index('(') - 1].strip
+      self.duration = value.scan(/\d\d:\d\d/).first       
+      #@title="Presidenta del Parlamento Vasco (16:48)  (256 K)  (56 K) ">
+      #@title="Aurrekoetxea Bilbao, Arantza (GP NV) (16:48)  (256 K)  (56 K) ">
+      #@title="Votaci\303\263n. (16:48)  (256 K)  (56 K) ">       
+    end
+        
+    def parliamentarian
+      Legebiltzarra::Parliamentarian.new(@id)
+    end    
+    
+  end
+  
 end
