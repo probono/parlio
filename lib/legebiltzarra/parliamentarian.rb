@@ -1,7 +1,7 @@
 module Legebiltzarra
   class Parliamentarian
     BASE_URL = "http://www.parlamento.euskadi.net"
-    attr_accessor :id, :url
+    attr_accessor :id, :url, :active, :substitution
 
     def initialize(id)
       @id = id
@@ -42,6 +42,10 @@ module Legebiltzarra
   
     def posts                        
       document.search('div[@class="indentar2"]//li').map { |l| l.content.strip } rescue []
+    end
+    
+    def active?
+      self.active
     end
 
     def document
