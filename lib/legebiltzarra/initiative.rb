@@ -38,7 +38,7 @@ module Legebiltzarra
     end
 
     def procedures
-      document.at("th[text()^='Trámites:']").next_sibling.search('a').map { |a| { a.content => BASE_URL + a['href']} } rescue []
+      document.at("th[text()^='Trámites:']").next_sibling.search('a').map { |a| { :title => a.content, :url => BASE_URL + a['href']} } rescue []
     end
 
     def votings
