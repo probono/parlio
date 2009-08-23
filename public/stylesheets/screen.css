@@ -663,49 +663,6 @@ iframe {margin: 0;}
 
 .current_subjects{}
 
-.parliamentarians_mod{}
-
-.parliamentarians_list{}
-
-/* @group .parliamentarian */
-
-.parliamentarian{}
-.parliamentarian .photo{}
-
-.parliamentarian .name
-{
-	font-size: 15px;
-	margin: 0 0 10px 0;
-}
-
-.parliamentarian .party
-{
-	margin: 0 0 5px 0;
-}
-
-.parliamentarian .party_name{}
-.parliamentarian .label{}
-.parliamentarian .date{}
-
-.parliamentarian .photo
-{
-	float: left;
-	margin: 0 10px 0 0;
-}
-
-.parliamentarian .main
-{
-	float: left;
-	margin: 0;
-}
-
-.parliamentarian .turn_meta
-{
-	margin: 0;
-}
-
-/* @end */
-
 /* @group .label */
 
 .label{}
@@ -852,6 +809,75 @@ a:hover {color: #47b6ed;}
 }
 /* @end */
 
+/* @group .evolution_mod */
+/* Evolución de una actividad */
+.evolution_mod
+{
+	
+}
+
+.evolution_sheet
+{
+	
+}
+
+.evolution_sheet dd
+{
+	margin: 0 0 15px 0;
+}
+/* @end */
+
+/* @group Parlamentarians */
+
+.parliamentarians_mod{margin: 0 0 40px 0;}
+
+.parliamentarians_list{}
+
+/* @group .parliamentarian */
+
+.parliamentarian{}
+.parliamentarian .photo{}
+
+.parliamentarian .name
+{
+	font-size: 15px;
+	margin: 0 0 10px 0;
+}
+
+.parliamentarian .party
+{
+	margin: 0 0 5px 0;
+}
+
+.parliamentarian .party_name{}
+.parliamentarian .label{}
+.parliamentarian .date{}
+
+.parliamentarian .photo
+{
+	float: left;
+	margin: 0 10px 0 0;
+}
+
+.parliamentarian .main
+{
+	float: left;
+	margin: 0;
+}
+
+.parliamentarian .turn_meta
+{
+	margin: 0;
+}
+
+/* @end */
+
+
+
+/* @end */
+
+/* @group Tags */
+
 /* @group .tag */
 .tag
 {
@@ -914,6 +940,12 @@ a:hover {color: #47b6ed;}
 }
 
 /* @end */
+
+
+
+/* @end */
+
+/* @group Files */
 
 /* @group .file_mod */
 /* Bloque de documentos */
@@ -987,33 +1019,14 @@ a:hover {color: #47b6ed;}
 
 /* @end */
 
-/* @group .evolution_mod */
-/* Evolución de una actividad */
-.evolution_mod
-{
-	
-}
 
-.evolution_sheet
-{
-	
-}
 
-.evolution_sheet dd
-{
-	margin: 0 0 15px 0;
-}
 /* @end */
 
+/* @group Turns */
 
 /* @group .turn_mod */
-.turn_mod
-{
-	-moz-border-radius: 10px;
-  	-webkit-border-radius: 10px;
-	background: #f2f2f2;
-	padding: 10px;
-}
+.turn_mod {}
 /* @end */
 
 
@@ -1054,38 +1067,10 @@ a:hover {color: #47b6ed;}
 /* @end */
 
 
-.date
-{
-	font-family: Georgia, 'Times New Roman', Times, serif;
-	font-style: italic;
-}
 
-.title{}
-
-.author{}
-
-.subject_num{}
-
-/* @group .photo */
-.photo
-{
-	
-}
-
-.photo a
-{
-	background: #fff;
-	display: block;
-	padding: 5px;
-	border: 1px solid #ccc;
-}
-
-.photo a:hover
-{
-	background: #f2f2f2;
-	border-color: 1px solid #999;
-}
 /* @end */
+
+/* @group Tabs */
 
 /* @group .tab_system */
 .tab_system
@@ -1303,11 +1288,76 @@ a:hover {color: #47b6ed;}
 	padding: 0 0 5px 0;
 }
 
+.commission_cont_cols
+{
+	
+}
+
+.commission_cont_col
+{
+	width: 310px;
+}
+
+.commission_cont_col .file_mod
+{
+	-moz-border-radius: 10px;
+  	-webkit-border-radius: 10px;
+  	background: #f2f2f2;
+  	padding: 20px;
+}
+
+.commission_cont_col_left
+{
+	float: left;
+}
+
+.commission_cont_col_right
+{
+	float: right;
+}
+
 .intervention_name
 {
 	
 }
 /* @end */
+/* @end */
+
+
+
+/* @end */
+
+.date
+{
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	font-style: italic;
+}
+
+.title{}
+
+.author{}
+
+.subject_num{}
+
+/* @group .photo */
+.photo
+{
+	
+}
+
+.photo a
+{
+	background: #fff;
+	display: block;
+	padding: 5px;
+	border: 1px solid #ccc;
+}
+
+.photo a:hover
+{
+	background: #f2f2f2;
+	border-color: 1px solid #999;
+}
 /* @end */
 
 /* @group .rss_mod */
@@ -1939,7 +1989,8 @@ dl.line dd.block {clear: both;}
 .main_menu:after,
 #global_search:after,
 .lang:after,
-.pag_nav:after
+.pag_nav:after,
+.commission_cont_cols:after
 {
   content: ".";
   display: block;
@@ -1962,7 +2013,8 @@ dl.line dd.block {clear: both;}
 .main_menu,
 #global_search,
 .lang,
-.pag_nav
+.pag_nav,
+.commission_cont_cols
 {display: inline-block;}
 
 /* Hides from IE-mac \*/
@@ -1981,7 +2033,8 @@ dl.line dd.block {clear: both;}
 * html .main_menu,
 * html #global_search,
 * html .lang,
-* html .pag_nav
+* html .pag_nav,
+* html .commission_cont_cols
 {height: 1%;}
 
 .clearfix,
@@ -1998,7 +2051,8 @@ dl.line dd.block {clear: both;}
 .main_menu,
 #global_search,
 .lang,
-.pag_nav
+.pag_nav,
+.commission_cont_cols
 {display: block;}
 /* End hide from IE-mac */
 /* @end */
