@@ -22,6 +22,10 @@ class Party < ActiveRecord::Base
     self.parliamentarians.collect{|p| p.initiatives}.flatten.uniq
   end
   
+  def interventions
+    self.parliamentarians.collect{|p| p.interventions}.flatten.uniq
+  end
+  
   def self.most_active
     tuples = Initiative.count(:all, :group => "party_id", :include => [:parliamentarian], :order => "count(*) DESC")
     returning most_active = [] do

@@ -4,11 +4,11 @@
 <div class="party_activity">
 
 <%= render :partial => 'menu' %>
-  
+
   <!-- party_activity_cont -->
   <div class="party_activity_cont">
-    <%= render :partial => 'parliamentarians' %>    
-    
+    <%= render :partial => 'parliamentarians' %>
+
     <h3>Actividad parlamentaria del partido</h3>
     <!-- party_activity_menu -->
     <ul class="party_activity_menu">
@@ -17,59 +17,33 @@
       <li class="last"><%= link_to "Comisiones", commissions_party_path(@party) %></li>
     </ul>
     <!-- /party_activity_menu -->
-    
+
     <!-- discussion_cont -->
     <div class="discussion_cont">
       <!-- discussion_list -->
       <div class="discussion_list">
-        
-        <!-- discussion -->
-        <div class="activity discussion">
-          <h2 class="title"><a href="#">Proposición no de ley formulada por el grupo parlamentario Nacionalistas
-          Vascos, de solicitud de reiteración de la presentación ante el Congreso de los
-          Diputados de la iniciativa denominada "Proposición de ley de modificación de las
-          leyes orgánicas del Tribunal Constitucional y del Poder Judicial"</a></h2>
-        
-          <p class="activity_type"><span>Debate y resolución definitiva</span></p>
-        
-          <dl class="activity_meta line">
-            <dt>Fecha:</dt>
-            <dd>22.05.2009</dd>
-            <dt>Por:</dt>
-            <dd><a class="author" href="#">Maeztu Perez, Daniel</a> de <a class="party_name" href="#">Aralar</a></dd>
-            <dt>Para:</dt>
-            <dd>Consejero de Sanidad y Consumo</dd>
-          </dl>
-        </div>
-        <!-- /discussion -->
-        
-        <!-- discussion -->
-        <div class="activity discussion">
-          <h2 class="title"><a href="#">Proposición no de ley formulada por el grupo parlamentario Nacionalistas
-          Vascos, de solicitud de reiteración de la presentación ante el Congreso de los
-          Diputados de la iniciativa denominada "Proposición de ley de modificación de las
-          leyes orgánicas del Tribunal Constitucional y del Poder Judicial"</a></h2>
-        
-          <p class="activity_type"><span>Debate y resolución definitiva</span></p>
-        
-          <dl class="activity_meta line">
-            <dt>Fecha:</dt>
-            <dd>22.05.2009</dd>
-            <dt>Por:</dt>
-            <dd><a class="author" href="#">Maeztu Perez, Daniel</a> de <a class="party_name" href="#">Aralar</a></dd>
-            <dt>Para:</dt>
-            <dd>Consejero de Sanidad y Consumo</dd>
-          </dl>
-        </div>
-        <!-- /discussion -->
-        
+
+        <% if !@party.interventions.blank? %>
+          <% for i in @party.interventions %>
+            <!-- discussion -->
+            <div class="activity discussion">
+              <h2 class="title"><%= link_to i.subject_title, intervention_path(i) %></h2>
+              <dl class="activity_meta line">
+                <dt>Fecha:</dt>
+                <dd><%= i.session_date %></dd>
+              </dl>
+            </div>
+            <!-- /discussion -->
+          <% end %>
+        <% end %>
+
       </div>
       <!-- /discussion_list -->
     </div>
     <!-- /discussion_cont -->
-    
+
   </div>
   <!-- /party_activity_cont -->
-  
+
 </div>
 <!-- /party_activity -->
