@@ -3,8 +3,11 @@ class InterventionsController < ApplicationController
 
   # GET /interventions
   # GET /interventions.xml
-  def index
-    @interventions = Intervention.all
+  def index      
+    
+    @interventions = Intervention.find(:all, :order=> "session_date desc")
+    @sessions_date = @interventions.map{|i| i.session_date}.uniq.sort.reverse
+    @interventions = @interventions.paginate :per_page => 10,  :page => params[:page]
 
     respond_to do |wants|
       wants.html # index.html.erb

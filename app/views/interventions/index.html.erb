@@ -1,9 +1,37 @@
-<% if !@interventions.blank? %>
-  <ul>
-    <% for inter in @interventions %>
-      <li><%= link_to "#{inter.session_date}/#{inter.subject_number}", intervention_path(inter) %>  | <%= inter.subject_title %></li>
-      <li><%= inter.session_date %> / <%= inter.subject_number %> | <%= inter.subject_title %></li>
-    <% end %>
-  </ul>
+<h1>Actividad</h1>
+<p class="claim">Qué ocurre en el Parlamento Vasco</p>
 
-<% end %>
+<!-- tab_system -->
+<div class="tab_system tab_system_subjects">
+
+  <%= render :partial => 'activity/activity_menu' %>
+
+  <!-- tab_cont -->
+  <div class="tab_cont">
+    
+    <%= render :partial => 'activity/sessions_date' %>
+
+    
+        
+    <!-- subject_cont -->
+    <div class="subject_cont">  
+      
+      <% if !@interventions.blank? %>
+        <ul>
+          <% for inter in @interventions %>
+            <li><%= link_to "#{inter.session_date}/#{inter.subject_number}", intervention_path(inter) %>  | <%= inter.subject_title %></li>
+          <% end %>
+        </ul>
+
+      <% end %>
+      
+      <%= will_paginate @initiatives, :class => 'pag_nav' %>
+      
+    </div>
+    
+    <!-- /subject_cont -->
+    
+  </div>
+  <!-- /tab_cont -->
+</div>
+<!-- /tab_system -->

@@ -1,0 +1,15 @@
+<!-- subject_cat -->
+<div class="subject_cat">
+  <h2>Sesiones</h2>       
+  <% if !current_sessions_date.blank? %>
+    <% current_sessions_date.group_by{|d| d.month}.each do |month, dates|  %>
+      <ul>
+        <%= Date::MONTHNAMES[month].upcase %>
+        <% for session in dates %>
+          <li><%= session %></li>
+        <% end %>
+      </ul>
+    <% end %>           
+  <% end %>
+</div>
+<!-- /subject_cat -->

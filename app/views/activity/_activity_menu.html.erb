@@ -1,5 +1,6 @@
 <ul class="tab_menu">
-  <li class="active"><%= link_to "Asuntos", initiatives_path %></li>
-  <li><%= link_to "Debates", interventions_path %></li>
-  <li><%= link_to "Comisiones", commisions_path %></li>
+
+  <li<%= " class='active'" if controller_name=='initiatives' %>><%= link_to "Asuntos", initiatives_path %></li>
+  <li<%= " class='active'" if controller_name=='interventions' %>><%= link_to "Debates", interventions_path %></li>
+  <li<%= " class='active'" if controller_name=='commisions' %>><%= link_to "Comisiones", commisions_path %></li>
 </ul>   
