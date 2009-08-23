@@ -18,9 +18,9 @@
     <% end -%>
     
     <ul class="main_menu">
-      <li class="active"><%= link_to "Parlamentarios", parliamentarians_path %></li>
-      <li><%= link_to "Actividad", activity_path %></li>
-      <li><%= link_to "Sobre Parlio", about_path %></li>
+      <li <%= main_tab_class('parliament') %> ><%= link_to "Parlamentarios", parliamentarians_path %></li>
+      <li <%= main_tab_class('activity') %> ><%= link_to "Actividad", activity_path %></li>
+      <li <%= main_tab_class('about') %> ><%= link_to "Sobre Parlio", about_path %></li>
     </ul>
 
 

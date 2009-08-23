@@ -37,4 +37,4 @@ l.topics_for_closed_initiatives.each do |t|
   end
 end
 
-puts "#{Topic.count} topics loaded."
+puts "#{Topic.count} topics loaded.\n"

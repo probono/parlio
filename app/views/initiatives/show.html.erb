@@ -29,8 +29,7 @@
       
       <!-- file_mod -->
       <div class="file_mod">
-        <h4>Documentos</h4>      
-        <p><%= @initiative.procedures %></p>
+        <h4>Documentos</h4>
         
         <ul class="file_list">
           
@@ -64,26 +63,15 @@
           <dd>
             
             <ul class="file_list">
+            <% @initiative.procedures.each do |p| %>
               <li>
-                <a class="file file_pdf" href="#">
-                  <span class="date">08.07.2009</span>
-                  <span class="file_title">Presentación de la iniciativa en el Registro (R.E. 1247)</span>
-                  <span class="file_meta">(<acronym title="Portable Document Format">PDF</acronym>, 2.4 <abbr title="Megabytes">Mb.</abbr>)</span>
+                <a class="file file_pdf" href="<%= p.url%>">
+                  <span class="date"><%= p.procedure_date %></span>
+                  <span class="file_title"><%= p.name -%></span>
+                  <!--<span class="file_meta">(<acronym title="Portable Document Format">PDF</acronym>, 2.4 <abbr title="Megabytes">Mb.</abbr>)</span>-->
                 </a>
               </li>
-              <li>
-                <a class="file file_pdf" href="#">
-                  <span class="date">14.07.2009</span>
-                  <span class="file_title">Calificación de la iniciativa por la Mesa del Parlamento</span>
-                </a>
-              </li>
-              <li>
-                <a class="file file_pdf" href="#">
-                  <span class="date">15.07.2009</span>
-                  <span class="file_title">Envío de la iniciativa al Gobierno Vasco (R.S. 742)</span>
-                  <span class="file_meta">(PDF, 2.4Mb.)</span>
-                </a>
-              </li>
+            <% end %>
             </ul>
             
           </dd>

@@ -3,19 +3,21 @@ Parliamentarian.destroy_all
 
 l = Legebiltzarra::Legislature.new 
 parliamentarians = l.parliamentarians
-puts "Loading Parliamentarians..."
+puts "Loading parliamentarians..."
 parliamentarians.each do |p|
   parliamentarian = Parliamentarian.new(:active => true)
-  ['orig_id', 'full_name', 'photo', 'profession', 'languages', 'email', 'posts'].each do |a|
+  ['orig_id', 'full_name', 'photo', 'profession', 'languages', 'email', 'degree'].each do |a|
     parliamentarian.send("#{a}=", p.send(a))
   end
+  
+  p.posts.each{|po| parliamentarian.posts.build(:title => po) }
   
   parliamentarian.save!
   
   puts "#{parliamentarian.orig_id} - #{parliamentarian.full_name}"
 end
 
-puts "#{Parliamentarian.count} parliamentarians loaded"
+puts "#{Parliamentarian.count} parliamentarians loaded.\n"
 
 puts "Setting substitutions..."
 parliamentarians.each do |p|
@@ -36,4 +38,4 @@ parliamentarians.each do |p|
   end
 end
 
-puts "#{Parliamentarian.unactive.count} parliamentarians substituded."
+puts "#{Parliamentarian.unactive.count} parliamentarians substituded.\n"

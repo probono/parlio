@@ -80,15 +80,15 @@ blockquote,q{quotes: "" "";}
 /* @group Webfonts */
 @font-face {
 	font-family: "Museo 300";
-	src: url(../../Museo300-Regular.otf) format("opentype");
+	src: url(/webfonts/Museo300-Regular.otf) format("opentype");
 	}
 @font-face {
 	font-family: "Museo 500";
-	src: url(../../Museo500-Regular.otf) format("opentype");
+	src: url(/webfonts/Museo500-Regular.otf) format("opentype");
 	}
 @font-face {
 	font-family: "Museo 700";
-	src: url(../../Museo700-Regular.otf) format("opentype");
+	src: url(/webfonts/Museo700-Regular.otf) format("opentype");
 	}
 /* @end */
 
@@ -110,7 +110,7 @@ h1, h2, h3, h4, h5, h6
 {
   font-family: "Museo 300", Museo, Georgia, 'Times New Roman', Times, serif;
   font-weight: normal;
-  line-height: 1;
+  line-height: 1.25;
   margin: 0 0 .5em 0;
 }
 
@@ -122,8 +122,16 @@ h5 {font-size: 14px;}/* 14px */
 h6 {font-size: 12px;}/* 12px */
 
 /* @end */
-a {border-bottom: 1px dotted #47b6ed;color: #1594D4;}
-a:hover {color: #47b6ed;}
+a
+{
+	border-bottom: 1px dotted #47b6ed;
+	color: #1594D4;
+}
+a:hover
+{
+	border-color: #fff;
+	color: #47b6ed;
+}
 
 acronym,
 abbr
@@ -578,6 +586,7 @@ iframe {margin: 0;}
 #footer p
 {
 	margin: 0;
+	text-shadow: 1px 1px 1px #000;
 }
 
 /* @end */
@@ -593,68 +602,9 @@ iframe {margin: 0;}
 .activity_list{}
 
 /* @group .activity */
-/* Clase común para los distintos tipos de actividad: debate, subject, commission */
+/* Clase común para los distintos tipos de actividad: discussion, subject, commission */
 .activity{}
 /* @end */
-/* @end */
-
-/* @group .debate */
-.debate{}
-/* @end */
-
-/* @group .subject_list */
-.subject_list{}
-
-/* @group .subject */
-.subject
-{
-	-moz-border-radius: 10px;
-  	-webkit-border-radius: 10px;
-	background: #eef9ff;
-	margin: 0 0 20px 0;
-	padding: 20px;
-}
-
-.subject .tag_mod
-{
-	margin: 0;
-}
-
-.subject .title
-{
-	
-}
-
-.subject .title a
-{
-	border: none;
-}
-
-.subject_type
-{
-	
-}
-
-.subject_type span
-{
-	-moz-border-radius: 20px;
-  	-webkit-border-radius: 20px;
-	background: #ffc;
-	border: 1px solid #ccc;
-	display: block;
-	float: left;
-	padding: 5px 10px;
-}
-
-.subject .activity_meta
-{
-	background: #fff;
-	margin: 0;
-}
-/* @end */
-
-
-
 /* @end */
 
 /* @group .commission */
@@ -670,7 +620,7 @@ iframe {margin: 0;}
 /* @group .label */
 
 .label{}
-.debate_label{}
+.discussion_label{}
 .subject_label{}
 .commission_label{}
 
@@ -886,19 +836,19 @@ a:hover {color: #47b6ed;}
 .tag
 {
 	-moz-border-radius: 20px;
-  	-webkit-border-radius: 20px;
-	background: #333;
+  	-webkit-border-radius: 20px;	
+	background: #333 url(/images/css/bullets/bullet_tag.png) no-repeat 8px 6px;
 	border: none;
 	color: #fff;
 	display: block;
 	float: left;
 	text-shadow: 1px 1px 1px #000;
-	padding: 4px 8px;
+	padding: 4px 8px 4px 29px;
 }
 
 .tag:hover
 {
-	background: #999;
+	background-color: #999;
 	border-color: #777;
 	color: #ddd;
 	text-shadow: 1px 1px 1px #222;
@@ -994,7 +944,14 @@ a:hover {color: #47b6ed;}
 
 .file_pdf
 {
-	
+	background: url(/images/css/bullets/bullet_pdf.png) no-repeat left 4px;
+	padding: 0 0 0 18px;
+}
+
+.file_realvideo
+{
+	background: url(/images/css/bullets/bullet_realvideo.png) no-repeat left 4px;
+	padding: 0 0 0 18px;
 }
 
 .file .date
@@ -1030,7 +987,19 @@ a:hover {color: #47b6ed;}
 /* @group Turns */
 
 /* @group .turn_mod */
-.turn_mod {}
+.turn_mod
+{
+	-moz-border-radius: 10px;
+  	-webkit-border-radius: 10px;
+	background: #111;
+	margin: 0 0 20px 0;
+	padding: 10px;
+}
+
+.turn_mod_title
+{
+	color: #fff;
+}
 /* @end */
 
 
@@ -1067,6 +1036,61 @@ a:hover {color: #47b6ed;}
 .turn .file_list
 {
 	
+}
+/* @end */
+
+
+
+/* @end */
+
+/* @group Subjects */
+.subject_list{}
+
+/* @group .subject */
+.subject
+{
+	-moz-border-radius: 10px;
+  	-webkit-border-radius: 10px;
+	background: #eef9ff;
+	margin: 0 0 20px 0;
+	padding: 20px;
+}
+
+.subject .tag_mod
+{
+	margin: 0;
+}
+
+.subject .title
+{
+	
+}
+
+.subject .title a
+{
+	border: none;
+}
+
+.activity_type
+{
+	
+}
+
+.activity_type span
+{
+	-moz-border-radius: 20px;
+  	-webkit-border-radius: 20px;
+	background: #ffc;
+	border: 1px solid #ccc;
+	display: block;
+	float: left;
+	padding: 5px 10px;
+}
+
+.subject .activity_meta
+{
+	background: #fff;
+	margin: 0;
 }
 /* @end */
 
@@ -1207,6 +1231,76 @@ a:hover {color: #47b6ed;}
 	margin: 0 30px 0 0;
 	width: 438px;
 }
+.subject_latest
+{
+	-moz-border-radius: 20px;
+  	-webkit-border-radius: 20px;
+	background: #d4f0ff;
+	margin: 0 0 40px 0;
+	padding: 20px;
+}
+
+/* @group .activity_stats */
+.activity_stats
+{
+	
+}
+
+.activity_stats_col
+{
+	width: 320px;
+}
+
+.activity_stats_col_left {float: left;}
+.activity_stats_col_right {float: right;}
+
+/* @group .activity_stat */
+.activity_stat
+{
+	margin: 0 0 40px 0;
+}
+/* @end */
+
+/* @group .most_active_cats */
+.most_active_cats
+{
+	
+}
+/* @end */
+
+/* @group .most_active_parties */
+.most_active_parties
+{
+	
+}
+/* @end */
+
+/* @group .most_recent_tags */
+.most_recent_tags
+{
+	
+}
+
+.most_recent_tags .subject_num
+{
+	display: block;
+	float: left;
+	padding: 5px;
+}
+
+.most_recent_tags li
+{
+	
+}
+/* @end */
+
+/* @group .most_active_parliamentarians */
+.most_active_parliamentarians
+{
+	
+}
+/* @end */
+/* @end */
 /* @end */
 
 /* @group .subject_sidebar */
@@ -1224,10 +1318,10 @@ a:hover {color: #47b6ed;}
 /* @end */
 /* @end */
 
-/* @group .tab_system_commission */
+/* @group .tab_system_commissions */
 
 /* Tab de Comisiones */
-.tab_system_commission
+.tab_system_commissions
 {
 	
 }
@@ -1276,6 +1370,11 @@ a:hover {color: #47b6ed;}
 	cursor: default;
 	text-shadow: 1px 1px 1px #fff;
 }
+
+.current_commissions li.active a:hover
+{
+	background: #38ba84;
+}
 /* @end */
 
 /* @group .commission_cont */
@@ -1319,16 +1418,175 @@ a:hover {color: #47b6ed;}
 {
 	float: right;
 }
+/* @end */
+/* @end */
 
-.intervention_name
+/* @group .tab_system_discussions */
+.tab_system_discussion
+{
+	
+}
+
+/* @group .sessions_menu */
+.sessions_menu
+{
+	-moz-border-radius: 10px;
+  	-webkit-border-radius: 10px;
+	background: #f5f5f5;
+	float: left;
+	margin: 0 30px 0 0;
+	padding: 10px;
+	text-align: center;
+	width: 120px;
+}
+
+.session_menu_year
+{
+	-moz-border-radius: 10px;
+  	-webkit-border-radius: 10px;
+  	background: #fff;
+  	padding: 10px;
+}
+
+.session_menu_year ul
+{
+	border-top: 1px solid #f2f2f2;
+}
+
+.session_menu_year li
+{
+	border-bottom: 1px solid #f2f2f2;
+}
+
+.session_menu_year li a
+{
+	border: none;
+	cursor: pointer;
+	display: block;
+	padding: 5px;
+}
+
+.session_menu_year li.active a
+{
+	background: #47eda9;
+	color: #fff;
+	text-shadow: 1px 1px 1px #333;
+}
+
+.session_menu_year li a:hover
+{
+	border: none;
+}
+/* @end */
+
+/* @group .discussion_cont */
+/* Contenido principal del tab de Debates */
+.discussion_cont
+{
+	float: left;
+	width: 498px;
+}
+
+.discussion_title
+{
+	border-bottom: 1px solid #ddd;
+	padding: 0 0 5px 0;
+}
+
+.discussion_cont_cols
+{
+	
+}
+
+.discussion_cont_col
+{
+	width: 310px;
+}
+
+.discussion_cont_col .file_mod
+{
+	-moz-border-radius: 10px;
+  	-webkit-border-radius: 10px;
+  	background: #f2f2f2;
+  	padding: 20px;
+}
+
+.discussion_cont_col_left
+{
+	float: left;
+}
+
+.discussion_cont_col_right
+{
+	float: right;
+}
+
+/* @group .discussion_list */
+.discussion_list
+{
+	
+}
+
+.discussion_list .discussion .title
+{
+	font-size: 14px;
+}
+
+.discussion
+{
+	-moz-border-radius: 10px;
+  	-webkit-border-radius: 10px;
+  	background: #dceef7;
+  	padding: 20px 20px 10px 20px;
+}
+/* @group .discussion */
+.discussion
 {
 	
 }
 /* @end */
 /* @end */
+/* @end */
 
+/* @group .discussion_sidebar */
+.discussion_sidebar
+{
+	float: right;
+	width: 200px;
+}
+/* @end */
 
+/* @end */
+/* @end */
 
+/* @group Commissions */
+.commission_list {}
+.commission {margin: 0 0 20px 0;}
+.commission a {}
+.commission span {display: block;}
+/* @end */
+
+/* @group Votes */
+
+/* @group .votes_mod */
+.votes_mod
+{
+	
+}
+
+.votes_list
+{
+	
+}
+
+.vote
+{
+	-moz-border-radius: 10px;
+  	-webkit-border-radius: 10px;
+  	background: #f2f2f2;
+  	padding: 20px;
+}
+/* @end */
 /* @end */
 
 .date
@@ -1338,16 +1596,11 @@ a:hover {color: #47b6ed;}
 }
 
 .title{}
-
 .author{}
-
 .subject_num{}
 
 /* @group .photo */
-.photo
-{
-	
-}
+.photo {}
 
 .photo a
 {
@@ -1429,78 +1682,6 @@ a:hover {color: #47b6ed;}
 }
 /* @end */
 
-/* Page: Asuntos */
-.subject_latest
-{
-	-moz-border-radius: 20px;
-  	-webkit-border-radius: 20px;
-	background: #d4f0ff;
-	margin: 0 0 40px 0;
-	padding: 20px;
-}
-
-/* @group .activity_stats */
-.activity_stats
-{
-	
-}
-
-.activity_stats_col
-{
-	width: 320px;
-}
-
-.activity_stats_col_left {float: left;}
-.activity_stats_col_right {float: right;}
-
-/* @group .activity_stat */
-.activity_stat
-{
-	margin: 0 0 40px 0;
-}
-/* @end */
-
-/* @group .most_active_cats */
-.most_active_cats
-{
-	
-}
-/* @end */
-
-/* @group .most_active_parties */
-.most_active_parties
-{
-	
-}
-/* @end */
-
-/* @group .most_recent_tags */
-.most_recent_tags
-{
-	
-}
-
-.most_recent_tags .subject_num
-{
-	display: block;
-	float: left;
-	padding: 5px;
-}
-
-.most_recent_tags li
-{
-	
-}
-/* @end */
-
-/* @group .most_active_parliamentarians */
-.most_active_parliamentarians
-{
-	
-}
-/* @end */
-/* @end */
-
 
 /* @end */
 
@@ -1515,7 +1696,7 @@ a:hover {color: #47b6ed;}
 	font-family: Georgia, 'Times New Roman', Times, serif;
 	font-size: 15px;
 	font-style: italic;
-	margin: -10px 0 25px 0;
+	margin: -15px 0 25px 0;
 }
 
 /* Listado con bullet básico */
@@ -1988,9 +2169,11 @@ ul li.errorField p.label
 /* line: clase para que el dt y el dd van en la misma línea */
 dl.line dt
 {
+	background: url(../../images/css/bullets/dl-line_dt.gif) no-repeat left 2px;
   clear: both;
   float: left;
   margin: 0 5px 0 0;
+  padding: 0 0 0 18px;
 }
 
 dl.line dd.block {clear: both;}
@@ -2007,7 +2190,7 @@ dl.line dd.block {clear: both;}
 .tag_mod ul:after,
 .file_list li:after,
 .file:after,
-.subject_type:after,
+.activity_type:after,
 .most_recent_tags li:after,
 .parliamentarian:after,
 .main_menu:after,
@@ -2031,7 +2214,7 @@ dl.line dd.block {clear: both;}
 .tag_mod ul,
 .file_list li,
 .file,
-.subject_type,
+.activity_type,
 .most_recent_tags li,
 .parliamentarian,
 .main_menu,
@@ -2051,7 +2234,7 @@ dl.line dd.block {clear: both;}
 * html .tag_mod ul,
 * html .file_list li,
 * html .file,
-* html .subject_type,
+* html .activity_type,
 * html .most_recent_tags li,
 * html .parliamentarian,
 * html .main_menu,
@@ -2069,7 +2252,7 @@ dl.line dd.block {clear: both;}
 .tag_mod ul,
 .file_list li,
 .file,
-.subject_type,
+.activity_type,
 .most_recent_tags li,
 .parliamentarian,
 .main_menu,

@@ -2,24 +2,26 @@
 <%= image_tag @parliamentarian.photo %>   
     
 <ul>
-  <li>Titulación: <%= @parliamentarian.profession %></li>
+  <li>Profesión: <%= @parliamentarian.profession %></li>
+  <li>Titulación: <%= @parliamentarian.degree %></li>
+  <li>Idiomas: <%= @parliamentarian.languages %></li>
   <li>Email: <%= mail_to @parliamentarian.email %></li>
 </ul>
 
 <%= inline_annotated_timeline @activity_data, 400, 300, 
                               "parliamentarian_#{@parliamentarian.id}_activity_data" %>
 <br/><br/>
-<h2>Cargos</h2>
 <% if !@parliamentarian.posts.blank? %>
-<ul>     
-  <% for post in @parliamentarian.posts %>
-    <li><%= post %></li>
-  <% end %>
-</ul>
+  <h2>Cargos</h2>
+  <ul>     
+    <% for post in @parliamentarian.posts %>
+      <li><%= post.title %></li>
+    <% end %>
+  </ul>
 <% end %>
                          
-<h2>Asuntos</h2>
 <% if !@parliamentarian.initiatives.blank? %>
+  <h2>Asuntos</h2>
   <ul>
     <% for ini in @parliamentarian.initiatives %>
       <li><%= link_to ini.num_exp, initiative_path(ini) %> | <%= ini.title %></li>
@@ -27,9 +29,9 @@
   </ul>
 <% end %>
 
-<h2>Debates</h2>    
 
 <% if !@parliamentarian.interventions.blank? %>
+  <h2>Debates</h2>    
   <ul>
     <% for inter in @parliamentarian.interventions %>
       <li><%= link_to inter.session_date, intervention_path(inter) %> | <%= inter.subject_title %></li>
@@ -38,6 +40,14 @@
 <% end %>
 
 
-<h2>Comisiones</h2>
+<% if !@parliamentarian.commissions.blank? %>
+  <h2>Comisiones</h2>
+  <ul>
+    <% for c in @parliamentarian.commissions %>
+      <li><%= link_to c.name, commision_path(c) %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 
 

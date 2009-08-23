@@ -3,7 +3,7 @@ Initiative.destroy_all
 
 l = Legebiltzarra::Legislature.new 
 parliamentarians = l.parliamentarians
-puts "Loading Parliamentarians..."
+puts "Loading initiatives..."
 parliamentarians.each do |p|
   parliamentarian = Parliamentarian.find_by_orig_id(p.id)
   
@@ -24,3 +24,5 @@ parliamentarians.each do |p|
   
   puts "#{parliamentarian.orig_id} - #{parliamentarian.full_name} - #{parliamentarian.initiatives.count}"
 end
+
+puts "#{Initiative.count} initiatives loaded.\n"
