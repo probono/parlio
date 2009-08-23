@@ -38,8 +38,11 @@
   <body>
 
     <%= render :partial => "shared/header" %>
-
-    <%= yield %>
+    <div class="content">
+      <div class="inside">
+        <%= yield %>
+      </div>
+    </div>
 
     <%= render :partial => "shared/footer" %>
 

@@ -1,20 +1,117 @@
-<p><%= @initiative.num_exp %></p>
-<p><%= @initiative.title %></p>
-<p>Por: <%= link_to @initiative.parliamentarian.full_name, parliamentarian_path(@initiative.parliamentarian) %></p>
-<br/>
-<br/>
+<!-- tab_system -->
+<div class="tab_system tab_system_subjects">
 
-<p><%= @initiative.party %></p>
-<p>
-  Etiquetas<br/>
-  <% if !@initiative.tags.blank? %>
-    <% for tag in @initiative.tags %>
-      <%= link_to tag, initiatives_by_tag_path(tag.name) %>
-    <% end %>
-  <% end %>
-  
-  <%=  %> 
-</p>
-<p><%= @initiative.num_exp %></p>
-<p><%= @initiative.votings %></p>
+  <%= render :partial => 'activity/activity_menu' %>
 
+  <!-- tab_cont -->
+  <div class="tab_cont">
+    
+    <%= render :partial => 'activity/topics' %>
+    
+    <!-- subject_cont -->
+    <div class="subject_cont">   
+      <% if @initiative.topic %>
+        <h2><%= @initiative.topic.name %></h2>
+      <% end %>
+
+      <!-- subject -->
+      <div class="activity subject">
+        <h3 class="title"><%= link_to @initiative.title, initiative_path(@initiative)%></h3>
+        <p class="activity_type"><span><%= @initiative.initiative_type %></span></p>
+        <dl class="activity_meta line">
+          <dt>Fecha:</dt>
+          <dd><%= @initiative.initiative_date %></dd>
+          <dt>Por:</dt>
+          <dd>
+            <%= link_to @initiative.parliamentarian.full_name, parliamentarian_path(@initiative.parliamentarian), :class=>"author" %> de 
+            <%= link_to @initiative.parliamentarian.party.party_acronym, party_path(@initiative.parliamentarian.party), :class => "party_name" %>
+          </dd>
+          <dt>Para:</dt>
+          <dd><%= @initiative.recipient %></dd>
+        </dl>
+      </div>
+      <!-- /subject -->
+      
+      <!-- tag_mod -->
+      <div class="tag_mod">
+        <h4>Etiquetas</h4>
+        <ul class="tag_list">      
+          <% if !@initiative.tags.blank? %>
+            <% for tag in @initiative.tags %>
+              <li><%= link_to tag, initiatives_by_tag_path(tag.name), :class => "tag" %></li>
+            <% end %>
+          <% end %>
+        </ul>
+      </div>
+      <!-- /tag_mod -->
+      
+      <!-- file_mod -->
+      <div class="file_mod">
+        <h4>Documentos</h4>      
+        <p><%= @initiative.procedures %></p>
+        
+        <ul class="file_list">
+          
+          <li>
+            <a class="file file_pdf" href="#">
+              <span class="file_title">Documento original En relación con la atención integral a las personas transexuales</span>
+              <span class="file_meta">(<acronym title="Portable Document Format">PDF</acronym>, 2.4 <abbr title="Megabytes">Mb.</abbr>)</span>
+            </a>
+          </li>
+          
+          <li>
+            <a class="file file_pdf" href="#">
+              <span class="file_title">Documento original En relación con la atención integral a las personas transexuales</span>
+              <span class="file_meta">(<acronym title="Portable Document Format">PDF</acronym>, 2.4 <abbr title="Megabytes">Mb.</abbr>)</span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      <!-- /file_mod -->
+      
+      <!-- evolution_mod -->
+      <div class="evolution_mod">
+        <h2>Evolución</h2>
+        <dl class="evolution_sheet">
+          <dt>Situación:</dt>
+          <dd>En curso</dd>
+          <dt>Plazo de presentación:</dt>
+          <dd>03.09.2009 Plazo para que conteste el Gobierno Vasco</dd>
+          <dt>Trámites por los que ha pasado:</dt>
+          <dd>
+            
+            <ul class="file_list">
+              <li>
+                <a class="file file_pdf" href="#">
+                  <span class="date">08.07.2009</span>
+                  <span class="file_title">Presentación de la iniciativa en el Registro (R.E. 1247)</span>
+                  <span class="file_meta">(<acronym title="Portable Document Format">PDF</acronym>, 2.4 <abbr title="Megabytes">Mb.</abbr>)</span>
+                </a>
+              </li>
+              <li>
+                <a class="file file_pdf" href="#">
+                  <span class="date">14.07.2009</span>
+                  <span class="file_title">Calificación de la iniciativa por la Mesa del Parlamento</span>
+                </a>
+              </li>
+              <li>
+                <a class="file file_pdf" href="#">
+                  <span class="date">15.07.2009</span>
+                  <span class="file_title">Envío de la iniciativa al Gobierno Vasco (R.S. 742)</span>
+                  <span class="file_meta">(PDF, 2.4Mb.)</span>
+                </a>
+              </li>
+            </ul>
+            
+          </dd>
+        </dl>
+      </div>
+      <!-- /evolution_mod -->
+    </div>
+    <!-- /subject_cont -->
+    
+  </div>
+  <!-- /tab_cont -->
+</div>
+<!-- /tab_system -->

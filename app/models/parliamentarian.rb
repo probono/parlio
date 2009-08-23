@@ -1,19 +1,23 @@
 # == Schema Information
-# Schema version: 20090822155637
+# Schema version: 20090823110617
 #
 # Table name: parliamentarians
 #
-#  id         :integer         not null, primary key
-#  full_name  :string(255)
-#  photo      :string(255)
-#  profession :string(255)
-#  languages  :string(255)
-#  email      :string(255)
-#  posts      :string(255)
-#  created_at :datetime
-#  updated_at :datetime
-#  orig_id    :string(255)
-#  party_id   :integer
+#  id                :integer         not null, primary key
+#  full_name         :string(255)
+#  photo             :string(255)
+#  profession        :string(255)
+#  languages         :string(255)
+#  email             :string(255)
+#  posts             :string(255)
+#  created_at        :datetime
+#  updated_at        :datetime
+#  orig_id           :string(255)
+#  party_id          :integer
+#  active            :boolean
+#  substitution_id   :integer
+#  substitutes_id    :integer
+#  substituted_by_id :integer
 #
 
 class Parliamentarian < ActiveRecord::Base

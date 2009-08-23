@@ -1,12 +1,11 @@
 # == Schema Information
-# Schema version: 20090822190635
+# Schema version: 20090823110617
 #
 # Table name: initiatives
 #
 #  id                 :integer         not null, primary key
 #  num_exp            :string(255)
 #  title              :string(255)
-#  party              :string(255)
 #  initiative_type    :string(255)
 #  procedures         :string(255)
 #  votings            :string(255)
@@ -15,6 +14,9 @@
 #  updated_at         :datetime
 #  status             :string(255)
 #  topic_id           :integer
+#  proposer           :string(255)
+#  recipient          :string(255)
+#  initiative_date    :date
 #
 
 class Initiative < ActiveRecord::Base

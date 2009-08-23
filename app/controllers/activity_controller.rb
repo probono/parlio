@@ -1,6 +1,5 @@
 class ActivityController < ApplicationController   
   def index
-    @topics = Topic.all
     @most_active = Topic.most_active
     tuples = Tagging.count(:all, :group => "tag_id", :order => "count(*) DESC", :limit=> 10)
     returning @most_active_tags = [] do

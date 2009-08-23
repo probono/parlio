@@ -1,0 +1,12 @@
+<!-- subject_cat -->
+<div class="subject_cat">
+  <h2>Categorías</h2>
+  <% if !current_topics.blank? %>
+    <ul>
+      <% for t in current_topics %>
+        <li><%= link_to t.name, topic_path(t) %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+<!-- /subject_cat -->
