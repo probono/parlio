@@ -1,0 +1,57 @@
+<%# 
+
+#  id              :integer         not null, primary key
+#  file_number     :string(255)
+#  commision_id    :integer
+#  session_date    :string(255)
+#  diary_number    :string(255)
+#  subject_number  :string(255)
+#  subject_title   :string(255)
+#  txt_url         :string(255)
+#  full_txt        :text
+#  pdf_url         :string(255)
+#  videos          :string(255)
+#  initiative_id   :integer
+#  subject_treated :string(255)
+#  created_at      :datetime
+#  updated_at      :datetime
+
+ %>                           
+ 
+<br/><br/> 
+<h3><%= @intervention.subject_title %></h3>
+<p> Por: <%= @intervention.initiative.parliamentarian.full_name if @intervention.initiative %></p>
+<br/>
+<h2>Videos</h2>
+<ul>
+  <li><%= @intervention.videos %></li>
+</ul>
+
+<br/>
+<h2>Intervienen</h2>
+<ul>
+  <% if !@intervention.parliamentarians.blank? %>
+    <% for parla in @intervention.parliamentarians %>
+      <li>
+        <%= parlavatar(parla) %>
+        <%= link_to parla.full_name, parliamentarian_path(parla) %><br/>
+        <%= parla.party.acronym %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<br/>
+<h2>Transcripción</h2>
+<p>Pdf: <%= link_to @intervention.pdf_url, @intervention.pdf_url %></p>
+<ul>
+  <% if !@intervention.parliamentarians.blank? %>
+    <% for parla in @intervention.parliamentarians %>
+      <li>
+        <%= parlavatar(parla) %>
+        <%= link_to parla.full_name, parliamentarian_path(parla) %><br/>
+        <%= parla.party.acronym %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>

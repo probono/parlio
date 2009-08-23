@@ -1,16 +1,3 @@
-<%# 
-#  id         :integer         not null, primary key
-#  full_name  :string(255)
-#  photo      :string(255)
-#  profession :string(255)
-#  languages  :string(255)
-#  email      :string(255)
-#  posts      :string(255)
-#  created_at :datetime
-#  updated_at :datetime
-
-                                 
- %>
 <p><%= @parliamentarian.full_name %></p>
 <%= image_tag @parliamentarian.photo %>   
     
@@ -19,6 +6,10 @@
   <li>Email: <%= mail_to @parliamentarian.email %></li>
 </ul>
 
+<%= inline_annotated_timeline @activity_data, 400, 300, 
+                              "parliamentarian_#{@parliamentarian.id}_activity_data" %>
+<br/><br/>
+<h2>Cargos</h2>
 <% if !@parliamentarian.posts.blank? %>
 <ul>     
   <% for post in @parliamentarian.posts %>
@@ -26,4 +17,27 @@
   <% end %>
 </ul>
 <% end %>
+                         
+<h2>Asuntos</h2>
+<% if !@parliamentarian.initiatives.blank? %>
+  <ul>
+    <% for ini in @parliamentarian.initiatives %>
+      <li><%= link_to ini.num_exp, initiative_path(ini) %> | <%= ini.title %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<h2>Debates</h2>    
+
+<% if !@parliamentarian.interventions.blank? %>
+  <ul>
+    <% for inter in @parliamentarian.interventions %>
+      <li><%= link_to inter.session_date, intervention_path(inter) %> | <%= inter.subject_title %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+<h2>Comisiones</h2>
+
 

@@ -5,6 +5,9 @@ module Legebiltzarra
 
     def initialize(content)
       @content = content
+      @url = BASE_URL + @content.search('td')[0].search('a/@href')[0]
+      #links points to active, but need all
+      @url = @url.sub(/ACT/,"LGA")
     end
 
     def group_name
@@ -32,8 +35,7 @@ module Legebiltzarra
     end
     
     def parliamentarians
-      parl_url = BASE_URL + @content.search('td')[0].search('a/@href')[0]
-      parl_list ||= Nokogiri::HTML(open(parl_url).read)
+      parl_list ||= Nokogiri::HTML(open(@url).read)
       parl_list.search('table[@class="parlamentarios"]/tr/td[@class="miembro_persona"]/a/@href').map{ |p| Parliamentarian.new(p.content.match(/\d+/)[0]) }
     end
     

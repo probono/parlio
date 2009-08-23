@@ -1,0 +1,9 @@
+<% if !@interventions.blank? %>
+  <ul>
+    <% for inter in @interventions %>
+      <li><%= link_to "#{inter.session_date}/#{inter.subject_number}", intervention_path(inter) %>  | <%= inter.subject_title %></li>
+      <li><%= inter.session_date %> / <%= inter.subject_number %> | <%= inter.subject_title %></li>
+    <% end %>
+  </ul>
+
+<% end %>

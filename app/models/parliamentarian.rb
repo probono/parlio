@@ -25,8 +25,14 @@ class Parliamentarian < ActiveRecord::Base
   
   has_many :intervention_parliamentarians
   has_many :interventions, :through => :intervention_parliamentarians
+  
+  has_one  :substitute, :class_name => 'Parliamentarian', :foreign_key => :substitutes_id
+  has_one  :substituted_by, :class_name => 'Parliamentarian', :foreign_key => :substituted_by_id
 
   belongs_to :party
+  
+  named_scope :active,   :conditions => ['active = ?', true]
+  named_scope :unactive, :conditions => ['active = ?', false]
   
   def first_name
     self.full_name.split(',').last.strip
@@ -34,7 +40,12 @@ class Parliamentarian < ActiveRecord::Base
 
   def last_name
     self.full_name.split(',').first.strip
-  end    
+  end  
+  
+  def active?
+    self.active
+  end
+    
   def self.most_active
     tuples = Initiative.count(:all, :group => "parliamentarian_id", :order => "count(*) DESC", :limit => 5)
     returning most_active = [] do
