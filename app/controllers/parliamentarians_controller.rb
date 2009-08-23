@@ -14,7 +14,24 @@ class ParliamentariansController < ApplicationController
 
   # GET /parliamentarians/1
   # GET /parliamentarians/1.xml
-  def show
+  def show    
+    @activity_data = {
+      1.day.ago => { :initiatives => 123 },
+      2.day.ago => { :initiatives => 345 },  
+      3.day.ago => { :initiatives => 165 },  
+      4.day.ago => { :initiatives => 308 }  
+    }   
+    @activity_annotations = {
+      :initiatives => { 
+        1.day.ago => [["Relativa al colapso funcional de la Administración ambiental"]],
+        2.day.ago => [["Relativa a situación actual de la gripe A en Euskadi"]], 
+        3.day.ago => [["Relativa al colapso funcional de la Administración ambiental"]] 
+      }
+      
+    }                
+    
+    
+    
     respond_to do |wants|
       wants.html # show.html.erb
       wants.xml  { render :xml => @parliamentarian }

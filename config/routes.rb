@@ -19,11 +19,11 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :parties
   map.resources :topics, :path_prefix => 'activity'
-  map.resources :initiatives, :path_prefix => 'activity'
-  map.resources :discussions, :path_prefix => 'activity'
+  map.resources :initiatives, :path_prefix => 'activity'            
+  map.resources :interventions, :path_prefix => 'activity'
   map.resources :commisions, :path_prefix => 'activity'
   
-  map.resources :parliamentarians
+  map.resources :parliamentarians, :member => {:initiatives => :get, :interventions => :get, :commisions => :get} 
 
   # Sample resource route with options:
   #   map.resources :products, :member => { :short => :get, :toggle => :post }, :collection => { :sold => :get }
