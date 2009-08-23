@@ -8,7 +8,7 @@
         <h3><%= year %></h3>
         <ul>
           <% for session in dates %>
-            <li><%= session %></li>
+            <li<%= " class='active'" if session == @session_date %>><%= link_to session, interventions_by_session_path(session) %></li>
           <% end %>
         </ul>
       </div>  

@@ -1,7 +1,109 @@
-<% if !@taggings.blank? %>  
-  <ul>
-    <% for ini in @taggings %>
-      <li><%= link_to ini.num_exp, initiative_path(ini) %> | <%= ini.title %></li>
-    <% end %>
-  </ul>
-<% end %>
+<h1>Actividad</h1>
+<p class="claim">Qué ocurre en el Parlamento Vasco</p>
+
+<!-- tab_system -->
+<div class="tab_system tab_system_subjects">
+
+  <%= render :partial => 'activity/activity_menu' %>
+
+  <!-- tab_cont -->
+  <div class="tab_cont">
+
+    <%= render :partial => 'activity/topics' %>
+
+    <!-- subject_cont -->
+    <div class="subject_cont subject_cont_category">
+
+        <h2>Etiquetadas con <%= @tag.name %></h2>
+        
+        <% if !@taggings.blank? %>
+
+          <% for ini in  @taggings %>
+          <!-- subject -->
+          <div class="activity subject">
+            <h3 class="title">
+              <%= link_to ini.title, initiative_path(ini) %>
+            </h3>
+            <p class="subject_type"><span><%= ini.initiative_type %></span></p>
+             
+            <%= render :partial => 'activity/activity_tags', :locals => { :activity => ini } %>
+
+            <%= render :partial => 'activity/activity_meta_line', :locals => { :activity => ini } %>
+          </div>
+          <% end %>
+
+        <% end %>
+        
+        <%= will_paginate @initiatives, :class => 'pag_nav' %>
+
+        <!-- rss_mod -->
+        <a class="rss_mod">
+          <strong>¿Te interesa?</strong>
+          <span>Suscríbete a las actualizaciones de este tema vía <acronym title="Really Simple Syndication">RSS</acronym>.</span>
+        </a>
+        <!-- /rss_mod -->
+
+      </div>
+      <!-- /subject_cont -->
+
+      <!-- subject_sidebar -->
+      <div class="subject_sidebar">
+
+        <!-- most_active_parliamentarians -->
+        <div class="activity_stat most_active_parliamentarians">
+          <h2>Parlamentarios más activos</h2>
+          <!-- parliamentarians_list -->
+          <div class="parliamentarians_list">
+
+            <!-- parliamentarian -->
+            <div class="parliamentarian">
+              <p class="photo"><a href="#"><img src="http://parlamento.euskadi.net/img/fichas/149.jpg" alt="Foto de [parliamentarian_name]" width="48" /></a></p>
+              <div class="main">
+                <h3 class="name"><a href="#">Aintzane Ezenarro</a></h3>
+                <p class="party"><a class="party_name" href="#">Aralar</a></p>
+                <p class="subject_num">23 iniciativas</p>
+              </div>
+            </div>
+            <!-- parliamentarian -->
+
+            <!-- parliamentarian -->
+            <div class="parliamentarian">
+              <p class="photo"><a href="#"><img src="http://parlamento.euskadi.net/img/fichas/149.jpg" alt="Foto de [parliamentarian_name]" width="48" /></a></p>
+              <div class="main">
+                <h3 class="name"><a href="#">Patxi López</a></h3>
+                <p class="party"><a class="party_name" href="#">Aralar</a></p>
+                <p class="subject_num">23 iniciativas</p>
+              </div>
+            </div>
+            <!-- parliamentarian -->
+
+          </div>
+          <!-- /parliamentarians_list -->
+        </div>
+        <!-- /most_active_parliamentarians -->
+
+        <!-- tag_mod -->
+        <div class="tag_mod">
+          <h2>Etiquetas utilizadas en esta categoria</h2>
+          <ul class="tag_list">
+            <li><a class="tag" href="#">minoría sexual</a></li>
+            <li><a class="tag" href="#">Osakidetza</a></li>
+            <li><a class="tag" href="#">terapéutica</a></li>
+            <li><a class="tag" href="#">cirugía</a></li>
+          </ul>
+        </div>
+        <!-- /tag_mod -->
+
+      </div>
+
+
+
+
+
+    </div>
+    <!-- /subject_cont -->
+
+  </div>
+  <!-- /tab_cont -->
+</div>
+<!-- /tab_system -->

@@ -1,50 +1,404 @@
 <h1>Actividad</h1>
 <p class="claim">Qué ocurre en el Parlamento Vasco</p>
-<%= render :partial => 'activity/activity_menu' %>
 
-<!-- tab_cont -->
-<div class="tab_cont">
+<!-- tab_system -->
+<div class="tab_system tab_system_discussions">
+  <%= render :partial => 'activity/activity_menu' %>
 
-  <br/><br/> 
-  <h3><%= @intervention.subject_title %></h3>
-  <p> Por: <%= @intervention.initiative.parliamentarian.full_name if @intervention.initiative %></p>
-  <br/>
-  <h2>Videos</h2>
-  <ul>
-    <li><%= @intervention.videos %></li>
-  </ul>
+  <!-- tab_cont -->
+  <div class="tab_cont">
+    
+    <!-- sessions_menu -->
+    <%= render :partial => 'activity/sessions_date' %>
+    <!-- /sessions_menu -->
+    
+    <!-- discussion_cont -->
+    <div class="discussion_cont">
+      
+      <!-- discussion -->
+      <div class="activity discussion">
+        <h3 class="title"><%= link_to @intervention.subject_title, intervention_path(@intervention) %></h3>
+        <!--
+        <p class="activity_type"><span>Debate y resolución definitiva</span></p>
+        
+        <dl class="activity_meta line">
+          <dt>Fecha:</dt>
+          <dd>14.07.2009</dd>
+          <dt>Por:</dt>
+          <dd><a class="author" href="#">Maeztu Perez, Daniel</a> de <a class="party_name" href="#">Aralar</a></dd>
+          <dt>Para:</dt>
+          <dd>Consejero de Sanidad y Consumo</dd>
+        </dl> -->
+      </div>
+      <!-- /discussion -->
+      
+      <!-- discussion_cont_cols -->
+      <div class="discussion_cont_cols">
+      
+        <!-- discussion_cont_col_left -->
+        <div class="discussion_cont_col discussion_cont_col_left">
+          
+          <h3>Vídeo</h3>
+          
+          <!-- turn_mod -->
+          <div class="turn_mod">
+            <h4 class="turn_mod_title">Turno a favor</h4>
+            <!-- turn_list -->
+            <div class="turn_list">
+          
+              <!-- turn -->
+              <div class="turn">
+        
+                <!-- parliamentarian -->
+                <div class="parliamentarian">
+                  <p class="photo"><a href="#"><img src="http://parlamento.euskadi.net/img/fichas/149.jpg" alt="Foto de [parliamentarian_name]" width="48" /></a></p>
+                  <div class="main">
+                    <h5 class="name"><a href="#">Aintzane Ezenarro</a></h5>
+                    <p class="party"><a class="party_name" href="#">Aralar</a></p>
+                    <dl class="line">
+                      <dt>Duración:</dt>
+                      <dd>12:23 <abbr title="Minutos">min.</abbr></dd>
+                    </dl>
+                  </div>
+                </div>
+                <!-- parliamentarian -->
+        
+                <!-- file_list -->
+                <ul class="file_list">
+                  <li>
+                    <a class="file file_realvideo" href="#" title="Ver vídeo: Turno de Gatzagaetxebarria Bastida, Ricardo">
+                      <span class="file_title">Calidad baja</span>
+                      <span class="file_meta">(<abbr title="RealMedia">RM</abbr>, 1,83 <abbr title="Megabytes">Mb.</abbr>)</span>
+                    </a>
+                  </li>
+          
+                  <li>
+                    <a class="file file_realvideo" href="#" title="Ver vídeo: Turno de Gatzagaetxebarria Bastida, Ricardo">
+                      <span class="file_title">Calidad alta</span>
+                      <span class="file_meta">(<abbr title="RealMedia">PDF</abbr>, 2,4 <abbr title="Megabytes">Mb.</abbr>)</span>
+                    </a>
+                  </li>
+                </ul>
+                <!-- /file_list -->
+        
+              </div>
+              <!-- turn -->
+          
+              <!-- turn -->
+              <div class="turn">
+        
+                <!-- parliamentarian -->
+                <div class="parliamentarian">
+                  <p class="photo"><a href="#"><img src="http://parlamento.euskadi.net/img/fichas/149.jpg" alt="Foto de [parliamentarian_name]" width="48" /></a></p>
+                  <div class="main">
+                    <h5 class="name"><a href="#">Aintzane Ezenarro</a></h5>
+                    <p class="party"><a class="party_name" href="#">Aralar</a></p>
+                    <dl class="line">
+                      <dt>Duración:</dt>
+                      <dd>12:23 <abbr title="Minutos">min.</abbr></dd>
+                    </dl>
+                  </div>
+                </div>
+                <!-- parliamentarian -->
+        
+                <!-- file_list -->
+                <ul class="file_list">
+                  <li>
+                    <a class="file file_realvideo" href="#" title="Ver vídeo: Turno de Gatzagaetxebarria Bastida, Ricardo">
+                      <span class="file_title">Calidad baja</span>
+                      <span class="file_meta">(<abbr title="RealMedia">RM</abbr>, 1,83 <abbr title="Megabytes">Mb.</abbr>)</span>
+                    </a>
+                  </li>
+          
+                  <li>
+                    <a class="file file_realvideo" href="#" title="Ver vídeo: Turno de Gatzagaetxebarria Bastida, Ricardo">
+                      <span class="file_title">Calidad alta</span>
+                      <span class="file_meta">(<abbr title="RealMedia">PDF</abbr>, 2,4 <abbr title="Megabytes">Mb.</abbr>)</span>
+                    </a>
+                  </li>
+                </ul>
+                <!-- /file_list -->
+        
+              </div>
+              <!-- turn -->
+          
+            </div>
+            <!-- turn_list -->
+          </div>
+          <!-- /turn_mod -->
+          
+          <!-- turn_mod -->
+          <div class="turn_mod">
+            <h4 class="turn_mod_title">Turno de grupos no enmendantes</h4>
+            <!-- turn_list -->
+            <div class="turn_list">
+          
+              <!-- turn -->
+              <div class="turn">
+        
+                <!-- parliamentarian -->
+                <div class="parliamentarian">
+                  <p class="photo"><a href="#"><img src="http://parlamento.euskadi.net/img/fichas/149.jpg" alt="Foto de [parliamentarian_name]" width="48" /></a></p>
+                  <div class="main">
+                    <h5 class="name"><a href="#">Aintzane Ezenarro</a></h5>
+                    <p class="party"><a class="party_name" href="#">Aralar</a></p>
+                    <dl class="line">
+                      <dt>Duración:</dt>
+                      <dd>12:23 <abbr title="Minutos">min.</abbr></dd>
+                    </dl>
+                  </div>
+                </div>
+                <!-- parliamentarian -->
+        
+                <!-- file_list -->
+                <ul class="file_list">
+                  <li>
+                    <a class="file file_realvideo" href="#" title="Ver vídeo: Turno de Gatzagaetxebarria Bastida, Ricardo">
+                      <span class="file_title">Calidad baja</span>
+                      <span class="file_meta">(<abbr title="RealMedia">RM</abbr>, 1,83 <abbr title="Megabytes">Mb.</abbr>)</span>
+                    </a>
+                  </li>
+          
+                  <li>
+                    <a class="file file_realvideo" href="#" title="Ver vídeo: Turno de Gatzagaetxebarria Bastida, Ricardo">
+                      <span class="file_title">Calidad alta</span>
+                      <span class="file_meta">(<abbr title="RealMedia">PDF</abbr>, 2,4 <abbr title="Megabytes">Mb.</abbr>)</span>
+                    </a>
+                  </li>
+                </ul>
+                <!-- /file_list -->
+        
+              </div>
+              <!-- turn -->
+          
+              <!-- turn -->
+              <div class="turn">
+        
+                <!-- parliamentarian -->
+                <div class="parliamentarian">
+                  <p class="photo"><a href="#"><img src="http://parlamento.euskadi.net/img/fichas/149.jpg" alt="Foto de [parliamentarian_name]" width="48" /></a></p>
+                  <div class="main">
+                    <h5 class="name"><a href="#">Aintzane Ezenarro</a></h5>
+                    <p class="party"><a class="party_name" href="#">Aralar</a></p>
+                    <dl class="line">
+                      <dt>Duración:</dt>
+                      <dd>12:23 <abbr title="Minutos">min.</abbr></dd>
+                    </dl>
+                  </div>
+                </div>
+                <!-- parliamentarian -->
+        
+                <!-- file_list -->
+                <ul class="file_list">
+                  <li>
+                    <a class="file file_realvideo" href="#" title="Ver vídeo: Turno de Gatzagaetxebarria Bastida, Ricardo">
+                      <span class="file_title">Calidad baja</span>
+                      <span class="file_meta">(<abbr title="RealMedia">RM</abbr>, 1,83 <abbr title="Megabytes">Mb.</abbr>)</span>
+                    </a>
+                  </li>
+          
+                  <li>
+                    <a class="file file_realvideo" href="#" title="Ver vídeo: Turno de Gatzagaetxebarria Bastida, Ricardo">
+                      <span class="file_title">Calidad alta</span>
+                      <span class="file_meta">(<abbr title="RealMedia">PDF</abbr>, 2,4 <abbr title="Megabytes">Mb.</abbr>)</span>
+                    </a>
+                  </li>
+                </ul>
+                <!-- /file_list -->
+        
+              </div>
+              <!-- turn -->
+          
+            </div>
+            <!-- turn_list -->
+          </div>
+          <!-- /turn_mod -->
+          
+          <!-- turn_mod -->
+          <div class="turn_mod">
+            <h4 class="turn_mod_title">Turno de réplica</h4>
+            <!-- turn_list -->
+            <div class="turn_list">
+          
+              <!-- turn -->
+              <div class="turn">
+        
+                <!-- parliamentarian -->
+                <div class="parliamentarian">
+                  <p class="photo"><a href="#"><img src="http://parlamento.euskadi.net/img/fichas/149.jpg" alt="Foto de [parliamentarian_name]" width="48" /></a></p>
+                  <div class="main">
+                    <h5 class="name"><a href="#">Aintzane Ezenarro</a></h5>
+                    <p class="party"><a class="party_name" href="#">Aralar</a></p>
+                    <dl class="line">
+                      <dt>Duración:</dt>
+                      <dd>12:23 <abbr title="Minutos">min.</abbr></dd>
+                    </dl>
+                  </div>
+                </div>
+                <!-- parliamentarian -->
+        
+                <!-- file_list -->
+                <ul class="file_list">
+                  <li>
+                    <a class="file file_realvideo" href="#" title="Ver vídeo: Turno de Gatzagaetxebarria Bastida, Ricardo">
+                      <span class="file_title">Calidad baja</span>
+                      <span class="file_meta">(<abbr title="RealMedia">RM</abbr>, 1,83 <abbr title="Megabytes">Mb.</abbr>)</span>
+                    </a>
+                  </li>
+          
+                  <li>
+                    <a class="file file_realvideo" href="#" title="Ver vídeo: Turno de Gatzagaetxebarria Bastida, Ricardo">
+                      <span class="file_title">Calidad alta</span>
+                      <span class="file_meta">(<abbr title="RealMedia">PDF</abbr>, 2,4 <abbr title="Megabytes">Mb.</abbr>)</span>
+                    </a>
+                  </li>
+                </ul>
+                <!-- /file_list -->
+        
+              </div>
+              <!-- turn -->
+          
+              <!-- turn -->
+              <div class="turn">
+        
+                <!-- parliamentarian -->
+                <div class="parliamentarian">
+                  <p class="photo"><a href="#"><img src="http://parlamento.euskadi.net/img/fichas/149.jpg" alt="Foto de [parliamentarian_name]" width="48" /></a></p>
+                  <div class="main">
+                    <h5 class="name"><a href="#">Aintzane Ezenarro</a></h5>
+                    <p class="party"><a class="party_name" href="#">Aralar</a></p>
+                    <dl class="line">
+                      <dt>Duración:</dt>
+                      <dd>12:23 <abbr title="Minutos">min.</abbr></dd>
+                    </dl>
+                  </div>
+                </div>
+                <!-- parliamentarian -->
+        
+                <!-- file_list -->
+                <ul class="file_list">
+                  <li>
+                    <a class="file file_realvideo" href="#" title="Ver vídeo: Turno de Gatzagaetxebarria Bastida, Ricardo">
+                      <span class="file_title">Calidad baja</span>
+                      <span class="file_meta">(<abbr title="RealMedia">RM</abbr>, 1,83 <abbr title="Megabytes">Mb.</abbr>)</span>
+                    </a>
+                  </li>
+          
+                  <li>
+                    <a class="file file_realvideo" href="#" title="Ver vídeo: Turno de Gatzagaetxebarria Bastida, Ricardo">
+                      <span class="file_title">Calidad alta</span>
+                      <span class="file_meta">(<abbr title="RealMedia">PDF</abbr>, 2,4 <abbr title="Megabytes">Mb.</abbr>)</span>
+                    </a>
+                  </li>
+                </ul>
+                <!-- /file_list -->
+        
+              </div>
+              <!-- turn -->
+          
+            </div>
+            <!-- turn_list -->
+          </div>
+          <!-- /turn_mod -->
+          
+          <!-- votes_mod -->
+          <div class="votes_mod">
+            <!-- vote_list -->
+            <div class="vote_list">
+              <!-- vote -->
+              <div class="vote">
+                <h3>Votación</h3>
+                <dl class="line">
+                  <dt>Duración:</dt>
+                  <dd>12:23 <abbr title="Minutos">min.</abbr></dd>
+                </dl>
+                <!-- file_list -->
+                <ul class="file_list">
+                  <li>
+                    <a class="file file_realvideo" href="#" title="Ver vídeo: Turno de Gatzagaetxebarria Bastida, Ricardo">
+                      <span class="file_title">Calidad baja</span>
+                      <span class="file_meta">(<abbr title="RealMedia">RM</abbr>, 1,83 <abbr title="Megabytes">Mb.</abbr>)</span>
+                    </a>
+                  </li>
+      
+                  <li>
+                    <a class="file file_realvideo" href="#" title="Ver vídeo: Turno de Gatzagaetxebarria Bastida, Ricardo">
+                      <span class="file_title">Calidad alta</span>
+                      <span class="file_meta">(<abbr title="RealMedia">PDF</abbr>, 2,4 <abbr title="Megabytes">Mb.</abbr>)</span>
+                    </a>
+                  </li>
+                </ul>
+                <!-- /file_list -->
+              </div>
+              <!-- /vote -->
+            </div>
+            <!-- /vote_list -->
+          </div>
+          <!-- /votes_mod -->
+                          
+        </div>
+        <!-- /discussion_cont_col_left -->
+      
+        <!-- discussion_cont_col_right -->
+        <div class="discussion_cont_col discussion_cont_col_right">
+        
+          <!-- parliamentarians_mod -->
+          <div class="parliamentarians_mod">
+            <h3>Intervienen</h3>
+            <!-- parliamentarians_list -->
+            <div class="parliamentarians_list">
+              <% for parla in @intervention.parliamentarians %>
+                <div class="parliamentarian">
+                  <%= parlavatar(parla) %>
+                  <div class="main">
+                    <h3 class="name"><%= link_to parla.full_name, parliamentarian_path(parla) %></h3>
+                    <p class="party"><%= link_to parla.party.party_acronym, party_path(parla.party), :class => "party_name" %></p>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+            <!-- /parliamentarians_list -->
+          </div>
+          <!-- /parliamentarians_mod -->
+        
+          <!-- file_mod -->
+          <div class="file_mod">
+            <h4>Transcripción del debate</h4>
+            <ul class="file_list">
+          
+              <li>
+                <% link_to @intervention.pdf_url, :class => "file file_pdf" do  %>
+                  <span class="file_title">Transcripción del debate "<%= @intervention.subject_title %>"</span>
+                  <span class="file_meta">(<acronym title="Portable Document Format">PDF</acronym>)</span>
+                <% end %>
+              </li>
+          
+            </ul>
+            
+            <!-- balloon -->
+            <div class="balloon">
+              <p>No podemos hacer nada más con su contenido.</p>
+            </div>
+            <!-- /balloon -->
+            
+          </div>
+          <!-- /file_mod -->
+        
+        </div>
+        <!-- /discussion_cont_col_right -->
+      
+      </div>
+      <!-- /discussion_cont_cols -->    
+      
+      
 
-  <br/>
-  <h2>Intervienen</h2>
-  <ul>
-    <% if !@intervention.parliamentarians.blank? %>
-      <% for parla in @intervention.parliamentarians %>
-        <li>
-          <%= parlavatar(parla) %>
-          <%= link_to parla.full_name, parliamentarian_path(parla) %><br/>
-          <%= parla.party.acronym %>
-        </li>
-      <% end %>
-    <% end %>
-  </ul>
-
-  <br/>
-  <h2>Transcripción</h2>
-  <p>Pdf: <%= link_to @intervention.pdf_url, @intervention.pdf_url %></p>
-  <ul>
-    <% if !@intervention.parliamentarians.blank? %>
-      <% for parla in @intervention.parliamentarians %>
-        <li>
-          <%= parlavatar(parla) %>
-          <%= link_to parla.full_name, parliamentarian_path(parla) %><br/>
-          <%= parla.party.acronym %>
-        </li>
-      <% end %>
-    <% end %>
-  </ul>
-
+    </div>
+    <!-- /discussion_cont -->
+    
+  </div>
+  <!-- /tab_cont -->
 </div>
-
+<!-- /tab_system -->
 
 
 
