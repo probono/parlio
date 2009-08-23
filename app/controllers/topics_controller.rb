@@ -14,7 +14,9 @@ class TopicsController < ApplicationController
 
   # GET /topics/1
   # GET /topics/1.xml
-  def show    
+  def show                   
+    @initiatives = @topic.initiatives.paginate :per_page => 5,  :page => params[:page]
+    
     respond_to do |wants|
       wants.html # show.html.erb
       wants.xml  { render :xml => @topic }

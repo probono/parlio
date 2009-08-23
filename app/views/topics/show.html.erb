@@ -13,9 +13,9 @@
 
         <h2><%= @topic.name %></h2>
         
-        <% if !@topic.initiatives.blank? %>
+        <% if !@initiatives.blank? %>
 
-          <% for ini in @topic.initiatives %>
+          <% for ini in @initiatives %>
           <!-- subject -->
           <div class="activity subject">
             <h3 class="title">
@@ -31,47 +31,7 @@
 
         <% end %>
         
-        
-        <!-- subject -->
-        <div class="activity subject">
-          <h3 class="title"><a href="#">Escuela pública San Martin Agirre de Bergara</a></h3>
-          <p class="subject_type"><span>Pregunta para su respuesta escrita</span></p>
-
-          <!-- tag_mod -->
-          <div class="tag_mod">
-            <h4 class="tag_mod_title">Etiquetas</h4>
-            <ul class="tag_list">
-              <li><a class="tag" href="#">minoría sexual</a></li>
-              <li><a class="tag" href="#">Osakidetza</a></li>
-              <li><a class="tag" href="#">terapéutica</a></li>
-              <li><a class="tag" href="#">cirugía</a></li>
-            </ul>
-          </div>
-          <!-- /tag_mod -->
-
-          <dl class="activity_meta line">
-            <dt>Fecha:</dt>
-            <dd>14.07.2009</dd>
-            <dt>Por:</dt>
-            <dd><a class="author" href="#">Maeztu Perez, Daniel</a> de <a class="party_name" href="#">Aralar</a></dd>
-            <dt>Para:</dt>
-            <dd>Consejero de Sanidad y Consumo</dd>
-          </dl>
-        </div>
-        <!-- /subject -->
-
-        
-        <!-- pag_nav -->
-        <div class="pag_nav">
-          <span class="disabled prev_page">← Previous</span>
-          <a rel="prev start" class="prev_page" href="#">← Previous</a>
-          <a rel="prev start" href="#">1</a>
-          <span class="current">2</span>
-          <a rel="next" href="#">3</a>
-          <a rel="next" class="next_page" href="#">Next →</a>
-          <span class="disabled next_page">Next →</span>
-        </div>
-        <!-- /pag_nav -->
+        <%= will_paginate @initiatives, :class => 'pag_nav' %>
 
         <!-- rss_mod -->
         <a class="rss_mod">
