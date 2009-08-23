@@ -21,53 +21,24 @@
     <!-- subject_cont -->
     <div class="subject_cont">
 
-      <!-- subject -->
-      <div class="activity subject">
-        <h4 class="title"><a href="#">Escuela pública San Martin Agirre de Bergara</a></h4>
-        <p class="activity_type"><span>Pregunta para su respuesta escrita</span></p>
-        <dl class="activity_meta line">
-          <dt>Fecha:</dt>
-          <dd>14.07.2009</dd>
-          <dt>Por:</dt>
-          <dd><a class="author" href="#">Maeztu Perez, Daniel</a> de <a class="party_name" href="#">Aralar</a></dd>
-        </dl>
-        <!-- tag_mod -->
-        <div class="tag_mod">
-          <h5>Etiquetas</h5>
-          <ul class="tag_list">
-            <li><a class="tag" href="#">minoría sexual</a></li>
-            <li><a class="tag" href="#">Osakidetza</a></li>
-            <li><a class="tag" href="#">terapéutica</a></li>
-            <li><a class="tag" href="#">cirugía</a></li>
-          </ul>
+      <% if !@party.initiatives.blank? %>
+        <% for i in @party.initiatives %>
+        <!-- subject -->
+        <div class="activity subject">
+          <h4 class="title"><%= link_to i.title, initiative_path(i) %></h4>
+          <p class="activity_type"><span><%= i.initiative_type %></span></p>
+          <dl class="activity_meta line">
+            <dt>Fecha:</dt>
+            <dd><%= i.initiative_date %></dd>
+            <dt>Por:</dt>
+            <dd><%= link_to i.parliamentarian.full_name, parliamentarian_path(i.parliamentarian), :class=>"author" %> de 
+            <%= link_to i.parliamentarian.party.party_acronym, party_path(i.parliamentarian.party), :class => "party_name" %></dd>
+          </dl>
+          <%= render :partial => 'activity/activity_tags', :locals => { :activity => i } %>
         </div>
-        <!-- /tag_mod -->
-      </div>
-      <!-- /subject -->
-      
-      <!-- subject -->
-      <div class="activity subject">
-        <h4 class="title"><a href="#">Escuela pública San Martin Agirre de Bergara</a></h4>
-        <p class="activity_type"><span>Pregunta para su respuesta escrita</span></p>
-        <dl class="activity_meta line">
-          <dt>Fecha:</dt>
-          <dd>14.07.2009</dd>
-          <dt>Por:</dt>
-          <dd><a class="author" href="#">Maeztu Perez, Daniel</a> de <a class="party_name" href="#">Aralar</a></dd>
-        </dl>
-        <!-- tag_mod -->
-        <div class="tag_mod">
-          <h5>Etiquetas</h5>
-          <ul class="tag_list">
-            <li><a class="tag" href="#">minoría sexual</a></li>
-            <li><a class="tag" href="#">Osakidetza</a></li>
-            <li><a class="tag" href="#">terapéutica</a></li>
-            <li><a class="tag" href="#">cirugía</a></li>
-          </ul>
-        </div>
-        <!-- /tag_mod -->
-      </div>
-      <!-- /subject -->
+        <!-- /subject -->
+        <% end %>
+      <% end %>
       
     </div>
     <!-- /subject_cont -->

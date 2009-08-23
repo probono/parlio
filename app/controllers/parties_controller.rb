@@ -3,7 +3,7 @@ class PartiesController < ApplicationController
   before_filter :load_news, :only => [:show, :commissions, :interventions]
 
   def show
-
+    
     respond_to do |wants|
       wants.html 
       wants.xml  { render :xml => @party }
