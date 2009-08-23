@@ -16,7 +16,7 @@ parliamentarians.each do |p|
     initiative.tag_list = i.tags.join(",")
     
     i.procedures.each do |p|
-      initiative.procedures.build(:title => p[:title], :url => p[:url])
+      initiative.procedures.build(:title => p[:title], :url => p[:url], :procedure_date => p[:procedure_date])
     end
   end
   
