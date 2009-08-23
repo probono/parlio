@@ -35,20 +35,14 @@
         <h4>Documentos</h4>
         
         <ul class="file_list">
-          
-          <li>
-            <a class="file file_pdf" href="#">
-              <span class="file_title">Documento original En relación con la atención integral a las personas transexuales</span>
-              <span class="file_meta">(<acronym title="Portable Document Format">PDF</acronym>, 2.4 <abbr title="Megabytes">Mb.</abbr>)</span>
-            </a>
-          </li>
-          
-          <li>
-            <a class="file file_pdf" href="#">
-              <span class="file_title">Documento original En relación con la atención integral a las personas transexuales</span>
-              <span class="file_meta">(<acronym title="Portable Document Format">PDF</acronym>, 2.4 <abbr title="Megabytes">Mb.</abbr>)</span>
-            </a>
-          </li>
+          <% @initiative.announcements.each do |anno| %>
+            <li>
+              <% link_to anno.announcement_url, :class => "file" do  %>
+                <span class="file_title"> <%= @initiative.title %></span>
+                <span class="file_meta">(<acronym title="Texto plano">TXT</acronym>)</span>
+              <% end %>
+            </li>
+          <% end %>
           
         </ul>
       </div>
@@ -59,9 +53,13 @@
         <h2>Evolución</h2>
         <dl class="evolution_sheet">
           <dt>Situación:</dt>
-          <dd><%= @initiative.status %></dd>
-          <dt>Plazo de presentación:</dt>
-          <dd>03.09.2009 Plazo para que conteste el Gobierno Vasco</dd>
+          <% if @initiative.status == Initiative::OPEN %>
+            <dd>En proceso</dd>
+          <% else %>
+            <dd>Cerrada</dd>
+          <% end %>
+          <!--<dt>Plazo de presentación:</dt>
+          <dd>03.09.2009 Plazo para que conteste el Gobierno Vasco</dd>-->
           <dt>Trámites por los que ha pasado:</dt>
           <dd>
             

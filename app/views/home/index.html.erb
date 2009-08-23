@@ -1,5 +1,3 @@
-<h1>Home#index</h1>
-
 Actividad parlamentaria
 <ul>
   
@@ -8,13 +6,43 @@ Actividad parlamentaria
 
 Asuntos de actualidad
 
-<ul>
-  
-</ul>   
+<h2>Categorías más activas</h2>    
+
+<% if !@most_active.blank? %>
+  <ul>
+    <% for t in @most_active %>
+      <li><%= link_to t.name, topic_path(t) %> <span class="subject_num"><%= t.initiatives.size %> iniciativas</span> </li>
+    <% end %>
+  </ul>
+<% end %>
+                
+<h2>Etiquetas más actuales</h2>                  
+<% if !@most_active_tags.blank? %>
+  <ul>
+    <% for t in @most_active_tags %>
+      <li><%= link_to t.name, initiatives_by_tag_path(t.name), :class => "tag" %> <span class="subject_num"><%= t.taggings.size %> asuntos</span></li><br/>
+    <% end %>
+  </ul>
+<% end %>
 
  
-Parlamentarios de actualidad
+ 
 
-<ul>
-  
-</ul>    
+<h2>Parlamentarios más activos</h2>
+<% if !@most_active_parliamentarians.blank? %>
+  <!-- parliamentarians_list -->
+  <div class="parliamentarians_list">
+    <% for p in @most_active_parliamentarians %>
+      <!-- parliamentarian -->
+      <div class="parliamentarian">
+        <%= parlavatar(p) %>
+        <div class="main">
+          <h2 class="name"><%= link_to p.full_name, parliamentarian_path(p) %> </h2>
+          <p class="party"><%= link_to p.party.party_acronym, party_path(p.party), :class => "party_name" %></p>
+          <p class="subject_num"><%= p.initiatives.size %> iniciativas</p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <!-- /parliamentarians_list -->
+<% end %>
