@@ -20,7 +20,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :parties
   map.resources :topics, :path_prefix => 'activity'
   map.resources :initiatives, :path_prefix => 'activity'            
-  map.resources :interventions, :path_prefix => 'activity'
+  map.resources :interventions, :path_prefix => 'activity' 
+  map.interventions_by_session  '/activity/interventions/session/:session_date' , :controller => 'interventions', :action => 'by_session_date'
   map.resources :commisions, :path_prefix => 'activity'
   
   map.resources :parliamentarians, :member => {:initiatives => :get, :interventions => :get, :commisions => :get} 

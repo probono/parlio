@@ -61,6 +61,6 @@ class Parliamentarian < ActiveRecord::Base
   
   def self.site_search(query)
     sql = "%#{query}%"
-    Parliamentarian.find(:all, :conditions => ["full_name like ? or profession like ? or posts like ?", sql, sql, sql])
+    Parliamentarian.find(:all, :conditions => ["full_name like ? or profession like ?", sql, sql])
   end  
 end

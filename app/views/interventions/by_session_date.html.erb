@@ -1,42 +1,50 @@
+by_session_date                                                   
+
 <h1>Actividad</h1>
 <p class="claim">Qué ocurre en el Parlamento Vasco</p>
 
 <!-- tab_system -->
-<div class="tab_system tab_system_subjects">
-
+<div class="tab_system tab_system_discussions">
   <%= render :partial => 'activity/activity_menu' %>
 
   <!-- tab_cont -->
   <div class="tab_cont">
-
+    
+    <!-- sessions_menu -->
     <%= render :partial => 'activity/sessions_date' %>
-
+    <!-- /sessions_menu -->
+    
     <!-- discussion_cont -->
     <div class="discussion_cont">
-      <h2>Últimos debates</h2>
+      <h2>Sesión del <%= @session_date %></h2>
       <!-- discussion_list -->
       <div class="discussion_list">
+                               
         <% if !@interventions.blank? %>
-            <% for inter in @interventions %>
-              <div class="activity discussion">
-                <h3 class="title"><%= link_to inter.subject_title, intervention_path(inter) %></h3>
-                <!--
-                <p class="activity_type"><span><%= link_to inter.subject_title, intervention_path(inter) %></span></p>
-                <dl class="activity_meta line">
-                  <dt>Por:</dt>
-                  <dd><a class="author" href="#">Maeztu Perez, Daniel</a> de <a class="party_name" href="#">Aralar</a></dd>
-                  <dt>Para:</dt>
-                  <dd>Consejero de Sanidad y Consumo</dd>
-                </dl>-->
-              </div>
-            <% end %>
+          <% for inter in @interventions %>
+            <div class="activity discussion">
+              <h3 class="title"><%= link_to inter.subject_title, intervention_path(inter) %></h3>
+              <!--
+              <p class="activity_type"><span>Debate y resolución definitiva</span></p>
+
+              <dl class="activity_meta line">
+                <dt>Por:</dt>
+                <dd><a class="author" href="#">Maeztu Perez, Daniel</a> de <a class="party_name" href="#">Aralar</a></dd>
+                <dt>Para:</dt>
+                <dd>Consejero de Sanidad y Consumo</dd>
+              </dl>-->
+            </div>
+            
+          <% end %>
+        <% else %>
+          
         <% end %>
-        <%= will_paginate @interventions, :class => 'pag_nav' %>
+        
       </div>
       <!-- /discussion_list -->
     </div>
     <!-- /discussion_cont -->
-
+    
     <!-- discussion_sidebar -->
     <div class="discussion_sidebar">
       <!-- parliamentarians_mod -->
@@ -44,7 +52,7 @@
         <h3>Ausentes en la sesión</h3>
         <!-- parliamentarians_list -->
         <div class="parliamentarians_list">
-
+  
           <!-- parliamentarian -->
           <div class="parliamentarian">
             <p class="photo"><a href="#"><img src="http://parlamento.euskadi.net/img/fichas/149.jpg" alt="Foto de [parliamentarian_name]" width="32" /></a></p>
@@ -54,7 +62,7 @@
             </div>
           </div>
           <!-- parliamentarian -->
-
+  
           <!-- parliamentarian -->
           <div class="parliamentarian">
             <p class="photo"><a href="#"><img src="http://parlamento.euskadi.net/img/fichas/149.jpg" alt="Foto de [parliamentarian_name]" width="32" /></a></p>
@@ -64,16 +72,21 @@
             </div>
           </div>
           <!-- parliamentarian -->
-
+  
         </div>
         <!-- /parliamentarians_list -->
       </div>
       <!-- /parliamentarians_mod -->
     </div>
     <!-- /discussion_sidebar -->
-
-
+    
   </div>
   <!-- /tab_cont -->
 </div>
 <!-- /tab_system -->
+
+
+
+                          
+ 
+

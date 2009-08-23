@@ -31,4 +31,9 @@ class Intervention < ActiveRecord::Base
   has_many :speakers, :through => :intervention_speakers
   
   has_many :procedures, :order => 'name asc'
+  
+  named_scope :by_session_date, lambda { |d|
+        { :conditions => { :session_date => d } }
+  }
+  
 end

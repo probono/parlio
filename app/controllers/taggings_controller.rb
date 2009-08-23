@@ -1,7 +1,8 @@
 class TaggingsController < ApplicationController
-  before_filter :find_tagging, :only => [:show]
+  before_filter :find_taggings, :only => [:show]
 
-  def show
+  def show      
+    @tag = Tag.find_by_name(params[:tag])
     respond_to do |wants|
       wants.html
       wants.xml  { render :xml => @tagging }
@@ -9,8 +10,8 @@ class TaggingsController < ApplicationController
   end
 
   private
-    def find_tagging
-      @taggings = Initiative.find_tagged_with(params[:tag])
+    def find_taggings
+      @taggings = Initiative.find_tagged_with(params[:tag]).paginate :per_page => 5,  :page => params[:page]
     end
 
 end

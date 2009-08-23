@@ -1,10 +1,8 @@
 class InterventionsController < ApplicationController
   before_filter :find_intervention, :only => [:show, :edit, :update, :destroy]
 
-  # GET /interventions
-  # GET /interventions.xml
-  def index      
-    
+  def index
+
     @interventions = Intervention.find(:all, :order=> "session_date desc")
     @sessions_date = @interventions.map{|i| i.session_date}.uniq.sort.reverse
     @interventions = @interventions.paginate :per_page => 10,  :page => params[:page]
@@ -15,8 +13,6 @@ class InterventionsController < ApplicationController
     end
   end
 
-  # GET /interventions/1
-  # GET /interventions/1.xml
   def show
     respond_to do |wants|
       wants.html # show.html.erb
@@ -24,63 +20,12 @@ class InterventionsController < ApplicationController
     end
   end
 
-  # GET /interventions/new
-  # GET /interventions/new.xml
-  def new
-    @intervention = Intervention.new
-
-    respond_to do |wants|
-      wants.html # new.html.erb
-      wants.xml  { render :xml => @intervention }
-    end
+  def by_session_date
+    sd = params[:session_date].split '-'
+    @session_date = Date.new(sd[0].to_i, sd[1].to_i, sd[2].to_i)
+    @interventions = Intervention.by_session_date(@session_date).all
   end
 
-  # GET /interventions/1/edit
-  def edit
-  end
-
-  # POST /interventions
-  # POST /interventions.xml
-  def create
-    @intervention = Intervention.new(params[:intervention])
-
-    respond_to do |wants|
-      if @intervention.save
-        flash[:notice] = 'Intervention was successfully created.'
-        wants.html { redirect_to(@intervention) }
-        wants.xml  { render :xml => @intervention, :status => :created, :location => @intervention }
-      else
-        wants.html { render :action => "new" }
-        wants.xml  { render :xml => @intervention.errors, :status => :unprocessable_entity }
-      end
-    end
-  end
-
-  # PUT /interventions/1
-  # PUT /interventions/1.xml
-  def update
-    respond_to do |wants|
-      if @intervention.update_attributes(params[:intervention])
-        flash[:notice] = 'Intervention was successfully updated.'
-        wants.html { redirect_to(@intervention) }
-        wants.xml  { head :ok }
-      else
-        wants.html { render :action => "edit" }
-        wants.xml  { render :xml => @intervention.errors, :status => :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /interventions/1
-  # DELETE /interventions/1.xml
-  def destroy
-    @intervention.destroy
-
-    respond_to do |wants|
-      wants.html { redirect_to(interventions_url) }
-      wants.xml  { head :ok }
-    end
-  end
 
   private
     def find_intervention
