@@ -28,16 +28,20 @@ module Legebiltzarra
       BASE_URL + document.at("div[@class='ficha_foto']/img/@src") rescue nil
     end
 
+    def degree
+      document.css('dt[contains("Titulaci")]+dd').text.strip rescue nil
+    end
+
     def profession
-      document.at('dl[@class="tabla"]/[2]').content.strip rescue nil
+      document.css('dt[contains("Profe")]+dd').text.strip rescue nil
     end
 
     def languages
-      document.at('dl[@class="tabla"]/[4]').content.strip.scan(/\w+/) rescue []
+      document.css('dt[contains("Idiomas:")]+dd').text.strip.scan(/\w+/) rescue []
     end
 
     def email
-      document.at('dl[@class="tabla"]/[6]').content.strip rescue nil
+      document.css('dt[contains("E-mail")]+dd>a').text.strip rescue nil
     end   
   
     def posts                        
