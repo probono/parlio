@@ -53,29 +53,21 @@
         <div class="activity_stat most_active_parliamentarians">
           <h2>Parlamentarios más activos</h2>
           <!-- parliamentarians_list -->
-          <div class="parliamentarians_list">
-
-            <!-- parliamentarian -->
-            <div class="parliamentarian">
-              <p class="photo"><a href="#"><img src="http://parlamento.euskadi.net/img/fichas/149.jpg" alt="Foto de [parliamentarian_name]" width="48" /></a></p>
-              <div class="main">
-                <h3 class="name"><a href="#">Aintzane Ezenarro</a></h3>
-                <p class="party"><a class="party_name" href="#">Aralar</a></p>
-                <p class="subject_num">23 iniciativas</p>
-              </div>
-            </div>
-            <!-- parliamentarian -->
-
-            <!-- parliamentarian -->
-            <div class="parliamentarian">
-              <p class="photo"><a href="#"><img src="http://parlamento.euskadi.net/img/fichas/149.jpg" alt="Foto de [parliamentarian_name]" width="48" /></a></p>
-              <div class="main">
-                <h3 class="name"><a href="#">Patxi López</a></h3>
-                <p class="party"><a class="party_name" href="#">Aralar</a></p>
-                <p class="subject_num">23 iniciativas</p>
-              </div>
-            </div>
-            <!-- parliamentarian -->
+          <div class="parliamentarians_list">        
+            
+            <% if !@most_active_parliamentarians.blank? %>
+              <% for parla in @most_active_parliamentarians %>
+                <%#= parla.full_name %>                       
+                <div class="parliamentarian">
+                  <%= parlavatar(parla[0]) %>
+                  <div class="main">
+                    <h3 class="name"><%= link_to parla[0].full_name, parliamentarian_path(parla[0]) %></h3>
+                    <p class="party"><%= link_to parla[0].party.party_acronym, party_path(parla[0].party), :class => "party_name" %></p>
+                    <p class="subject_num"><%= parla[1].size %> iniciativas</p>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
 
           </div>
           <!-- /parliamentarians_list -->
