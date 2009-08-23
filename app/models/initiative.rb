@@ -31,4 +31,8 @@ class Initiative < ActiveRecord::Base
   has_many :procedures, :dependent => :destroy
   has_many :announcements, :dependent => :destroy
 
+  def self.site_search(query)
+    sql = "%#{query}%"
+    Initiative.find(:all, :conditions => ["num_exp like ? or title like ? or proposer like ? or recipient like ?", sql, sql, sql, sql])
+  end
 end

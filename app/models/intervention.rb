@@ -37,4 +37,9 @@ class Intervention < ActiveRecord::Base
         { :conditions => { :session_date => d } }
   }
   
+  def self.site_search(query)
+    sql = "%#{query}%"
+    Intervention.find(:all, :conditions => ["file_number like ? or subject_title like ? or full_txt like ? or subject_treated like ?", sql, sql, sql, sql])
+  end  
+  
 end
