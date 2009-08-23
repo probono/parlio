@@ -1,14 +1,17 @@
 <!-- subject_cat -->
-<div class="subject_cat">
-  <h2>Sesiones</h2>       
+<div class="sessions_menu">
+  <h2>Sesiones</h2>
+         
   <% if !current_sessions_date.blank? %>
-    <% current_sessions_date.group_by{|d| d.month}.each do |month, dates|  %>
-      <ul>
-        <%= Date::MONTHNAMES[month].upcase %>
-        <% for session in dates %>
-          <li><%= session %></li>
-        <% end %>
-      </ul>
+    <% current_sessions_date.group_by{|d| d.year}.each do |year, dates|  %>
+      <div class="session_menu_year">
+        <h3><%= year %></h3>
+        <ul>
+          <% for session in dates %>
+            <li><%= session %></li>
+          <% end %>
+        </ul>
+      </div>  
     <% end %>           
   <% end %>
 </div>

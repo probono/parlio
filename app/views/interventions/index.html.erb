@@ -8,29 +8,73 @@
 
   <!-- tab_cont -->
   <div class="tab_cont">
-    
+
     <%= render :partial => 'activity/sessions_date' %>
 
-    
-        
-    <!-- subject_cont -->
-    <div class="subject_cont">  
-      
-      <% if !@interventions.blank? %>
-        <ul>
-          <% for inter in @interventions %>
-            <li><%= link_to "#{inter.session_date}/#{inter.subject_number}", intervention_path(inter) %>  | <%= inter.subject_title %></li>
-          <% end %>
-        </ul>
 
-      <% end %>
-      
-      <%= will_paginate @initiatives, :class => 'pag_nav' %>
-      
+
+
+    <!-- discussion_cont -->
+    <div class="discussion_cont">
+      <h2>Últimos debates</h2>
+      <!-- discussion_list -->
+      <div class="discussion_list">
+        <% if !@interventions.blank? %>
+            <% for inter in @interventions %>
+              <div class="activity discussion">
+                <h3 class="title"><%= link_to inter.subject_title, intervention_path(inter) %></h3>
+                <p class="activity_type"><span>Debate y resolución definitiva</span></p>
+                <dl class="activity_meta line">
+                  <dt>Por:</dt>
+                  <dd><a class="author" href="#">Maeztu Perez, Daniel</a> de <a class="party_name" href="#">Aralar</a></dd>
+                  <dt>Para:</dt>
+                  <dd>Consejero de Sanidad y Consumo</dd>
+                </dl>
+              </div>
+            <% end %>
+        <% end %>
+        <%= will_paginate @interventions, :class => 'pag_nav' %>
+      </div>
+      <!-- /discussion_list -->
     </div>
-    
-    <!-- /subject_cont -->
-    
+    <!-- /discussion_cont -->
+
+    <!-- discussion_sidebar -->
+    <div class="discussion_sidebar">
+      <!-- parliamentarians_mod -->
+      <div class="parliamentarians_mod">
+        <h3>Ausentes en la sesión</h3>
+        <!-- parliamentarians_list -->
+        <div class="parliamentarians_list">
+
+          <!-- parliamentarian -->
+          <div class="parliamentarian">
+            <p class="photo"><a href="#"><img src="http://parlamento.euskadi.net/img/fichas/149.jpg" alt="Foto de [parliamentarian_name]" width="32" /></a></p>
+            <div class="main">
+              <h3 class="name"><a href="#">Aintzane Ezenarro</a></h3>
+              <p class="party"><a class="party_name" href="#">Aralar</a></p>
+            </div>
+          </div>
+          <!-- parliamentarian -->
+
+          <!-- parliamentarian -->
+          <div class="parliamentarian">
+            <p class="photo"><a href="#"><img src="http://parlamento.euskadi.net/img/fichas/149.jpg" alt="Foto de [parliamentarian_name]" width="32" /></a></p>
+            <div class="main">
+              <h3 class="name"><a href="#">Patxi López</a></h3>
+              <p class="party"><a class="party_name" href="#">Aralar</a></p>
+            </div>
+          </div>
+          <!-- parliamentarian -->
+
+        </div>
+        <!-- /parliamentarians_list -->
+      </div>
+      <!-- /parliamentarians_mod -->
+    </div>
+    <!-- /discussion_sidebar -->
+
+
   </div>
   <!-- /tab_cont -->
 </div>
