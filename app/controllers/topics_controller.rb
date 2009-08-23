@@ -17,6 +17,8 @@ class TopicsController < ApplicationController
   def show                   
     @initiatives = @topic.initiatives.paginate :per_page => 5,  :page => params[:page]
     @tags = @topic.initiatives.map{|i| i.tags}.flatten.uniq
+    @most_active_parliamentarians = @topic.most_active_parliamentarians
+    
     respond_to do |wants|
       wants.html # show.html.erb
       wants.xml  { render :xml => @topic }

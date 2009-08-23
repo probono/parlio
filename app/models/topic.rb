@@ -21,4 +21,8 @@ class Topic < ActiveRecord::Base
     end
   end      
   
+  def most_active_parliamentarians                         
+    self.initiatives.group_by(&:parliamentarian).sort_by{|x| x[1].size }.reverse.first(3)
+  end
+  
 end
