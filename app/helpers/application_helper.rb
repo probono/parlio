@@ -3,8 +3,6 @@ module ApplicationHelper
   
   def main_tab_class(tab)
     c = controller.controller_name
-    puts "controller #{c}"
-
     if tab == 'parliament'
       'class="active"' if ['parliamentarians', 'parties'].include?(c)
     elsif tab == 'activity'
