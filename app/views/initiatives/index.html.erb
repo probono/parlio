@@ -77,7 +77,7 @@
             <% if !@most_active_parties.blank? %>
               <ul>
                 <% for p in @most_active_parties %>
-                  <li><%= link_to p.party_acronym, party_path(p), :class => "party_name" %> <span class="subject_num">146 asuntos</span></li>
+                  <li><%= link_to p[0].party_acronym, party_path(p[0]), :class => "party_name" %> <span class="subject_num"><%= p[1] %> asuntos</span></li>
                 <% end %>
               </ul>
             <% end %>

@@ -21,7 +21,7 @@ class Party < ActiveRecord::Base
   def self.most_active
     tuples = Initiative.count(:all, :group => "party_id", :include => [:parliamentarian], :order => "count(*) DESC")
     returning most_active = [] do
-      tuples.each{|tuple| most_active << Party.find(tuple[0])}
+      tuples.each{|tuple| most_active << [Party.find(tuple[0]), tuple[1]]}
     end
   end
   def party_acronym
