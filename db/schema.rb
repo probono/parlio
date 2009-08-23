@@ -9,7 +9,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090823153255) do
+ActiveRecord::Schema.define(:version => 20090823180900) do
+
+  create_table "announcements", :force => true do |t|
+    t.string   "announcement_url"
+    t.integer  "initiative_id"
+    t.integer  "summary"
+    t.date     "announcement_date"
+    t.integer  "num_exp"
+    t.integer  "number"
+    t.integer  "page"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "commisions", :force => true do |t|
     t.string   "name"

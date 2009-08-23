@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  announcement_url: MyString
+  initiative_id: 1
+  summary: 1
+  announcement_date: 2009-08-23
+  num_exp: 1
+  number: 1
+  page: 1
+
+two:
+  announcement_url: MyString
+  initiative_id: 1
+  summary: 1
+  announcement_date: 2009-08-23
+  num_exp: 1
+  number: 1
+  page: 1

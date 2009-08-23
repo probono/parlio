@@ -63,7 +63,7 @@ module Legebiltzarra
       BASE_URL + document.at("//div[@class='boton']/script").inner_html.match(/href='(.*)' title/)[1]
     end
     def videos
-      document.search("//a[text()=' (256 K)']").map { |v| { v.parent.content => v['href']} } rescue []
+      document.search("//a[text()=' (256 K)']").map { |v| { :title => v.parent.content, :url => v['href']} } rescue []
     end  
     def document
       @document ||= Nokogiri::HTML(open(self.url).read)

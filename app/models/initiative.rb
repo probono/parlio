@@ -29,5 +29,6 @@ class Initiative < ActiveRecord::Base
   belongs_to :parliamentarian
   belongs_to :topic
   has_many :procedures, :dependent => :destroy
-  
+  has_many :announcements, :dependent => :destroy
+
 end
