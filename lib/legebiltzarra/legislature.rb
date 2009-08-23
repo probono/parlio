@@ -57,11 +57,11 @@ module Legebiltzarra
           tmp = parlas.select{|p| "#{p.first_name} #{p.last_name}" == parliamentarian.substitution}.first
           if tmp
             parliamentarian.substitution = tmp.full_name
-            if parliamentarian.active?
-              puts "#{parliamentarian.full_name} sustituye a #{tmp.full_name}"
-            else
-              puts "#{parliamentarian.full_name} sustituido por #{tmp.full_name}"
-            end
+            #if parliamentarian.active?
+            #  puts "#{parliamentarian.full_name} sustituye a #{tmp.full_name}"
+            #else
+            #  puts "#{parliamentarian.full_name} sustituido por #{tmp.full_name}"
+            #end
           else
             puts "---> Who is #{parliamentarian.substitution}?"
           end
