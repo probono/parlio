@@ -1,17 +1,140 @@
 <h1>Actividad</h1>
 <p class="claim">Qué ocurre en el Parlamento Vasco</p>
-<%= render :partial => 'activity/activity_menu' %>
 
-<!-- tab_cont -->
-<div class="tab_cont">
+<!-- tab_system -->
+<div class="tab_system tab_system_subjects">
 
-  <h2>Asuntos</h2>
+  <%= render :partial => 'activity/activity_menu' %>
 
-  <% if !@initiatives.blank? %>  
-    <ul>
-      <% for ini in @initiatives %>
-        <li><%= link_to ini.num_exp, initiative_path(ini) %> | <%= ini.title %></li>
-      <% end %>
-    </ul>
-  <% end %>
+  <!-- tab_cont -->
+  <div class="tab_cont">
+    
+    <%= render :partial => 'activity/topics' %>
+    
+    <!-- subject_cont -->
+    <div class="subject_cont">
+      
+      <!-- subject_latest -->
+      <div class="subject_latest">
+        <h2>Últimos asuntos tratados</h2>
+        
+        <!-- subjects -->
+        <div class="activities subjects">
+          <% if ! @most_recent_initiatives.blank? %>
+            <% for initiative in  @most_recent_initiatives %>
+              <!-- subject -->
+              <div class="activity subject">
+                <h3 class="title">
+                  <%= link_to initiative.title, initiative_path(initiative) %>
+                </h3>
+                <dl class="activity_meta line">
+                  <dt>Fecha:</dt>
+                  <dd>14.07.2009</dd>
+                  <dt>Por:</dt>
+                  <dd>
+                    <%= link_to initiative.parliamentarian.full_name, parliamentarian_path(initiative.parliamentarian), :class=>"author" %> de 
+                    <%= link_to initiative.parliamentarian.party.party_acronym, party_path(initiative.parliamentarian.party), :class => "party_name" %>
+                  </dd>
+                  <dt>Para:</dt>
+                  <dd><%= initiative.recipient %></dd>
+                </dl>
+              </div>
+              <!-- /subject -->
+            <% end %>
+          <% end %>
+
+        </div>
+        <!-- /subjects -->
+        
+      </div>
+      <!-- /subject_latest -->
+      
+      
+      <!-- activity_stats -->
+      <div class="activity_stats">
+        
+        <!-- activity_stats_col -->
+        <div class="activity_stats_col activity_stats_col_left">
+          <!-- most_active_cats -->
+          <div class="activity_stat most_active_cats">
+            <h2>Categorías más activas</h2>    
+            
+            <% if !@most_active.blank? %>
+              <ul>
+                <% for t in @most_active %>
+                  <li><%= link_to t.name, topic_path(t) %> <span class="subject_num"><%= t.initiatives.size %> iniciativas</span> </li>
+                <% end %>
+              </ul>
+            <% end %>
+            
+          </div>
+          <!-- /most_active_cats -->
+        
+          <!-- most_active_parties -->
+          <div class="activity_stat most_active_parties">
+            <h2>Partidos más activos</h2>    
+            
+            <% if !@most_active_parties.blank? %>
+              <ul>
+                <% for p in @most_active_parties %>
+                  <li><%= link_to p.party_acronym, party_path(p), :class => "party_name" %> <span class="subject_num">146 asuntos</span></li>
+                <% end %>
+              </ul>
+            <% end %>
+            
+          </div>
+          <!-- /most_active_parties -->
+        </div>
+        <!-- /activity_stats_col -->
+        
+        <!-- activity_stats_col -->
+        <div class="activity_stats_col activity_stats_col_right">
+          <!-- most_recent_tags -->
+          <div class="activity_stat most_recent_tags">
+            <h2>Etiquetas más actuales</h2>                  
+            <% if !@most_active_tags.blank? %>
+              <ul>
+                <% for t in @most_active_tags %>
+                  <li><%= link_to t.name, initiatives_by_tag_path(t.name), :class => "tag" %> <span class="subject_num"><%= t.taggings.size %> asuntos</span></li>
+                <% end %>
+              </ul>
+            <% end %>
+
+          </div>
+          <!-- /most_recent_tags -->
+        
+          <!-- most_active_parliamentarians -->
+          <div class="activity_stat most_active_parliamentarians">
+            <h2>Parlamentarios más activos</h2>
+            <% if !@most_active_parliamentarians.blank? %>
+              <!-- parliamentarians_list -->
+              <div class="parliamentarians_list">
+                <% for p in @most_active_parliamentarians %>
+                  <!-- parliamentarian -->
+                  <div class="parliamentarian">
+                    <%= parlavatar(p) %>
+                    <div class="main">
+                      <h2 class="name"><%= link_to p.full_name, parliamentarian_path(p) %> </h2>
+                      <p class="party"><%= link_to p.party.party_acronym, party_path(p.party), :class => "party_name" %></p>
+                      <p class="subject_num"><%= p.initiatives.size %> iniciativas</p>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+              <!-- /parliamentarians_list -->
+            <% end %>
+            
+          </div>
+          <!-- /most_active_parliamentarians -->
+        </div>
+        <!-- /activity_stats_col -->
+      </div>
+      <!-- /activity_stats -->
+      
+    </div>
+    <!-- /subject_cont -->
+    
+  </div>
+  <!-- /tab_cont -->
 </div>
+<!-- /tab_system -->

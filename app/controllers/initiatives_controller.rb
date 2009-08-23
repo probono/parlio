@@ -1,10 +1,15 @@
 class InitiativesController < ApplicationController
   before_filter :find_initiative, :only => [:show, :edit, :update, :destroy]
 
-  # GET /initiatives
-  # GET /initiatives.xml
   def index
-    @initiatives = Initiative.all
+    @most_active = Topic.most_active
+    tuples = Tagging.count(:all, :group => "tag_id", :order => "count(*) DESC", :limit=> 10)
+    returning @most_active_tags = [] do
+      tuples.each{|tuple| @most_active_tags << Tag.find(tuple[0])}
+    end       
+    @most_active_parties= Party.most_active
+    @most_active_parliamentarians= Parliamentarian.most_active
+    @most_recent_initiatives = Initiative.find(:all, :limit => 3)
 
     respond_to do |wants|
       wants.html # index.html.erb
@@ -12,70 +17,10 @@ class InitiativesController < ApplicationController
     end
   end
 
-  # GET /initiatives/1
-  # GET /initiatives/1.xml
   def show
     respond_to do |wants|
       wants.html # show.html.erb
       wants.xml  { render :xml => @initiative }
-    end
-  end
-
-  # GET /initiatives/new
-  # GET /initiatives/new.xml
-  def new
-    @initiative = Initiative.new
-
-    respond_to do |wants|
-      wants.html # new.html.erb
-      wants.xml  { render :xml => @initiative }
-    end
-  end
-
-  # GET /initiatives/1/edit
-  def edit
-  end
-
-  # POST /initiatives
-  # POST /initiatives.xml
-  def create
-    @initiative = Initiative.new(params[:initiative])
-
-    respond_to do |wants|
-      if @initiative.save
-        flash[:notice] = 'Initiative was successfully created.'
-        wants.html { redirect_to(@initiative) }
-        wants.xml  { render :xml => @initiative, :status => :created, :location => @initiative }
-      else
-        wants.html { render :action => "new" }
-        wants.xml  { render :xml => @initiative.errors, :status => :unprocessable_entity }
-      end
-    end
-  end
-
-  # PUT /initiatives/1
-  # PUT /initiatives/1.xml
-  def update
-    respond_to do |wants|
-      if @initiative.update_attributes(params[:initiative])
-        flash[:notice] = 'Initiative was successfully updated.'
-        wants.html { redirect_to(@initiative) }
-        wants.xml  { head :ok }
-      else
-        wants.html { render :action => "edit" }
-        wants.xml  { render :xml => @initiative.errors, :status => :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /initiatives/1
-  # DELETE /initiatives/1.xml
-  def destroy
-    @initiative.destroy
-
-    respond_to do |wants|
-      wants.html { redirect_to(initiatives_url) }
-      wants.xml  { head :ok }
     end
   end
 
