@@ -59,3 +59,12 @@ namespace :deploy do
   end
 
 end
+              
+namespace :data do
+  desc "Load data from legebiltzarra"
+  task :load do                                                
+    puts "Loading data from legebiltzarra"
+    run "cd #{deploy_to}/current && script/runner script/load_parliamentarians.rb  && script/runner script/load_comissions.rb  && script/runner script/load_parties.rb  && script/runner script/load_topics.rb && script/runner script/load_interventions.rb"
+  end
+end
+
