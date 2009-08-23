@@ -37,7 +37,7 @@
         <% if !@parliamentarian.posts.blank? %>    
           <dt>Cargos:</dt>
           <% for post in @parliamentarian.posts %>
-            <dd class="block"><%= post.title %></dd>
+            <dd class="block"><%= post.title %>.</dd>
           <% end %>
           </ul>
         <% end %>        
