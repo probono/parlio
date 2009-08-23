@@ -1,33 +1,97 @@
-<p><%= @parliamentarian.full_name %></p>
-<%= image_tag @parliamentarian.photo %>   
+<!-- parliamentarian_sheet -->
+<div class="parliamentarian_sheet">
+  
+  <p class="photo"><%= parlavatar(@parliamentarian, 100) %></p>
+  
+  <!-- main -->
+  <div class="main">
+    <h1><%= @parliamentarian.full_name %></h1>
+    <p><%= link_to @parliamentarian.party.name, party_path(@parliamentarian.party) %></p>
+    <%= status_button(@parliamentarian) %>
     
-<ul>
-  <li>Profesión: <%= @parliamentarian.profession %></li>
-  <li>Titulación: <%= @parliamentarian.degree %></li>
-  <li>Idiomas: <%= @parliamentarian.languages %></li>
-  <li>Email: <%= mail_to @parliamentarian.email %></li>
-</ul>
+    <!-- parliament_data -->
+    <div class="parliament_data">
+      <dl class="line">
+        <% if @parliamentarian.degree %>
+          <dt>Titulación:</dt>
+          <dd><%= @parliamentarian.degree %></dd>
+        <%end%>
+        <% if @parliamentarian.profession %>
+          <dt>Profesión:</dt>
+          <dd><%= @parliamentarian.profession %></dd>
+        <%end%>
+        <% if @parliamentarian.languages %>
+          <dt>Idiomas:</dt>
+          <dd><%= @parliamentarian.languages %></dd>
+        <%end%>
+        <% if @parliamentarian.email %>
+          <dt>e-mail:</dt>
+          <dd><%= mail_to @parliamentarian.email %></dd>
+        <%end%>
+      </dl>
 
-<%= inline_annotated_timeline @activity_data, "100%", 300, 
-                              "parliamentarian_#{@parliamentarian.id}_activity_data" %>
-<br/><br/>
-<% if !@parliamentarian.posts.blank? %>
-  <h2>Cargos</h2>
-  <ul>     
-    <% for post in @parliamentarian.posts %>
-      <li><%= post.title %></li>
-    <% end %>
-  </ul>
-<% end %>
-                         
-<% if !@parliamentarian.initiatives.blank? %>
-  <h2>Asuntos</h2>
-  <ul>
-    <% for ini in @parliamentarian.initiatives %>
-      <li><%= link_to ini.num_exp, initiative_path(ini) %> | <%= ini.title %></li>
-    <% end %>
-  </ul>
-<% end %>
+      <dl class="line">
+        <dt>Sueldo:</dt>
+        <dd>Calculando... <a href="http://partaide.parlam.euskadi.net/galdera/503/">Ver más</a></dd>
+        
+        <% if !@parliamentarian.posts.blank? %>    
+          <dt>Cargos:</dt>
+          <% for post in @parliamentarian.posts %>
+            <dd class="block"><%= post.title %></dd>
+          <% end %>
+          </ul>
+        <% end %>        
+      </dl>
+    </div>
+    <!-- /parliament_data -->
+  </div>
+  <!-- /main -->
+</div>
+<!-- /parliamentarian_sheet -->
+
+<!-- parliamentarian_activity -->
+<div class="parliamentarian_activity">
+  
+  <h2>Actividad parlamentaria</h2>
+
+  <!-- legislature_menu -->
+  <div class="legislature_menu">
+    <h3>Legislaturas</h3>
+    <ul>
+      <li class="active"><a href="#">2009-Actualidad</a></li>
+<!--
+      <li><a href="#">2005-2009</a></li>
+      <li><a href="#">2001-2005</a></li>
+-->      
+    </ul> 
+  </div>
+  <!-- /legislature_menu -->
+  
+  <!-- parliamentarian_activity_cont -->
+  <div class="parliamentarian_activity_cont">
+    <h3>Gráfica de su actividad anual</h3>
+    <div class="activity_graph">
+      <%= inline_annotated_timeline @activity_data, "100%", 300, 
+                                    "parliamentarian_#{@parliamentarian.id}_activity_data" %>
+                                    <br/>
+    </div>
+
+    <!-- parliamentarian_activity_menu -->
+    <ul class="parliamentarian_activity_menu">
+      <li class="first active"><a href="#">Asuntos</a></li>
+      <li><a href="#">Debates</a></li>
+      <li class="last"><a href="#">Comisiones</a></li>
+    </ul>
+    <!-- /parliamentarian_activity_menu -->
+    
+    <%= render :partial => 'initiatives', :locals => {:initiatives => @initiatives}%>
+    
+  </div>
+  <!-- /parliamentarian_activity_cont -->
+  
+</div>
+<!-- /parliamentarian_activity -->
+
 
 
 <% if !@parliamentarian.interventions.blank? %>

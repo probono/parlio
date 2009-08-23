@@ -15,7 +15,10 @@ class ParliamentariansController < ApplicationController
     
     @parliamentarian.initiatives.group_by(&:initiative_date).each{|date, initiatives|
       @activity_data[date] = {:initiatives => initiatives.size}
-    }      
+    }     
+     
+    @page = params[:page] || 1
+    @initiatives = @parliamentarian.initiatives.paginate :page => @page, :per_page => 5
     
     @parliamentarian.interventions.group_by(&:session_date).each{|date, interventions|
         @activity_data[date] = {:interventions => interventions.size}
