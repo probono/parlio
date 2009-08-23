@@ -38,7 +38,7 @@
           <% @initiative.announcements.each do |anno| %>
             <li>
               <% link_to anno.announcement_url, :class => "file" do  %>
-                <span class="file_title"> <%= @initiative.title %></span>
+                <span class="file_title"> <%= anno.summary %></span>
                 <span class="file_meta">(<acronym title="Texto plano">TXT</acronym>)</span>
               <% end %>
             </li>
