@@ -58,7 +58,7 @@ eu:
     session_date: "Sesión del {{session_date}}" 
     video: "Vídeo"
     minutos: min.
-    duración: "Duración:"
+    duracion: "Duración:"
     calidad: "Calidad {{bitrate}}"
     intervienen: Intervienen
     transcripcion: "Transcripción del debate"
