@@ -1,6 +1,6 @@
 <!-- col_left -->
 <div class="col_left">
-  <h2>Legislatura</h2>
+  <h2><%= I18n.t("parliamentarians.index.legislatura") %></h2>
   <ul class="legislature_menu">
     <li><a href="#">2009-2013</a></li>
   </ul>
@@ -9,12 +9,12 @@
 
 <!-- main_content -->
 <div class="main_content">
-  <h1>Parlamentarios</h1>
-  <p class="claim">Legislatura 2009-2013 | <strong>Total:</strong> <%= @parliamentarians.size %> parlamentarios</p>
+  <h1><%= I18n.t("parliamentarians.index.parlamentarios") %></h1>
+  <p class="claim">Legislatura 2009-2013 | <strong><%= I18n.t("parliamentarians.index.total") %>:</strong> <%= @parliamentarians.size %> <%= I18n.t("parliamentarians.index.parlamentarios") %></p>
   
   <!-- parties-parliamentarians -->
   <div class="parties-parliamentarians">
-    <h2>Partidos</h2>
+    <h2><%= I18n.t("parliamentarians.index.partidos") %></h2>
     <ul>
       <% @parliamentarians.group_by{|p| p.party}.each do |party, parliamentarians | %>
         <li>  
@@ -23,7 +23,7 @@
               <% link_to party_path(party) do %>
                 <%= image_tag party.logo, :size => "143x70" %>
                 <strong><%= party.party_acronym %></strong>
-                <em><%= parliamentarians.size %> parlamentarios</em>
+                <em><%= parliamentarians.size %> <%= I18n.t("parliamentarians.index.parlamentarios") %></em>
               <% end %>
             </li>                                   
           <% end %>
@@ -36,7 +36,7 @@
   
   <!-- parties-parliamentarians -->
   <div class="parties-parliamentarians">
-    <h2>Grupo mixto</h2>
+    <h2><%= I18n.t("parliamentarians.index.grupo_mixto") %></h2>
     <ul>
       <% @parliamentarians.group_by{|p| p.party}.each do |party, parliamentarians | %>
         <% if party.acronym.include?("Mixto")%>
@@ -44,7 +44,7 @@
             <% link_to party_path(party) do %>
               <%= image_tag party.logo, :size => "143x70" %>
               <strong><%= party.party_acronym %></strong>
-              <em><%= parliamentarians.size %> parlamentarios</em>
+              <em><%= parliamentarians.size %> <%= I18n.t("parliamentarians.index.parlamentarios") %></em>
             <% end %>
           </li>                                   
         <% end %>

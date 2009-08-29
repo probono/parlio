@@ -9,12 +9,12 @@
   <div class="party_activity_cont">
     <%= render :partial => 'parliamentarians' %>
 
-    <h3>Actividad parlamentaria del partido</h3>
+    <h3><%= I18n.t("parties.interventions.actividad_parlamentaria_del_partido") %></h3>
     <!-- party_activity_menu -->
     <ul class="party_activity_menu">
-      <li class="first"><%= link_to "Asuntos", party_path(@party) %></li>
-      <li class="active"><%= link_to "Debates", interventions_party_path(@party) %></li>
-      <li class="last"><%= link_to "Comisiones", commissions_party_path(@party) %></li>
+      <li class="first"><%= link_to I18n.t("parties.interventions.asuntos"), party_path(@party) %></li>
+      <li class="active"><%= link_to I18n.t("parties.interventions.debates"), interventions_party_path(@party) %></li>
+      <li class="last"><%= link_to I18n.t("parties.interventions.comisiones"), commissions_party_path(@party) %></li>
     </ul>
     <!-- /party_activity_menu -->
 
@@ -29,7 +29,7 @@
             <div class="activity discussion">
               <h2 class="title"><%= link_to i.subject_title, intervention_path(i) %></h2>
               <dl class="activity_meta line">
-                <dt>Fecha:</dt>
+                <dt><%= I18n.t("parties.interventions.fecha") %>:</dt>
                 <dd><%= i.session_date %></dd>
               </dl>
             </div>

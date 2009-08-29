@@ -1,5 +1,5 @@
-<h1>Actividad</h1>
-<p class="claim">Qué ocurre en el Parlamento Vasco</p>
+<h1><%= I18n.t("actividad") %></h1>
+<p class="claim"><%= I18n.t("parlamento.claim", :parliament_name => "Parlamento Vasco") %></p>
 
 <!-- tab_system -->
 <div class="tab_system tab_system_discussions">
@@ -22,13 +22,13 @@
         <p class="activity_type"><span>Debate y resolución definitiva</span></p>
       -->
         <dl class="activity_meta line">
-          <dt>Fecha:</dt>
+          <dt><%= I18n.t("info.fecha") %>:</dt>
           <dd><%= @intervention.session_date %></dd>
           <!--
-          <dt>Por:</dt>
-          <dd><a class="author" href="#">Maeztu Perez, Daniel</a> de <a class="party_name" href="#">Aralar</a></dd>
-          <dt>Para:</dt>
-          <dd>Consejero de Sanidad y Consumo</dd>
+          <dt><%= I18n.t("info.por") %>:</dt>
+          <dd><a class="author" href="#">nombre</a> <%= I18n.t("info.de") %> <a class="party_name" href="#">partido</a></dd>
+          <dt><%= I18n.t("info.para") %>:</dt>
+          <dd>nombre para</dd>
         -->
         </dl>
       </div>
@@ -41,7 +41,7 @@
         <div class="discussion_cont_col discussion_cont_col_left">
   
         <% unless @intervention.videos.empty?%>
-          <h3>Vídeo</h3>
+          <h3><%= I18n.t("interventions.video") %></h3>
           
           <!-- turn_mod -->
           <div class="turn_mod">
@@ -59,8 +59,8 @@
                       <h5 class="name"><%= video_speaker_name(video)%></h5>
                       <p class="party"><%= video_speaker_party(video)%></p>
                       <dl class="line">
-                        <dt>Duración:</dt>
-                        <dd><%= video.duration%> <abbr title="Minutos">min.</abbr></dd>
+                        <dt><%= I18n.t("interventions.duracion") %></dt>
+                        <dd><%= video.duration%> <abbr title="Minutos"><%= I18n.t("interventions.minutos") %>.</abbr></dd>
                       </dl>
                     </div>
                   </div>
@@ -69,8 +69,8 @@
                   <!-- file_list -->
                   <ul class="file_list">
                     <li>
-                      <a class="file file_realvideo" href="<%= video.video_url%>" title="Ver vídeo: <%= video.title%>">
-                        <span class="file_title">Calidad 256k</span>
+                      <a class="file file_realvideo" href="<%= video.video_url%>">
+                        <span class="file_title"><%= I18n.t("interventions.calidad", :bitrate => "256k") %></span>
                         <span class="file_meta">(<abbr title="RealMedia">RM</abbr>)</span>
                       </a>
                     </li>
@@ -95,7 +95,7 @@
         
           <!-- parliamentarians_mod -->
           <div class="parliamentarians_mod">
-            <h3>Intervienen</h3>
+            <h3><%= I18n.t("interventions.intervienen") %></h3>
             <!-- parliamentarians_list -->
             <div class="parliamentarians_list">
               <% for parla in @intervention.parliamentarians %>
@@ -114,12 +114,12 @@
         
           <!-- file_mod -->
           <div class="file_mod">
-            <h4>Transcripción del debate</h4>
+            <h4><%= I18n.t("interventions.transcripcion") %></h4>
             <ul class="file_list">
           
               <li>
                 <% link_to @intervention.pdf_url, :class => "file file_pdf" do  %>
-                  <span class="file_title">Transcripción del debate "<%= @intervention.subject_title %>"</span>
+                  <span class="file_title"><%= I18n.t("interventions.transcripcion") %> "<%= @intervention.subject_title %>"</span>
                   <span class="file_meta">(<acronym title="Portable Document Format">PDF</acronym>)</span>
                 <% end %>
               </li>
@@ -128,7 +128,7 @@
             
             <!-- balloon -->
             <div class="balloon">
-              <p>No podemos hacer nada más con su contenido.</p>
+              <p><%= I18n.t("interventions.no_podemos_mas") %></p>
             </div>
             <!-- /balloon -->
             
@@ -140,8 +140,6 @@
       
       </div>
       <!-- /discussion_cont_cols -->    
-      
-      
 
     </div>
     <!-- /discussion_cont -->
@@ -150,9 +148,3 @@
   <!-- /tab_cont -->
 </div>
 <!-- /tab_system -->
-
-
-
-                          
- 
-

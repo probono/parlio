@@ -7,20 +7,20 @@
     </div>
 
     <ul class="lang">
-      <li><a href="#">euskara</a></li>
+      <li><a href="#"><%= I18n.t("shared._header.euskara") %></a></li>
       <li><a href="#">español</a></li>
     </ul>
     
     <% form_tag(search_url, {:method => :get, :id => "global_search"}) do -%>
       <%= label :search_term, "Buscador" %>
       <%= text_field_tag :search_term, params[:search_term] ? params[:search_term] : "¿Qué buscas?", :onclick => "this.select();" %>
-      <%= submit_tag "Buscar" %>
+      <%= submit_tag I18n.t("shared._header.buscar") %>
     <% end -%>
     
     <ul class="main_menu">
-      <li <%= main_tab_class('parliament') %> ><%= link_to "Parlamentarios", parliamentarians_path %></li>
-      <li <%= main_tab_class('activity') %> ><%= link_to "Actividad", initiatives_path %></li>
-      <li <%= main_tab_class('about') %> ><%= link_to "Sobre Parlio", about_path %></li>
+      <li <%= main_tab_class('parliament') %> ><%= link_to I18n.t("shared._header.parlamentarios"), parliamentarians_path %></li>
+      <li <%= main_tab_class('activity') %> ><%= link_to I18n.t("shared._header.actividad"), initiatives_path %></li>
+      <li <%= main_tab_class('about') %> ><%= link_to I18n.t("shared._header.sobre_parlio"), about_path %></li>
     </ul>
 
 

@@ -1,5 +1,5 @@
-<h1>Actividad</h1>
-<p class="claim">Qué ocurre en el Parlamento Vasco</p>
+<h1><%= I18n.t("actividad") %></h1>
+<p class="claim"><%= I18n.t("parlamento.claim", :parliament_name => "Parlamento Vasco") %></p>
 
 <!-- tab_system -->
 <div class="tab_system tab_system_subjects">
@@ -32,7 +32,7 @@
       
       <!-- file_mod -->
       <div class="file_mod">
-        <h4>Documentos</h4>
+        <h4><%= I18n.t("initiatives.documentos") %></h4>
         
         <ul class="file_list">
           <% @initiative.announcements.each do |anno| %>
@@ -50,16 +50,16 @@
       
       <!-- evolution_mod -->
       <div class="evolution_mod">
-        <h2>Evolución</h2>
+        <h2><%= I18n.t("headers.evolución") %></h2>
         <dl class="evolution_sheet">
           <dt>Situación:</dt>
           <% if @initiative.status == Initiative::OPEN %>
-            <dd>En proceso</dd>
+            <dd><%= I18n.t("initiatives.en_proceso") %></dd>
           <% else %>
-            <dd>Cerrada</dd>
+            <dd><%= I18n.t("initiatives.cerrada") %></dd>
           <% end %>
           <!--<dt>Plazo de presentación:</dt>
-          <dd>03.09.2009 Plazo para que conteste el Gobierno Vasco</dd>-->
+          <dd>fwefwef</dd>-->
           <dt>Trámites por los que ha pasado:</dt>
           <dd>
             

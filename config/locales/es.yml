@@ -1,0 +1,204 @@
+es:
+  activity:
+
+    _activity_menu:
+      asuntos: Asuntos
+      debates: Debates
+      comisiones: Comisiones
+
+    _activity_meta_line:
+      fecha: "Fecha:"
+      por: "Por:"
+      de: de 
+      para: "Para:"
+
+    _activity_tags:
+      etiquetas: Etiquetas
+
+    _sessions_date:
+      sesiones: Sesiones
+
+    index:
+      actividad: Actividad
+      de: de 
+      iniciativas: iniciativas
+      146_asuntos: 146 asuntos
+      asuntos: asuntos
+      iniciativas: iniciativas
+
+  commisions:
+    _menu:
+      comisiones_actuales: Comisiones actuales
+
+    show:
+      actividad: Actividad
+      presidente: Presidente
+      intervenciones: intervenciones
+      vicepresidente: Vicepresidente
+      intervenciones: intervenciones
+      secretario: Secretario
+      intervenciones: intervenciones
+      vocales: Vocales
+      intervenciones: intervenciones
+
+  discussions:
+    index:
+      debates: Debates
+
+  home:
+    index:
+      parliament: Parliament
+      lo_que_se_debate_lo_que_se_propone_lo_que_se_decide_tienes_derecho_a_saberlo: "Lo que se debate, lo que se propone, lo que se decide. Tienes derecho a saberlo."
+      un_lugar_donde_se_quiere_informar_al_ciudadano_sobre_la_actividad_parlamentaria_del_parlamento_vasco: "Un lugar donde se quiere informar al ciudadano sobre la actividad parlamentaria del Parlamento Vasco."
+      parliament_no_es: Parliament NO es
+      actividad_parlamentaria: Actividad parlamentaria
+      asunto: Asunto
+      de: de 
+      debate: Debate
+      asuntos_de_actualidad: Asuntos de actualidad
+      etiquetas: Etiquetas
+      parlamentarios_de_actualidad: Parlamentarios de actualidad
+      iniciativas: iniciativas
+      aintzane_ezenarro: Aintzane Ezenarro
+      aralar: Aralar
+      asunto: "Asunto:"
+      aintzane_ezenarro: Aintzane Ezenarro
+      aralar: Aralar
+      aintzane_ezenarro: Aintzane Ezenarro
+      aralar: Aralar
+
+  initiatives:
+    index:
+      actividad: Actividad
+      de: de 
+      iniciativas: iniciativas
+      asuntos: asuntos
+      asuntos: asuntos
+      iniciativas: iniciativas
+    show:
+      actividad: Actividad
+      documentos: Documentos
+      txt: TXT
+      en_proceso: En proceso
+      cerrada: Cerrada
+      03092009_plazo_para_que_conteste_el_gobierno_vasco: 03.09.2009 Plazo para que conteste el Gobierno Vasco
+      pdf: PDF
+      mb: Mb.
+
+  interventions:
+    by_session_date:
+      actividad: Actividad
+      de: de 
+      aralar: Aralar
+      consejero_de_sanidad_y_consumo: Consejero de Sanidad y Consumo
+      aintzane_ezenarro: Aintzane Ezenarro
+      aralar: Aralar
+      aralar: Aralar
+
+    index:
+      actividad: Actividad
+      de: de 
+      aralar: Aralar
+      consejero_de_sanidad_y_consumo: Consejero de Sanidad y Consumo
+      aintzane_ezenarro: Aintzane Ezenarro
+      aralar: Aralar
+      aralar: Aralar
+
+    show:
+      ver_vdeo: "Ver vídeo:"
+      actividad: Actividad
+      de: de 
+      aralar: Aralar
+      consejero_de_sanidad_y_consumo: Consejero de Sanidad y Consumo
+      min: min.
+      calidad_256k: Calidad 256k
+      rm: RM
+      intervienen: Intervienen
+      pdf: PDF
+
+  parliamentarians:
+    _commissions:
+      comisiones_en_las_que_participa: Comisiones en las que participa
+
+    index:
+      legislatura: Legislatura
+      parlamentarios: Parlamentarios
+      total: "Total:"
+      parlamentarios: parlamentarios
+      partidos: Partidos
+      parlamentarios: parlamentarios
+      grupo_mixto: Grupo mixto
+      parlamentarios: parlamentarios
+
+    show:
+      idiomas: "Idiomas:"
+      sueldo: "Sueldo:"
+      calculando: Calculando... 
+      cargos: "Cargos:"
+      actividad_parlamentaria: Actividad parlamentaria
+      legislaturas: Legislaturas
+      asuntos: Asuntos
+      debates: Debates
+      comisiones: Comisiones
+
+  parties:
+    _menu:
+      legislaturas: Legislaturas
+      2009actualidad: 2009-Actualidad
+
+    _sheet:
+      sitio_web: "Sitio web:"
+      respuestas_en_partaide: Respuestas en Partaide
+      noticias: Noticias
+
+    commissions:
+      actividad_parlamentaria_del_partido: Actividad parlamentaria del partido
+      comisiones_en_las_que_participan: Comisiones en las que participan
+      parlamentarios: "Parlamentarios:"
+      iniciativas: Iniciativas
+      asuntos: Asuntos
+      debates: Debates
+      comisiones: Comisiones
+
+    interventions:
+      actividad_parlamentaria_del_partido: Actividad parlamentaria del partido
+      fecha: "Fecha:"
+      asuntos: Asuntos
+      debates: Debates
+      comisiones: Comisiones
+
+    show:
+      actividad_parlamentaria_del_partido: Actividad parlamentaria del partido
+      de: de 
+      asuntos: Asuntos
+      debates: Debates
+      comisiones: Comisiones
+
+  shared:
+    _footer:
+      parlio: Parlio
+      linking_paths: Linking Paths
+      y: y 
+      para: para 
+      pro_bono_publico: Pro Bono Publico
+
+    _header:
+      euskara: euskara
+      parlamentarios: Parlamentarios
+      actividad: Actividad
+      sobre_parlio: Sobre Parlio
+      buscar: Buscar
+
+  taggings:
+    show:
+      actividad: Actividad
+      etiquetadas_con: Etiquetadas con 
+      rss: RSS
+      iniciativas: iniciativas
+
+  topics:
+    show:
+      actividad: Actividad
+      rss: RSS
+      iniciativas: iniciativas
+      etiquetas_utilizadas_en_esta_categoria: Etiquetas utilizadas en esta categoria

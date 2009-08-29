@@ -1,5 +1,5 @@
-<h1>Actividad</h1>
-<p class="claim">Qué ocurre en el Parlamento Vasco</p>
+<h1><%= I18n.t("actividad") %></h1>
+<p class="claim"><%= I18n.t("parlamento.claim", :parliament_name => "Parlamento Vasco") %></p>
 
 <!-- tab_system -->
 <div class="tab_system tab_system_subjects">
@@ -28,14 +28,14 @@
                   <%= link_to initiative.title, initiative_path(initiative) %>
                 </h3>
                 <dl class="activity_meta line">
-                  <dt>Fecha:</dt>
+                  <dt><%= I18n.t("info.fecha") %>:</dt>
                   <dd><%= initiative.initiative_date %></dd>
-                  <dt>Por:</dt>
+                  <dt><%= I18n.t("info.por") %>:</dt>
                   <dd>
-                    <%= link_to initiative.parliamentarian.full_name, parliamentarian_path(initiative.parliamentarian), :class=>"author" %> de 
+                    <%= link_to initiative.parliamentarian.full_name, parliamentarian_path(initiative.parliamentarian), :class=>"author" %> <%= I18n.t("info.de") %> 
                     <%= link_to initiative.parliamentarian.party.party_acronym, party_path(initiative.parliamentarian.party), :class => "party_name" %>
                   </dd>
-                  <dt>Para:</dt>
+                  <dt><%= I18n.t("info.para") %>:</dt>
                   <dd><%= initiative.recipient %></dd>
                 </dl>
               </div>
@@ -62,7 +62,7 @@
             <% if !@most_active.blank? %>
               <ul>
                 <% for t in @most_active %>
-                  <li><%= link_to t.name, topic_path(t) %> <span class="subject_num"><%= t.initiatives.size %> iniciativas</span> </li>
+                  <li><%= link_to t.name, topic_path(t) %> <span class="subject_num"><%= t.initiatives.size %> <%= I18n.t("iniciativas") %></span> </li>
                 <% end %>
               </ul>
             <% end %>
@@ -77,7 +77,7 @@
             <% if !@most_active_parties.blank? %>
               <ul>
                 <% for p in @most_active_parties %>
-                  <li><%= link_to p[0].party_acronym, party_path(p[0]), :class => "party_name" %> <span class="subject_num"><%= p[1] %> asuntos</span></li>
+                  <li><%= link_to p[0].party_acronym, party_path(p[0]), :class => "party_name" %> <span class="subject_num"><%= p[1] %> <%= I18n.t("asuntos") %></span></li>
                 <% end %>
               </ul>
             <% end %>
@@ -95,7 +95,7 @@
             <% if !@most_active_tags.blank? %>
               <ul>
                 <% for t in @most_active_tags %>
-                  <li><%= link_to t.name, initiatives_by_tag_path(t.name), :class => "tag" %> <span class="subject_num"><%= t.taggings.size %> asuntos</span></li>
+                  <li><%= link_to t.name, initiatives_by_tag_path(t.name), :class => "tag" %> <span class="subject_num"><%= t.taggings.size %> <%= I18n.t("asuntos") %></span></li>
                 <% end %>
               </ul>
             <% end %>
@@ -116,7 +116,7 @@
                     <div class="main">
                       <h2 class="name"><%= link_to p.full_name, parliamentarian_path(p) %> </h2>
                       <p class="party"><%= link_to p.party.party_acronym, party_path(p.party), :class => "party_name" %></p>
-                      <p class="subject_num"><%= p.initiatives.size %> iniciativas</p>
+                      <p class="subject_num"><%= p.initiatives.size %> <%= I18n.t("iniciativas") %></p>
                     </div>
                   </div>
                 <% end %>

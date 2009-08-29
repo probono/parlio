@@ -9,25 +9,25 @@
   <div class="party_activity_cont">
     <%= render :partial => 'parliamentarians' %>
 
-    <h3>Actividad parlamentaria del partido</h3>
+    <h3><%= I18n.t("parties.commissions.actividad_parlamentaria_del_partido") %></h3>
     <!-- party_activity_menu -->
     <ul class="party_activity_menu">
-      <li class="first"><%= link_to "Asuntos", party_path(@party) %></li>
-      <li><%= link_to "Debates", interventions_party_path(@party) %></li>
-      <li class="last active"><%= link_to "Comisiones", commissions_party_path(@party) %></li>
+      <li class="first"><%= link_to I18n.t("parties.commissions.asuntos"), party_path(@party) %></li>
+      <li><%= link_to I18n.t("parties.commissions.debates"), interventions_party_path(@party) %></li>
+      <li class="last active"><%= link_to I18n.t("parties.commissions.comisiones"), commissions_party_path(@party) %></li>
     </ul>
     <!-- /party_activity_menu -->
     
     <!-- commissions_participants -->
     <div class="commissions_participants">
-      <h4 class="commissions_participants_title">Comisiones en las que participan</h4>
+      <h4 class="commissions_participants_title"><%= I18n.t("parties.commissions.comisiones_en_las_que_participan") %></h4>
       <% if !@commissions.blank? %>
         <% for comi in @commissions %>
           <div class="commission_participant">
             <h5><%= comi.name %></h5>
             <% if !comi.members.blank? %>
                   <dl class="line">
-                    <dt>Parlamentarios:</dt>
+                    <dt><%= I18n.t("parties.commissions.parlamentarios") %>:</dt>
                     <dd>
                       <% for member in comi.members %>
                         <% if member.party == @party %>
@@ -48,17 +48,17 @@
     <!-- commission_cont -->  
     <%# 
     <div class="commission_cont">
-      <h4>Iniciativas</h4>
+      <h4><%= I18n.t("parties.commissions.iniciativas") %></h4>
       <h5>Comisión de Vivienda, Obras Públicas y Transportes</h5>
       <!-- commission_list -->
       <ul class="commission_list">
         <li class="commission">
           <a href="#">Elección de la Mesa</a>
-          <span class="date">17.06.2009</span>
+          <span class="date"><%= I18n.t("parties.commissions.17062009") %></span>
         </li>
         <li class="commission">
           <a href="#">Resolución sobre la solicitud de comparecencia del consejero de Vivienda, Obras Públicas y Transportes, formulada por el grupo Nacionalistas Vascos, para informar sobre la política y las actuaciones a desarrollar durante la legislatura por su departamento, y, en su caso, celebración de la comparecencia y comparecencia del consejero de Vivienda, Obras Públicas y Transportes, a petición propia, para exponer las líneas generales de actuación de su departamento.</a>
-          <span class="date">17.06.2009</span>
+          <span class="date"><%= I18n.t("parties.commissions.17062009") %></span>
         </li>
       </ul>
       <!-- /commission_list -->
@@ -68,11 +68,11 @@
       <ul class="commission_list">
         <li class="commission">
           <a href="#">Elección de la Mesa</a>
-          <span class="date">17.06.2009</span>
+          <span class="date"><%= I18n.t("parties.commissions.17062009") %></span>
         </li>
         <li class="commission">
           <a href="#">Resolución sobre la solicitud de comparecencia del consejero de Vivienda, Obras Públicas y Transportes, formulada por el grupo Nacionalistas Vascos, para informar sobre la política y las actuaciones a desarrollar durante la legislatura por su departamento, y, en su caso, celebración de la comparecencia y comparecencia del consejero de Vivienda, Obras Públicas y Transportes, a petición propia, para exponer las líneas generales de actuación de su departamento.</a>
-          <span class="date">17.06.2009</span>
+          <span class="date"><%= I18n.t("parties.commissions.17062009") %></span>
         </li>
       </ul>
       <!-- /commission_list -->

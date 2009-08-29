@@ -1,5 +1,5 @@
-<h1>Actividad</h1>
-<p class="claim">Qué ocurre en el Parlamento Vasco</p>
+<h1><%= I18n.t("actividad") %></h1>
+<p class="claim"><%= I18n.t("parlamento.claim", :parliament_name => "Parlamento Vasco") %></p>
 
 <!-- tab_system -->
 <div class="tab_system tab_system_subjects">
@@ -41,7 +41,7 @@
 
           <!-- parliamentarians_mod -->
            <div class="parliamentarians_mod">
-             <h3>Presidente</h3>
+             <h3><%= I18n.t("commisions.presidente") %></h3>
              <!-- parliamentarians_list -->
              <div class="parliamentarians_list">
                <% if !@commision.members_as_president.blank? %>
@@ -52,7 +52,7 @@
                      <div class="main">
                        <h4 class="name"><%= link_to member.full_name, parliamentarian_path(member) %></h4>
                        <p class="party"><%= link_to member.party.party_acronym, party_path(member.party), :class => "party_name" %></p>
-                       <p class="subject_num"><%= member.interventions.size %> intervenciones</p>
+                       <p class="subject_num"><%= member.interventions.size %> <%= I18n.t("commisions.show.intervenciones") %></p>
                      </div>
                    </div>
                    <!-- parliamentarian -->
@@ -66,7 +66,7 @@
            
            <!-- parliamentarians_mod -->
             <div class="parliamentarians_mod">
-              <h3>Vicepresidente</h3>
+              <h3><%= I18n.t("commisions.vicepresidente") %></h3>
               <!-- parliamentarians_list -->
               <div class="parliamentarians_list">
                 <% if !@commision.members_as_vicepresident.blank? %>
@@ -77,7 +77,7 @@
                       <div class="main">
                         <h4 class="name"><%= link_to member.full_name, parliamentarian_path(member) %></h4>
                         <p class="party"><%= link_to member.party.party_acronym, party_path(member.party), :class => "party_name" %></p>
-                        <p class="subject_num"><%= member.interventions.size %> intervenciones</p>
+                        <p class="subject_num"><%= member.interventions.size %> <%= I18n.t("commisions.show.intervenciones") %></p>
                       </div>
                     </div>
                     <!-- parliamentarian -->
@@ -91,7 +91,7 @@
  
             <!-- parliamentarians_mod -->
              <div class="parliamentarians_mod">
-               <h3>Secretario</h3>
+               <h3><%= I18n.t("commisions.secretario") %></h3>
                <!-- parliamentarians_list -->
                <div class="parliamentarians_list">
                  <% if !@commision.members_as_secretary.blank? %>
@@ -102,7 +102,7 @@
                        <div class="main">
                          <h4 class="name"><%= link_to member.full_name, parliamentarian_path(member) %></h4>
                          <p class="party"><%= link_to member.party.party_acronym, party_path(member.party), :class => "party_name" %></p>
-                         <p class="subject_num"><%= member.interventions.size %> intervenciones</p>
+                         <p class="subject_num"><%= member.interventions.size %> <%= I18n.t("commisions.show.intervenciones") %></p>
                        </div>
                      </div>
                      <!-- parliamentarian -->
@@ -116,7 +116,7 @@
 
              <!-- parliamentarians_mod -->
               <div class="parliamentarians_mod">
-                <h3>Vocales</h3>
+                <h3><%= I18n.t("commisions.vocales") %></h3>
                 <!-- parliamentarians_list -->
                 <div class="parliamentarians_list">
                   <% if !@commision.members_as_vocal.blank? %>
@@ -127,7 +127,7 @@
                         <div class="main">
                           <h4 class="name"><%= link_to member.full_name, parliamentarian_path(member) %></h4>
                           <p class="party"><%= link_to member.party.party_acronym, party_path(member.party), :class => "party_name" %></p>
-                          <p class="subject_num"><%= member.interventions.size %> intervenciones</p>
+                          <p class="subject_num"><%= member.interventions.size %> <%= I18n.t("commisions.show.intervenciones") %></p>
                         </div>
                       </div>
                       <!-- parliamentarian -->

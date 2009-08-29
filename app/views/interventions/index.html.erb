@@ -1,5 +1,5 @@
-<h1>Actividad</h1>
-<p class="claim">Qué ocurre en el Parlamento Vasco</p>
+<h1><%= I18n.t("interventions.index.actividad") %></h1>
+<p class="claim"><%= I18n.t("parlamento.claim", :parliament_name => "Parlamento Vasco") %></p>
 
 <!-- tab_system -->
 <div class="tab_system tab_system_subjects">
@@ -23,10 +23,10 @@
                 <!--
                 <p class="activity_type"><span><%= link_to inter.subject_title, intervention_path(inter) %></span></p>
                 <dl class="activity_meta line">
-                  <dt>Por:</dt>
-                  <dd><a class="author" href="#">Maeztu Perez, Daniel</a> de <a class="party_name" href="#">Aralar</a></dd>
-                  <dt>Para:</dt>
-                  <dd>Consejero de Sanidad y Consumo</dd>
+                  <dt><%= I18n.t("interventions.index.por") %>:</dt>
+                  <dd><a class="author" href="#"><%= I18n.t("interventions.index.maeztu_perez_daniel") %></a> <%= I18n.t("interventions.index.de") %> <a class="party_name" href="#"><%= I18n.t("interventions.index.aralar") %></a></dd>
+                  <dt><%= I18n.t("interventions.index.para") %>:</dt>
+                  <dd><%= I18n.t("interventions.index.consejero_de_sanidad_y_consumo") %></dd>
                 </dl>-->
               </div>
             <% end %>
@@ -49,8 +49,8 @@
           <div class="parliamentarian">
             <p class="photo"><a href="#"><img src="http://parlamento.euskadi.net/img/fichas/149.jpg" alt="Foto de [parliamentarian_name]" width="32" /></a></p>
             <div class="main">
-              <h3 class="name"><a href="#">Aintzane Ezenarro</a></h3>
-              <p class="party"><a class="party_name" href="#">Aralar</a></p>
+              <h3 class="name"><a href="#"><%= I18n.t("interventions.index.aintzane_ezenarro") %></a></h3>
+              <p class="party"><a class="party_name" href="#"><%= I18n.t("interventions.index.aralar") %></a></p>
             </div>
           </div>
           <!-- parliamentarian -->
@@ -60,7 +60,7 @@
             <p class="photo"><a href="#"><img src="http://parlamento.euskadi.net/img/fichas/149.jpg" alt="Foto de [parliamentarian_name]" width="32" /></a></p>
             <div class="main">
               <h3 class="name"><a href="#">Patxi López</a></h3>
-              <p class="party"><a class="party_name" href="#">Aralar</a></p>
+              <p class="party"><a class="party_name" href="#"><%= I18n.t("interventions.index.aralar") %></a></p>
             </div>
           </div>
           <!-- parliamentarian -->

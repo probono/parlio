@@ -1,28 +1,28 @@
-<h1 class="hide">Parliament</h1>
+<h1 class="hide"><%= I18n.t("home.index.parliament") %></h1>
 
 <!-- presentation -->
 <div class="presentation">
 
   <div class="intro">
-    <h2>Tú los eliges. Pero, ¿sabes si te representan?</h2>
-    <p>Lo que se debate, lo que se propone, lo que se decide. Tienes derecho a saberlo.</p>
+    <h2><%= I18n.t("intro.te_representan") %></h2>
+    <p><%= I18n.t("intro.lo_que_se_debate") %></p>
   </div>
 
   <!-- parlio_definition -->
   <div class="parlio_definition">
     <div class="yes">
-      <h3>Parliament SÍ es</h3>
+      <h3><%= I18n.t("intro.parlio_si.header") %></h3>
       <ul>
-        <li>Un lugar donde se quiere informar al ciudadano sobre la actividad parlamentaria del Parlamento Vasco.</li>
-        <li>La primera iniciativa de la asociación <a href="#"><strong>Pro Bono Público</strong></a> a favor de los estándares para la difusión de los datos públicos.</li>
+        <li><%= I18n.t("intro.parlio_si.un_lugar") %></li>
+        <li><%= I18n.t("intro.parlio_si.iniciativa_probono") %></li>
       </ul>
     </div>
 
     <div class="no">
-      <h3>Parliament NO es</h3>
+      <h3><%= I18n.t("intro.parlio_no.header") %></h3>
       <ul>
-        <li>El sitio web oficial del Parlamento Vasco. Ni tiene ningún vínculo con él.</li>
-        <li>Un sitio donde se emitan juicios de valor. Los datos hablan por sí mismos. Es lo bueno que tienen.</li>
+        <li><%= I18n.t("intro.parlio_no.web_oficial") %></li>
+        <li><%= I18n.t("intro.parlio_no.sitio_juicios") %></li>
       </ul>
     </div>
   </div>
@@ -36,21 +36,21 @@
   <!-- parliament_activity -->
   <div class="index_col parliament_activity">
 
-    <h2>Actividad parlamentaria</h2>
+    <h2><%= I18n.t("headers.actividad_parlamentaria") %></h2>
     
     
     <% if !@parlio_activity.blank? %>
       <% for t in @parlio_activity %>
         <% if t.instance_of? Initiative %>
           <div class="last_activity last_subject">
-            <h3 class="label subject_label"><a href="#">Asunto</a></h3>
+            <h3 class="label subject_label"><a href="#"><%= I18n.t("home.index.asunto") %></a></h3>
             <p class="date"><%= t.initiative_date %></p>
             <p class="title"><%= link_to t.title, initiative_path(t) %></p>
-            <p class="author"><strong>Por:</strong> <%= link_to t.parliamentarian.full_name, parliamentarian_path(t.parliamentarian) %> de <%= link_to t.parliamentarian.party.party_acronym, party_path(t.parliamentarian.party) %></p>
+            <p class="author"><strong><%= I18n.t("info.por") %>:</strong> <%= link_to t.parliamentarian.full_name, parliamentarian_path(t.parliamentarian) %> <%= I18n.t("info.de") %> <%= link_to t.parliamentarian.party.party_acronym, party_path(t.parliamentarian.party) %></p>
           </div>
         <% else %>
           <div class="last_activity last_discussion">
-            <h3 class="label discussion_label"><a href="#">Debate</a></h3>
+            <h3 class="label discussion_label"><a href="#"><%= I18n.t("home.index.debate") %></a></h3>
             <p class="date"><%= t.session_date %></p>
             <p class="title"><%= link_to t.subject_title, intervention_path(t) %></p>
           </div>
@@ -64,7 +64,7 @@
   <!-- actual_subjects -->
   <div class="index_col current_subjects">
 
-    <h2>Asuntos de actualidad</h2>
+    <h2><%= I18n.t("headers.asuntos_de_actualidad") %></h2>
 
     <!-- categories -->
     <div class="categories">
@@ -84,7 +84,7 @@
 
       <!-- tag_mod -->
       <div class="tag_mod">
-        <h3>Etiquetas</h3>
+        <h3><%= I18n.t("headers.etiquetas") %></h3>
         <% if !@most_active_tags.blank? %>
           <ul class="tag_list">
             <% for t in @most_active_tags %>
@@ -104,7 +104,7 @@
   <!-- actual_parliamentarians -->
   <div class="index_col parliamentarians_list">
 
-    <h2>Parlamentarios de actualidad</h2>
+    <h2><%= I18n.t("headers.parlamentarios_de_actualidad") %></h2>
     <!-- parliamentarians_list -->             
     
     <% if !@most_active_parliamentarians.blank? %>
@@ -117,7 +117,7 @@
             <div class="main">
               <h2 class="name"><%= link_to p.full_name, parliamentarian_path(p) %> </h2>
               <p class="party"><%= link_to p.party.party_acronym, party_path(p.party), :class => "party_name" %></p>
-              <p class="subject_num"><%= p.initiatives.size %> iniciativas</p>
+              <p class="subject_num"><%= p.initiatives.size %> <%= I18n.t("iniciativas") %></p>
             </div>
           </div>
         <% end %>
@@ -126,52 +126,6 @@
     <% end %>
     
     
-    
-    <%# 
-    <div class="parliamentarians_list">
-
-      <!-- parliamentarian -->
-      <div class="parliamentarian">
-        <p class="photo"><a href="#"><img src="http://parlamento.euskadi.net/img/fichas/149.jpg" alt="Foto de [parliamentarian_name]" width="48" /></a></p>
-        <div class="main">
-          <h2 class="name"><a href="#">Aintzane Ezenarro</a></h2>
-          <p class="party"><a class="party_name" href="#">Aralar</a></p>
-          <p class="date">26.07.2009</p>
-          <p class="label subject_label"><a href="#">Asunto:</a></p>
-          <p><a href="#">Escuela pública San Martin Agirre de Bergara</a></p>
-        </div>
-      </div>
-      <!-- parliamentarian -->
-
-      <!-- parliamentarian -->
-      <div class="parliamentarian">
-        <p class="photo"><a href="#"><img src="http://parlamento.euskadi.net/img/fichas/149.jpg" alt="Foto de [parliamentarian_name]" width="48" /></a></p>
-        <div class="main">
-          <h2 class="name"><a href="#">Aintzane Ezenarro</a></h2>
-          <p class="party"><a class="party_name" href="#">Aralar</a></p>
-          <p class="date">26.07.2009</p>
-          <p class="label discussion_label"><a href="#">Discusión:</a></p>
-          <p><a href="#">Escuela pública San Martin Agirre de Bergara</a></p>
-        </div>
-      </div>
-      <!-- parliamentarian -->
-
-      <!-- parliamentarian -->
-      <div class="parliamentarian">
-        <p class="photo"><a href="#"><img src="http://parlamento.euskadi.net/img/fichas/149.jpg" alt="Foto de [parliamentarian_name]" width="48" /></a></p>
-        <div class="main">
-          <h2 class="name"><a href="#">Aintzane Ezenarro</a></h2>
-          <p class="party"><a class="party_name" href="#">Aralar</a></p>
-          <p class="date">26.07.2009</p>
-          <p class="label commission_label"><a href="#">Comisión:</a></p>
-          <p><a href="#">Escuela pública San Martin Agirre de Bergara</a></p>
-        </div>
-      </div>
-      <!-- parliamentarian -->
-
-    </div>
-    <!-- /parliamentarians_list -->
-     %>
   </div>
   <!-- /actual_parliamentarians -->
 </div>

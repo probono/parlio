@@ -8,17 +8,17 @@
     <dl class="line">
       <dt>Nº de parlamentarios:</dt>
       <dd><%= @party.parliamentarians.size %></dd>
-      <dt>Sitio web:</dt>
+      <dt><%= I18n.t("parties._sheet.sitio_web") %>:</dt>
       <dd><%= link_to @party.url, @party.url %></dd>
     </dl>
   
-    <p><a href="http://partaide.parlam.euskadi.net">Respuestas en Partaide</a></p>
+    <p><a href="http://partaide.parlam.euskadi.net"><%= I18n.t("parties._sheet.respuestas_en_partaide") %></a></p>
   </div>
   <!-- /main -->
   
   <!-- news -->
   <div class="news">
-    <h2>Noticias</h2>
+    <h2><%= I18n.t("parties._sheet.noticias") %></h2>
     <ul class="news_list">
       <% if !@news["ResultSet"]["Result"].blank? %>
         <% for a_new in @news["ResultSet"]["Result"] %>

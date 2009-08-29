@@ -21,7 +21,7 @@
           <dd><%= @parliamentarian.profession %></dd>
         <%end%>
         <% if @parliamentarian.languages %>
-          <dt>Idiomas:</dt>
+          <dt><%= I18n.t("parliamentarians.show.idiomas") %>:</dt>
           <dd><%= @parliamentarian.languages %></dd>
         <%end%>
         <% if @parliamentarian.email %>
@@ -31,11 +31,11 @@
       </dl>
 
       <dl class="line">
-        <dt>Sueldo:</dt>
-        <dd>Calculando... <a href="http://partaide.parlam.euskadi.net/galdera/503/">Ver más</a></dd>
+        <dt><%= I18n.t("parliamentarians.show.sueldo") %>:</dt>
+        <dd><%= I18n.t("parliamentarians.show.calculando") %>... <a href="http://partaide.parlam.euskadi.net/galdera/503/">Ver más</a></dd>
         
         <% if !@parliamentarian.posts.blank? %>    
-          <dt>Cargos:</dt>
+          <dt><%= I18n.t("parliamentarians.show.cargos") %>:</dt>
           <% for post in @parliamentarian.posts %>
             <dd class="block"><%= post.title %>.</dd>
           <% end %>
@@ -52,11 +52,11 @@
 <!-- parliamentarian_activity -->
 <div class="parliamentarian_activity">
   
-  <h2>Actividad parlamentaria</h2>
+  <h2><%= I18n.t("parliamentarians.show.actividad_parlamentaria") %></h2>
 
   <!-- legislature_menu -->
   <div class="legislature_menu">
-    <h3>Legislaturas</h3>
+    <h3><%= I18n.t("parliamentarians.show.legislaturas") %></h3>
     <ul>
       <li class="active"><a href="#">2009-Actualidad</a></li>
 <!--
@@ -78,9 +78,9 @@
 
     <!-- parliamentarian_activity_menu -->
     <ul class="parliamentarian_activity_menu">
-      <li class="first <%= "active" if @initiatives %>"><%= link_to "Asuntos", initiatives_parliamentarian_path(@parliamentarian)%></li>
-      <li <%= "class=\"active\"" if @interventions %>><%= link_to "Debates", interventions_parliamentarian_path(@parliamentarian)%></li>
-      <li class="last <%= "active" if @commission_members %>"><%= link_to "Comisiones", commisions_parliamentarian_path(@parliamentarian)%></li>
+      <li class="first <%= "active" if @initiatives %>"><%= link_to I18n.t("parliamentarians.show.asuntos"), initiatives_parliamentarian_path(@parliamentarian)%></li>
+      <li <%= "class=\"active\"" if @interventions %>><%= link_to I18n.t("parliamentarians.show.debates"), interventions_parliamentarian_path(@parliamentarian)%></li>
+      <li class="last <%= "active" if @commission_members %>"><%= link_to I18n.t("parliamentarians.show.comisiones"), commisions_parliamentarian_path(@parliamentarian)%></li>
     </ul>
     <!-- /parliamentarian_activity_menu -->
     

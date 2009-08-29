@@ -9,12 +9,12 @@
   <div class="party_activity_cont">
     <%= render :partial => 'parliamentarians' %>
     
-    <h3>Actividad parlamentaria del partido</h3>
+    <h3><%= I18n.t("parties.show.actividad_parlamentaria_del_partido") %></h3>
     <!-- party_activity_menu -->
     <ul class="party_activity_menu">
-      <li class="first active"><%= link_to "Asuntos", party_path(@party) %></li>
-      <li><%= link_to "Debates", interventions_party_path(@party) %></li>
-      <li class="last"><%= link_to "Comisiones", commissions_party_path(@party) %></li>
+      <li class="first active"><%= link_to I18n.t("parties.show.asuntos"), party_path(@party) %></li>
+      <li><%= link_to I18n.t("parties.show.debates"), interventions_party_path(@party) %></li>
+      <li class="last"><%= link_to I18n.t("parties.show.comisiones"), commissions_party_path(@party) %></li>
     </ul>
     <!-- /party_activity_menu -->
     
@@ -28,10 +28,10 @@
           <h4 class="title"><%= link_to i.title, initiative_path(i) %></h4>
           <p class="activity_type"><span><%= i.initiative_type %></span></p>
           <dl class="activity_meta line">
-            <dt>Fecha:</dt>
+            <dt><%= I18n.t("parties.show.fecha") %>:</dt>
             <dd><%= i.initiative_date %></dd>
-            <dt>Por:</dt>
-            <dd><%= link_to i.parliamentarian.full_name, parliamentarian_path(i.parliamentarian), :class=>"author" %> de 
+            <dt><%= I18n.t("parties.show.por") %>:</dt>
+            <dd><%= link_to i.parliamentarian.full_name, parliamentarian_path(i.parliamentarian), :class=>"author" %> <%= I18n.t("parties.show.de") %> 
             <%= link_to i.parliamentarian.party.party_acronym, party_path(i.parliamentarian.party), :class => "party_name" %></dd>
           </dl>
           <%= render :partial => 'activity/activity_tags', :locals => { :activity => i } %>

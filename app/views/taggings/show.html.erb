@@ -1,5 +1,5 @@
-<h1>Actividad</h1>
-<p class="claim">Qué ocurre en el Parlamento Vasco</p>
+<h1><%= I18n.t("taggings.show.actividad") %></h1>
+<p class="claim"><%= I18n.t("parlamento.claim", :parliament_name => "Parlamento Vasco") %></p>
 
 <!-- tab_system -->
 <div class="tab_system tab_system_subjects">
@@ -14,7 +14,7 @@
     <!-- subject_cont -->
     <div class="subject_cont subject_cont_category">
 
-        <h2>Etiquetadas con <%= @tag.name %></h2>
+        <h2><%= I18n.t("taggings.show.etiquetadas_con") %> <%= @tag.name %></h2>
         
         <% if !@taggings.blank? %>
 
@@ -39,7 +39,7 @@
         <!-- rss_mod -->
         <a class="rss_mod">
           <strong>¿Te interesa?</strong>
-          <span>Suscríbete a las actualizaciones de este tema vía <acronym title="Really Simple Syndication">RSS</acronym>.</span>
+          <span>Suscríbete a las actualizaciones de este tema vía <acronym title="Really Simple Syndication"><%= I18n.t("taggings.show.rss") %></acronym>.</span>
         </a>
         <!-- /rss_mod -->
 
@@ -63,7 +63,7 @@
                   <div class="main">
                     <h3 class="name"><%= link_to parla[0].full_name, parliamentarian_path(parla[0]) %></h3>
                     <p class="party"><%= link_to parla[0].party.party_acronym, party_path(parla[0].party), :class => "party_name" %></p>
-                    <p class="subject_num"><%= parla[1].size %> iniciativas</p>
+                    <p class="subject_num"><%= parla[1].size %> <%= I18n.t("taggings.show.iniciativas") %></p>
                   </div>
                 </div>
               <% end %>

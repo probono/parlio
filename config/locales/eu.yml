@@ -1,0 +1,149 @@
+eu: 
+  asuntos: Ekimenak
+  asunto: Ekimena
+  debates: Eztabiadak
+  debate: Eztabiada
+  comisiones: Batzordeak
+  comisiones_actuales: Batzordeak
+  actividad: Jarduera
+  sesiones: Bilkura
+  iniciativas: Iniciativas
+  intervenciones: Eskuhartzeak
+  
+  headers:
+    actividad_parlamentaria: Actividad parlamentaria
+    asuntos_de_actualidad: Asuntos de actualidad
+    etiquetas: Etiquetas
+    parlamentarios_de_actualidad: Parlamentarios de actualidad
+    evolución: Evolución.
+    
+  info:
+    fecha: Fecha
+    por: Por
+    de: de 
+    para: Para
+    etiquetas: Etiquetas 
+
+  commisions:
+      presidente: Lehendakaria
+      vicepresidente: Lehendakariordea
+      secretario: Idazkaria
+      vocales: Vocales
+
+  discussions:
+    index:
+      debates: Kideak
+
+  intro:     
+    te_representan: "Tú los eliges. Pero, ¿sabes si te representan?"
+    lo_que_se_debate: "Lo que se debate, lo que se propone, lo que se decide. Tienes derecho a saberlo."
+    parlio_si:   
+      header: "Parlio SÍ es"
+      un_lugar: "Un lugar donde se quiere informar al ciudadano sobre la actividad parlamentaria del Parlamento Vasco." 
+      iniciativa_probono: "La primera iniciativa de la asociación <a href='http://www.probp.org'><strong>Pro Bono Público</strong></a> a favor de los estándares para la difusión de los datos públicos."
+    parlio_no:
+      header: "Parlio NO es" 
+      web_oficial: "El sitio web oficial del Parlamento Vasco. Ni tiene ningún vínculo con él."         
+      sitio_juicios: "Un sitio donde se emitan juicios de valor. Los datos hablan por sí mismos. Es lo bueno que tienen."
+
+  parlamento:
+    claim: "Qué ocurre en el {{parliament_name}}"
+
+  initiatives:
+    documentos: Documentos
+    en_proceso: En proceso
+    cerrada: Cerrada
+
+  interventions:  
+    session_date: "Sesión del {{session_date}}" 
+    video: "Vídeo"
+    minutos: min.
+    duración: "Duración:"
+    calidad: "Calidad {{bitrate}}"
+    intervienen: Intervienen
+    transcripcion: "Transcripción del debate"
+    no_podemos_mas: "No podemos hacer nada más con su contenido."
+
+  parliamentarians:
+    _commissions:
+      comisiones_en_las_que_participa: Comisiones en las que participa
+
+    index:
+      legislatura: Legealdia
+      parlamentarios: Legebiltzarkideak
+      total: "Total:"
+      partidos: Partidos
+      grupo_mixto: Grupo mixto
+
+    show:
+      idiomas: "Idiomas:"
+      sueldo: "Sueldo:"
+      calculando: Calculando... 
+      cargos: "Cargos:"
+      actividad_parlamentaria: Actividad parlamentaria
+      legislaturas: Legislaturas
+      asuntos: Ekimenak
+      debates: Debates
+      comisiones: Comisiones
+
+  parties:
+    _menu:
+      legislaturas: Legislaturas
+      2009actualidad: 2009-Actualidad
+
+    _sheet:
+      sitio_web: "Sitio web:"
+      respuestas_en_partaide: Respuestas en Partaide
+      noticias: Noticias
+
+    commissions:
+      actividad_parlamentaria_del_partido: Actividad parlamentaria del partido
+      comisiones_en_las_que_participan: Comisiones en las que participan
+      parlamentarios: "Legebiltzarkideak:"
+      iniciativas: Iniciativas
+      asuntos: Ekimenak
+      debates: Debates
+      comisiones: Comisiones
+
+    interventions:
+      actividad_parlamentaria_del_partido: Actividad parlamentaria del partido
+      fecha: "Fecha:"
+      asuntos: Ekimenak
+      debates: Debates
+      comisiones: Comisiones
+
+    show:
+      actividad_parlamentaria_del_partido: Actividad parlamentaria del partido
+      de: de 
+      asuntos: Ekimenak
+      debates: Debates
+      comisiones: Comisiones
+
+  shared:
+    _footer:
+      parlio: Parlio
+      linking_paths: Linking Paths
+      y: y 
+      para: para 
+      pro_bono_publico: Pro Bono Publico
+
+    _header:
+      euskara: euskara
+      parlamentarios: Legebiltzarkideak
+      actividad: Actividad
+      sobre_parlio: Sobre Parlio
+      buscar: Buscar
+
+  taggings:
+    show:
+      actividad: Actividad
+      etiquetadas_con: Etiquetadas con 
+      rss: RSS
+      iniciativas: iniciativas
+
+  topics:
+    show:
+      actividad: Actividad
+      rss: RSS
+      iniciativas: iniciativas
+      etiquetas_utilizadas_en_esta_categoria: Etiquetas utilizadas en esta categoria

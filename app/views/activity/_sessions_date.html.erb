@@ -1,6 +1,6 @@
 <!-- subject_cat -->
 <div class="sessions_menu">
-  <h2>Sesiones</h2>
+  <h2><%= I18n.t("sesiones") %></h2>
          
   <% if !current_sessions_date.blank? %>
     <% current_sessions_date.group_by{|d| d.year}.each do |year, dates|  %>

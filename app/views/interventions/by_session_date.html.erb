@@ -1,5 +1,5 @@
-<h1>Actividad</h1>
-<p class="claim">Qué ocurre en el Parlamento Vasco</p>
+<h1><%= I18n.t("actividad") %></h1>
+<p class="claim"><%= I18n.t("parlamento.claim", :parliament_name => "Parlamento Vasco") %></p>
 
 <!-- tab_system -->
 <div class="tab_system tab_system_discussions">
@@ -14,7 +14,7 @@
     
     <!-- discussion_cont -->
     <div class="discussion_cont">
-      <h2>Sesión del <%= @session_date %></h2>
+      <h2><%= I18n.t("interventions.session_date", :session_date => @session_date) %></h2>
       <!-- discussion_list -->
       <div class="discussion_list">
                                
@@ -26,10 +26,10 @@
               <p class="activity_type"><span>Debate y resolución definitiva</span></p>
 
               <dl class="activity_meta line">
-                <dt>Por:</dt>
-                <dd><a class="author" href="#">Maeztu Perez, Daniel</a> de <a class="party_name" href="#">Aralar</a></dd>
-                <dt>Para:</dt>
-                <dd>Consejero de Sanidad y Consumo</dd>
+                <dt><%= I18n.t("info.por") %>:</dt>
+                <dd><a class="author" href="#">nombre</a> <%= I18n.t("info.de") %> <a class="party_name" href="#">partido</a></dd>
+                <dt><%= I18n.t("info.para") %>:</dt>
+                <dd>nombre para</dd>
               </dl>-->
             </div>
             
@@ -40,7 +40,7 @@
       <!-- /discussion_list -->
     </div>
     <!-- /discussion_cont -->
-    
+    <%# 
     <!-- discussion_sidebar -->
     <div class="discussion_sidebar">
       <!-- parliamentarians_mod -->
@@ -48,33 +48,22 @@
         <h3>Ausentes en la sesión</h3>
         <!-- parliamentarians_list -->
         <div class="parliamentarians_list">
-  
           <!-- parliamentarian -->
           <div class="parliamentarian">
             <p class="photo"><a href="#"><img src="http://parlamento.euskadi.net/img/fichas/149.jpg" alt="Foto de [parliamentarian_name]" width="32" /></a></p>
             <div class="main">
-              <h3 class="name"><a href="#">Aintzane Ezenarro</a></h3>
-              <p class="party"><a class="party_name" href="#">Aralar</a></p>
+              <h3 class="name"><a href="#">Nomber</a></h3>
+              <p class="party"><a class="party_name" href="#">Partido</a></p>
             </div>
           </div>
           <!-- parliamentarian -->
-  
-          <!-- parliamentarian -->
-          <div class="parliamentarian">
-            <p class="photo"><a href="#"><img src="http://parlamento.euskadi.net/img/fichas/149.jpg" alt="Foto de [parliamentarian_name]" width="32" /></a></p>
-            <div class="main">
-              <h3 class="name"><a href="#">Patxi López</a></h3>
-              <p class="party"><a class="party_name" href="#">Aralar</a></p>
-            </div>
-          </div>
-          <!-- parliamentarian -->
-  
         </div>
         <!-- /parliamentarians_list -->
       </div>
       <!-- /parliamentarians_mod -->
     </div>
     <!-- /discussion_sidebar -->
+     %>
     
   </div>
   <!-- /tab_cont -->
