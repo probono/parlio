@@ -1,14 +1,19 @@
 eu: 
   asuntos: Ekimenak
   asunto: Ekimena
-  debates: Eztabiadak
-  debate: Eztabiada
+  debates: Eztabaidak
+  debate: Eztabaida
   comisiones: Batzordeak
   comisiones_actuales: Batzordeak
   actividad: Jarduera
   sesiones: Bilkura
   iniciativas: Iniciativas
   intervenciones: Eskuhartzeak
+  legislatura: Legealdia
+  legislaturas: Legealdiak
+  parlamentarios: Legebiltzarkideak
+  partidos: Taldeak
+  grupo_mixto: Talde Mistoa  
   
   headers:
     actividad_parlamentaria: Actividad parlamentaria
@@ -16,23 +21,30 @@ eu:
     etiquetas: Etiquetas
     parlamentarios_de_actualidad: Parlamentarios de actualidad
     evolución: Evolución.
-    
+    comisiones_en_las_que_participa: Comisiones en las que participa
+    grafica_de_actividad: Gráfica de su actividad anual
+    actividad_parlamentaria_del_partido: Actividad parlamentaria del partido
+    comisiones_en_las_que_participan: Comisiones en las que participan
+    etiquetas_utilizadas_en_esta_categoria: Etiquetas utilizadas en esta categoria
+    parlamentarios_mas_activos: Parlamentarios más activos
   info:
     fecha: Fecha
     por: Por
     de: de 
     para: Para
     etiquetas: Etiquetas 
+    total: Total
 
   commisions:
       presidente: Lehendakaria
       vicepresidente: Lehendakariordea
       secretario: Idazkaria
-      vocales: Vocales
+      vocales: Kideak
+      vocal: Kidea
 
   discussions:
     index:
-      debates: Kideak
+      debates: Debates
 
   intro:     
     te_representan: "Tú los eliges. Pero, ¿sabes si te representan?"
@@ -65,85 +77,30 @@ eu:
     no_podemos_mas: "No podemos hacer nada más con su contenido."
 
   parliamentarians:
-    _commissions:
-      comisiones_en_las_que_participa: Comisiones en las que participa
-
-    index:
-      legislatura: Legealdia
-      parlamentarios: Legebiltzarkideak
-      total: "Total:"
-      partidos: Partidos
-      grupo_mixto: Grupo mixto
-
-    show:
-      idiomas: "Idiomas:"
-      sueldo: "Sueldo:"
-      calculando: Calculando... 
-      cargos: "Cargos:"
-      actividad_parlamentaria: Actividad parlamentaria
-      legislaturas: Legislaturas
-      asuntos: Ekimenak
-      debates: Debates
-      comisiones: Comisiones
+    idiomas: "Idiomas"
+    sueldo: "Sueldo"
+    calculando: Calculando... 
+    cargos: "Cargos"
+    actividad_parlamentaria: Actividad parlamentaria
 
   parties:
+    sitio_web: "Sitio web"
+    respuestas_en_partaide: Respuestas en Partaide
+    noticias: Noticias
     _menu:
-      legislaturas: Legislaturas
       2009actualidad: 2009-Actualidad
 
-    _sheet:
-      sitio_web: "Sitio web:"
-      respuestas_en_partaide: Respuestas en Partaide
-      noticias: Noticias
+  footer:
+    claim: "<strong>Parlio</strong>, creado graciosamente por <a href='http://www.linkingpaths.com/'>Linking Paths</a> y <a href='http://www.lapersonnalite.com/'>La Personnalité</a> para <a href='http://www.probp.org/'>Pro Bono Publico</a>."
 
-    commissions:
-      actividad_parlamentaria_del_partido: Actividad parlamentaria del partido
-      comisiones_en_las_que_participan: Comisiones en las que participan
-      parlamentarios: "Legebiltzarkideak:"
-      iniciativas: Iniciativas
-      asuntos: Ekimenak
-      debates: Debates
-      comisiones: Comisiones
-
-    interventions:
-      actividad_parlamentaria_del_partido: Actividad parlamentaria del partido
-      fecha: "Fecha:"
-      asuntos: Ekimenak
-      debates: Debates
-      comisiones: Comisiones
-
-    show:
-      actividad_parlamentaria_del_partido: Actividad parlamentaria del partido
-      de: de 
-      asuntos: Ekimenak
-      debates: Debates
-      comisiones: Comisiones
-
-  shared:
-    _footer:
-      parlio: Parlio
-      linking_paths: Linking Paths
-      y: y 
-      para: para 
-      pro_bono_publico: Pro Bono Publico
-
-    _header:
-      euskara: euskara
-      parlamentarios: Legebiltzarkideak
-      actividad: Actividad
-      sobre_parlio: Sobre Parlio
-      buscar: Buscar
+  header:
+    sobre_parlio: Parliori buruz
+    buscar: Buscar
+    buscar_tag: "¿Qué buscas?"
 
   taggings:
-    show:
-      actividad: Actividad
-      etiquetadas_con: Etiquetadas con 
-      rss: RSS
-      iniciativas: iniciativas
+    etiquetadas_con: Etiquetadas con 
 
-  topics:
-    show:
-      actividad: Actividad
-      rss: RSS
-      iniciativas: iniciativas
-      etiquetas_utilizadas_en_esta_categoria: Etiquetas utilizadas en esta categoria
+  rss:
+    te_interesa: "¿Te interesa?"
+    copy: "Suscríbete a las actualizaciones de este tema vía <acronym title='Really Simple Syndication'>RSS</acronym>."

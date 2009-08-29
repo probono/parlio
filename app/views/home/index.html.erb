@@ -43,14 +43,14 @@
       <% for t in @parlio_activity %>
         <% if t.instance_of? Initiative %>
           <div class="last_activity last_subject">
-            <h3 class="label subject_label"><a href="#"><%= I18n.t("home.index.asunto") %></a></h3>
+            <h3 class="label subject_label"><a href="#"><%= I18n.t("asunto") %></a></h3>
             <p class="date"><%= t.initiative_date %></p>
             <p class="title"><%= link_to t.title, initiative_path(t) %></p>
             <p class="author"><strong><%= I18n.t("info.por") %>:</strong> <%= link_to t.parliamentarian.full_name, parliamentarian_path(t.parliamentarian) %> <%= I18n.t("info.de") %> <%= link_to t.parliamentarian.party.party_acronym, party_path(t.parliamentarian.party) %></p>
           </div>
         <% else %>
           <div class="last_activity last_discussion">
-            <h3 class="label discussion_label"><a href="#"><%= I18n.t("home.index.debate") %></a></h3>
+            <h3 class="label discussion_label"><a href="#"><%= I18n.t("debate") %></a></h3>
             <p class="date"><%= t.session_date %></p>
             <p class="title"><%= link_to t.subject_title, intervention_path(t) %></p>
           </div>

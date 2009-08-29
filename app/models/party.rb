@@ -15,7 +15,7 @@
 #
 
 class Party < ActiveRecord::Base
-  seo_urls
+  seo_urls :party_acronym
   has_many :parliamentarians  
   
   def initiatives

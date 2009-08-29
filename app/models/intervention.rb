@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20090823125052
+# Schema version: 20090823212248
 #
 # Table name: interventions
 #
@@ -12,7 +12,6 @@
 #  txt_url         :string(255)
 #  full_txt        :text
 #  pdf_url         :string(255)
-#  videos          :string(255)
 #  initiative_id   :integer
 #  subject_treated :string(255)
 #  created_at      :datetime

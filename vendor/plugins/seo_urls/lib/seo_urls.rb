@@ -19,7 +19,7 @@ module Rsm
       end
       
       def seo_urls_permalink
-        if !self.attributes[attribute_for_url]
+        if attribute_for_url == nil || !self.respond_to?(attribute_for_url)
           begin
             string=self.title
           rescue
@@ -30,7 +30,7 @@ module Rsm
             end
           end
         else
-          string=self.attributes[attribute_for_url]
+          string=self.send attribute_for_url
         end
         if string.nil?
           return ""
