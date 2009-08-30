@@ -1,4 +1,5 @@
 class ParliamentariansController < ApplicationController
+  
   before_filter :find_parliamentarian, :except => [:index]
   before_filter :calculate_activity_data, :except => [:index]
 
@@ -22,6 +23,7 @@ class ParliamentariansController < ApplicationController
   end
   
   def initiatives
+    meta :title => "Parlio - Iniciativas del parlamentario #{@parliamentarian.full_name}"
     @page = params[:page] || 1
     @initiatives = @parliamentarian.initiatives.paginate :page => @page, :per_page => 5
     
@@ -31,6 +33,7 @@ class ParliamentariansController < ApplicationController
     end    
   end
   def interventions
+    meta :title => "Parlio - Intervenciones del parlamentario #{@parliamentarian.full_name}"
     @page = params[:page] || 1
     @interventions = @parliamentarian.interventions.paginate :page => @page, :per_page => 5
     
@@ -40,6 +43,8 @@ class ParliamentariansController < ApplicationController
     end    
   end
   def commisions
+    meta :title => "Parlio - Comisiones en las que participa el parlamentario #{@parliamentarian.full_name}"
+    
     @commission_members = @parliamentarian.commission_members
     
     respond_to do |wants|
@@ -52,6 +57,7 @@ class ParliamentariansController < ApplicationController
   private
     def find_parliamentarian
       @parliamentarian = Parliamentarian.find(params[:id])
+      meta :title => "Parlio - Parlamentario #{@parliamentarian.full_name}"
     end
     
     def calculate_activity_data

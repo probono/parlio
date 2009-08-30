@@ -3,6 +3,7 @@ class TaggingsController < ApplicationController
 
   def show
     @tag = Tag.find_by_name(params[:tag])
+    meta :title => "Parlio - Iniciativas etiquetadas con '#{@tag.name}'"
     @most_active_parliamentarians = most_active_parliamentarians(params[:tag])
 
     respond_to do |wants|

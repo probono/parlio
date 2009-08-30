@@ -1,4 +1,6 @@
 class InitiativesController < ApplicationController
+
+  meta :title => "Parlio - Últimos asuntos tratados en el Parlamento Vasco"
   before_filter :find_initiative, :only => [:show, :edit, :update, :destroy]
 
   def index
@@ -18,6 +20,7 @@ class InitiativesController < ApplicationController
   end
 
   def show
+    meta :title => "Parlio - #{@initiative.initiative_type} - #{@initiative.title}"
     respond_to do |wants|
       wants.html # show.html.erb
       wants.xml  { render :xml => @initiative }

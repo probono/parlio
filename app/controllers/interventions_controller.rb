@@ -1,4 +1,5 @@
 class InterventionsController < ApplicationController
+  meta :title => "Parlio - Últimos debates en el Parlamento Vasco"
   before_filter :find_intervention, :only => [:show, :edit, :update, :destroy]
 
   def index
@@ -14,6 +15,7 @@ class InterventionsController < ApplicationController
   end
 
   def show
+    meta :title => "Parlio - Debate #{@intervention.file_number} en el Parlamento Vasco"
     respond_to do |wants|
       wants.html # show.html.erb
       wants.xml  { render :xml => @intervention }
@@ -23,6 +25,7 @@ class InterventionsController < ApplicationController
   def by_session_date
     sd = params[:session_date].split '-'
     @session_date = Date.new(sd[0].to_i, sd[1].to_i, sd[2].to_i)
+    meta :title => "Parlio - Debates del día #{@session_date} en el Parlamento Vasco"
     @interventions = Intervention.by_session_date(@session_date).all
   end
 

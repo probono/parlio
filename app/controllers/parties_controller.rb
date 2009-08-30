@@ -3,6 +3,7 @@ class PartiesController < ApplicationController
   before_filter :load_news, :only => [:show, :commissions, :interventions]
 
   def show
+    meta :title => "Parlio - #{@party.name} en el Parlamento Vasco"
     
     respond_to do |wants|
       wants.html 

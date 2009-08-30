@@ -1,4 +1,6 @@
 class HomeController < ApplicationController
+  meta :title => "Parlio, la política que se entiende - Actualidad en el Parlamento Vasco"
+  
   def index      
     @most_active = Topic.most_active
     tuples = Tagging.count(:all, :group => "tag_id", :order => "count(*) DESC", :limit=> 10)

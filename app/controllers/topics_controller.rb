@@ -15,6 +15,7 @@ class TopicsController < ApplicationController
   # GET /topics/1
   # GET /topics/1.xml
   def show                   
+    meta :title => "Parlio - Iniciativas relacionadas con #{@topic.name}"
     @initiatives = @topic.initiatives.paginate :per_page => 5,  :page => params[:page]
     @tags = @topic.initiatives.map{|i| i.tags}.flatten.uniq
     @most_active_parliamentarians = @topic.most_active_parliamentarians

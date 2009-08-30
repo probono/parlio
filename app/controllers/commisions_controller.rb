@@ -1,4 +1,6 @@
 class CommisionsController < ApplicationController
+  meta :title => "Parlio - Comisiones Actuales en el Parlamento Vasco"
+
   before_filter :find_commision, :only => [:show]
 
   def index

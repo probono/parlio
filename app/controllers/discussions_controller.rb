@@ -1,4 +1,6 @@
 class DiscussionsController < ApplicationController
+
+  meta :title => "Parlio - Últimos debates en el Parlamento Vasco"
   before_filter :find_discussion, :only => [:show, :edit, :update, :destroy]
 
   # GET /discussions
