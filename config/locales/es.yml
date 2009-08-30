@@ -1,4 +1,4 @@
-eu: 
+es: 
   asuntos: Asuntos
   asunto: Asunto
   debates: Debates
@@ -27,6 +27,8 @@ eu:
     comisiones_en_las_que_participan: Comisiones en las que participan
     etiquetas_utilizadas_en_esta_categoria: Etiquetas utilizadas en esta categoria
     parlamentarios_mas_activos: Parlamentarios más activos
+    ultimos_debates: Últimos debates
+    
   info:
     fecha: Fecha
     por: Por

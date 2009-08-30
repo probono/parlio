@@ -1,0 +1,104 @@
+ca: 
+  asuntos: Assumptes
+  asunto: Assumpte
+  debates: Debats
+  debate: Debat
+  comisiones: Comissions
+  comisiones_actuales: Comissions Actuals
+  actividad: Activitat
+  sesiones: Sessions
+  iniciativas: Iniciatives
+  intervenciones: Intervencions
+  legislatura: Legislatura
+  legislaturas: Legislatures
+  parlamentarios: Parlamentaris
+  partidos: Partits
+  grupo_mixto: Grup Mixt
+  
+  headers:
+    actividad_parlamentaria: Activitat parlamentària
+    asuntos_de_actualidad: Assumptes d'actualitat
+    etiquetas: Etiquetes
+    parlamentarios_de_actualidad: Parlamentaris d'actualitat
+    evolucion: Evolució.
+    comisiones_en_las_que_participa: Comissions en les que participa
+    grafica_de_actividad: Gràfica de la seva activitat anual
+    actividad_parlamentaria_del_partido: Activitat parlamentària del partit
+    comisiones_en_las_que_participan: Comissions en les que participa
+    etiquetas_utilizadas_en_esta_categoria: Etiquetes utilizades en aquesta categoria
+    parlamentarios_mas_activos: Parlamentaris més actius
+    ultimos_debates: Últimos debates
+    
+  info:
+    fecha: Data
+    por: Per
+    de: de 
+    para: Per
+    etiquetas: Etiquetes 
+    total: Total
+
+  commisions:
+      presidente: President
+      vicepresidente: Vicepresident
+      secretario: secretari
+      vocales: vocals
+      vocal: vocal
+
+  intro:     
+    te_representan: "Tu els eligeixes. Però, saps si et representen?"
+    lo_que_se_debate: "El que es debat, el que es proposa, el que es decideix. Tens el dret a saber-ho."
+    parlio_si:   
+      header: "Parlio Síç és"
+      un_lugar: "Un espai on es vol informar al ciutadà sobre l'activitat parlamentària del Parlament Vasc." 
+      iniciativa_probono: "La primera iniciativa de l'associació <a href='http://www.probp.org'><strong>Pro Bono P√∫blico</strong></a> a favor dels estàndards per la difusió de les dades públiques."
+    parlio_no:
+      header: "Parlio NO és" 
+      web_oficial: "L'espai web oficial del Parlamento Vasc. Ni té cap vincle amb ell."         
+      sitio_juicios: "Un espai on s'emeteixen judicis de valor. Les dades parlen per si soles. És lo bo que tenen."
+
+  parlamento:
+    claim: "Què passa al {{parliament_name}}"
+
+  initiatives:
+    documentos: Documents
+    en_proceso: En procés
+    cerrada: Tancat
+
+  interventions:  
+    session_date: "Sessió del {{session_date}}" 
+    video: "Vídeo"
+    minutos: min.
+    duracion: "Duració:"
+    calidad: "Qualitat {{bitrate}}"
+    intervienen: Intervenen
+    transcripcion: "Transcripció del debat"
+    no_podemos_mas: "No podem fer res més amb el seu contingut."
+
+  parliamentarians:
+    idiomas: "Idiomes"
+    sueldo: "Salari"
+    calculando: Calculant... 
+    cargos: "Responsabilitats"
+    actividad_parlamentaria: Activitat parlamentària
+
+  parties:
+    sitio_web: "Espai web"
+    respuestas_en_partaide: Respostes en Partaide
+    noticias: Notícies
+    _menu:
+      2009actualidad: 2009-Actualitat
+
+  footer:
+    claim: "<strong>Parlio</strong>, creat graciosament per<a href='http://www.linkingpaths.com/'>Linking Paths</a> i <a href='http://www.lapersonnalite.com/'>La Personnalit√©</a> per <a href='http://www.probp.org/'>Pro Bono Publico</a>."
+
+  header:
+    sobre_parlio: Sobre Parlio
+    buscar: Buscar
+    buscar_tag: "Què busques?"
+
+  taggings:
+    etiquetadas_con: Etiquetades amb 
+
+  rss:
+    te_interesa: "T'interessa?"
+    copy: "Subscriu-te a les actualitzacions d'aquest tema vía <acronym title='Really Simple Syndication'>RSS</acronym>."

@@ -12,28 +12,29 @@ eu:
   legislatura: Legealdia
   legislaturas: Legealdiak
   parlamentarios: Legebiltzarkideak
-  partidos: Taldeak
+  partidos: Alderdiak
   grupo_mixto: Talde Mistoa  
   
   headers:
-    actividad_parlamentaria: Actividad parlamentaria
-    asuntos_de_actualidad: Asuntos de actualidad
-    etiquetas: Etiquetas
-    parlamentarios_de_actualidad: Parlamentarios de actualidad
-    evolución: Evolución.
-    comisiones_en_las_que_participa: Comisiones en las que participa
-    grafica_de_actividad: Gráfica de su actividad anual
-    actividad_parlamentaria_del_partido: Actividad parlamentaria del partido
-    comisiones_en_las_que_participan: Comisiones en las que participan
-    etiquetas_utilizadas_en_esta_categoria: Etiquetas utilizadas en esta categoria
-    parlamentarios_mas_activos: Parlamentarios más activos
+    actividad_parlamentaria: Legebiltzar jarduera
+    asuntos_de_actualidad: Gaurkotasuneko ekimenak
+    etiquetas: Etiketak
+    parlamentarios_de_actualidad: Gaurkotasuneko legebiltzarkideak
+    evolucion: Bilakabidea
+    comisiones_en_las_que_participa: Batzorde hauetan parte hartzen du
+    grafica_de_actividad: Urteko jardueraren grafikoa
+    actividad_parlamentaria_del_partido: Alderdiaren jarduera legebiltzarrean
+    comisiones_en_las_que_participan: Batzorde hauetan parte hartzen dute
+    etiquetas_utilizadas_en_esta_categoria: Kategoria honetan erabilitako etiketak
+    parlamentarios_mas_activos: Legebiltzarkide aktiboenak
+    ultimos_debates: Azken eztabaidak
   info:
-    fecha: Fecha
-    por: Por
-    de: de 
-    para: Para
-    etiquetas: Etiquetas 
-    total: Total
+    fecha: Data
+    por: Nork
+    de: "Alderdia:"
+    para: Norentzat
+    etiquetas: Etiketak 
+    total: Osora
 
   commisions:
       presidente: Lehendakaria
@@ -43,60 +44,60 @@ eu:
       vocal: Kidea
 
   intro:     
-    te_representan: "Tú los eliges. Pero, ¿sabes si te representan?"
-    lo_que_se_debate: "Lo que se debate, lo que se propone, lo que se decide. Tienes derecho a saberlo."
+    te_representan: "Zuk aukeratzen dituzu. Baina, ordezkatzen ote zaituzten ba al dakizu?"
+    lo_que_se_debate: "Eztabaidatzen dena, proposatzen dena, erabakitzen dena. Jakiteko eskubidea duzu."
     parlio_si:   
-      header: "Parlio SÍ es"
-      un_lugar: "Un lugar donde se quiere informar al ciudadano sobre la actividad parlamentaria del Parlamento Vasco." 
-      iniciativa_probono: "La primera iniciativa de la asociación <a href='http://www.probp.org'><strong>Pro Bono Público</strong></a> a favor de los estándares para la difusión de los datos públicos."
+      header: "Parlio BADA"
+      un_lugar: "Herritarrei Eusko Legebiltzarreko jarduera ezagutzera eman nahi dien leku bat." 
+      iniciativa_probono: "<a href='http://www.probp.org'><strong>Pro Bono Público</strong></a> elkartearen lehen ekimena, datu publikoak zabaltzeko estandarrak erabiltzearen alde."
     parlio_no:
-      header: "Parlio NO es" 
-      web_oficial: "El sitio web oficial del Parlamento Vasco. Ni tiene ningún vínculo con él."         
-      sitio_juicios: "Un sitio donde se emitan juicios de valor. Los datos hablan por sí mismos. Es lo bueno que tienen."
+      header: "Parlio EZ da" 
+      web_oficial: "Eusko Legebiltzarreko web gune ofiziala. Eta ez du honekin inolako loturarik."         
+      sitio_juicios: "Balio-judizioak ematen dituen leku bat. Datuek bere kasa hitz egiten dute. Hori da duten abantaila."
 
   parlamento:
-    claim: "Qué ocurre en el {{parliament_name}}"
+    claim: "Zer gertatzen da hemen: {{parliament_name}}"
 
   initiatives:
-    documentos: Documentos
-    en_proceso: En proceso
-    cerrada: Cerrada
+    documentos: Dokumentuak
+    en_proceso: Prozesuan
+    cerrada: Itxirik
 
   interventions:  
-    session_date: "Sesión del {{session_date}}" 
-    video: "Vídeo"
+    session_date: "Bilkura eguna {{session_date}}" 
+    video: "Bideoa"
     minutos: min.
-    duracion: "Duración:"
-    calidad: "Calidad {{bitrate}}"
-    intervienen: Intervienen
-    transcripcion: "Transcripción del debate"
-    no_podemos_mas: "No podemos hacer nada más con su contenido."
+    duracion: "Iraupena:"
+    calidad: "Kalitatea {{bitrate}}"
+    intervienen: "Eskuhartzeak"
+    transcripcion: "Eztabaidaren transkripzioa"
+    no_podemos_mas: "Ezin dugu edukiarekin ezer gehiago egin."
 
   parliamentarians:
-    idiomas: "Idiomas"
-    sueldo: "Sueldo"
-    calculando: Calculando... 
-    cargos: "Cargos"
-    actividad_parlamentaria: Actividad parlamentaria
+    idiomas: "Hizkuntzak"
+    sueldo: "Soldata"
+    calculando: Kalkulatzen... 
+    cargos: "Karguak"
+    actividad_parlamentaria: Legebiltzar jarduera
 
   parties:
-    sitio_web: "Sitio web"
-    respuestas_en_partaide: Respuestas en Partaide
-    noticias: Noticias
+    sitio_web: "Web gunea"
+    respuestas_en_partaide: Partaiden emandako erantzunak
+    noticias: Berriak
     _menu:
-      2009actualidad: 2009-Actualidad
+      2009actualidad: 2009-Gaur
 
   footer:
-    claim: "<strong>Parlio</strong>, creado graciosamente por <a href='http://www.linkingpaths.com/'>Linking Paths</a> y <a href='http://www.lapersonnalite.com/'>La Personnalité</a> para <a href='http://www.probp.org/'>Pro Bono Publico</a>."
+    claim: "<strong>Parlio</strong> graziyarekin sortu dute <a href='http://www.linkingpaths.com/'>Linking Paths</a> eta <a href='http://www.lapersonnalite.com/'>La Personnalité</a>k  <a href='http://www.probp.org/'>Pro Bono Publico</a>rentzat."
 
   header:
     sobre_parlio: Parliori buruz
-    buscar: Buscar
-    buscar_tag: "¿Qué buscas?"
+    buscar: Bilatu
+    buscar_tag: "Zer ari zara bilatzen?"
 
   taggings:
-    etiquetadas_con: Etiquetadas con 
+    etiquetadas_con: "Etiketa hau dute:" 
 
   rss:
-    te_interesa: "¿Te interesa?"
-    copy: "Suscríbete a las actualizaciones de este tema vía <acronym title='Really Simple Syndication'>RSS</acronym>."
+    te_interesa: "Interesatzen al zaizu?"
+    copy: "Harpidetu zaitez gai honen eguneraketetara <acronym title='Really Simple Syndication'>RSS</acronym> bidez."
