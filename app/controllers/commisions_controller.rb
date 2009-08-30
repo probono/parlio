@@ -12,6 +12,7 @@ class CommisionsController < ApplicationController
 
   def show
     @commisions = Commision.all
+    meta :title => "Parlio - Debates realizados en la comisión de #{@commision.name}"
 
     respond_to do |wants|
       wants.html # show.html.erb
