@@ -12,19 +12,19 @@
     <!-- parliament_data -->
     <div class="parliament_data">
       <dl class="line">
-        <% if @parliamentarian.degree %>
+        <% unless @parliamentarian.degree.blank? %>
           <dt>Titulación:</dt>
           <dd><%= @parliamentarian.degree %></dd>
         <%end%>
-        <% if @parliamentarian.profession %>
+        <% unless @parliamentarian.profession.blank? %>
           <dt>Profesión:</dt>
           <dd><%= @parliamentarian.profession %></dd>
         <%end%>
-        <% if @parliamentarian.languages %>
+        <% unless @parliamentarian.languages.blank? %>
           <dt><%= I18n.t("parliamentarians.idiomas") %>:</dt>
           <dd><%= @parliamentarian.languages %></dd>
         <%end%>
-        <% if @parliamentarian.email %>
+        <% unless @parliamentarian.email.blank? %>
           <dt>e-mail:</dt>
           <dd><%= mail_to @parliamentarian.email %></dd>
         <%end%>
