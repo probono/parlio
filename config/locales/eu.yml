@@ -49,7 +49,7 @@ eu:
     parlio_si:   
       header: "Parlio BADA"
       un_lugar: "Herritarrei Eusko Legebiltzarreko jarduera ezagutzera eman nahi dien leku bat." 
-      iniciativa_probono: "<a href='http://www.probp.org'><strong>Pro Bono Público</strong></a> elkartearen lehen ekimena, datu publikoak zabaltzeko estandarrak erabiltzearen alde."
+      iniciativa_probono: "<a href='http://www.probp.org'><strong>Pro Bono Publico</strong></a> elkartearen lehen ekimena, datu publikoak zabaltzeko estandarrak erabiltzearen alde."
     parlio_no:
       header: "Parlio EZ da" 
       web_oficial: "Eusko Legebiltzarreko web gune ofiziala. Eta ez du honekin inolako loturarik."         

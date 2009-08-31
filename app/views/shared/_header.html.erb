@@ -7,8 +7,9 @@
     </div>
 
     <ul class="lang">
-      <li><a href="#">euskara</a></li>
-      <li><a href="#">español</a></li>
+      <li><%= link_to "euskara", root_eu_path %></li>
+      <li><%= link_to "català", root_ca_path %></li>
+      <li><%= link_to "español", root_es_path %></li>
     </ul>
     
     <% form_tag(search_url, {:method => :get, :id => "global_search"}) do -%>

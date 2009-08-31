@@ -48,7 +48,7 @@ en:
     parlio_si:   
       header: "Parlio SÍ es"
       un_lugar: "Un lugar donde se quiere informar al ciudadano sobre la actividad parlamentaria del Parlamento Vasco." 
-      iniciativa_probono: "La primera iniciativa de la asociación <a href='http://www.probp.org'><strong>Pro Bono Público</strong></a> a favor de los estándares para la difusión de los datos públicos."
+      iniciativa_probono: "La primera iniciativa de la asociación <a href='http://www.probp.org'><strong>Pro Bono Publico</strong></a> a favor de los estándares para la difusión de los datos públicos."
     parlio_no:
       header: "Parlio NO es" 
       web_oficial: "El sitio web oficial del Parlamento Vasco. Ni tiene ningún vínculo con él."         

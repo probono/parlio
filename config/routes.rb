@@ -55,3 +55,5 @@ ActionController::Routing::Routes.draw do |map|
   map.root :controller => "home"
 
 end
+
+ActionController::Routing::Translator.translate_from_file('config','i18n-routes.yml')
