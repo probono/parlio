@@ -27,7 +27,7 @@ set :scm, :git
 set :branch, "master"
 set :scm_user, 'railsrumble'
 #set :scm_passphrase, 'trouristb0x'
-set :repository, "git@github.com:railsrumble/rr09-team-15.git"
+set :repository, "git://github.com/probono/parlio.git"
 set :deploy_via, :remote_cache
 
 

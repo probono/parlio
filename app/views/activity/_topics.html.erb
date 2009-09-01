@@ -4,7 +4,7 @@
   <% if !current_topics.blank? %>
     <ul>
       <% for t in current_topics %>
-        <li<%= " class='active'" if t == @topic %><%= link_to t.name, topic_path(t) %></li>
+        <li><%= " class='active'" if t == @topic %><%= link_to t.name, topic_path(t) %></li>
       <% end %>
     </ul>
   <% end %>
