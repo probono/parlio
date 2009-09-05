@@ -14,6 +14,7 @@ class UpdateParliamentarians
         ['full_name', 'photo', 'profession', 'languages', 'email', 'degree'].each do |a|
           local.send("#{a}=", p.send(a))
         end
+        #FIXME, comprobar en lugar de cargárnoslos todos
         p.posts.destroy_all
         p.posts.each{|po| local.posts.build(:title => po) } 
         updated += 1
