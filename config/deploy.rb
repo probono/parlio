@@ -36,7 +36,7 @@ set :deploy_via, :remote_cache
 #############################################################
 
 set :user, "parlio"
-set :domain, "parlio.r09.railsrumble.com"
+set :domain, "parlio.org"
 server domain, :app, :web
 role :db, domain, :primary => true
 
