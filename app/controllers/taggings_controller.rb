@@ -14,7 +14,7 @@ class TaggingsController < ApplicationController
 
   private
     def most_active_parliamentarians(tag)
-      Initiative.find_tagged_with(tag).group_by(&:parliamentarian).sort_by{|x| x[1].size}.reverse.first(3)
+      Initiative.with_parliamentarian.find_tagged_with(tag).group_by(&:parliamentarian).sort_by{|x| x[1].size}.reverse.first(3)
     end
 
     def find_taggings
