@@ -19,15 +19,15 @@ class Party < ActiveRecord::Base
   has_many :parliamentarians  
   
   def initiatives
-    self.parliamentarians.collect{|p| p.initiatives}.flatten.uniq
+    self.parliamentarians.collect{|p| p.initiatives}.flatten.uniq.sort {|x,y| y.initiative_date <=> x.initiative_date }
   end
   
   def interventions
-    self.parliamentarians.collect{|p| p.interventions}.flatten.uniq
+    self.parliamentarians.collect{|p| p.interventions}.flatten.uniq.sort {|x,y| y.session_date <=> x.session_date }
   end
   
   def self.most_active
-    tuples = Initiative.count(:all, :group => "party_id", :include => [:parliamentarian], :order => "count(*) DESC")
+    tuples = Initiative.with_parliamentarian.count(:all, :group => "party_id", :include => [:parliamentarian], :order => "count(*) DESC")
     returning most_active = [] do
       tuples.each{|tuple| most_active << [Party.find(tuple[0]), tuple[1]]}
     end
@@ -44,7 +44,7 @@ class Party < ActiveRecord::Base
   
   private
   def self.most_active_all_parlamentarians
-    tuples = Initiative.count(:all, :group => "parliamentarian_id", :order => "count(*) DESC")
+    tuples = Initiative.with_parliamentarian.count(:all, :group => "parliamentarian_id", :order => "count(*) DESC")
     returning most_active = [] do
       tuples.each{|tuple| most_active << Parliamentarian.find(tuple[0])}
     end    

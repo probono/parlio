@@ -23,14 +23,14 @@
 class Parliamentarian < ActiveRecord::Base
   seo_urls "full_name"
   
-  has_many :initiatives, :dependent => :destroy
+  has_many :initiatives, :dependent => :destroy, :order => 'initiative_date desc'
   has_many :posts, :dependent => :destroy  
   
   has_many :commission_members
   has_many :commissions, :through => :commission_members, :source => :commision
   
   has_many :intervention_parliamentarians
-  has_many :interventions, :through => :intervention_parliamentarians
+  has_many :interventions, :through => :intervention_parliamentarians, :order => 'session_date desc'
   
   has_one  :substitute, :class_name => 'Parliamentarian', :foreign_key => :substitutes_id
   has_one  :substituted_by, :class_name => 'Parliamentarian', :foreign_key => :substituted_by_id
@@ -53,7 +53,7 @@ class Parliamentarian < ActiveRecord::Base
   end
     
   def self.most_active
-    tuples = Initiative.count(:all, :group => "parliamentarian_id", :order => "count(*) DESC", :limit => 5)
+    tuples = Initiative.with_parliamentarian.count(:all, :group => "parliamentarian_id", :order => "count(*) DESC", :limit => 5)
     returning most_active = [] do
       tuples.each{|tuple| most_active << Parliamentarian.find(tuple[0])}
     end    

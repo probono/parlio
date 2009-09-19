@@ -30,6 +30,8 @@ class Initiative < ActiveRecord::Base
   belongs_to :topic
   has_many :procedures, :dependent => :destroy
   has_many :announcements, :dependent => :destroy
+  
+  named_scope :with_parliamentarian, :conditions => ['parliamentarian_id <> ?', nil]
 
   def self.site_search(query)
     sql = "%#{query}%"
