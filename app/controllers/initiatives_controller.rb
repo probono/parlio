@@ -11,7 +11,7 @@ class InitiativesController < ApplicationController
     end       
     @most_active_parties= Party.most_active
     @most_active_parliamentarians= Parliamentarian.most_active
-    @most_recent_initiatives = Initiative.find(:all, :limit => 3)
+    @most_recent_initiatives = Initiative.find(:all, :limit => 3, :order => 'initiative_date desc')
 
     respond_to do |wants|
       wants.html # index.html.erb

@@ -12,7 +12,7 @@
 class Topic < ActiveRecord::Base
   seo_urls
   
-  has_many :initiatives
+  has_many :initiatives, :order => 'initiative_date desc'
   
   def self.most_active
     tuples = Initiative.count(:all, :group => "topic_id", :order => "count(*) DESC", :limit=> 6)

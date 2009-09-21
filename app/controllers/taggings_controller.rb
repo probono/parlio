@@ -18,7 +18,7 @@ class TaggingsController < ApplicationController
     end
 
     def find_taggings
-      @taggings = Initiative.find_tagged_with(params[:tag]).paginate :per_page => 5,  :page => params[:page]
+      @taggings = Initiative.find_tagged_with(params[:tag], :order => "initiative_date desc").paginate :per_page => 5,  :page => params[:page]
     end
 
 end

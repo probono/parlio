@@ -27,6 +27,7 @@ class Initiative < ActiveRecord::Base
   
   acts_as_taggable_on :tags
   belongs_to :parliamentarian
+  belongs_to :speaker
   belongs_to :topic
   has_many :procedures, :dependent => :destroy
   has_many :announcements, :dependent => :destroy
