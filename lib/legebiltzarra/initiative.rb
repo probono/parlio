@@ -39,12 +39,14 @@ module Legebiltzarra
 
     def procedures
       procedures = Array.new
-      document.at("th[text()^='Trámites:']").next_sibling.search('a').each do |a|
-        value = a.content[0, a.content.index('/')]
-        procedure_date = Date.strptime(value, "%d.%m.%Y")
-        title = a.content[a.content.index('/') + 1, a.content.size - 1]
-        url = BASE_URL + a['href']
-        procedures << { :title => title, :url => url, :procedure_date => procedure_date}
+      if document.at("th[text()^='Trámites:']")
+        document.at("th[text()^='Trámites:']").next_sibling.search('a').each do |a|
+          value = a.content[0, a.content.index('/')]
+          procedure_date = Date.strptime(value, "%d.%m.%Y")
+          title = a.content[a.content.index('/') + 1, a.content.size - 1]
+          url = BASE_URL + a['href']
+          procedures << { :title => title, :url => url, :procedure_date => procedure_date}
+        end
       end
       procedures
     end
