@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090823212248) do
+ActiveRecord::Schema.define(:version => 20090921113354) do
 
   create_table "announcements", :force => true do |t|
     t.string   "announcement_url"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(:version => 20090823212248) do
     t.string   "recipient"
     t.date     "initiative_date"
     t.date     "session_date"
+    t.integer  "speaker_id"
   end
 
   create_table "intervention_parliamentarians", :force => true do |t|
