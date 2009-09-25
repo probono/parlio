@@ -16,6 +16,11 @@ module Legebiltzarra
       document.at("th[text()^='Título iniciativa:']").next_sibling.content.strip rescue nil
     end
 
+    def processing
+      document.at("th[text()^='Tramitación ante:']").next_sibling.content.strip rescue nil
+      name[name.index('Comis'), name.size - 1] if name && name.index('Comis')
+    end
+    
     def proposer
       document.at("th[text()^='Proponentes:']").next_sibling.content.strip rescue nil
     end
