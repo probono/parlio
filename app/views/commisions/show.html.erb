@@ -21,17 +21,28 @@
         <!-- commission_cont_col_left -->
         <div class="commission_cont_col commission_cont_col_left">
           <!-- commission_list -->
-          <% if !@commision.interventions.blank? %>
+          <% unless @activity.blank? %>
             <ul class="commission_list">
-            <% for intervention in @commision.interventions %>
+            <% for t in @activity %>
               <li class="commission">
-                <%= link_to intervention.subject_title, intervention_path(intervention) %>
-                <span class="date"><%= intervention.session_date %></span>
+              <% if t.instance_of? Initiative %>
+                <div class="last_activity last_subject">
+                  <p class="date"><strong><%= t.initiative_date %>, <%= I18n.t("asunto") %></strong></p>
+                  <p class="title"><%= link_to t.title, initiative_path(t) %></p>
+                  <p class="author"><%=I18n.t("info.por")%>: <%= initiative_author(t) -%></p>
+                </div>
+              <% else %>
+                <div class="last_activity last_discussion">
+                  <p class="date"><strong><%= t.session_date %>, <%= I18n.t("debate") %></strong></p>
+                  <p class="title"><%= link_to t.subject_title, intervention_path(t) %></p>
+                </div>
+              <% end %>                  
               </li>
             <% end %>
             </ul>
           <% end %>
           </ul>
+          <%= will_paginate @activity, :class => 'pag_nav' %>
           <!-- /commission_list -->
         </div>
         <!-- /commission_cont_col_left -->
