@@ -9,6 +9,7 @@ class TaggingsController < ApplicationController
     respond_to do |wants|
       wants.html
       wants.xml  { render :xml => @tagging }
+      wants.atom { render(:layout => false) }
     end
   end
 
