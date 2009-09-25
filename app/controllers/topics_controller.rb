@@ -23,6 +23,7 @@ class TopicsController < ApplicationController
     respond_to do |wants|
       wants.html # show.html.erb
       wants.xml  { render :xml => @topic }
+      wants.atom { render(:layout => false) }
     end
   end
 

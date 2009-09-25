@@ -36,7 +36,7 @@
         
         <%= will_paginate @initiatives, :class => 'pag_nav' %>
 
-        <%= render :partial => 'shared/rss_mod' %>
+        <%= render :partial => 'shared/rss_mod', :locals => {:url => topic_path(@topic, :format => :atom)} %>
 
 
       </div>
