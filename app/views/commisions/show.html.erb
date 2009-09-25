@@ -44,6 +44,8 @@
           </ul>
           <%= will_paginate @activity, :class => 'pag_nav' %>
           <!-- /commission_list -->
+          <%= render :partial => 'shared/rss_mod', :locals => {:url => commision_path(@commision, :format => :atom)} %>
+          
         </div>
         <!-- /commission_cont_col_left -->
 

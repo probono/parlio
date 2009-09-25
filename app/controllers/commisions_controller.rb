@@ -22,6 +22,7 @@ class CommisionsController < ApplicationController
     respond_to do |wants|
       wants.html # show.html.erb
       wants.xml  { render :xml => @commision }
+      wants.atom { render(:layout => false) }      
     end
   end
 
