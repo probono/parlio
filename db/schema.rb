@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(:version => 20090925163111) do
     t.date     "initiative_date"
     t.date     "session_date"
     t.integer  "speaker_id"
-    t.integer  "commission_id"
+    t.integer  "commision_id"
   end
 
   create_table "intervention_parliamentarians", :force => true do |t|

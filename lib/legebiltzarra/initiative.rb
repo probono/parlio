@@ -17,7 +17,7 @@ module Legebiltzarra
     end
 
     def processing
-      document.at("th[text()^='Tramitación ante:']").next_sibling.content.strip rescue nil
+      name = document.at("th[text()^='Tramitación ante:']").next_sibling.content.strip rescue nil
       name[name.index('Comis'), name.size - 1] if name && name.index('Comis')
     end
     

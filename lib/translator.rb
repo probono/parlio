@@ -72,8 +72,8 @@ class Translator
     unless initiative 
       initiative = Initiative.new
       initiative.created_at = remote_i.initiative_date
-      intervention.commision = find_comission(remote_i.processing) unless remote_i.processing.blank?
     end
+    initiative.commision = find_comission(remote_i.processing) unless remote_i.processing.blank?
 
     if changed_initiative?(initiative, remote_i)
       ['num_exp', 'title', 'proposer', 'recipient', 'initiative_date'].each do |a|
