@@ -15,7 +15,8 @@ class Commision < ActiveRecord::Base
   has_many :commission_members
   has_many :members, :through => :commission_members, :source => :parliamentarian
   
-  has_many :interventions
+  has_many :interventions, :order => 'session_date desc'
+  has_many :initiatives, :order => 'initiative_date desc'
   
   
   has_many :commission_members_as_president, :class_name => "CommissionMember", :conditions => ["commission_members.position = ?", CommissionMember::PRESIDENT]
