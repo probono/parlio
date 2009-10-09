@@ -30,10 +30,7 @@
                   <dt><%= I18n.t("info.fecha") %>:</dt>
                   <dd><%= initiative.initiative_date %></dd>
                   <dt><%= I18n.t("info.por") %>:</dt>
-                  <dd>
-                    <%= link_to initiative.parliamentarian.full_name, parliamentarian_path(initiative.parliamentarian), :class=>"author" %> <%= I18n.t("info.de") %> 
-                    <%= link_to initiative.parliamentarian.party.party_acronym, party_path(initiative.parliamentarian.party), :class => "party_name" %>
-                  </dd>
+                  <dd><%= initiative_author(initiative)%></dd>
                   <dt><%= I18n.t("info.para") %>:</dt>
                   <dd><%= initiative.recipient %></dd>
                 </dl>

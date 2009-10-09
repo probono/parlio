@@ -3,7 +3,7 @@
   <div class="current_commissions">
     <h2><%= I18n.t("comisiones_actuales") %></h2>
     <ul>
-      <% for c in @commisions %>
+      <%  @commisions.each do |c| %>
         <li <%= "class='active'" if c == @commision %>><%= link_to c.name, commision_path(c) %></li>
       <% end %>
     </ul>
