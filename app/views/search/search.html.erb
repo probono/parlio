@@ -1,6 +1,71 @@
-<ul>
-<% @matches.each do |m| %>
-  <%= render :partial => m.class.name.downcase, :locals => {:match => m} %>
-<% end -%>
-</ul>
-<%= will_paginate @matches %>
+<h1>Resultados para '<%= params[:search_term] %>'</h1>
+
+<!-- tab_system -->
+<div class="tab_system tab_system_subjects">
+
+   
+  <!-- tab_cont -->
+  <div class="tab_cont">
+    
+     <!-- subject_cat -->
+     <div class="subject_cat">
+       <h2>Parlamentarios</h2>
+
+       <% if !@parliamentarians.blank? %>
+         <% for member in @parliamentarians %>
+           <!-- parliamentarian -->
+           <div class="parliamentarian">
+             <%= parlavatar(member) %>
+             <div class="main">
+               <h4 class="name"><%= link_to member.full_name, parliamentarian_path(member) %></h4>
+               <p class="party"><%= link_to member.party.party_acronym, party_path(member.party), :class => "party_name" %></p>
+               <p class="subject_num"><%= member.interventions.size %> <%= I18n.t("intervenciones") %></p>
+             </div>
+           </div>
+           <!-- parliamentarian -->
+         <% end %>
+       <% end %>
+
+     </div>
+     <!-- /subject_cat -->    
+    <!-- subject_cont -->
+    <div class="subject_cont">
+      <h2>Actividad</h2>
+       <!-- subject_latest -->
+       <div class="subject_latest">
+
+         <!-- subjects -->
+         <div class="activities subjects">
+           <% if ! @matches.blank? %>
+             <% for t in  @matches %>
+                <% if t.instance_of? Initiative %>
+                  <div class="last_activity last_subject">
+                    <h3 class="label subject_label"><a href="#"><%= I18n.t("asunto") %></a></h3>
+                    <p class="date"><%= t.initiative_date %></p>
+                    <p class="title"><%= link_to t.title, initiative_path(t) %></p>
+                    <p class="author"><strong><%=I18n.t("info.por")%>:</strong><%= initiative_author(t) -%></p>
+                  </div>
+                <% else %>
+                  <div class="last_activity last_discussion">
+                    <h3 class="label discussion_label"><a href="#"><%= I18n.t("debate") %></a></h3>
+                    <p class="date"><%= t.session_date %></p>
+                    <p class="title"><%= link_to t.subject_title, intervention_path(t) %></p>
+                  </div>
+                <% end %>
+             <% end %>
+           <% end %>
+         </div>
+         <!-- /subjects -->        
+       </div>
+       <!-- /subject_latest -->
+       <%= will_paginate @matches, :class => 'pag_nav' %>
+
+      <!-- /activity_stats -->
+      
+    </div>
+    <!-- /subject_cont -->
+    
+  </div>
+  <!-- /tab_cont -->
+</div>
+<!-- /tab_system -->
