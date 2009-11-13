@@ -1670,6 +1670,8 @@ a:hover {color: #47b6ed;}
 
 .tab_cont
 {
+	-moz-border-radius: 5px;
+  	-webkit-border-radius: 5px;
 	background: #fff;
 	border: 1px solid #ccc;
 	padding: 30px;
@@ -1749,6 +1751,7 @@ a:hover {color: #47b6ed;}
 	margin: 0 30px 0 0;
 	width: 438px;
 }
+
 .subject_latest
 {
 	-moz-border-radius: 20px;
@@ -1756,6 +1759,16 @@ a:hover {color: #47b6ed;}
 	background: #d4f0ff;
 	margin: 0 0 40px 0;
 	padding: 20px;
+}
+
+.last_activity
+{
+	-moz-border-radius: 20px;
+  	-webkit-border-radius: 20px;
+	background: #fff;
+	border-bottom: 1px solid #888;
+	border-right: 1px solid #ccc;
+	padding: 15px;
 }
 
 /* @group .activity_stats */
