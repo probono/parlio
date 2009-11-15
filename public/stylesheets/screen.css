@@ -447,16 +447,20 @@ a::selection {
 	margin: 0 auto;
 }
 
-#logo_parliament
+#logo_parliament {width: 320px;}
+
+#logo_parliament a
 {
-	-moz-border-radius-bottomleft: 10px;
-  	-moz-border-radius-bottomright: 10px;
-  	-webkit-border-bottom-left-radius: 10px;
-  	-webkit-border-bottom-right-radius: 10px;
-	background: #fff;
-	margin: 0 0 40px 0;
-	padding: 20px 0;
-	width: 307px;
+	border: none;
+	display: block;
+	padding: 15px 0;
+}
+
+#logo_parliament a:hover
+{
+	filter: alpha(opacity=50);
+	-moz-opacity: .5;
+	opacity: .5;
 }
 
 /* @group .lang */
@@ -610,7 +614,7 @@ a::selection {
 /* @end */
 
 /* @end */
-.content {background: #fff;}
+.content {background: #fff;margin: 0;padding: 0 0 20px 0;}
 .content .inside {padding: 20px 0 0 0;}
 
 .col_left
@@ -638,9 +642,29 @@ a::selection {
 /* @group .footer */
 #footer
 {
-	color: #fff;
+	border-top: 5px solid #111;
+	color: #999;
 	margin: 0;
-	padding: 10px 0 40px 0;
+	padding: 5px 0;
+}
+
+#footer a
+{
+	border: none;
+	color: #fecd08;
+}
+
+#footer a:hover
+{
+	color: #cb9b2b;
+}
+
+#footer .inside,
+#subfooter .inside
+{
+	padding: 0 0 0 75px;
+	position: relative;
+	width: 885px;
 }
 
 #footer p
@@ -648,8 +672,90 @@ a::selection {
 	margin: 0;
 	text-shadow: 1px 1px 1px #000;
 }
+
+#footer .flux
+{
+	background: url(/images/css/bg/footer_flux.png) no-repeat;
+	height: 184px;
+	left: 0;
+	position: absolute;
+	top: -50px;
+	width: 75px;
+}
+/* @end */
+
+
+
+/* @group #subfooter */
+#subfooter
+{
+	background: #000;
+	margin: 0;
+	padding: 20px 0;
+}
+
+#subfooter .credits span
+{
+	display: block;
+	float: left;
+	margin: 0 20px 0 0;
+}
+
+#subfooter .credits span a
+{
+	background-repeat: no-repeat;
+	border-bottom: none;
+	display: block;
+	text-indent: -9999px;
+}
+
+#subfooter .credits span a:hover
+{
+	filter: alpha(opacity=50);
+	-moz-opacity: .5;
+	opacity: .5;
+}
+
+#subfooter .credits .credit a,
+#subfooter .credits .credit_plus
+{
+	height: 55px;
+}
+
+#subfooter .credits .credit.probono a
+{
+	background-image: url(/images/css/bg/credit_probono.gif);
+	height: 89px;
+	width: 123px;
+}
+
+#subfooter .credits .credit.linking a
+{
+	background-image: url(/images/css/bg/credit_linking.gif);
+	width: 47px;
+}
+
+#subfooter .credits .credit.lapersonnalite a
+{
+	background-image: url(/images/css/bg/credit_lapersonnalite.gif);
+	width: 150px;
+}
+
+#subfooter .credits .credit_by
+{
+	display: none;
+}
+
+#subfooter .credits .credit_plus
+{
+	background-image: url(/images/css/bg/credit_plus.gif);
+	width: 28px;
+	text-indent: -9999px;
+}
 /* @end */
 /* @end */
+
+
 
 /* @group Modules */
 /* @group .presentation */
@@ -708,7 +814,7 @@ a::selection {
 {
 	-moz-border-radius: 10px;
   	-webkit-border-radius: 10px;  	
-	background: #f2f2f2;
+	background: #f6f6f6;
 	float: left;
 	margin: 0 30px 0 0;
 	padding: 20px;
@@ -775,8 +881,9 @@ a::selection {
 .index_cols .parliamentarians_list .parliamentarian
 {
 	border-bottom: 1px solid #ddd;
+	border-top: 1px solid #fff;
 	margin: 0;
-	padding: 10px 0 0 0;
+	padding: 10px 0;
 }
 
 .index_cols .parliamentarians_list .parliamentarian .main {width: 190px;}
@@ -1170,7 +1277,7 @@ a:hover {color: #47b6ed;}
 	background: #ccc;
 }
 
-.parties-parliamentarians h2 {padding: 10px 20px;}
+.parties-parliamentarians h2 {margin: 0;padding: 10px 20px;}
 
 .parties-parliamentarians ul
 {
@@ -2577,7 +2684,8 @@ dl.line dd.block {clear: both;}
 .index_cols .parliament_activity .last_activity .label:after,
 .index_cols .current_subjects .categories li:after,
 .parlio_definition:after,
-.parties-parliamentarians ul:after
+.parties-parliamentarians ul:after,
+#subfooter .credits:after
 {
   content: ".";
   display: block;
@@ -2615,7 +2723,8 @@ dl.line dd.block {clear: both;}
 .index_cols .parliament_activity .last_activity .label,
 .index_cols .current_subjects .categories li,
 .parlio_definition,
-.parties-parliamentarians ul
+.parties-parliamentarians ul,
+#subfooter .credits
 {display: inline-block;}
 
 /* Hides from IE-mac \*/
@@ -2649,7 +2758,8 @@ dl.line dd.block {clear: both;}
 * html .index_cols .parliament_activity .last_activity .label,
 * html .index_cols .current_subjects .categories li,
 * html .parlio_definition,
-* html .parties-parliamentarians ul
+* html .parties-parliamentarians ul,
+* html #subfooter .credits
 {height: 1%;}
 
 .clearfix,
@@ -2681,7 +2791,8 @@ dl.line dd.block {clear: both;}
 .index_cols .parliament_activity .last_activity .label,
 .index_cols .current_subjects .categories li,
 .parlio_definition,
-.parties-parliamentarians ul
+.parties-parliamentarians ul,
+#subfooter .credits
 {display: block;}
 /* End hide from IE-mac */
 /* @end */
