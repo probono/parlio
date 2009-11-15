@@ -504,19 +504,13 @@ a::selection {
 /* @group #global_search */
 #global_search
 {
-	/*
-	-moz-border-radius-topleft: 5px;
-  	-moz-border-radius-topright: 5px;
-  	-webkit-border-top-left-radius: 5px;
-  	-webkit-border-top-right-radius: 5px;
-  	*/
   	-moz-border-radius: 10px;
   	-webkit-border-radius: 10px;
 	background: #fff;
 	bottom: -20px;
 	color: #333;
 	margin: 0;
-	padding: 10px;
+	padding: 10px 20px;
 	position: absolute;
 	right: 0;
 }
@@ -614,8 +608,22 @@ a::selection {
 /* @end */
 
 /* @end */
-.content {background: #fff;margin: 0;padding: 0 0 20px 0;}
-.content .inside {padding: 20px 0 0 0;}
+.content
+{
+	background: #eed;
+	margin: 0;
+	padding: 0 0 25px 0;
+}
+.content .inside
+{
+	-moz-border-radius-bottomleft: 15px;
+  	-moz-border-radius-bottomright: 15px;
+  	-webkit-border-bottom-left-radius: 15px;
+  	-webkit-border-bottom-right-radius: 15px;
+	background: #fff;
+	padding: 20px;
+	width: 920px;
+}
 
 .col_left
 {
@@ -636,7 +644,7 @@ a::selection {
 	background: #f2f2f2;
 	float: left;
 	padding: 20px;
-	width: 680px;
+	width: 640px;
 }
 
 /* @group .footer */
@@ -662,7 +670,7 @@ a::selection {
 #footer .inside,
 #subfooter .inside
 {
-	padding: 0 0 0 75px;
+	padding: 0 0 0 80px;
 	position: relative;
 	width: 885px;
 }
@@ -677,7 +685,7 @@ a::selection {
 {
 	background: url(/images/css/bg/footer_flux.png) no-repeat;
 	height: 184px;
-	left: 0;
+	left: 5px;
 	position: absolute;
 	top: -50px;
 	width: 75px;
@@ -1297,7 +1305,7 @@ a:hover {color: #47b6ed;}
 	height: 100px;
 	padding: 10px;
 	text-align: center;
-	width: 185px;
+	width: 175px;
 }
 
 .parties-parliamentarians ul li a
@@ -1675,21 +1683,28 @@ a:hover {color: #47b6ed;}
   	-moz-border-radius-topright: 5px;
   	-webkit-border-top-left-radius: 5px;
   	-webkit-border-top-right-radius: 5px;
-	background: #fff;
-	border: 1px solid #ccc;
-	color: #333;
+	background: #f2f2f2;
+	border: 1px solid #f2f2f2;
+	border-bottom-color: #ccc;
+	color: #ccc;
 	display: block;
 	padding: 5px 10px;
 }
 
-.tab_menu li a:hover {color: #ccc;}
+.tab_menu li a:hover
+{
+	background: #ddd;
+	border-color: #ccc;
+	color: #333;
+}
 
 .tab_menu li.active a,
 .tab_menu li.active a:hover
 {
-	background: #f2f2f2;
-	border-bottom: 1px solid #f2f2f2;
-	color: #ccc;
+	background: #fff;
+	border: 1px solid #ccc;
+	border-bottom-color: #fff;
+	color: #333;
 	cursor: default;
 }
 /* @end */
@@ -1698,8 +1713,7 @@ a:hover {color: #47b6ed;}
 {
 	background: #fff;
 	border: 1px solid #ccc;
-	padding: 30px;
-	width: 898px;
+	padding: 20px;
 }
 /* @end */
 
@@ -1759,7 +1773,7 @@ a:hover {color: #47b6ed;}
 .subject_cont
 {
 	float: left;
-	width: 668px;
+	width: 648px;
 }
 
 .subject_cont.subject_cont_category
@@ -1900,7 +1914,7 @@ a:hover {color: #47b6ed;}
 .commission_cont
 {
 	float: left;
-	width: 668px;
+	width: 648px;
 }
 
 .commission_title
@@ -1977,7 +1991,7 @@ a:hover {color: #47b6ed;}
 .discussion_cont
 {
 	float: left;
-	width: 728px;
+	width: 708px;
 }
 
 .discussion_title
