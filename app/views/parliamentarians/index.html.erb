@@ -17,19 +17,16 @@
     <h2><%= I18n.t("partidos") %></h2>
     <ul>
       <% @parliamentarians.group_by{|p| p.party}.each do |party, parliamentarians | %>
-        <li>  
-          <% unless party.acronym.include?("Mixto")%>
-            <li>  
-              <% link_to party_path(party) do %>
-                <%= image_tag party.logo, :size => "143x70" %>
-                <strong><%= party.party_acronym %></strong>
-                <em><%= parliamentarians.size %> <%= I18n.t("parlamentarios") %></em>
-              <% end %>
-            </li>                                   
-          <% end %>
-        </li>
+        <% unless party.acronym.include?("Mixto")%>
+          <li>  
+            <% link_to party_path(party) do %>
+              <%= image_tag party.logo, :size => "143x70" %>
+              <strong><%= party.party_acronym %></strong>
+              <em><%= parliamentarians.size %> <%= I18n.t("parlamentarios") %></em>
+            <% end %>
+          </li>                                   
+        <% end %>
       <% end %>
-      
     </ul>
   </div>
   <!-- /parties-parliamentarians -->
