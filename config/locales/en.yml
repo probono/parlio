@@ -20,13 +20,15 @@ en:
     asuntos_de_actualidad: Asuntos de actualidad
     etiquetas: Etiquetas
     parlamentarios_de_actualidad: Parlamentarios de actualidad
-    evolución: Evolución.
+    evolucion: Evolución.
     comisiones_en_las_que_participa: Comisiones en las que participa
     grafica_de_actividad: Gráfica de su actividad anual
     actividad_parlamentaria_del_partido: Actividad parlamentaria del partido
     comisiones_en_las_que_participan: Comisiones en las que participan
     etiquetas_utilizadas_en_esta_categoria: Etiquetas utilizadas en esta categoria
     parlamentarios_mas_activos: Parlamentarios más activos
+    ultimos_debates: Últimos debates
+    
   info:
     fecha: Fecha
     por: Por
