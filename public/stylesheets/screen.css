@@ -1369,7 +1369,7 @@ a:hover {color: #47b6ed;}
 .party_activity_cont
 {
 	float: left;
-	width: 730px;
+	width: 690px;
 }
 
 .party_activity_cont .parliamentarians_list .parliamentarian
@@ -1381,7 +1381,7 @@ a:hover {color: #47b6ed;}
 	margin: 0 15px 15px 0;
 	height: 70px;
 	padding: 3px;
-	width: 160px;
+	width: 150px;
 }
 
 .party_activity_cont .parliamentarians_list .parliamentarian .name
@@ -1390,7 +1390,11 @@ a:hover {color: #47b6ed;}
 	top: 5px;
 }
 
-.party_activity_cont .parliamentarians_list .parliamentarian .main {width: 104px;}
+.party_activity_cont .parliamentarians_list .parliamentarian .main
+{
+	margin: 0 0 0 45px;
+	width: 104px;
+}
 
 .party_activity_cont .parliamentarians_list .parliamentarian .main .spokesman
 {
@@ -1779,7 +1783,7 @@ a:hover {color: #47b6ed;}
 .subject_cont.subject_cont_category
 {
 	margin: 0 30px 0 0;
-	width: 438px;
+	width: 418px;
 }
 
 .subject_latest
