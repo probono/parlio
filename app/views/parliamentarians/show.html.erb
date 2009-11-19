@@ -71,7 +71,7 @@
   <div class="parliamentarian_activity_cont">
     <h3><%= I18n.t("headers.grafica_de_actividad") %></h3>
     <div class="activity_graph">
-      <%= inline_annotated_timeline @activity_data, "100%", 300, 
+      <%= inline_annotated_timeline @activity_data, 660, 300, 
                                     "parliamentarian_#{@parliamentarian.id}_activity_data" %>
                                     <br/>
     </div>
