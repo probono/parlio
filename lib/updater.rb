@@ -54,8 +54,10 @@ class Updater
       remote_p.initiatives.select{|ini| ini.num_exp.start_with?(YEAR)}.each do |remote_i|
         feedback(count += 1)
         initiative = Translator.initiative(remote_i)
-        initiative.parliamentarian = parliamentarian
-        initiative.save
+        if initiative
+          initiative.parliamentarian = parliamentarian
+          initiative.save
+        end
       end    
     end
   end

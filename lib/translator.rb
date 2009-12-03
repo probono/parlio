@@ -40,9 +40,8 @@ class Translator
     else
       commission = Commision.new
       ['name'].each do |a|
-        commission.send("#{a}=", c.send(a))
+        commission.send("#{a}=", remote_c.send(a))
       end      
-      created += 1
       commission.save! 
     end
     create_member(commission, remote_c.president.id, CommissionMember::PRESIDENT, remote_c.president.date)
@@ -97,6 +96,8 @@ class Translator
     end
     initiative.save! 
     initiative
+    rescue Exception => exc
+       logger.error("Exception #{exc.message} (#{remote_i.url})")
   end
     
   def self.intervention(i)
