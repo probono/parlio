@@ -29,7 +29,7 @@ class CommisionsController < ApplicationController
   private
   
     def all_commissions
-      @commisions = Commision.all
+      @commisions = Commision.all(:order => 'name asc')
     end
     
     def find_commision
