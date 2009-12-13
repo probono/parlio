@@ -1,3 +1,5 @@
+<%= auto_discovery_link_tag(:atom, initiatives_by_tag_path(@tag.name, :format => :atom), :title => "Parlio: #{I18n.t('asuntos')} #{I18n.t("taggings.etiquetadas_con")} #{@tag.name}") %>
+
 <h1><%= I18n.t("actividad") %></h1>
 <p class="claim"><%= I18n.t("parlamento.claim", :parliament_name => "Parlamento Vasco") %></p>
 
