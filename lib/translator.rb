@@ -97,7 +97,7 @@ class Translator
     initiative.save! 
     initiative
     rescue Exception => exc
-       logger.error("Exception #{exc.message} (#{remote_i.url})")
+       puts "Exception #{exc.message} (#{remote_i.url})"
   end
     
   def self.intervention(i)
