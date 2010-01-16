@@ -1,6 +1,6 @@
 class Updater
   
-  YEAR = "10"
+  YEAR = "09"
   
   def self.all
     self.parliamentarians
