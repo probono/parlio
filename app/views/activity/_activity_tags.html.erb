@@ -1,12 +1,12 @@
+<% if !activity.tags.blank? %>
 <!-- tag_mod -->
 <div class="tag_mod">
   <h4><%= I18n.t("info.etiquetas") %></h4>
-  <ul class="tag_list">      
-    <% if !activity.tags.blank? %>
-      <% for tag in activity.tags %>
-        <li><%= link_to tag, initiatives_by_tag_path(tag.name), :class => "tag" %></li>
-      <% end %>
+  <ul class="tag_list">
+    <% for tag in activity.tags %>
+      <li><%= link_to tag, initiatives_by_tag_path(tag.name), :class => "tag" %></li>
     <% end %>
   </ul>
 </div>
-<!-- /tag_mod --> 
+<!-- /tag_mod -->
+<% end %>
