@@ -36,9 +36,9 @@ class Updater
         parlio = Parliamentarian.find_by_full_name(p.full_name)
         tmp = Parliamentarian.find_by_full_name(p.substitution)
         parlio.active = p.active?
-        if parlio.active? && parlio.substitute.id != tmp.id
+        if parlio.active? && (!parlio.substitute && tmp || parlio.substitute.id != tmp.id)
           parlio.substitute = tmp
-        elsif parlio.substituted_by.id != tmp.id
+        elsif (!parlio.substituted_by && tmp) || parlio.substituted_by.id != tmp.id
           parlio.substituted_by = tmp 
         end
         parlio.save
@@ -78,7 +78,6 @@ class Updater
         px = Parliamentarian.find_by_orig_id(parla.id)
         if px && px.party != party 
           px.party = party
-          updated += 1
           px.save!
         end
       end      
