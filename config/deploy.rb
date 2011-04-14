@@ -1,3 +1,4 @@
+
 require 'capistrano/ext/multistage'
 
 #############################################################
@@ -60,13 +61,13 @@ namespace :deploy do
 
 end
 
-after "deploy", :move_dev_data_to_production
-desc "Use data extracted from http://www.parlamento.euskadi.net/ in production"
-task :move_dev_data_to_production do
-  puts "Deploying to production... removing #{deploy_to}/current/public/.htaccess"
-  run "cp #{deploy_to}/current/db/development.sqlite3 #{deploy_to}/current/db/production.sqlite3 "
-end
-
+# after "deploy", :move_dev_data_to_production
+# desc "Use data extracted from http://www.parlamento.euskadi.net/ in production"
+# task :move_dev_data_to_production do
+#   puts "Deploying to production... removing #{deploy_to}/current/public/.htaccess"
+#   run "cp #{deploy_to}/current/db/development.sqlite3 #{deploy_to}/current/db/production.sqlite3 "
+# end
+# 
 after "deploy", "deploy:update_crontab"
 namespace :deploy do
   desc "Update the crontab file"
