@@ -57,7 +57,7 @@ ca:
       sitio_juicios: "Un lloc on es facin judicis de valor. Les dades parlen per si soles."
 
   parlamento:
-    claim: "Què està passant al {{parliament_name}}"
+    claim: "Què està passant al %{parliament_name}"
 
   initiatives:
     documentos: Documents
@@ -65,11 +65,11 @@ ca:
     cerrada: Tancada
 
   interventions:
-    session_date: "Sessió del {{session_date}}"
+    session_date: "Sessió del %{session_date}"
     video: "Vídeo"
     minutos: min.
     duracion: "Durada:"
-    calidad: "Qualitat {{bitrate}}"
+    calidad: "Qualitat %{bitrate}"
     intervienen: Intervenen
     transcripcion: "Transcripció del debat"
     no_podemos_mas: "No podem fer res més amb el seu contingut."

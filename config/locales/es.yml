@@ -57,7 +57,7 @@ es:
       sitio_juicios: "Un sitio donde se emitan juicios de valor. Los datos hablan por sí mismos. Es lo bueno que tienen."
 
   parlamento:
-    claim: "Qué ocurre en el {{parliament_name}}"
+    claim: "Qué ocurre en el %{parliament_name}"
 
   initiatives:
     documentos: Documentos
@@ -65,11 +65,11 @@ es:
     cerrada: Cerrada
 
   interventions:  
-    session_date: "Sesión del {{session_date}}" 
+    session_date: "Sesión del %{session_date}" 
     video: "Vídeo"
     minutos: min.
     duracion: "Duración:"
-    calidad: "Calidad {{bitrate}}"
+    calidad: "Calidad %{bitrate}"
     intervienen: Intervienen
     transcripcion: "Transcripción del debate"
     no_podemos_mas: "No podemos hacer nada más con su contenido."

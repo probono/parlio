@@ -56,7 +56,7 @@ eu:
       sitio_juicios: "Balio-judizioak ematen dituen leku bat. Datuek bere kasa hitz egiten dute. Hori da duten abantaila."
 
   parlamento:
-    claim: "Zer gertatzen da hemen: {{parliament_name}}"
+    claim: "Zer gertatzen da hemen: %{parliament_name}"
 
   initiatives:
     documentos: Dokumentuak
@@ -64,11 +64,11 @@ eu:
     cerrada: Itxirik
 
   interventions:  
-    session_date: "Bilkura eguna {{session_date}}" 
+    session_date: "Bilkura eguna %{session_date}" 
     video: "Bideoa"
     minutos: min.
     duracion: "Iraupena:"
-    calidad: "Kalitatea {{bitrate}}"
+    calidad: "Kalitatea %{bitrate}"
     intervienen: "Eskuhartzeak"
     transcripcion: "Eztabaidaren transkripzioa"
     no_podemos_mas: "Ezin dugu edukiarekin ezer gehiago egin."
