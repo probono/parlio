@@ -5,3 +5,6 @@ doc/api
 doc/app
 coverage/*
 public/system/*
+.bundle
+vendor/bundle/ruby
+

@@ -20,10 +20,10 @@
   <div class="news">
     <h2><%= I18n.t("parties.noticias") %></h2>
     <ul class="news_list">
-      <% if !@news["ResultSet"]["Result"].blank? %>
-        <% for a_new in @news["ResultSet"]["Result"] %>
+      <% if @news.present? && @news["Results"].present? %>
+        <% for a_new in @news["Results"] %>
         <li class="clearfix">
-            <%= link_to a_new["Title"], a_new["Url"] %> | <span class="date"><%= Time.at(a_new["PublishDate"].to_i).to_date %></span>
+            <%= link_to a_new["Title"], a_new["Url"] %> | <span class="date"><%= a_new["Date"].to_date %></span>
         </li>
         <% end %>
       <% end %>

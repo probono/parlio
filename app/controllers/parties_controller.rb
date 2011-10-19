@@ -40,12 +40,12 @@ class PartiesController < ApplicationController
     end
 
     def get_news_for_this_party
-      appid = "rzAI5ZbV34Frd2_uCqREg14Ui0jflPNwI5ub43vXao6R7fOO8_ciI.cwM7v7b8JToINus3w-"
-      output="json"
+      appid = "CD341340140122006521FEEE3D7AB8591B6D5351"
       name = URI.escape(@party.party_acronym)
-      rs = Net::HTTP.get URI.parse("http://search.yahooapis.com/NewsSearchService/V1/newsSearch?appid=#{appid}&query=#{name}&results=2&language=es&output=#{output}")
-      puts "http://search.yahooapis.com/NewsSearchService/V1/newsSearch?appid=#{appid}&query=#{name}&results=2&language=es&output=#{output}"
-      ActiveSupport::JSON.decode(rs)
+      url = "http://api.bing.net/json.aspx?AppId=#{appid}&Query=#{name}&Sources=News&Version=2.0&Market=es-es&News.Count=2&News.SortBy=Date"
+      rs = Net::HTTP.get(URI.parse(url))
+      puts url
+      ActiveSupport::JSON.decode(rs)["SearchResponse"]["News"]
     end
 end
 
